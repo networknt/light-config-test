@@ -1,11 +1,22 @@
-# light-config-dev
-Default config files of light-java and light-java-rest for dev environment for light-config-server.
-For your own project from another organization, you can setup an organization wide default as
-light-config-dev in your github organization in order to overwrite some of the config files from
-default.
+# light-config-test
 
-Each service/app built on top of light-java and light-java-rest can have its own config repo
-identified by serviceId in order to provide service/app specific config files and overwrite
-default config files inherited from organization or networknt.
+Default config files of light-java for test environment on light-config-server
 
+This repo contains all the recommended config files for each version of the framework including 
+light-java, light-java-rest, light-java-graphql, light-java-eventuate and light-java-hybrid. As
+this is aiming to test deployment, all secrets and sensitive info are defaulted to something 
+works out of the box. The default config files are designed to be easy to get started and you
+can update certain things to change the behavior of each component. For example, the security
+is turned off by default but you can enable it by update security.yml to enable it. If you need 
+details info on how to update these config files, please consult each individual module document. 
 
+Along with a list of test config files, we have provided another repo that contains all the 
+production config files with all the sensitive info remove and force users to create their own. 
+
+The light-config-server supports multiple level organizations config file assembly and merging, 
+for example, every organization can setup its own light-config-test to overwrite some files from
+light-config-test config files from networknt. With configuration in light-config-server, the
+final generated config.zip will contains some files from /networknt/light-config-test and some
+files from /yourorg/light-config-test as well as your API/service specific config files. During
+merging, most files will be replaced but status.yml and service.yml will be merged across all
+levels.
