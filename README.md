@@ -1,12 +1,12 @@
 # light-config-test
 
-Default config files of light-java for test environment on light-config-server
+Default config files of light*4j frameworks for test environment on light-config-server
 
 This repo contains all the recommended config files for each version of the framework including 
-light-java, light-java-rest, light-java-graphql, light-java-eventuate and light-java-hybrid. As
-this is aiming to test deployment, all secrets and sensitive info are defaulted to something 
-works out of the box. The default config files are designed to be easy to get started and you
-can update certain things to change the behavior of each component. For example, the security
+light-4j, light-rest-4j, light-graphql-4j, light-hybrid-4j and light-eventuate-4j. As this is 
+aiming to test environment, all secrets and sensitive info are defaulted to something works out 
+of the box. The default config files are designed to be easy to get started and you can update 
+certain things to change the behavior of each component later on. For example, the security
 is turned off by default but you can enable it by update security.yml to enable it. If you need 
 details info on how to update these config files, please consult each individual module document. 
 
