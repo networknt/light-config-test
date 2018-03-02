@@ -7,7 +7,7 @@ with detailed steps.
 Services built on top of light-eventuate-4j need infrastructure services to
 run. You can install Kafak, Zookeeper, Mysql and CDC server on your local 
 with docker-compose which is documented in [getting started](https://www.networknt.com/tutorial/eventuate/getting-started/)
-or you can use our cloud services which is very convinient for individual
+or you can use our cloud services which is very convenient for individual
 developers or for developers who cannot use docker-compose. The config 
 files in this folder are pointing to the cloud services. 
 
@@ -32,10 +32,11 @@ Now you should have light-bot built already.
 
 ### To start the command line
 
-Run the following command at the same location as this README.md
+Run the following commands at the same location as this README.md
+
+To start rest query side service:
 
 ```
-java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-bot/bot-cli/build/libs/bot-cli-fat-1.0.jar -t develop-build
+java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-example-4j/eventuate/todo-list/rest-query/target/rest-query-1.0.0.jar
 ```
-
 
