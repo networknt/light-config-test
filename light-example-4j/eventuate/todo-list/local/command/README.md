@@ -1,6 +1,6 @@
 ### The purpose of this config
 
-The config files in this folder are pointing to the cloud services.
+ The config files in this folder are pointing to the local event-store with docker-compose.
 
 ### Prepare the environment
 
@@ -26,12 +26,12 @@ Now you should have light-bot built already.
 Run the following commands at the same location as this README.md
 
 ```
-cd ~/networknt/light-config-test/light-example-4j/eventuate/todo-list/cloud/query
+cd ~/networknt/light-config-test/light-example-4j/eventuate/todo-list/local/command
 ```
 
-To start rest query side service:
+To start rest command side service:
 
 ```
-java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-example-4j/eventuate/todo-list/rest-query/target/rest-query-1.0.0.jar
+java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-example-4j/eventuate/todo-list/rest-command/target/rest-command-1.0.0.jar
 ```
 
