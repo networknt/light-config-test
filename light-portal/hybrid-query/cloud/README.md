@@ -43,13 +43,6 @@ folder. The command line should be executed in the folder that contains this REA
 java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -cp ~/networknt/light-portal/hybrid-query/target/hybrid-query-1.0.0.jar:../service/* com.networknt.server.Server
 ```
 
-If you only want to test one service jar file, then your can include the jar file into 
-the class path as below.
-
-```
-java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -cp ~/networknt/light-portal/hybrid-query/target/hybrid-query-1.0.0.jar:~/networknt/light-codegen/codegen-web/target/codegen-web-1.5.11.jar com.networknt.server.Server
-```
-
 If there are any service injections needed for your service, you need to update service.yml
 to add these services before starting the command line. 
 
