@@ -1,7 +1,7 @@
 ## Local Service StartUp:
 
 
-Services built on top of light-eventuate-4j need infrastructure services to run. Which includes event store and CDC service
+Services built on top of light-tram-4j need infrastructure services to run. Which includes event store and CDC service
 The event-store can be start by following step:  Documented in [getting started](https://www.networknt.com/tutorial/eventuate/getting-started/)
 
 
@@ -27,18 +27,22 @@ export DOCKER_HOST_IP=10.200.10.1
 Run the following commands at the same location as this README.md
 
 ```
-cd ~/networknt/light-config-test/light-example-4j/eventuate/todo-list/local
+cd ~/networknt/light-config-test/light-example-4j/tram/todo-list/local
 
-docker-compose -f docker-compose-eventuate-cdc.yml
+docker-compose -f docker-compose-eventuate.yml
+
+docker-compose -f docker-compose-cdcserver-for-tram.yml
 
 ```
+
+
 
 ### Prepare the environment
 
 There are several repositories need to be cloned to your local and built.
 
-The setting use  networknt under user home directory as workspace and all scripts
-are based on that assumption. If user want use another folder as local workspace,
+The setting use networknt under user home directory as workspace and all scripts
+are based on that assumption. If you want use another folder as local workspace,
 please fork the light-config-test repo and update the scripts accordingly.
 
 ```
@@ -46,6 +50,6 @@ cd ~
 mkdir networknt
 git clone https://github.com/networknt/light-example-4j.git
 git clone https://github.com/networknt/light-config-test.git
-cd ~/networknt/light-example-4j/eventuate/todo-list
+cd ~/networknt/light-example-4j/tram/light-tram-todolist/multi-module
 mvn clean install
 ```

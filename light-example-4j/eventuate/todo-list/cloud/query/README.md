@@ -6,8 +6,8 @@ The config files in this folder are pointing to the cloud services.
 
 There are several repositories need to be cloned to your local and built. 
 
-I am using networknt under my user home directory as workspace and all scripts 
-are based on that assumtpion. If you want use another folder as your workspace, 
+The setting use networknt under user home directory as workspace and all scripts
+are based on that assumption. If user want use another folder as local workspace,
 please fork the light-config-test repo and update the scripts accordingly. 
 
 ```
