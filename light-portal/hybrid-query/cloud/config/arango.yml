@@ -1,0 +1,5 @@
+# Database configuration for ArangoDB
+host: 198.55.49.187
+port: 8529
+user: arangouser
+password: arangopw
