@@ -1,0 +1,19 @@
+version: "2"
+#
+# Services
+#
+services:
+  tram-cdcserver:
+    image: networknt/tram-cdcserver:latest
+    volumes:
+      - ./tram-cdcserver/config:/config
+    network_mode: "host"
+    networks:
+       - localnet
+
+# Networks
+#
+networks:
+  localnet:
+    external: true
+

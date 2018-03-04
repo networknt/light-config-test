@@ -7,17 +7,19 @@ The config files in this folder are pointing to the cloud services.
 There are several repositories need to be cloned to your local and built. 
 
 The setting use networknt under user home directory as workspace and all scripts
-are based on that assumption. If user want to use another folder as local workspace,
+are based on that assumption. If user want use another folder as local workspace,
 please fork the light-config-test repo and update the scripts accordingly. 
+
 
 ```
 cd ~
 mkdir networknt
 git clone https://github.com/networknt/light-example-4j.git
 git clone https://github.com/networknt/light-config-test.git
-cd ~/networknt/light-example-4j/eventuate/todo-list
+cd ~/networknt/light-example-4j/tram/light-tram-todolist/multi-module
 mvn clean install
 ```
+
 
 Now you should have light-bot built already. 
 
@@ -26,12 +28,13 @@ Now you should have light-bot built already.
 Run the following commands at the same location as this README.md
 
 ```
-cd ~/networknt/light-config-test/light-example-4j/eventuate/todo-list/cloud/command
+cd ~/networknt/light-config-test/light-example-4j/tram/todo-list/cloud/command
 ```
 
 To start rest command side service:
 
 ```
-java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-example-4j/eventuate/todo-list/rest-command/target/rest-command-1.0.0.jar
+java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-example-4j/tram/light-tram-todolist/multi-module/tram-todo-command/target/tram-todo-command-service-1.0.0.jar
+
 ```
 
