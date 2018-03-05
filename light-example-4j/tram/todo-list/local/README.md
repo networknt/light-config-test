@@ -29,9 +29,9 @@ Run the following commands at the same location as this README.md
 ```
 cd ~/networknt/light-config-test/light-example-4j/tram/todo-list/local
 
-docker-compose -f docker-compose-eventuate.yml
+docker-compose -f docker-compose-eventuate.yml up
 
-docker-compose -f docker-compose-cdcserver-for-tram.yml
+docker-compose -f docker-compose-cdcserver-for-tram.yml up
 
 ```
 
