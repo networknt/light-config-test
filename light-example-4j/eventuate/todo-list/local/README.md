@@ -29,7 +29,7 @@ Run the following commands at the same location as this README.md
 ```
 cd ~/networknt/light-config-test/light-example-4j/eventuate/todo-list/local
 
-docker-compose -f docker-compose-eventuate-cdc.yml
+docker-compose -f docker-compose-eventuate-cdc.yml up
 
 ```
 

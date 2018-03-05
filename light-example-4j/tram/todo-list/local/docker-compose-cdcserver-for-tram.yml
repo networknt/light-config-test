@@ -7,7 +7,6 @@ services:
     image: networknt/tram-cdcserver:latest
     volumes:
       - ./tram-cdcserver/config:/config
-    network_mode: "host"
     networks:
        - localnet
 
