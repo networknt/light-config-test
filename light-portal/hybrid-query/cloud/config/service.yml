@@ -1,6 +1,43 @@
 
 # Singleton service factory configuration/IoC injection
 singletons:
+- javax.sql.DataSource:
+  - com.zaxxer.hikari.HikariDataSource:
+      jdbcUrl: jdbc:mysql://198.55.49.187:3306/todo_db?useSSL=false
+      username: mysqluser
+      password: mysqlpw
+      maximumPoolSize: 15
+      useServerPrepStmts: true
+      cachePrepStmts: true
+      cacheCallableStmts: true
+      prepStmtCacheSize: 4096
+      prepStmtCacheSqlLimit: 2048
+
+# Host Menu - you need to make sure that the host menu service is in the classpath
+- net.lightapi.portal.menu.MenuRepository:
+  - net.lightapi.portal.menu.MenuRepositoryArangoImpl
+
+- com.networknt.eventuate.jdbc.EventuateJdbcAccess:
+  - com.networknt.eventuate.jdbc.EventuateJdbcAccessImpl
+- com.networknt.eventuate.common.impl.sync.AggregateCrud:
+  - com.networknt.eventuate.server.jdbckafkastore.EventuateLocalAggregateCrud
+- com.networknt.eventuate.common.impl.AggregateCrud:
+  - com.networknt.eventuate.common.impl.adapters.SyncToAsyncAggregateCrudAdapter
+- com.networknt.eventuate.common.impl.AggregateEvents:
+  - com.networknt.eventuate.server.jdbckafkastore.EventuateKafkaAggregateSubscriptions
+- com.networknt.eventuate.common.SnapshotManager:
+  - com.networknt.eventuate.common.SnapshotManagerImpl
+- com.networknt.eventuate.common.MissingApplyEventMethodStrategy:
+  - com.networknt.eventuate.common.DefaultMissingApplyEventMethodStrategy
+- com.networknt.eventuate.common.EventuateAggregateStore:
+  - com.networknt.eventuate.common.impl.EventuateAggregateStoreImpl
+- com.networknt.eventuate.event.EventHandlerProcessor:
+  - com.networknt.eventuate.event.EventHandlerProcessorDispatchedEventReturningVoid
+  - com.networknt.eventuate.event.EventHandlerProcessorDispatchedEventReturningCompletableFuture
+  - com.networknt.eventuate.event.EventHandlerProcessorEventHandlerContextReturningCompletableFuture
+  - com.networknt.eventuate.event.EventHandlerProcessorEventHandlerContextReturningVoid
+- com.networknt.eventuate.client.SubscriptionsRegistry: com.networknt.eventuate.client.EventuateClientServiceInitializer::subscriptionsRegistry
+
 # HandlerProvider implementation
 - com.networknt.server.HandlerProvider:
   - com.networknt.rpc.router.RpcRouter
@@ -29,10 +66,6 @@ singletons:
   - com.networknt.audit.AuditHandler
 
 # Individual service configuration
-
-# Host Menu - you need to make sure that the host menu service is in the classpath
-#- net.lightapi.portal.menu.MenuRepository:
-#  - net.lightapi.portal.menu.MenuRepositoryArangoImpl
 
 # light-codegen codegen-web interface implementations
 - com.networknt.codegen.Generator:
