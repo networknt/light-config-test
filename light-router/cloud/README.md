@@ -13,8 +13,15 @@ a docker image.
 
 All config file can be loaded in the config folder.
 
-To start the server. 
+To start the server with docker command line. 
 
 ```
+docker run -p 8080:8080 -v /home/steve/networknt/light-config-test/light-router/cloud/config:/config networknt/light-router
+```
 
+
+To start the server with docker-compose
+
+```
+docker-compose up
 ```
