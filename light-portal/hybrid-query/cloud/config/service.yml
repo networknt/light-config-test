@@ -13,10 +13,6 @@ singletons:
       prepStmtCacheSize: 4096
       prepStmtCacheSqlLimit: 2048
 
-# Host Menu - you need to make sure that the host menu service is in the classpath
-- net.lightapi.portal.menu.MenuRepository:
-  - net.lightapi.portal.menu.MenuRepositoryArangoImpl
-
 - com.networknt.eventuate.jdbc.EventuateJdbcAccess:
   - com.networknt.eventuate.jdbc.EventuateJdbcAccessImpl
 - com.networknt.eventuate.common.impl.sync.AggregateCrud:
@@ -37,6 +33,21 @@ singletons:
   - com.networknt.eventuate.event.EventHandlerProcessorEventHandlerContextReturningCompletableFuture
   - com.networknt.eventuate.event.EventHandlerProcessorEventHandlerContextReturningVoid
 - com.networknt.eventuate.client.SubscriptionsRegistry: com.networknt.eventuate.client.EventuateClientServiceInitializer::subscriptionsRegistry
+
+- net.lightapi.portal.menu.domain.MenuAggregate:
+  - net.lightapi.portal.menu.domain.MenuAggregate
+- net.lightapi.portal.menu.domain.MenuItemAggregate:
+  - net.lightapi.portal.menu.domain.MenuItemAggregate
+- net.lightapi.portal.menu.MenuRepository:
+  - net.lightapi.portal.menu.MenuRepositoryArangoImpl
+- net.lightapi.portal.menu.MenuQueryEventHandler:
+  - net.lightapi.portal.menu.MenuQueryEventHandler
+- net.lightapi.portal.form.domain.FormAggregate:
+  - net.lightapi.portal.form.domain.FormAggregate
+- net.lightapi.portal.form.FormRepository:
+  - net.lightapi.portal.form.FormRepositoryArangoImpl
+- net.lightapi.portal.form.FormQueryEventHandler:
+  - net.lightapi.portal.form.FormQueryEventHandler
 
 # HandlerProvider implementation
 - com.networknt.server.HandlerProvider:

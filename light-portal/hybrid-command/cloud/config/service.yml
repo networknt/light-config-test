@@ -4,7 +4,7 @@ singletons:
 - javax.sql.DataSource:
   - com.zaxxer.hikari.HikariDataSource:
       DriverClassName: com.mysql.jdbc.Driver
-      jdbcUrl: jdbc:mysql://198.55.49.187:3306/oauth2?useSSL=false
+      jdbcUrl: jdbc:mysql://198.55.49.187:3306/eventuate?useSSL=false
       username: mysqluser
       password: mysqlpw
       maximumPoolSize: 10
@@ -33,6 +33,13 @@ singletons:
   - com.networknt.eventuate.common.impl.EventuateAggregateStoreImpl
 - com.networknt.eventuate.common.sync.EventuateAggregateStore:
   - com.networknt.eventuate.common.impl.sync.EventuateAggregateStoreImpl
+
+- net.lightapi.portal.form.domain.FormAggregate:
+  - net.lightapi.portal.form.domain.FormAggregate
+- net.lightapi.portal.menu.domain.MenuAggregate:
+  - net.lightapi.portal.menu.domain.MenuAggregate
+- net.lightapi.portal.menu.domain.MenuItemAggregate:
+  - net.lightapi.portal.menu.domain.MenuItemAggregate
 
 # HandlerProvider implementation
 - com.networknt.server.HandlerProvider:
