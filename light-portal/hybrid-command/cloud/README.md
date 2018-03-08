@@ -40,6 +40,7 @@ The following command line to start the server with all the services in service
 folder. The command line should be executed in the folder that contains this README.md
 
 ```
+cd ~/networknt/light-config-test/light-portal/hybrid-command/cloud/
 cp ~/networknt/light-portal/docker/hybrid-command/service/*.jar ../service
 java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -cp ~/networknt/light-portal/hybrid-command/target/hybrid-command-1.0.0.jar:../service/* com.networknt.server.Server
 ```
