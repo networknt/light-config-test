@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  petstore:
+    image: networknt/com.networknt.petstore-1.0.1
+    ports:
+    - "8443:8443"
+    volumes:
+    - ./config:/config
+    networks:
+    - localnet
+networks:
+  localnet:
+    # driver: bridge
+    external: true
