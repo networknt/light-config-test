@@ -9,6 +9,8 @@ skip_build: false
 # local repo. Also, some of our customers have constraint test environment to run
 # unit and integration test only and another environment to run all of tests.
 skip_test: false
+# skip copyFile
+skip_copyFile: true
 
 checkout:
   branch: develop
@@ -24,6 +26,7 @@ checkout:
   - git@github.com:networknt/light-saga-4j.git
   - git@github.com:networknt/light-session-4j.git
   - git@github.com:networknt/light-proxy.git
+  - git@github.com:networknt/light-router.git
   - git@github.com:networknt/light-oauth2.git
   - git@github.com:networknt/light-example-4j.git
   - git@github.com:networknt/light-docker.git
@@ -40,12 +43,21 @@ build:
   - light-saga-4j
   - light-session-4j
   - light-proxy
+  - light-router
   - light-oauth2
-  - light-example-4j/rest/swagger/petstore
   - light-example-4j/rest/openapi/petstore
-  - light-example-4j/rest/swagger/proxy-backend
   - light-example-4j/rest/openapi/proxy-backend
   - light-example-4j/rest/openapi/cors
+  - light-example-4j/rest/openapi/ms-aggregate/aa/generated
+  - light-example-4j/rest/openapi/ms-aggregate/aa/https
+  - light-example-4j/rest/openapi/ms-aggregate/ab/generated
+  - light-example-4j/rest/openapi/ms-aggregate/ab/https
+  - light-example-4j/rest/openapi/ms-aggregate/ac/generated
+  - light-example-4j/rest/openapi/ms-aggregate/ac/https
+  - light-example-4j/rest/openapi/ms-aggregate/ad/generated
+  - light-example-4j/rest/openapi/ms-aggregate/ad/https
+  - light-example-4j/rest/swagger/petstore
+  - light-example-4j/rest/swagger/proxy-backend
   - light-example-4j/rest/swagger/ms_chain/api_a/httpschain
   - light-example-4j/rest/swagger/ms_chain/api_b/httpschain
   - light-example-4j/rest/swagger/ms_chain/api_c/httpschain
@@ -68,21 +80,6 @@ build:
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.
 test:
-  rest-swagger-petstore:
-    server:
-    - path: light-example-4j/rest/swagger/petstore
-      cmd: target/petstore-1.0.1.jar
-    request:
-    - host: https://localhost:8443
-      path: "/v2/pet/111"
-      method: get
-      response:
-        status: 200
-        header:
-          content-type: application/json
-        body:
-          "$.name": doggie
-          "$.id": 123456789
   rest-openapi-petstore:
     server:
     - path: light-example-4j/rest/openapi/petstore
@@ -98,40 +95,6 @@ test:
         body:
           "$.name": Jessica Right
           "$.id": 1
-  rest-swagger-proxy-backend:
-    server:
-    - path: light-example-4j/rest/swagger/proxy-backend
-      cmd: target/backend-1.0.0.jar
-    request:
-    - host: https://localhost:8081
-      path: "/v1/getData"
-      method: get
-      response:
-        status: 200
-        header:
-          content-type: application/json
-        body:
-          "$.enableHttp2": true
-          "$.enableHttps": true
-          "$.httpsPort": 8081
-          "$.key": key1
-          "$.value": value1
-    - host: https://localhost:8081
-      path: "/v1/postData"
-      method: post
-      header:
-        "content-type": application/json
-      body: "{\"key\":\"key1\",\"value\":\"value1\"}"
-      response:
-        status: 200
-        header:
-          content-type: application/json
-        body:
-          "$.enableHttp2": true
-          "$.enableHttps": true
-          "$.httpsPort": 8081
-          "$.key": key1
-          "$.value": value1
   rest-openapi-proxy-backend:
     server:
     - path: light-example-4j/rest/openapi/proxy-backend
@@ -205,6 +168,73 @@ test:
         "Access-Control-Request-Headers": X-Requested-With
       response:
         status: 200
+  rest-openapi-aggregate:
+    server:
+    - path: light-example-4j/rest/openapi/ms-aggregate/ad/https
+      cmd: target/ad-1.0.0.jar
+    - path: light-example-4j/rest/openapi/ms-aggregate/ac/https
+      cmd: target/ac-1.0.0.jar
+    - path: light-example-4j/rest/openapi/ms-aggregate/ab/https
+      cmd: target/ab-1.0.0.jar
+    - path: light-example-4j/rest/openapi/ms-aggregate/aa/https
+      cmd: target/aa-1.0.0.jar
+    request:
+    - host: https://localhost:7441
+      path: "/v1/data"
+      method: get
+      response:
+        status: 200
+        body:
+          "$.length()": 8
+  rest-swagger-petstore:
+    server:
+    - path: light-example-4j/rest/swagger/petstore
+      cmd: target/petstore-1.0.1.jar
+    request:
+    - host: https://localhost:8443
+      path: "/v2/pet/111"
+      method: get
+      response:
+        status: 200
+        header:
+          content-type: application/json
+        body:
+          "$.name": doggie
+          "$.id": 123456789
+  rest-swagger-proxy-backend:
+    server:
+    - path: light-example-4j/rest/swagger/proxy-backend
+      cmd: target/backend-1.0.0.jar
+    request:
+    - host: https://localhost:8081
+      path: "/v1/getData"
+      method: get
+      response:
+        status: 200
+        header:
+          content-type: application/json
+        body:
+          "$.enableHttp2": true
+          "$.enableHttps": true
+          "$.httpsPort": 8081
+          "$.key": key1
+          "$.value": value1
+    - host: https://localhost:8081
+      path: "/v1/postData"
+      method: post
+      header:
+        "content-type": application/json
+      body: "{\"key\":\"key1\",\"value\":\"value1\"}"
+      response:
+        status: 200
+        header:
+          content-type: application/json
+        body:
+          "$.enableHttp2": true
+          "$.enableHttps": true
+          "$.httpsPort": 8081
+          "$.key": key1
+          "$.value": value1
   rest-swagger-chain:
     server:
     - path: light-example-4j/rest/swagger/ms_chain/api_d/httpschain
@@ -284,3 +314,5 @@ test:
           content-type: application/json
         body:
           "$.data.numberHolder.theNumber": 4
+# copy individual files
+copyFile:
