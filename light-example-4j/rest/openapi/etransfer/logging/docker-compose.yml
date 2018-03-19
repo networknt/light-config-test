@@ -1,0 +1,20 @@
+version: '2'
+
+services:
+  etransfer:
+    image: networknt/ca.interac.etransfer-2.0.0
+    ports:
+      - "8443:8443"
+    volumes:
+      - ./config:/config
+    logging:
+      driver: "gelf"
+      options:
+        gelf-address: "udp://${LOGSTASH_ADDRESS}:12201"
+        tag: "etransfer-compose"
+        env: "dev"
+    networks:
+      - localnet
+networks:
+  localnet:
+    external: true

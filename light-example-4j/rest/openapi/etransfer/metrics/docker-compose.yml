@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  etransfer:
+    image: networknt/ca.interac.etransfer-2.0.0
+    ports:
+    - "8443:8443"
+    volumes:
+    - ./config:/config
+    networks:
+    - localnet
+networks:
+  localnet:
+    # driver: bridge
+    external: true
