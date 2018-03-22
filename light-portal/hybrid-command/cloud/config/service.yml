@@ -14,7 +14,13 @@ singletons:
       prepStmtCacheSize: 10,
       prepStmtCacheSqlLimit: 2048,
       connectionTimeout: 2000
-
+- com.networknt.portal.usermanagement.model.jdbc.DatabaseSchema:
+  - com.networknt.portal.usermanagement.model.jdbc.DatabaseSchema:
+    - java.lang.String: user
+- com.networknt.portal.usermanagement.model.common.model.user.UserRepository:
+  - com.networknt.portal.usermanagement.model.jdbc.user.UserRepositoryImpl
+- com.networknt.portal.usermanagement.model.common.crypto.PasswordSecurity:
+  - com.networknt.portal.usermanagement.model.common.crypto.Pbkdf2PasswordSecurityImpl
 - com.networknt.eventuate.jdbc.EventuateJdbcAccess:
   - com.networknt.eventuate.jdbc.EventuateJdbcAccessImpl
 - com.networknt.eventuate.common.impl.sync.AggregateCrud:

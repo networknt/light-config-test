@@ -1,0 +1,12 @@
+---
+smtpHost: mail.lightapi.net
+port: 587
+fromEmail: noreply@lightapi.net
+subject: New User Initial confirmation email
+emitEvent: false
+content: Welcome to Light-portal! <br/><br/> To complete your account registration, please confirm your email address by clicking on the following link:<br/><br/>  {0}  <br/><br/>If you cannot click on the link above, please copy and paste it into your web browser.<br/>Please visit https://github.com/networknt/light-portal for more information.
+serverHost: http://localhost:8080/v1/user/token/
+password: change-ME
+sendEmail: false
+hybridServie: true
+hybridLink:  Click <a href='https://localhost:8443/api/json?cmd={"host":"lightapi.net","service":"user","action":"confirmUser","version":"0.1.0","data":{"tokenId":"%s"}}'>link</a> to activate your account.
