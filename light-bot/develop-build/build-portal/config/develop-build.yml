@@ -27,6 +27,7 @@ build:
   - light-eventuate-4j
   - light-portal
   - light-portal/api-certification
+  - light-portal/oauth-playground
   - light-portal/host-menu
   - light-portal/schema-form
 # This section defines end-to-end tests with real live servers, if you want to skip
@@ -35,6 +36,8 @@ copyFile:
   # populate hybrid-query services
   - src: light-portal/api-certification/target/api-certification-1.0.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/api-certification-1.0.0.jar
+  - src: light-portal/oauth-playground/target/playground-1.0.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/playground-1.0.0.jar
   - src: light-codegen//codegen-core/target/codegen-core-1.5.11.jar
     dst: light-config-test/light-portal/hybrid-query/service/codegen-core-1.5.11.jar
   - src: light-codegen/codegen-fwk/target/codegen-fwk-1.5.11.jar
