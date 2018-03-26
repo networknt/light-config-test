@@ -1,9 +1,9 @@
 workspace: networknt
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 # or the last time the build was failed and you just want to retry without changing anything.
-skip_checkout: true
+skip_checkout: false
 # Just checkout the repositories for backup or some other tasks
-skip_build: true
+skip_build: false
 # If this value is set to true, then only checkout and build will be called. It is
 # very useful if you just want to install the develop branch modules into your .m2
 # local repo. Also, some of our customers have constraint test environment to run
@@ -30,6 +30,7 @@ build:
   - light-portal/oauth-playground
   - light-portal/host-menu
   - light-portal/schema-form
+  - light-portal/user-management
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.
 copyFile:
@@ -77,4 +78,14 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-command/service/schema-form-command-0.1.0.jar
   - src: light-portal/schema-form/hybrid-command/target/form-command-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/form-command-0.1.0.jar
+  - src: light-portal/user-management/hybrid-service/target/user-hybrid-service-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-service-0.1.0.jar
+  - src: light-portal/user-management/hybrid-service/target/user-hybrid-service-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-service-0.1.0.jar
+  - src: light-portal/user-management/auth/target/usermanagement-auth-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/usermanagement-auth-0.1.0.jar
+  - src: light-portal/user-management/common/target/user-management-common-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-management-common-0.1.0.jar
+  - src: light-portal/user-management/jdbc/target/user-management-jdbc-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-management-jdbc-0.1.0.jar
 
