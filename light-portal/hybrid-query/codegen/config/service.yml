@@ -1,0 +1,51 @@
+
+# Singleton service factory configuration/IoC injection
+singletons:
+- javax.sql.DataSource:
+  - com.zaxxer.hikari.HikariDataSource:
+      jdbcUrl: jdbc:mysql://198.55.49.187:3306/todo_db?useSSL=false
+      username: mysqluser
+      password: mysqlpw
+      maximumPoolSize: 15
+      useServerPrepStmts: true
+      cachePrepStmts: true
+      cacheCallableStmts: true
+      prepStmtCacheSize: 4096
+      prepStmtCacheSqlLimit: 2048
+
+# HandlerProvider implementation
+- com.networknt.server.HandlerProvider:
+  - com.networknt.rpc.router.RpcRouter
+# StartupHookProvider implementations, there are one to many and they are called in the same sequence defined.
+- com.networknt.server.StartupHookProvider:
+  # registry all service handlers by from annotations
+  - com.networknt.rpc.router.RpcStartupHookProvider
+  # config event handle registration
+  - com.networknt.eventuate.client.EventuateClientStartupHookProvider
+# ShutdownHookProvider implementations, there are one to many and they are called in the same sequence defined.
+# - com.networknt.server.ShutdownHookProvider:
+  # - com.networknt.server.Test1ShutdownHook
+# MiddlewareHandler implementations, the calling sequence is as defined in the request/response chain.
+- com.networknt.handler.MiddlewareHandler:
+  # Exception Global exception handler that needs to be called first to wrap all middleware handlers and business handlers
+  - com.networknt.exception.ExceptionHandler
+  # Metrics handler to calculate response time accurately, this needs to be the second handler in the chain.
+  - com.networknt.metrics.MetricsHandler
+  # Traceability Put traceabilityId into response header from request header if it exists
+  - com.networknt.traceability.TraceabilityHandler
+  # Correlation Create correlationId if it doesn't exist in the request header and put it into the request header
+  - com.networknt.correlation.CorrelationHandler
+  # Jwt Token Verification for signature and expiration
+  - com.networknt.rpc.security.JwtVerifyHandler
+  # SimpleAudit Log important info about the request into audit log
+  - com.networknt.audit.AuditHandler
+
+# Individual service configuration
+
+# light-codegen codegen-web interface implementations
+- com.networknt.codegen.Generator:
+  - com.networknt.codegen.rest.OpenApiGenerator
+  - com.networknt.codegen.rest.SwaggerGenerator
+  - com.networknt.codegen.hybrid.HybridServerGenerator
+  - com.networknt.codegen.hybrid.HybridServiceGenerator
+  - com.networknt.codegen.graphql.GraphqlGenerator
