@@ -28,6 +28,7 @@ checkout:
   - git@github.com:networknt/light-proxy.git
   - git@github.com:networknt/light-router.git
   - git@github.com:networknt/light-oauth2.git
+  - git@github.com:networknt/light-portal.git
   - git@github.com:networknt/light-example-4j.git
   - git@github.com:networknt/light-docker.git
 build:
@@ -45,6 +46,13 @@ build:
   - light-proxy
   - light-router
   - light-oauth2
+  - light-portal
+  - light-portal/api-certification
+  - light-portal/host-menu
+  - light-portal/schema-form
+  # - light-portal/user-management  #This is still working in progress. 
+  - light-portal/hybrid-command
+  - light-portal/hybrid-query
   - light-example-4j/rest/openapi/petstore
   - light-example-4j/rest/openapi/proxy-backend
   - light-example-4j/rest/openapi/cors
@@ -78,14 +86,14 @@ build:
   - light-example-4j/graphql/mutation-idl
   - light-example-4j/graphql/relaytodo
   - light-example-4j/graphql/subscription
-  # eventuate
+  # light-eventuate-4j
   - light-example-4j/eventuate/account-management
   - light-example-4j/eventuate/todo-list
 
-  # tram
+  # light-tram-4j
   - light-example-4j/tram/light-tram-todolist/single-module
   - light-example-4j/tram/light-tram-todolist/multi-module
-  # saga
+  # light-saga-4j
   - light-example-4j/saga/light-saga-cutomers-and-orders
 
 # This section defines end-to-end tests with real live servers, if you want to skip
