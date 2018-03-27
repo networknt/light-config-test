@@ -15,7 +15,7 @@ httpPort:  8081
 enableHttp: false
 
 # Https port if enableHttps is true. It will be ignored if dynamicPort is true.
-httpsPort:  8081
+httpsPort:  8443
 
 # Enable HTTPS should be true on official environment and most dev environments.
 enableHttps: true

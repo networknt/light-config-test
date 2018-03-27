@@ -3,7 +3,7 @@
 singletons:
 - javax.sql.DataSource:
   - com.zaxxer.hikari.HikariDataSource:
-      jdbcUrl: jdbc:mysql://198.55.49.187:3306/todo_db?useSSL=false
+      jdbcUrl: jdbc:mysql://198.55.49.187:3306/eventuate?useSSL=false
       username: mysqluser
       password: mysqlpw
       maximumPoolSize: 15
@@ -12,7 +12,6 @@ singletons:
       cacheCallableStmts: true
       prepStmtCacheSize: 4096
       prepStmtCacheSqlLimit: 2048
-
 - com.networknt.eventuate.jdbc.EventuateJdbcAccess:
   - com.networknt.eventuate.jdbc.EventuateJdbcAccessImpl
 - com.networknt.eventuate.common.impl.sync.AggregateCrud:

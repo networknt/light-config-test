@@ -15,7 +15,7 @@ httpPort:  8082
 enableHttp: false
 
 # Https port if enableHttps is true. It will be ignored if dynamicPort is true.
-httpsPort:  8082
+httpsPort:  8442
 
 # Enable HTTPS should be true on official environment and most dev environments.
 enableHttps: true
