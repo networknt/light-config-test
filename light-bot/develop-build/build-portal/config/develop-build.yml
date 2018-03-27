@@ -57,6 +57,8 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-query/service/common-util-0.1.0.jar
   - src: light-portal/host-menu/common/target/host-menu-common-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/host-menu-common-0.1.0.jar
+  - src: light-portal/host-menu/command/target/host-menu-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/host-menu-command-0.1.0.jar
   - src: light-portal/hybrid-query/target/hybrid-query-1.5.11.jar
     dst: light-config-test/light-portal/hybrid-query/service/hybrid-query-1.5.11.jar
   - src: light-portal/host-menu/query/target/host-menu-query-0.1.0.jar
@@ -65,6 +67,8 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-query/service/menu-query-0.1.0.jar
   - src: light-portal/schema-form/common/target/schema-form-common-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/schema-form-common-0.1.0.jar
+  - src: light-portal/schema-form/command/target/schema-form-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/schema-form-command-0.1.0.jar
   - src: light-portal/schema-form/query/target/schema-form-query-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/schema-form-query-0.1.0.jar
   - src: light-portal/schema-form/hybrid-query/target/form-query-0.1.0.jar
