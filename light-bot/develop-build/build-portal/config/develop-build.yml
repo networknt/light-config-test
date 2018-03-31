@@ -3,7 +3,7 @@ workspace: networknt
 # or the last time the build was failed and you just want to retry without changing anything.
 skip_checkout: true
 # Just checkout the repositories for backup or some other tasks
-skip_build: true
+skip_build: false
 # If this value is set to true, then only checkout and build will be called. It is
 # very useful if you just want to install the develop branch modules into your .m2
 # local repo. Also, some of our customers have constraint test environment to run
