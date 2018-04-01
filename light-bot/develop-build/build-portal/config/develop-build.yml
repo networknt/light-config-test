@@ -61,8 +61,8 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-query/service/host-menu-common-0.1.0.jar
   - src: light-portal/host-menu/command/target/host-menu-command-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/host-menu-command-0.1.0.jar
-  - src: light-portal/hybrid-query/target/hybrid-query-1.5.11.jar
-    dst: light-config-test/light-portal/hybrid-query/service/hybrid-query-1.5.11.jar
+  - src: light-portal/hybrid-query/target/hybrid-query.jar
+    dst: light-config-test/light-portal/hybrid-query/service/hybrid-query.jar
   - src: light-portal/host-menu/query/target/host-menu-query-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/host-menu-query-0.1.0.jar
   - src: light-portal/host-menu/hybrid-query/target/menu-query-0.1.0.jar
@@ -76,8 +76,8 @@ copyFile:
   - src: light-portal/schema-form/hybrid-query/target/form-query-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/form-query-0.1.0.jar
   # populate hybrid-command services
-  - src: light-portal/hybrid-command/target/hybrid-command-1.5.11.jar
-    dst: light-config-test/light-portal/hybrid-command/service/hybrid-command-1.5.11.jar
+  - src: light-portal/hybrid-command/target/hybrid-command.jar
+    dst: light-config-test/light-portal/hybrid-command/service/hybrid-command.jar
   - src: light-portal/host-menu/common/target/host-menu-common-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/host-menu-common-0.1.0.jar
   - src: light-portal/host-menu/command/target/host-menu-command-0.1.0.jar
