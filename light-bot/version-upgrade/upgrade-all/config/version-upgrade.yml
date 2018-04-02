@@ -49,7 +49,8 @@ maven:
   - light-proxy
   - light-router
   - light-oauth2
-  # - light-portal
+  - light-portal/hybrid-command
+  - light-portal/hybrid-query
 # regex replacement for dependencies
 version:
   openapi-parser:
@@ -136,6 +137,10 @@ version:
   - path: user-management/rest-query/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: user-management/usermanagement-service/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: hybrid-command/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: hybrid-query/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
 
   light-example-4j:
@@ -233,6 +238,16 @@ version:
   - path: discovery/api_d/kubernetes/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
 
+  # multidb
+  - path: common/multidb/generated/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: common/multidb/generated/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+  - path: common/multidb/dbconfig/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: common/multidb/dbconfig/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+    
   # graphql framework
   # graphql subscription
   - path: graphql/subscription/pom.xml
@@ -428,3 +443,4 @@ version:
   # webserver
   - path: webserver/api-simple-web/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  
