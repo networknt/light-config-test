@@ -18,7 +18,7 @@ skip_docker: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   # here we checkout master branch to publish the images. 
-  branch: master
+  branch: develop
   repository:
   # - git@github.com:networknt/light-proxy.git
   # - git@github.com:networknt/light-router.git
@@ -29,7 +29,7 @@ checkout:
 merge:
   # - light-proxy
   # - light-router
-  # - light-oauth2
+  - light-oauth2
   # - light-codegen
   # - light-docker
 # maven build
