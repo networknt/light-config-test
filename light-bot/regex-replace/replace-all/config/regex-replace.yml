@@ -55,7 +55,12 @@ checkout:
 # of file names.
 replace:
 # matched path based on Glob (https://javapapers.com/java/glob-with-java-nio/)
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 0.1.10
+#   new_value: 0.1.15
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
-  old_value: 0.1.10
-  new_value: 0.1.15
+  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+  old_value: 2.9.1
+  new_value: 2.9.4
