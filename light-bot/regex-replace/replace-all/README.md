@@ -37,3 +37,11 @@ Or
 ```
 ./run.sh
 ```
+
+After the first run, you can use the following command to check if the 2.9.1 still exists in the workspace. 
+
+```
+cd ~/regexreplace
+grep -R --include="pom.xml" "2.9.1" .
+```
+You can also, use "git status" to check how many files are updated. 
