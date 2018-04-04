@@ -6,7 +6,7 @@ skip_checkout: false
 skip_replace: false
 # indicate if you want to skip checkin. If you are not comfortable to checkin directly, skip this step and then you can
 # skip checkout and replace in second round and only make skip checkin false.
-skip_checkin: true
+skip_checkin: false
 # clone and switch to develop branch or checkout and pull from develop branch. This is to ensure that develop branch for
 # each repository is up-to-date for manipulations. Please update skip_checkout to true if you want to bypass this step.
 checkout:
@@ -60,7 +60,22 @@ replace:
 #   old_value: 0.1.10
 #   new_value: 0.1.15
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.9.4
+#   new_value: 2.9.5
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.swagger>\d*\.\d*\.\d*</version.swagger>
+#   old_value: <version.swagger>1.0.32</version.swagger>
+#   new_value: <version.swagger-parser>1.0.34</version.swagger-parser>
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version>[$]\{version.swagger\}</version>
+#   old_value: version.swagger}
+#   new_value: version.swagger-parser}
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
-  old_value: 2.9.1
-  new_value: 2.9.4
+  match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+  old_value: 0.1.15
+  new_value: 0.1.18
