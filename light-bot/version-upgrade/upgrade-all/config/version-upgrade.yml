@@ -34,6 +34,7 @@ checkout:
   - git@github.com:networknt/light-portal.git
   - git@github.com:networknt/light-example-4j.git
   - git@github.com:networknt/light-docker.git
+  - git@198.55.49.186:lightapi/tokenization.git
 # run mvn versions:set command in the following folders.
 maven:
   - light-4j
@@ -51,6 +52,7 @@ maven:
   - light-oauth2
   - light-portal/hybrid-command
   - light-portal/hybrid-query
+  - tokenization
 # regex replacement for dependencies
 version:
   openapi-parser:
@@ -444,3 +446,8 @@ version:
   - path: webserver/api-simple-web/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   
+  # tokenization
+  - path: tokenization/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: tokenization/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
