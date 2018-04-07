@@ -27,6 +27,7 @@ checkout:
   - git@github.com:networknt/light-eventuate-4j.git
   - git@github.com:networknt/light-tram-4j.git
   - git@github.com:networknt/light-example-4j.git
+  - git@198.55.49.186:lightapi/tokenization.git
   # - git@github.com:networknt/light-codegen.git
   # - git@github.com:networknt/light-docker.git
 # merge develop to master for above repos
@@ -37,6 +38,7 @@ merge:
   - light-portal
   - light-eventuate-4j
   - light-tram-4j
+  - tokenization
   - light-example-4j
   # - light-codegen
   # - light-docker
@@ -48,7 +50,7 @@ maven:
   - light-portal
   - light-eventuate-4j
   - light-tram-4j
-
+  - tokenization
   # - light-codegen
 
 # update changelog in master, merge it to develop and publish to github.com
@@ -58,6 +60,7 @@ release:
   - light-router
   - light-oauth2
   - light-portal
+  - tokenization
   # - light-codegen
 
 # build docker image and push to docker hub
@@ -76,4 +79,5 @@ docker:
   - light-portal/hybrid-query
   - light-eventuate-4j/eventuate-cdc-server
   - light-tram-4j/tram-cdc-mysql-server
+  - tokenization
   # - light-docker/light-codegen

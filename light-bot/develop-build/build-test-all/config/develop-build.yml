@@ -31,6 +31,7 @@ checkout:
   - git@github.com:networknt/light-portal.git
   - git@github.com:networknt/light-example-4j.git
   - git@github.com:networknt/light-docker.git
+  - git@198.55.49.186:lightapi/tokenization.git
 build:
   project:
   - light-4j
@@ -50,9 +51,10 @@ build:
   - light-portal/api-certification
   - light-portal/host-menu
   - light-portal/schema-form
-  # - light-portal/user-management  #This is still working in progress. 
+  - light-portal/user-management
   - light-portal/hybrid-command
   - light-portal/hybrid-query
+  - tokenization
   - light-example-4j/rest/openapi/petstore
   - light-example-4j/rest/openapi/proxy-backend
   - light-example-4j/rest/openapi/cors
