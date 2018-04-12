@@ -142,11 +142,43 @@ replace:
 #   old_value: "2.5.6"
 #   new_value: "2.6.2"
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.javamail>\d*\.\d*\.\d*</version.javamail>
+#   old_value: "1.6.0"
+#   new_value: "1.6.1"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.javamail>\d*\.\d*\.\d*</version.javamail>
+#   old_value: "1.4.7"
+#   new_value: "1.6.1"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.fastscanner>\d*\.\d*\.\d*</version.fastscanner>
+#   old_value: "2.7.0"
+#   new_value: "2.18.1"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.fastscanner>\d*\.\d*\.\d*</version.fastscanner>
+#   old_value: "2.0.8"
+#   new_value: "2.18.1"
+
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.javamail>\d*\.\d*\.\d*</version.javamail>
-  old_value: "1.6.0"
-  new_value: "1.6.1"
+  match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
+  old_value: "2.5.1"
+  new_value: "3.0.0"
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.javamail>\d*\.\d*\.\d*</version.javamail>
-  old_value: "1.4.7"
-  new_value: "1.6.1"
+  match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
+  old_value: "2.6.1"
+  new_value: "3.0.0"
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
+  old_value: "2.6.2"
+  new_value: "3.0.0"
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
+  old_value: "2.7.0"
+  new_value: "3.0.0"
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
+  old_value: "2.7.1"
+  new_value: "3.0.0"
