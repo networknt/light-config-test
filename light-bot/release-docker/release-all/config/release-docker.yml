@@ -82,10 +82,10 @@ docker:
   - light-portal/hybrid-command
   - light-portal/hybrid-query
   - light-eventuate-4j/eventuate-cdc-server
+  - light-tram-4j/tram-cdc-mysql-server
   - light-example-4j/discovery/api_a/kubernetes
   - light-example-4j/discovery/api_b/kubernetes
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
-  # - light-tram-4j/tram-cdc-mysql-server
   # - tokenization
   # - light-docker/light-codegen
