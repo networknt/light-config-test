@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: swagger-petstore-deployment
+  labels:
+    app: swagger-petstore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: swagger-petstore
+  template:
+    metadata:
+      labels:
+        app: swagger-petstore
+    spec:
+      hostNetwork: true
+      containers:
+      - name: swagger-petstore
+        image: networknt/com.networknt.petstore-2.0.0
+        resources:
+          limits:
+          memory: 512Mi
+        requests:
+          memory: 256Mi        
+        env:
+        - name: STATUS_HOST_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.hostIP
