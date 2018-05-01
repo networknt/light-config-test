@@ -43,18 +43,18 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-query/service/api-certification-1.0.0.jar
   - src: light-portal/oauth-playground/target/playground-1.0.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/playground-1.0.0.jar
-  - src: light-codegen//codegen-core/target/codegen-core-1.5.11.jar
-    dst: light-config-test/light-portal/hybrid-query/service/codegen-core-1.5.11.jar
-  - src: light-codegen/codegen-fwk/target/codegen-fwk-1.5.11.jar
-    dst: light-config-test/light-portal/hybrid-query/service/codegen-fwk-1.5.11.jar
-  - src: light-codegen/light-graphql-4j/target/light-graphql-4j-generator-1.5.11.jar
-    dst: light-config-test/light-portal/hybrid-query/service/light-graphql-4j-generator-1.5.11.jar
-  - src: light-codegen/light-rest-4j/target/light-rest-4j-generator-1.5.11.jar
+  - src: light-codegen//codegen-core/target/codegen-core-1.5.14.jar
+    dst: light-config-test/light-portal/hybrid-query/service/codegen-core-1.5.14.jar
+  - src: light-codegen/codegen-fwk/target/codegen-fwk-1.5.14.jar
+    dst: light-config-test/light-portal/hybrid-query/service/codegen-fwk-1.5.14.jar
+  - src: light-codegen/light-graphql-4j/target/light-graphql-4j-generator-1.5.14.jar
+    dst: light-config-test/light-portal/hybrid-query/service/light-graphql-4j-generator-1.5.14.jar
+  - src: light-codegen/light-rest-4j/target/light-rest-4j-generator-1.5.14.jar
     dst: light-config-test/light-portal/hybrid-query/service/light-rest-4j-generator-1.5.11.jar
-  - src: light-codegen/light-hybrid-4j/target/light-hybrid-4j-generator-1.5.11.jar
-    dst: light-config-test/light-portal/hybrid-query/service/light-hybrid-4j-generator-1.5.11.jar
-  - src: light-codegen/codegen-web/target/codegen-web-1.5.11.jar
-    dst: light-config-test/light-portal/hybrid-query/service/codegen-web-1.5.11.jar
+  - src: light-codegen/light-hybrid-4j/target/light-hybrid-4j-generator-1.5.14.jar
+    dst: light-config-test/light-portal/hybrid-query/service/light-hybrid-4j-generator-1.5.14.jar
+  - src: light-codegen/codegen-web/target/codegen-web-1.5.14.jar
+    dst: light-config-test/light-portal/hybrid-query/service/codegen-web-1.5.14.jar
   - src: light-portal/common-util/target/common-util-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/common-util-0.1.0.jar
   - src: light-portal/host-menu/common/target/host-menu-common-0.1.0.jar
