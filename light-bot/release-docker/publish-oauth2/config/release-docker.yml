@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasedocker
 # new upgraded version. This needs to be changed for every release.
-version: 1.5.11
+version: 1.5.14
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
@@ -18,13 +18,13 @@ skip_docker: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   # here we checkout master branch to publish the images. 
-  branch: develop
-  repository:
-  # - git@github.com:networknt/light-proxy.git
-  # - git@github.com:networknt/light-router.git
-  - git@github.com:networknt/light-oauth2.git
-  # - git@github.com:networknt/light-codegen.git
-  # - git@github.com:networknt/light-docker.git
+  - branch: develop
+    repository:
+    # - git@github.com:networknt/light-proxy.git
+    # - git@github.com:networknt/light-router.git
+    - git@github.com:networknt/light-oauth2.git
+    # - git@github.com:networknt/light-codegen.git
+    # - git@github.com:networknt/light-docker.git
 # merge develop to master for above repos
 merge:
   # - light-proxy
