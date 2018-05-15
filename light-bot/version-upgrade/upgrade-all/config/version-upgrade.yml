@@ -28,6 +28,7 @@ checkout:
     - git@github.com:networknt/light-tram-4j.git
     - git@github.com:networknt/light-saga-4j.git
     - git@github.com:networknt/light-session-4j.git
+    - git@github.com:networknt/light-spa-4j.git
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
@@ -47,6 +48,7 @@ maven:
   - light-tram-4j
   - light-saga-4j
   - light-session-4j
+  - light-spa-4j
   - light-proxy
   - light-router
   - light-oauth2
@@ -96,6 +98,9 @@ version:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   light-session-4j:
+  - path: pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  light-spa-4j:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   light-proxy:
