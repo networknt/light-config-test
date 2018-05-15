@@ -162,24 +162,7 @@ replace:
 #   old_value: "2.0.8"
 #   new_value: "2.18.1"
 
-
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
   match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
-  old_value: "2.5.1"
-  new_value: "3.0.0"
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
-  old_value: "2.6.1"
-  new_value: "3.0.0"
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
-  old_value: "2.6.2"
-  new_value: "3.0.0"
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
-  old_value: "2.7.0"
-  new_value: "3.0.0"
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
-  old_value: "2.7.1"
-  new_value: "3.0.0"
+  old_value: "3.0.0"
+  new_value: "3.1.0"
