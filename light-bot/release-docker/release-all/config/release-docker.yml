@@ -23,6 +23,7 @@ checkout:
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
+    - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-eventuate-4j.git
     - git@github.com:networknt/light-tram-4j.git
@@ -35,6 +36,7 @@ merge:
   - light-proxy
   - light-router
   - light-oauth2
+  - light-tokenization
   - light-portal
   - light-eventuate-4j
   - light-tram-4j
@@ -47,6 +49,7 @@ maven:
   - light-proxy
   - light-router
   - light-oauth2
+  - light-tokenization
   - light-portal
   - light-eventuate-4j
   - light-tram-4j
@@ -63,6 +66,7 @@ release:
   - light-proxy
   - light-router
   - light-oauth2
+  - light-tokenization
   - light-portal
   # - tokenization
   # - light-codegen
@@ -79,6 +83,7 @@ docker:
   - light-oauth2/service
   - light-oauth2/token
   - light-oauth2/user
+  - light-tokenization
   - light-portal/hybrid-command
   - light-portal/hybrid-query
   - light-example-4j/discovery/api_a/kubernetes

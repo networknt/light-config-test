@@ -29,6 +29,7 @@ checkout:
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
+    - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
@@ -49,6 +50,7 @@ build:
   - light-proxy
   - light-router
   - light-oauth2
+  - light-tokenization
   - light-portal
   - light-portal/api-certification
   - light-portal/host-menu

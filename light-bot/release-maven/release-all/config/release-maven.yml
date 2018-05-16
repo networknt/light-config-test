@@ -30,6 +30,7 @@ checkout:
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
+    - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
     - git@github.com:networknt/light-doc.git

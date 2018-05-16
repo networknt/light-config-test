@@ -32,6 +32,7 @@ checkout:
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
+    - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
@@ -52,6 +53,7 @@ maven:
   - light-proxy
   - light-router
   - light-oauth2
+  - light-tokenization
   - light-portal/hybrid-command
   - light-portal/hybrid-query
   - tokenization
@@ -116,6 +118,11 @@ version:
   light-oauth2:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  light-tokenization:
+  - path: pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   light-portal:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
