@@ -1,7 +1,7 @@
 workspace: develop-build
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 # or the last time the build was failed and you just want to retry without changing anything.
-skip_checkout: false
+skip_checkout: true
 # Just checkout the repositories for backup or some other tasks
 skip_build: false
 # If this value is set to true, then only checkout and build will be called. It is
@@ -123,7 +123,7 @@ test:
   rest-openapi-proxy-backend:
     server:
     - path: light-example-4j/rest/openapi/proxy-backend
-      cmd: target/backend-2.0.0.jar
+      cmd: target/backend-1.0.0.jar
     request:
     - host: https://localhost:8081
       path: "/v1/getData"
