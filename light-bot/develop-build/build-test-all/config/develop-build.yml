@@ -108,7 +108,7 @@ test:
   rest-openapi-petstore:
     server:
     - path: light-example-4j/rest/openapi/petstore
-      cmd: target/petstore-1.0.1.jar
+      cmd: target/petstore-3.0.1.jar
     request:
     - host: https://localhost:8443
       path: "/v1/pets/111"
@@ -123,7 +123,7 @@ test:
   rest-openapi-proxy-backend:
     server:
     - path: light-example-4j/rest/openapi/proxy-backend
-      cmd: target/backend-1.0.0.jar
+      cmd: target/backend-2.0.0.jar
     request:
     - host: https://localhost:8081
       path: "/v1/getData"
