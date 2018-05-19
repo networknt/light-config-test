@@ -214,7 +214,7 @@ test:
   rest-swagger-petstore:
     server:
     - path: light-example-4j/rest/swagger/petstore
-      cmd: target/petstore-1.0.1.jar
+      cmd: target/petstore-2.0.0.jar
     request:
     - host: https://localhost:8443
       path: "/v2/pet/111"
