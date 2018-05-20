@@ -1,9 +1,9 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade
 # old existing version that need to be upgraded
-old_version: 1.5.13
+old_version: 1.5.14
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 1.5.14
+new_version: 1.5.15
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -36,7 +36,6 @@ checkout:
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
-    - git@198.55.49.186:lightapi/tokenization.git
 # run mvn versions:set command in the following folders.
 maven:
   - light-4j
@@ -56,7 +55,6 @@ maven:
   - light-tokenization
   - light-portal/hybrid-command
   - light-portal/hybrid-query
-  - tokenization
 # regex replacement for dependencies
 version:
   openapi-parser:
@@ -457,10 +455,3 @@ version:
   # webserver
   - path: webserver/api-simple-web/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-    
-  # tokenization service  
-  tokenization:
-  - path: pom.xml
-    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  - path: pom.xml
-    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
