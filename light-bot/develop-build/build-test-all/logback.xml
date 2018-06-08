@@ -44,7 +44,7 @@
         <appender-ref ref="stdout"/>
     </root>
 
-    <logger name="com.networknt" level="debug">
+    <logger name="com.networknt.bot" level="debug">
         <appender-ref ref="log"/>
     </logger>
 
