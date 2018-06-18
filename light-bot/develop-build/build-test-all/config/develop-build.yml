@@ -1,7 +1,7 @@
 workspace: develop-build
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 # or the last time the build was failed and you just want to retry without changing anything.
-skip_checkout: true
+skip_checkout: false
 # Just checkout the repositories for backup or some other tasks
 skip_build: false
 # If this value is set to true, then only checkout and build will be called. It is
@@ -97,7 +97,7 @@ build:
   - light-example-4j/eventuate/todo-list
 
   # light-tram-4j
-  - light-example-4j/tram/light-tram-todolist/single-module
+  # - light-example-4j/tram/light-tram-todolist/single-module
   - light-example-4j/tram/light-tram-todolist/multi-module
   # light-saga-4j
   - light-example-4j/saga/light-saga-cutomers-and-orders
