@@ -36,6 +36,7 @@ checkout:
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
+    - git@github.com:networknt/light-client-all-4j.git
 # run mvn versions:set command in the following folders.
 maven:
   - light-4j
@@ -53,6 +54,7 @@ maven:
   - light-router
   - light-oauth2
   - light-tokenization
+  - light-client-all-4j
   - light-portal/hybrid-command
   - light-portal/hybrid-query
 # regex replacement for dependencies
