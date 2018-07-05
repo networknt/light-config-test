@@ -31,6 +31,7 @@ checkout:
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
     - git@github.com:networknt/light-tokenization.git
+    - git@github.com:networknt/light-client-all-4j.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
     - git@github.com:networknt/light-doc.git
@@ -73,6 +74,7 @@ release:
   - light-saga-4j
   - light-session-4j
   - light-spa-4j
+  - light-client-all-4j
 #  - light-proxy
 #  - light-router
 #  - light-oauth2

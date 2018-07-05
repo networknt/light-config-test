@@ -51,6 +51,7 @@ checkout:
     - git@github.com:networknt/react-file-manager.git
     - git@github.com:networknt/light-commerce.git
     - git@github.com:networknt/light-cms.git
+    - git@github.com:networknt/light-client-all-4j.git
     # repositories from lightapi.net
     # - git@198.55.49.186:lightapi/tokenization.git
 
