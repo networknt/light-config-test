@@ -37,6 +37,7 @@ checkout:
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
     - git@github.com:networknt/light-client-all-4j.git
+    - git@github.com:networknt/light-config-server.git
 # run mvn versions:set command in the following folders.
 maven:
   - light-4j
@@ -55,6 +56,7 @@ maven:
   - light-oauth2
   - light-tokenization
   - light-client-all-4j
+  - light-config-server
   - light-portal/hybrid-command
   - light-portal/hybrid-query
 # regex replacement for dependencies
@@ -119,6 +121,11 @@ version:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   light-tokenization:
+  - path: pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+  light-config-server:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: pom.xml
