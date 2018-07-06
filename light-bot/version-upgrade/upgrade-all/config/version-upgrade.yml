@@ -1,9 +1,9 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade
 # old existing version that need to be upgraded
-old_version: 1.5.15
+old_version: 1.5.16
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 1.5.16
+new_version: 1.5.17
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
