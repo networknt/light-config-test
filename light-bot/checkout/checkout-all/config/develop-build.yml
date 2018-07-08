@@ -45,3 +45,4 @@ checkout:
       - git@github.com:networknt/light-portal.git
       - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-docker.git
+      - git@github.com:networknt/light-doc.git
