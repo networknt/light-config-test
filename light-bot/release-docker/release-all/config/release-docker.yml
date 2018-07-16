@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasedocker
 # new upgraded version. This needs to be changed for every release.
-version: 1.5.16
+version: 1.5.17
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
@@ -28,7 +28,6 @@ checkout:
     - git@github.com:networknt/light-eventuate-4j.git
     - git@github.com:networknt/light-tram-4j.git
     - git@github.com:networknt/light-example-4j.git
-    # - git@198.55.49.186:lightapi/tokenization.git
     # - git@github.com:networknt/light-codegen.git
     # - git@github.com:networknt/light-docker.git
 # merge develop to master for above repos
@@ -40,7 +39,6 @@ merge:
   - light-portal
   - light-eventuate-4j
   - light-tram-4j
-  # - tokenization
   - light-example-4j
   # - light-codegen
   # - light-docker
@@ -57,7 +55,6 @@ maven:
   - light-example-4j/discovery/api_b/kubernetes
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
-  # - tokenization
   # - light-codegen
 
 # update changelog in master, merge it to develop and publish to github.com
@@ -68,7 +65,6 @@ release:
   - light-oauth2
   - light-tokenization
   - light-portal
-  # - tokenization
   # - light-codegen
 
 # build docker image and push to docker hub
@@ -91,7 +87,7 @@ docker:
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
   # need to shutdown docker-compose-integration-test.yml before building the following two images.
+  # moved to release-cdc sub task.
   # - light-eventuate-4j/eventuate-cdc-server
   # - light-tram-4j/tram-cdc-mysql-server
-  # - tokenization
   # - light-docker/light-codegen

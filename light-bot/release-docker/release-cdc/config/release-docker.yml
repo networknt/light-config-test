@@ -6,11 +6,11 @@ version: 1.5.17
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # skip checkout if you know all latest code has been checkout in the previous build
-skip_checkout: false
+skip_checkout: true
 # skip merge if develop branch has been merged to master
 skip_merge: false
 # skip maven build if you know the build has been done already
-skip_maven: false
+skip_maven: true
 # skip release if it is already done.
 skip_release: true
 # skip docker publish if it is done already.
@@ -23,34 +23,58 @@ checkout:
     # - git@github.com:networknt/light-proxy.git
     # - git@github.com:networknt/light-router.git
     # - git@github.com:networknt/light-oauth2.git
-    - git@github.com:networknt/light-codegen.git
-    - git@github.com:networknt/light-docker.git
+    # - git@github.com:networknt/light-tokenization.git
+    # - git@github.com:networknt/light-portal.git
+    # - git@github.com:networknt/light-eventuate-4j.git
+    # - git@github.com:networknt/light-tram-4j.git
+    # - git@github.com:networknt/light-example-4j.git
+    # - git@198.55.49.186:lightapi/tokenization.git
+    # - git@github.com:networknt/light-codegen.git
+    # - git@github.com:networknt/light-docker.git
 # merge develop to master for above repos
 merge:
   # - light-proxy
   # - light-router
   # - light-oauth2
-  - light-codegen
-  - light-docker
+  # - light-tokenization
+  # - light-portal
+  - light-eventuate-4j
+  - light-tram-4j
+  # - tokenization
+  # - light-example-4j
+  # - light-codegen
+  # - light-docker
 # maven build
 maven:
   # - light-proxy
   # - light-router
   # - light-oauth2
-  - light-codegen
+  # - light-tokenization
+  # - light-portal
+  # - light-eventuate-4j
+  # - light-tram-4j
+  # - light-example-4j/discovery/api_a/kubernetes
+  # - light-example-4j/discovery/api_b/kubernetes
+  # - light-example-4j/discovery/api_c/kubernetes
+  # - light-example-4j/discovery/api_d/kubernetes
+  # - tokenization
+  # - light-codegen
 
 # update changelog in master, merge it to develop and publish to github.com
+# please note that light-eventuate-4j and light-tram-4j are released in release-maven task.
 release:
   # - light-proxy
   # - light-router
   # - light-oauth2
+  # - light-tokenization
+  # - light-portal
+  # - tokenization
   # - light-codegen
 
 # build docker image and push to docker hub
 docker:
   # - light-proxy
   # - light-router
-  - light-docker/light-codegen
   # - light-oauth2/authorize
   # - light-oauth2/client
   # - light-oauth2/code
@@ -59,4 +83,15 @@ docker:
   # - light-oauth2/service
   # - light-oauth2/token
   # - light-oauth2/user
-
+  # - light-tokenization
+  # - light-portal/hybrid-command
+  # - light-portal/hybrid-query
+  # - light-example-4j/discovery/api_a/kubernetes
+  # - light-example-4j/discovery/api_b/kubernetes
+  # - light-example-4j/discovery/api_c/kubernetes
+  # - light-example-4j/discovery/api_d/kubernetes
+  # need to shutdown docker-compose-integration-test.yml before building the following two images.
+  - light-eventuate-4j/eventuate-cdc-server
+  - light-tram-4j/tram-cdc-mysql-server
+  # - tokenization
+  # - light-docker/light-codegen
