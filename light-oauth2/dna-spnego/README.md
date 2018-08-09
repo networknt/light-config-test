@@ -1,0 +1,1 @@
+This folder contains an example of configuration for MS AD/LDAP/KDC integration from the default authentication/authorization provider. The configuration was copied from one of the development server implementation but has been change to example.com domain. These file must be updated in order to make it work with your own setup. 
