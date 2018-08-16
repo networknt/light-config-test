@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven
 # release version that is used to generate changelog. This need to be changed every time
-version: 1.5.17
+version: 1.5.18
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
@@ -63,7 +63,7 @@ merge:
 # merge the changelog.md to develop branch
 # publish the release to github repository
 release:
-  - light-4j
+  # - light-4j
   - openapi-parser
   - light-rest-4j
   - light-graphql-4j

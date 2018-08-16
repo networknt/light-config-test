@@ -47,3 +47,4 @@ checkout:
       - git@github.com:networknt/light-docker.git
       - git@github.com:networknt/light-doc.git
       - git@github.com:networknt/light-config-server.git
+      - git@github.com:networknt/light-consumer-4j.git
