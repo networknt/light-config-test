@@ -1,0 +1,5 @@
+uri: LDAP://ad.example.com
+domain: ad.example.com
+ldapPrincipal: CN=System_oauth_devops\, System_oauth_devops,OU=System Accounts,OU=Support,OU=AUTH,DC=ad,DC=example,DC=com
+searchFilter: (&(samaccountname=%s)(objectclass=user))
+searchBase: DC=ad,DC=example,DC=com

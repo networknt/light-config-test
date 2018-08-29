@@ -1,0 +1,6 @@
+protocol: https
+host: github.com
+pathPrefix: '/api/v3'
+owner: api
+repo: admin
+path: users.json

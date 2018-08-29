@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: oauth2-client
+spec:
+  host: oauth2-client.example.com
+  port:
+    targetPort: '6884'
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
+  to:
+    kind: Service
+    name: oauth2-client
+    weight: 100
+  wildcardPolicy: None
+status:

@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: ../../bin/kompose --provider openshift --file ../docker-compose-oauth.yml
+      convert
+    kompose.version: ""
+  creationTimestamp: null
+  labels:
+    io.kompose.service: oauth2-refresh-token
+    light-oauth2-cluster01: true
+  name: oauth2-refresh-token
+spec:
+  ports:
+  - name: "6887"
+    port: 6887
+    targetPort: 6887
+  selector:
+    io.kompose.service: oauth2-refresh-token
+status:
+  loadBalancer: {}
