@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: oauth2-code
+spec:
+  host: oauth2-code.example.com
+  port:
+    targetPort: '6881'
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
+  to:
+    kind: Service
+    name: oauth2-code
+    weight: 100
+  wildcardPolicy: None
+status:

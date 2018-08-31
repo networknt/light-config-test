@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: oauth2-key
+spec:
+  host: oauth2-key.example.com
+  port:
+    targetPort: '6886'
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
+  to:
+    kind: Service
+    name: oauth2-key
+    weight: 100
+  wildcardPolicy: None
+status:

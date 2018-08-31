@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: oauth2-token
+spec:
+  host: oauth2-token.example.com
+  port:
+    targetPort: '6882'
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: passthrough
+  to:
+    kind: Service
+    name: oauth2-token
+    weight: 100
+  wildcardPolicy: None
+status:
