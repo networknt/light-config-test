@@ -1,1 +1,0 @@
-Using light-router with DirectRegistry and PathServiceHandler.
