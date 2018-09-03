@@ -11,28 +11,45 @@ skip_build: false
 skip_test: true
 # skip copy file if necessary.
 skip_copyFile: false
+# skip start
+skip_start: true
+
+# Execute this set of tasks in order
+# setup is called before any of the tasks
+# teardown and stop are called regardless of a succesful/failed light-bot run
+tasks:
+  # one set of operations
+  checkoutSetOne: checkout
+  buildSetOne: build
+  testProjects: test     
+  copyProjectFiles: copyFile 
+
 checkout:
-  - branch: develop
-    repository:
-    - git@github.com:networknt/light-4j.git
-    - git@github.com:networknt/light-hybrid-4j.git
-    - git@github.com:networknt/openapi-parser.git
-    - git@github.com:networknt/light-codegen.git
-    - git@github.com:networknt/light-eventuate-4j.git
-    - git@github.com:networknt/light-portal.git
+  checkoutSetOne:
+    - branch: develop
+      skip: false
+      repository:
+      - git@github.com:networknt/light-4j.git
+      - git@github.com:networknt/light-hybrid-4j.git
+      - git@github.com:networknt/openapi-parser.git
+      - git@github.com:networknt/light-codegen.git
+      - git@github.com:networknt/light-eventuate-4j.git
+      - git@github.com:networknt/light-portal.git
 build:
-  project:
-  - light-4j
-  - light-hybrid-4j
-  - openapi-parser
-  - light-codegen
-  - light-eventuate-4j
-  - light-portal
-  - light-portal/api-certification
-  - light-portal/oauth-playground
-  - light-portal/host-menu
-  - light-portal/schema-form
-  - light-portal/user-management
+  buildSetOne:
+    skip: false
+    project:
+    - light-4j
+    - light-hybrid-4j
+    - openapi-parser
+    - light-codegen
+    - light-eventuate-4j
+    - light-portal
+    - light-portal/api-certification
+    - light-portal/oauth-playground
+    - light-portal/host-menu
+    - light-portal/schema-form
+    - light-portal/user-management
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.
 test:
