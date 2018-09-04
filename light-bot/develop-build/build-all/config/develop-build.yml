@@ -47,6 +47,8 @@ checkout:
       - git@github.com:networknt/light-portal.git
       - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-docker.git
+      - git@github.com:networknt/http2client-benchmark.git
+      - git@github.com:networknt/microservices-framework-benchmark.git
 build:
   buildSetOne:
     skip: false
@@ -73,6 +75,9 @@ build:
     - light-portal/user-management
     - light-portal/hybrid-command
     - light-portal/hybrid-query
+    - http2client-benchmark/httpserver
+    - http2client-benchmark/lightclient
+    - microservices-framework-benchmark/light-4j  
     - light-example-4j/rest/openapi/petstore
     - light-example-4j/rest/openapi/proxy-backend
     - light-example-4j/rest/openapi/cors

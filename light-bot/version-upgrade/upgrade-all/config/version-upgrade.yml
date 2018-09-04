@@ -40,6 +40,9 @@ checkout:
     - git@github.com:networknt/light-docker.git
     - git@github.com:networknt/light-consumer-4j.git
     - git@github.com:networknt/light-config-server.git
+    - git@github.com:networknt/http2client-benchmark.git
+    - git@github.com:networknt/microservices-framework-benchmark.git
+
 # run mvn versions:set command in the following folders.
 maven:
   - light-4j
@@ -484,4 +487,16 @@ version:
 
   # webserver
   - path: webserver/api-simple-web/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+
+  # http2client-benchmark
+  http2client-benchmark:
+  - path: httpserver/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: httpclient/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+
+  # microservices-framework-benchmark
+  microservices-framework-benchmark:
+  - path: light-4j/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
