@@ -17,6 +17,7 @@ checkout:
   - branch: develop
     repository:
     - git@github.com:networknt/light-4j.git
+    - git@github.com:networknt/json-overlay.git
     - git@github.com:networknt/openapi-parser.git
     - git@github.com:networknt/light-rest-4j.git
     - git@github.com:networknt/light-graphql-4j.git
@@ -64,6 +65,7 @@ merge:
 # publish the release to github repository
 release:
   - light-4j
+  - json-overlay
   - openapi-parser
   - light-rest-4j
   - light-graphql-4j

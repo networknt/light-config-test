@@ -21,6 +21,7 @@ checkout:
   - branch: develop
     repository:
     - git@github.com:networknt/light-4j.git
+    - git@github.com:networknt/json-overlay.git
     - git@github.com:networknt/openapi-parser.git
     - git@github.com:networknt/light-rest-4j.git
     - git@github.com:networknt/light-graphql-4j.git
@@ -46,6 +47,7 @@ checkout:
 # run mvn versions:set command in the following folders.
 maven:
   - light-4j
+  - json-overlay
   - openapi-parser
   - light-rest-4j
   - light-graphql-4j
@@ -69,9 +71,13 @@ version:
   openapi-parser:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   light-rest-4j:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   light-graphql-4j:
@@ -84,6 +90,8 @@ version:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   - path: light-graphql-4j/src/main/resources/templates/graphql/pom.xml.rocker.raw
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
@@ -93,6 +101,8 @@ version:
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: light-rest-4j/src/main/resources/templates/rest/openapi/pom.xml.rocker.raw
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: light-rest-4j/src/main/resources/templates/rest/openapi/pom.xml.rocker.raw
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: light-rest-4j/src/main/resources/templates/rest/openapi/pom.xml.rocker.raw
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   - path: light-rest-4j/src/main/resources/templates/rest/swagger/pom.xml.rocker.raw
@@ -116,10 +126,14 @@ version:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   light-router:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   light-oauth2:
@@ -129,6 +143,8 @@ version:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   light-consumer-4j:
   - path: pom.xml
@@ -136,6 +152,8 @@ version:
   light-config-server:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   light-portal:
@@ -287,9 +305,13 @@ version:
   - path: common/multidb/generated/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: common/multidb/generated/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: common/multidb/generated/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   - path: common/multidb/dbconfig/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: common/multidb/dbconfig/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: common/multidb/dbconfig/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
     
@@ -324,20 +346,28 @@ version:
   - path: tram/light-tram-todolist/multi-module/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: tram/light-tram-todolist/multi-module/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: tram/light-tram-todolist/multi-module/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   # tram todolist command
   - path: tram/light-tram-todolist/multi-module/tram-todo-command/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: tram/light-tram-todolist/multi-module/tram-todo-command/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: tram/light-tram-todolist/multi-module/tram-todo-command/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   # tram todolist view
   - path: tram/light-tram-todolist/multi-module/tram-todo-view/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: tram/light-tram-todolist/multi-module/tram-todo-view/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: tram/light-tram-todolist/multi-module/tram-todo-view/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   # tram todolist single module
   - path: tram/light-tram-todolist/single-module/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: tram/light-tram-todolist/single-module/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: tram/light-tram-todolist/single-module/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
 
@@ -346,15 +376,21 @@ version:
   - path: saga/light-saga-cutomers-and-orders/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: saga/light-saga-cutomers-and-orders/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: saga/light-saga-cutomers-and-orders/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   # saga customers orders order service
   - path: saga/light-saga-cutomers-and-orders/order-service/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: saga/light-saga-cutomers-and-orders/order-service/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: saga/light-saga-cutomers-and-orders/order-service/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   # saga customers orders customer service
   - path: saga/light-saga-cutomers-and-orders/customer-service/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: saga/light-saga-cutomers-and-orders/customer-service/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: saga/light-saga-cutomers-and-orders/customer-service/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
 
@@ -432,49 +468,71 @@ version:
   - path: rest/openapi/proxy-backend/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: rest/openapi/proxy-backend/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: rest/openapi/proxy-backend/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
 
   - path: rest/openapi/cors/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/cors/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/cors/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
 
   - path: rest/openapi/petstore/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/petstore/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/petstore/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
 
   - path: rest/openapi/ms-aggregate/aa/generated/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/ms-aggregate/aa/generated/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/ms-aggregate/aa/generated/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   - path: rest/openapi/ms-aggregate/ab/generated/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/ms-aggregate/ab/generated/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/ms-aggregate/ab/generated/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   - path: rest/openapi/ms-aggregate/ac/generated/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/ms-aggregate/ac/generated/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/ms-aggregate/ac/generated/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   - path: rest/openapi/ms-aggregate/ad/generated/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/ms-aggregate/ad/generated/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/ms-aggregate/ad/generated/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
 
   - path: rest/openapi/ms-aggregate/aa/https/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/ms-aggregate/aa/https/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/ms-aggregate/aa/https/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   - path: rest/openapi/ms-aggregate/ab/https/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/ms-aggregate/ab/https/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/ms-aggregate/ab/https/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   - path: rest/openapi/ms-aggregate/ac/https/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/ms-aggregate/ac/https/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/ms-aggregate/ac/https/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   - path: rest/openapi/ms-aggregate/ad/https/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: rest/openapi/ms-aggregate/ad/https/pom.xml
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: rest/openapi/ms-aggregate/ad/https/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
 

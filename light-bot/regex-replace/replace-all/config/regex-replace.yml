@@ -16,6 +16,7 @@ checkout:
     repository:
     # repositories from github.com
     - git@github.com:networknt/light-4j.git
+    - git@github.com:networknt/json-overlay.git
     - git@github.com:networknt/openapi-parser.git
     - git@github.com:networknt/light-rest-4j.git
     - git@github.com:networknt/light-graphql-4j.git
