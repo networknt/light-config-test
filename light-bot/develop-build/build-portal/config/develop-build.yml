@@ -11,6 +11,8 @@ skip_build: false
 skip_test: true
 # skip copy file if necessary.
 skip_copyFile: false
+# skip copyWildcardFile
+skip_copyWildcardFile: false
 # skip start
 skip_start: true
 
@@ -23,7 +25,8 @@ tasks:
   buildSetOne: build
   testProjects: test     
   copyProjectFiles: copyFile 
-
+  copyWildcardFile: copyWildcardFile
+  
 checkout:
   checkoutSetOne:
     - branch: develop
@@ -88,6 +91,13 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-query/service/schema-form-query-0.1.0.jar
   - src: light-portal/schema-form/hybrid-query/target/form-query-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/form-query-0.1.0.jar
+  # user-management
+  - src: light-portal/user-management/common/target/user-common-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/user-common-0.1.0.jar
+  - src: light-portal/user-management/query/target/user-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/user-query-0.1.0.jar
+  - src: light-portal/user-management/hybrid-query/target/user-hybrid-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/user-hybrid-query-0.1.0.jar
 
   # populate hybrid-command services
   - src: light-portal/hybrid-command/target/hybrid-command.jar
@@ -107,17 +117,13 @@ copyFile:
   - src: light-portal/schema-form/hybrid-command/target/form-command-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/form-command-0.1.0.jar
   # user-management  
-  - src: light-portal/user-management/hybrid-service/target/user-hybrid-service-0.1.0.jar
-    dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-service-0.1.0.jar
-  - src: light-portal/user-management/hybrid-service/target/user-hybrid-service-0.1.0.jar
-    dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-service-0.1.0.jar
-  - src: light-portal/user-management/auth/target/usermanagement-auth-0.1.0.jar
-    dst: light-config-test/light-portal/hybrid-command/service/usermanagement-auth-0.1.0.jar
-  - src: light-portal/user-management/common/target/user-management-common-0.1.0.jar
-    dst: light-config-test/light-portal/hybrid-command/service/user-management-common-0.1.0.jar
-  - src: light-portal/user-management/jdbc/target/user-management-jdbc-0.1.0.jar
-    dst: light-config-test/light-portal/hybrid-command/service/user-management-jdbc-0.1.0.jar
-
+  - src: light-portal/user-management/common/target/user-common-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-common-0.1.0.jar
+  - src: light-portal/user-management/command/target/user-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-command-0.1.0.jar
+  - src: light-portal/user-management/hybrid-command/target/user-hybrid-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-command-0.1.0.jar
+  
 # copy files with Glob pattern from src folder to dst folder both in home and workspace.
 copyWildcardFile:
   # light-codegen 

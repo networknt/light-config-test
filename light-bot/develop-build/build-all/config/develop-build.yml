@@ -11,6 +11,8 @@ skip_build: false
 skip_test: true
 # skip copy file if necessary.
 skip_copyFile: true
+# skip copyWildcardFile
+skip_copyWildcardFile: true
 # skip start
 skip_start: true
 
@@ -23,6 +25,7 @@ tasks:
   buildSetOne: build
   testProjects: test     
   copyProjectFiles: copyFile 
+  copyWildcardFile: copyWildcardFile
 
 checkout:
   checkoutSetOne: 
@@ -364,3 +367,6 @@ test:
           
 # copy individual files
 copyFile:
+
+# copy wildcard files
+copyWildcardFile:

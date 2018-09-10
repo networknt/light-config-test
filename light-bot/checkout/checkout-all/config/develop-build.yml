@@ -12,6 +12,8 @@ skip_build: true
 skip_test: true
 # skip copy file if necessary.
 skip_copyFile: true
+# skip copyWildcardFile
+skip_copyWildcardFile: true
 # skip start
 skip_start: true
 
