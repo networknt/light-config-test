@@ -43,12 +43,12 @@ build:
   buildSetOne:
     skip: false
     project:
-    - light-4j
-    - json-overlay
-    - light-hybrid-4j
-    - openapi-parser
-    - light-codegen
-    - light-eventuate-4j
+    # - light-4j
+    # - json-overlay
+    # - light-hybrid-4j
+    # - openapi-parser
+    # - light-codegen
+    # - light-eventuate-4j
     - light-portal
     - light-portal/api-certification
     - light-portal/oauth-playground
@@ -102,6 +102,9 @@ copyFile:
   # populate hybrid-command services
   - src: light-portal/hybrid-command/target/hybrid-command.jar
     dst: light-config-test/light-portal/hybrid-command/service/hybrid-command.jar
+  # common-util  
+  - src: light-portal/common-util/target/common-util-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/common-util-0.1.0.jar
   # host-menu
   - src: light-portal/host-menu/common/target/host-menu-common-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/host-menu-common-0.1.0.jar
@@ -121,6 +124,8 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-command/service/user-common-0.1.0.jar
   - src: light-portal/user-management/command/target/user-command-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/user-command-0.1.0.jar
+  - src: light-portal/user-management/query/target/user-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-query-0.1.0.jar
   - src: light-portal/user-management/hybrid-command/target/user-hybrid-command-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-command-0.1.0.jar
   

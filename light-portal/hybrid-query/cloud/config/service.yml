@@ -6,7 +6,7 @@ singletons:
       jdbcUrl: jdbc:mysql://198.55.49.187:3306/eventuate?useSSL=false
       username: mysqluser
       password: mysqlpw
-      maximumPoolSize: 15
+      maximumPoolSize: 2
       useServerPrepStmts: true
       cachePrepStmts: true
       cacheCallableStmts: true
@@ -47,7 +47,8 @@ singletons:
   - net.lightapi.portal.form.FormRepositoryArangoImpl
 - net.lightapi.portal.form.FormQueryEventHandler:
   - net.lightapi.portal.form.FormQueryEventHandler
-
+- net.lightapi.portal.user.UserRepository:
+  - net.lightapi.portal.user.UserRepositoryArangoImpl
 # HandlerProvider implementation
 - com.networknt.handler.HandlerProvider:
   - com.networknt.rpc.router.RpcRouter
