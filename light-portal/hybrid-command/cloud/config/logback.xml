@@ -62,16 +62,4 @@
     <root level="debug">
         <appender-ref ref="stdout"/>
     </root>
-
-    <logger name="com.networknt" level="debug">
-        <appender-ref ref="log"/>
-    </logger>
-    <logger name="net.lightapi" level="debug">
-        <appender-ref ref="log"/>
-    </logger>
-
-    <logger name="Audit" level="error" additivity="false">
-        <appender-ref ref="audit"/>
-    </logger>
-
 </configuration>

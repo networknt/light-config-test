@@ -42,8 +42,10 @@ folder. The command line should be executed in the folder that contains this REA
 ```
 cd ~/networknt/light-config-test/light-portal/hybrid-command/cloud/
 cp ~/networknt/light-portal/docker/hybrid-command/service/*.jar ../service
-java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -cp ~/networknt/light-portal/hybrid-command/target/hybrid-command-1.0.0.jar:../service/* com.networknt.server.Server
+java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./config/logback.xml -cp ~/networknt/light-portal/hybrid-command/target/hybrid-command-1.0.0.jar:../service/* com.networknt.server.Server
 ```
+
+
 
 If there are any service injections needed for your service, you need to update service.yml
 to add these services before starting the command line. 
