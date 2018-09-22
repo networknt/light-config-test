@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade
 # git commit comment for this task
-comment: 'upgrade to version 1.5.18'
+comment: 'upgrade to version 1.5.20'
 # old existing version that need to be upgraded
-old_version: 1.5.18
+old_version: 1.5.19
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 1.5.19
+new_version: 1.5.20
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -68,6 +68,9 @@ maven:
   - light-portal/hybrid-query
 # regex replacement for dependencies
 version:
+  json-overlay:
+  - path: pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   openapi-parser:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
@@ -139,6 +142,8 @@ version:
   light-oauth2:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
   light-tokenization:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
@@ -177,13 +182,15 @@ version:
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: user-management/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  - path: user-management/hybrid-service/pom.xml
+  - path: user-management/common/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  - path: user-management/rest-command/pom.xml
+  - path: user-management/command/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  - path: user-management/rest-query/pom.xml
+  - path: user-management/query/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  - path: user-management/usermanagement-service/pom.xml
+  - path: user-management/hybrid-command/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: user-management/hybrid-query/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: hybrid-command/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
@@ -314,7 +321,16 @@ version:
     match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: common/multidb/dbconfig/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
-    
+  # router-demo
+  - path: spa/react-stateless/router-demo/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: spa/react-stateless/router-demo/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+  # secspa
+  - path: graphql/secspa/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+
+
   # graphql framework
   # graphql subscription
   - path: graphql/subscription/pom.xml
@@ -334,11 +350,8 @@ version:
   # graphql starwars
   - path: graphql/starwars/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  # client standalone
-  - path: client/standalone/pom.xml
-    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  # client tomcat
-  - path: client/tomcat/pom.xml
+  # graphql secspa
+  - path: graphql/secspa/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
 
   # light-tram-4j framework
@@ -543,6 +556,10 @@ version:
   - path: client/tomcat/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
 
+  - path: client/tableau/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+
+
   # webserver
   - path: webserver/api-simple-web/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
@@ -551,10 +568,28 @@ version:
   http2client-benchmark:
   - path: httpserver/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  - path: httpclient/pom.xml
+  - path: lightclient/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
 
   # microservices-framework-benchmark
   microservices-framework-benchmark:
   - path: light-4j/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+
+  # middleware-performance
+  middleware-performance:
+  - path: service-config/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: service-config/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+
+  - path: endpoint-individual/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: endpoint-individual/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+
+  - path: endpoint-source/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: endpoint-source/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+  
