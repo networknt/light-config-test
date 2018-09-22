@@ -43,12 +43,12 @@ build:
   buildSetOne:
     skip: false
     project:
-    # - light-4j
-    # - json-overlay
-    # - light-hybrid-4j
-    # - openapi-parser
-    # - light-codegen
-    # - light-eventuate-4j
+    - light-4j
+    - json-overlay
+    - light-hybrid-4j
+    - openapi-parser
+    - light-codegen
+    - light-eventuate-4j
     - light-portal
     - light-portal/api-certification
     - light-portal/oauth-playground
