@@ -187,5 +187,5 @@ replace:
 
  - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
    match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
-   old_value: 0.1.21
-   new_value: 0.1.22
+   old_value: 0.1.22
+   new_value: 0.1.23
