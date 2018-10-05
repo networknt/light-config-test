@@ -560,6 +560,8 @@ version:
   - path: client/tableau/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
 
+  - path: client/consul/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
 
   # webserver
   - path: webserver/api-simple-web/pom.xml

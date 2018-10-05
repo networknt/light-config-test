@@ -110,6 +110,8 @@ build:
     - light-example-4j/rest/swagger/database/updates
     - light-example-4j/client/standalone
     - light-example-4j/client/tomcat
+    - light-example-4j/client/consul
+    - light-example-4j/client/tableau
     - light-example-4j/graphql/helloworld
     - light-example-4j/graphql/starwars
     - light-example-4j/graphql/mutation
