@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade
 # git commit comment for this task
-comment: 'upgrade to version 1.5.20'
+comment: 'upgrade to version 1.5.21'
 # old existing version that need to be upgraded
-old_version: 1.5.19
+old_version: 1.5.20
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 1.5.20
+new_version: 1.5.21
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -549,6 +549,7 @@ version:
   - path: rest/openapi/ms-aggregate/ad/https/pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
 
+
   # client
   - path: client/standalone/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
@@ -564,6 +565,23 @@ version:
   - path: webserver/api-simple-web/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
 
+  # middleware-performance
+  - path: middleware-performance/service-config/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: middleware-performance/service-config/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+
+  - path: middleware-performance/endpoint-individual/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: middleware-performance/endpoint-individual/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+
+  - path: middleware-performance/endpoint-source/pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: middleware-performance/endpoint-source/pom.xml
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+  
+
   # http2client-benchmark
   http2client-benchmark:
   - path: httpserver/pom.xml
@@ -576,20 +594,3 @@ version:
   - path: light-4j/pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
 
-  # middleware-performance
-  middleware-performance:
-  - path: service-config/pom.xml
-    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  - path: service-config/pom.xml
-    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
-
-  - path: endpoint-individual/pom.xml
-    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  - path: endpoint-individual/pom.xml
-    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
-
-  - path: endpoint-source/pom.xml
-    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
-  - path: endpoint-source/pom.xml
-    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
-  

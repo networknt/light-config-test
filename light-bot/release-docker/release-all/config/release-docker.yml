@@ -7,8 +7,9 @@ version: 1.5.20
 organization: networknt
 # skip checkout if you know all latest code has been checkout in the previous build
 skip_checkout: false
-# skip merge if develop branch has been merged to master
-skip_merge: false
+# skip merge if develop branch has been merged to master. It is set to false as the previous
+# release-maven task merged all repositories already. 
+skip_merge: true
 # skip maven build if you know the build has been done already
 skip_maven: false
 # skip release if it is already done.
