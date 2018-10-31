@@ -36,3 +36,5 @@ singletons:
   - com.networknt.correlation.CorrelationHandler
   # Header middleware to manipulate request and/or response headers before or after downstream server
   - com.networknt.header.HeaderHandler
+  # Direct requests to named services based on the request path
+  - com.networknt.router.middleware.PathPrefixServiceHandler
