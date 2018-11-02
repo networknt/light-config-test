@@ -10,7 +10,7 @@ services:
     - 8443:8443
     volumes:
     - ./config:/config
-
+    - ./view/build:/public
 #
 # Networks
 #
