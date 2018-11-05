@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+
+  light-router:
+    image:  networknt/light-router:latest
+    networks:
+    - localnet
+    ports:
+    - 8443:8443
+    volumes:
+    - ./config:/config
+    - ./edibleforestgarden/build:/edibleforestgarden/build
+    - ./lightapi/build:/lightapi/build
+    - ./taiji/build:/taiji/build
+
+#
+# Networks
+#
+networks:
+    localnet:
+        # driver: bridge
+        external: true

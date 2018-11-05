@@ -1,0 +1,6 @@
+# Whether to enable PathPrefixServiceHandler
+enabled: true
+
+# mapping from request path prefixes to serviceIds
+mapping:
+  /faucet: io.taiji.faucet-1.0.0
