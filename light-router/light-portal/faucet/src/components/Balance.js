@@ -15,7 +15,7 @@ class Balance extends Component {
                         value={this.props.address}
                         onChange={this.props.handleChange('address')}
                         margin="normal"
-                        style={{width: 360}}
+                        style={{width: 370}}
                     />
                 </form>
                 <Button color="primary" variant="contained" onClick={this.props.getBalance}>
