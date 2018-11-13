@@ -81,6 +81,10 @@ paths:
     method: 'POST'
     exec:
       - default
+  - path: '/faucet/{address}/{currency}'
+    method: 'GET'
+    exec:
+      - default
 
   - path: '/health/com.networknt.router-0.1.0'
     method: 'get'
@@ -92,6 +96,15 @@ paths:
     method: 'get'
     exec:
       - info
+
+  - path: '/spec.yaml'
+    method: 'get'
+    exec:
+      - spec
+  - path: '/specui.html'
+    method: 'get'
+    exec:
+      - swaggerui
 
 defaultHandlers:
   - virtual
