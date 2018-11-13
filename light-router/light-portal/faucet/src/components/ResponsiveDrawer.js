@@ -70,11 +70,14 @@ class ResponsiveDrawer extends Component {
                     <MenuItem component={Link} to="/" selected={'/' === pathname}>
                         Home
                     </MenuItem>
+                    <MenuItem component={Link} to="/faucet" selected={'/faucet' === pathname}>
+                        Faucet
+                    </MenuItem>
                     <MenuItem component={Link} to="/balance" selected={'/balance' === pathname}>
                         Balance
                     </MenuItem>
-                    <MenuItem component={Link} to="/faucet" selected={'/faucet' === pathname}>
-                        Faucet
+                    <MenuItem component={Link} to="/transaction" selected={'/transaction' === pathname}>
+                        Transaction
                     </MenuItem>
                 </MenuList>
             </div>

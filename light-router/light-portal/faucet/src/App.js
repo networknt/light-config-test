@@ -3,6 +3,7 @@ import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from './components/Home';
 import Balance from './components/Balance';
 import Faucet from './components/Faucet';
+import Transaction from './components/Transaction';
 import ResponsiveDrawer from './components/ResponsiveDrawer';
 
 class App extends Component {
@@ -12,7 +13,8 @@ class App extends Component {
         amount: '',
         currency: 'taiji',
         unit: 'TAIJI',
-        currencyMap: undefined
+        currencyMap: undefined,
+        transactions: undefined
     };
 
     handleChange = name => event => {
@@ -67,6 +69,23 @@ class App extends Component {
         }
     };
 
+    getTransaction = async (e) => {
+        e.preventDefault();
+        const api_call = await fetch(`/faucet/${this.state.address}/${this.state.currency}`);
+        const data = await api_call.json();
+        //console.log(data);
+        if (data) {
+            this.setState({
+                transactions: data
+            });
+        } else {
+            this.setState({
+                transactions: undefined
+            });
+        }
+    };
+
+
     render() {
         return (
             <BrowserRouter>
@@ -88,6 +107,13 @@ class App extends Component {
                                               currency={this.state.currency}
                                               unit={this.state.unit}
                                               currencyMap={this.state.currencyMap}/>} />
+                        <Route path="/transaction" render = {
+                            props => <Transaction {...props}
+                                             getTransaction={this.getTransaction}
+                                             handleChange={this.handleChange}
+                                             address={this.state.address}
+                                             currency={this.state.currency}
+                                             transactions={this.state.transactions}/>} />
                     </Switch>
                 </ResponsiveDrawer>
             </BrowserRouter>
