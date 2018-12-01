@@ -8,7 +8,7 @@ http2Enabled: false
 httpsEnabled: false
 
 # Target URIs
-hosts: http://localhost:8081
+hosts: http://192.168.1.144:8081
 
 # Connections per thread to the target servers
 connectionsPerThread: 20
