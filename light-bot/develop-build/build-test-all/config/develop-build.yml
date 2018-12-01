@@ -128,7 +128,7 @@ build:
     # - light-example-4j/tram/light-tram-todolist/single-module
     - light-example-4j/tram/light-tram-todolist/multi-module
     # light-saga-4j
-    - light-example-4j/saga/light-saga-cutomers-and-orders
+    # - light-example-4j/saga/light-saga-cutomers-and-orders
     # middleware-performance
     - light-example-4j/middleware-performance/service-config
     - light-example-4j/middleware-performance/endpoint-individual
