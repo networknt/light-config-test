@@ -5,4 +5,5 @@ The following domains are supported.
 lightapi.net
 faucet.taiji.io
 taiji.io
+demo.taiji.io
 

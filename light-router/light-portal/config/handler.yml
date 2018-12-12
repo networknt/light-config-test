@@ -85,14 +85,24 @@ paths:
     method: 'GET'
     exec:
       - default
-  - path: '/spec.yaml'
-    method: 'get'
+
+  - path: '/api/webclient'
+    method: 'GET'
     exec:
       - default
-  - path: '/specui.html'
-    method: 'get'
+  - path: '/api/webclient'
+    method: 'POST'
     exec:
       - default
+
+  # - path: '/spec.yaml'
+  #   method: 'get'
+  #   exec:
+  #     - default
+  # - path: '/specui.html'
+  #   method: 'get'
+  #   exec:
+  #     - default
 
   - path: '/health/com.networknt.router-0.1.0'
     method: 'get'

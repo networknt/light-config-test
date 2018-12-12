@@ -11,6 +11,7 @@ services:
     volumes:
     - ./config:/config
     - ./faucet/build:/faucet/build
+    - ./webclient/build:/webclient/build
     - ./lightapi/build:/lightapi/build
     - ./taiji/build:/taiji/build
 

@@ -5,6 +5,12 @@ hosts:
     base: /faucet/build
     transferMinSize: 10245760
     directoryListingEnabled: false
+  - domain: demo.taiji.io
+    path: /
+    #base: /home/steve/networknt/light-config-test/light-router/light-portal/faucet/build
+    base: /webclient/build
+    transferMinSize: 10245760
+    directoryListingEnabled: false
   - domain: taiji.io
     path: /
     #base: /home/steve/networknt/light-config-test/light-router/virtual-host/taiji/build
