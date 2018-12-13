@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import Home from './components/Home';
-import Balance from './components/Balance';
 import Faucet from './components/Faucet';
-import Transaction from './components/Transaction';
 import ResponsiveDrawer from './components/ResponsiveDrawer';
 
 class App extends Component {
@@ -13,32 +11,15 @@ class App extends Component {
         amount: '',
         currency: 'taiji',
         unit: 'TAIJI',
-        currencyMap: undefined,
-        transactions: undefined
+        currencyMap: undefined
     };
 
     handleChange = name => event => {
         //console.log(name, event.target.value);
         this.setState({
             [name]: event.target.value,
+            currencyMap: undefined
         });
-    };
-
-    getBalance = async (e) => {
-        e.preventDefault();
-        //console.log('address', this.state.address);
-        const api_call = await fetch(`/faucet/${this.state.address}`);
-        const data = await api_call.json();
-        //console.log(data);
-        if (data) {
-            this.setState({
-                currencyMap: data
-            });
-        } else {
-            this.setState({
-                currencyMap: undefined
-            });
-        }
     };
 
     postFaucet = async (e) => {
@@ -56,7 +37,7 @@ class App extends Component {
             })
         };
 
-        const api_call = await fetch(`/faucet/${this.state.address}`, settings)
+        const api_call = await fetch(`/faucet/${this.state.address}`, settings);
         const data = await api_call.json();
         if (data) {
             this.setState({
@@ -69,35 +50,12 @@ class App extends Component {
         }
     };
 
-    getTransaction = async (e) => {
-        e.preventDefault();
-        const api_call = await fetch(`/faucet/${this.state.address}/${this.state.currency}`);
-        const data = await api_call.json();
-        //console.log(data);
-        if (data) {
-            this.setState({
-                transactions: data
-            });
-        } else {
-            this.setState({
-                transactions: undefined
-            });
-        }
-    };
-
-
     render() {
         return (
             <BrowserRouter>
                 <ResponsiveDrawer>
                     <Switch>
                         <Route exact path="/" component={Home} />
-                        <Route path="/balance" render = {
-                            props => <Balance {...props}
-                                              getBalance={this.getBalance}
-                                              handleChange={this.handleChange}
-                                              address={this.state.address}
-                                              currencyMap={this.state.currencyMap}/>} />
                         <Route path="/faucet" render = {
                             props => <Faucet {...props}
                                               postFaucet={this.postFaucet}
@@ -107,13 +65,6 @@ class App extends Component {
                                               currency={this.state.currency}
                                               unit={this.state.unit}
                                               currencyMap={this.state.currencyMap}/>} />
-                        <Route path="/transaction" render = {
-                            props => <Transaction {...props}
-                                             getTransaction={this.getTransaction}
-                                             handleChange={this.handleChange}
-                                             address={this.state.address}
-                                             currency={this.state.currency}
-                                             transactions={this.state.transactions}/>} />
                     </Switch>
                 </ResponsiveDrawer>
             </BrowserRouter>

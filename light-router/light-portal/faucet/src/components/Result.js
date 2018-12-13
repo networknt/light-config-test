@@ -4,7 +4,7 @@ class Result extends Component {
         if(this.props.currencyMap) {
             return (<div><pre>{JSON.stringify(this.props.currencyMap, null, 2) }</pre></div>)
         } else {
-            return (<div>Invalid Address!</div>)
+            return (<div></div>)
         }
     }
 }
