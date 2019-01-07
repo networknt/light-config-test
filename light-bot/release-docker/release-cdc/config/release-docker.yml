@@ -39,6 +39,7 @@ merge:
   # - light-tokenization
   # - light-portal
   - light-eventuate-4j
+  - light-tram-kafka
   - light-tram-4j
   # - tokenization
   # - light-example-4j
