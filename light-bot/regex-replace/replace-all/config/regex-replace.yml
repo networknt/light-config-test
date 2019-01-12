@@ -201,7 +201,12 @@ replace:
 #   old_value: 0.1.25
 #   new_value: 0.1.26
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.9.5
+#   new_value: 2.9.8
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
-  old_value: 2.9.5
-  new_value: 2.9.8
+  match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+  old_value: 0.1.26
+  new_value: 1.0.1
