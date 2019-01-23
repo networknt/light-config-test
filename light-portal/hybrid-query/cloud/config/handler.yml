@@ -74,7 +74,7 @@ paths:
     exec:
       - default
 
-  - path: '/health/com.networknt.portal.query-1.0.0'
+  - path: '/health/com.networknt.portal.hybrid.query-1.0.0'
     method: 'get'
     exec:
       - health
