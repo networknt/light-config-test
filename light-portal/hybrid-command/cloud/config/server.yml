@@ -15,7 +15,7 @@ httpPort:  8081
 enableHttp: false
 
 # Https port if enableHttps is true. It will be ignored if dynamicPort is true.
-httpsPort:  8443
+httpsPort:  8441
 
 # Enable HTTPS should be true on official environment and most dev environments.
 enableHttps: true
@@ -37,7 +37,7 @@ serviceId: com.networknt.portal.command-1.0.0
 
 # Flag to enable self service registration. This should be turned on on official test and production. And
 # dyanmicPort should be enabled if any orchestration tool is used like Kubernetes.
-enableRegistry: false
+enableRegistry: true
 
 # Dynamic port is used in situation that multiple services will be deployed on the same host and normally
 # you will have enableRegistry set to true so that other services can find the dynamic port service. When

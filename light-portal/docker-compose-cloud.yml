@@ -10,7 +10,7 @@ services:
         - ./hybrid-command/cloud/config:/config
         - ./hybrid-command/service:/service
       ports:
-        - 8443:8443
+        - 8441:8441
       networks:
           - localnet
 
