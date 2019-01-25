@@ -95,6 +95,19 @@ paths:
     exec:
       - default
 
+  - path: '/portal/query'
+    method: 'GET'
+    exec:
+      - default
+  - path: '/portal/query'
+    method: 'POST'
+    exec:
+      - default
+  - path: '/portal/command'
+    method: 'POST'
+    exec:
+      - default
+
   # - path: '/spec.yaml'
   #   method: 'get'
   #   exec:
