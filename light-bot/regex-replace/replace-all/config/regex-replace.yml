@@ -44,7 +44,6 @@ checkout:
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/react-schema-form.git
     - git@github.com:networknt/light-workflow-4j.git
-    - git@github.com:networknt/light.git
     - git@github.com:networknt/swagger-bundler.git
     - git@github.com:networknt/openapi-bundler.git
     - git@github.com:networknt/http2client-benchmark.git
