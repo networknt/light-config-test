@@ -98,6 +98,20 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-query/service/user-query-0.1.0.jar
   - src: light-portal/user-management/hybrid-query/target/user-hybrid-query-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/user-hybrid-query-0.1.0.jar
+  # light-codegen
+  - src: light-codegen/codegen-core/target/codegen-core.jar
+    dst: light-config-test/light-portal/hybrid-query/service/coregen-core.jar
+  - src: light-codegen/codegen-fwk/target/codegen-fwk.jar
+    dst: light-config-test/light-portal/hybrid-query/service/codegen-fwk.jar
+  - src: light-codegen/light-graphql-4j/target/light-graphql-4j-generator.jar
+    dst: light-config-test/light-portal/hybrid-query/service/light-graphql-4j-generator.jar
+  - src: light-codegen/light-rest-4j/target/light-rest-4j-generator.jar
+    dst: light-config-test/light-portal/hybrid-query/service/light-rest-4j-generator.jar
+  - src: light-codegen/light-hybrid-4j/target/light-hybrid-4j-generator.jar
+    dst: light-config-test/light-portal/hybrid-query/service//light-hybrid-4j-generator.jar
+  - src: light-codegen/codegen-web/target/codegen-web.jar
+    dst: light-config-test/light-portal/hybrid-query/service/codegen-web.jar
+
 
   # populate hybrid-command services
   - src: light-portal/hybrid-command/target/hybrid-command.jar
@@ -130,24 +144,24 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-command-0.1.0.jar
   
 # copy files with Glob pattern from src folder to dst folder both in home and workspace.
-copyWildcardFile:
+# copyWildcardFile:
   # light-codegen 
   # The jar file has version number and we are using glob patter to locate the jar files. 
-  - src: light-codegen//codegen-core/target
-    dst: light-config-test/light-portal/hybrid-query/service
-    pattern: codegen-core-*[!javadoc][!sources].jar
-  - src: light-codegen/codegen-fwk/target
-    dst: light-config-test/light-portal/hybrid-query/service
-    pattern: codegen-fwk-*[!javadoc][!sources].jar
-  - src: light-codegen/light-graphql-4j/target
-    dst: light-config-test/light-portal/hybrid-query/service
-    pattern: light-graphql-4j-generator-*[!javadoc][!sources].jar   
-  - src: light-codegen/light-rest-4j/target
-    dst: light-config-test/light-portal/hybrid-query/service
-    pattern: light-rest-4j-generator-*[!javadoc][!sources].jar
-  - src: light-codegen/light-hybrid-4j/target
-    dst: light-config-test/light-portal/hybrid-query/service
-    pattern: light-hybrid-4j-generator-*[!javadoc][!sources].jar
-  - src: light-codegen/codegen-web/target
-    dst: light-config-test/light-portal/hybrid-query/service
-    pattern: codegen-web-*[!javadoc][!sources].jar
+  # - src: light-codegen//codegen-core/target
+  #   dst: light-config-test/light-portal/hybrid-query/service
+  #   pattern: codegen-core-*[!javadoc][!sources].jar
+  # - src: light-codegen/codegen-fwk/target
+  #   dst: light-config-test/light-portal/hybrid-query/service
+  #   pattern: codegen-fwk-*[!javadoc][!sources].jar
+  # - src: light-codegen/light-graphql-4j/target
+  #   dst: light-config-test/light-portal/hybrid-query/service
+  #   pattern: light-graphql-4j-generator-*[!javadoc][!sources].jar   
+  # - src: light-codegen/light-rest-4j/target
+  #   dst: light-config-test/light-portal/hybrid-query/service
+  #   pattern: light-rest-4j-generator-*[!javadoc][!sources].jar
+  # - src: light-codegen/light-hybrid-4j/target
+  #   dst: light-config-test/light-portal/hybrid-query/service
+  #   pattern: light-hybrid-4j-generator-*[!javadoc][!sources].jar
+  # - src: light-codegen/codegen-web/target
+  #   dst: light-config-test/light-portal/hybrid-query/service
+  #   pattern: codegen-web-*[!javadoc][!sources].jar
