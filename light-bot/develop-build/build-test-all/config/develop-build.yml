@@ -375,6 +375,35 @@ test:
         body:
           "$.data.numberHolder.theNumber": 4
     # subscription test has two browser windows and cannot be tested here.
+
+  # dynamic port testing with two instances  
+  dynamic-port-petstore:
+    server:
+    - path: light-example-4j/rest/openapi/dyanmic-port
+      cmd: target/petstore-3.0.1.jar
+    - path: light-example-4j/rest/openapi/dyanmic-port
+      cmd: target/petstore-3.0.1.jar
+    request:
+    - host: https://localhost:2400
+      path: "/v1/pets/111"
+      method: get
+      response:
+        status: 200
+        header:
+          content-type: application/json
+        body:
+          "$.name": Jessica Right
+          "$.id": 1
+    - host: https://localhost:2401
+      path: "/v1/pets/111"
+      method: get
+      response:
+        status: 200
+        header:
+          content-type: application/json
+        body:
+          "$.name": Jessica Right
+          "$.id": 1
           
 # copy individual files
 copyFile:
