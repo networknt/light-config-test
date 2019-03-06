@@ -58,6 +58,7 @@ checkout:
     - git@github.com:networknt/light-consumer-4j.git
     - git@github.com:networknt/http2client-benchmark.git
     - git@github.com:networknt/microservices-framework-benchmark.git
+    - git@github.com:networknt/light-spring-boot.git
 
     # repositories from lightapi.net
     # - git@198.55.49.186:lightapi/tokenization.git

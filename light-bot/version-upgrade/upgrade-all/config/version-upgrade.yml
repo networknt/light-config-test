@@ -44,6 +44,7 @@ checkout:
     - git@github.com:networknt/light-config-server.git
     - git@github.com:networknt/http2client-benchmark.git
     - git@github.com:networknt/microservices-framework-benchmark.git
+    - git@github.com:networknt/light-spring-boot.git
 
 # run mvn versions:set command in the following folders.
 maven:
@@ -66,6 +67,7 @@ maven:
   - light-tokenization
   - light-consumer-4j
   - light-config-server
+  - light-spring-boot
   - light-portal/hybrid-command
   - light-portal/hybrid-query
 # regex replacement for dependencies
@@ -168,6 +170,9 @@ version:
     match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+  light-spring-boot:
+  - path: pom.xml
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   light-portal:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>

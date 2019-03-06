@@ -54,6 +54,8 @@ checkout:
     - git@github.com:networknt/react-file-manager.git
     - git@github.com:networknt/light-commerce.git
     - git@github.com:networknt/light-cms.git
+    - git@github.com:networknt/light-spring-boot.git
+
 # merge develop to master and check in master for above repositories.
 # It assumes that you always merge into master branch to release.
 # Some of the repositories above are not going to be release but simple merge from
@@ -80,4 +82,5 @@ release:
   - light-consumer-4j
   - light-router
   - light-proxy
+  - light-spring-boot
 #  - light-oauth2
