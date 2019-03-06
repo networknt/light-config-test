@@ -79,5 +79,5 @@ release:
   - light-spa-4j
   - light-consumer-4j
   - light-router
-#  - light-proxy
+  - light-proxy
 #  - light-oauth2
