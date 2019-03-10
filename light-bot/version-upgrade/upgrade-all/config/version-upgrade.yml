@@ -100,20 +100,40 @@ version:
     match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: pom.xml
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+  # light-graphql-4j  
   - path: light-graphql-4j/src/main/resources/templates/graphql/pom.xml.rocker.raw
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  # light-hybrid-4j
   - path: light-hybrid-4j/src/main/resources/templates/hybrid/server/pom.xml.rocker.raw
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: light-hybrid-4j/src/main/resources/templates/hybrid/service/pom.xml.rocker.raw
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  # light-rest-4j openapi  
   - path: light-rest-4j/src/main/resources/templates/rest/openapi/pom.xml.rocker.raw
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
   - path: light-rest-4j/src/main/resources/templates/rest/openapi/pom.xml.rocker.raw
     match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
   - path: light-rest-4j/src/main/resources/templates/rest/openapi/pom.xml.rocker.raw
     match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+  # light-rest-4j swagger
   - path: light-rest-4j/src/main/resources/templates/rest/swagger/pom.xml.rocker.raw
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  # light-rest-4j kotlin
+  - path: light-rest-4j/src/main/resources/templates/restkotlin/gradleProperties.rocker.raw
+    match: light4jVersion=\d*\.\d*\.\d*
+  # light-eventuate-4j openapi
+  - path: light-eventuate-4j/src/main/resources/templates/eventuate/rest/openapi/pom.xml.rocker.raw
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: light-eventuate-4j/src/main/resources/templates/eventuate/rest/openapi/pom.xml.rocker.raw
+    match: <version.json-overlay>\d*\.\d*\.\d*</version.json-overlay>
+  - path: light-eventuate-4j/src/main/resources/templates/eventuate/rest/openapi/pom.xml.rocker.raw
+    match: <version.openapi-parser>\d*\.\d*\.\d*</version.openapi-parser>
+  # light-eventuate-4j hybrid
+  - path: light-eventuate-4j/src/main/resources/templates/eventuate/hybrid/server/pom.xml.rocker.raw
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+  - path: light-eventuate-4j/src/main/resources/templates/eventuate/hybrid/service/pom.xml.rocker.raw
+    match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
+
   light-eventuate-4j:
   - path: pom.xml
     match: <version.light[a-z-]+4j>\d*\.\d*\.\d*</version.light[a-z-]+4j>
