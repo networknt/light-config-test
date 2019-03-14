@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace
 # git commit comment for the current task
-comment: 'upgrade json-schema-validator to 1.0.3'
+comment: 'upgrade json-schema-validator to 1.0.4'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -219,5 +219,5 @@ replace:
 
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
-  old_value: 1.0.2
-  new_value: 1.0.3
+  old_value: 1.0.3
+  new_value: 1.0.4
