@@ -29,7 +29,7 @@ tasks:
   
 checkout:
   checkoutSetOne:
-    - branch: develop
+    - branch: master
       skip: false
       repository:
       - git@github.com:networknt/light-4j.git

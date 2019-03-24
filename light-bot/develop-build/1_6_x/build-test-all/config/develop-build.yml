@@ -1,4 +1,4 @@
-workspace: develop-build
+workspace: developbuild_1_6_x
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 # or the last time the build was failed and you just want to retry without changing anything.
 skip_checkout: false
@@ -8,7 +8,7 @@ skip_build: false
 # very useful if you just want to install the develop branch modules into your .m2
 # local repo. Also, some of our customers have constraint test environment to run
 # unit and integration test only and another environment to run all of tests.
-skip_test: true
+skip_test: false
 # skip copy file if necessary.
 skip_copyFile: true
 # skip copyWildcardFile
@@ -29,7 +29,7 @@ tasks:
 
 checkout:
   checkoutSetOne: 
-    - branch: develop
+    - branch: master
       skip: false
       repository:
       - git@github.com:networknt/light-4j.git
@@ -130,13 +130,15 @@ build:
     # light-eventuate-4j
     - light-example-4j/eventuate/account-management
     - light-example-4j/eventuate/todo-list
-
     # light-tram-4j
-    - light-example-4j/tram/light-tram-todolist/single-module
+    # - light-example-4j/tram/light-tram-todolist/single-module
     - light-example-4j/tram/light-tram-todolist/multi-module
     # light-saga-4j
-    - light-example-4j/saga/light-saga-cutomers-and-orders
-
+    # - light-example-4j/saga/light-saga-cutomers-and-orders
+    # middleware-performance
+    - light-example-4j/middleware-performance/service-config
+    - light-example-4j/middleware-performance/endpoint-individual
+    - light-example-4j/middleware-performance/endpoint-source
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.
 test:
@@ -336,7 +338,7 @@ test:
       cmd: target/starwars-1.0.1.jar
     request:
     # query
-    - host: http://localhost:8080
+    - host: http://localhost:8081
       path: "/graphql"
       method: post
       header:
@@ -349,7 +351,7 @@ test:
         body:
           "$.data.numberHolder.theNumber": 6
     # mutation
-    - host: http://localhost:8080
+    - host: http://localhost:8081
       path: "/graphql"
       method: post
       header:
@@ -362,7 +364,7 @@ test:
         body:
           "$.data.changeTheNumber.theNumber": 4
     # query again
-    - host: http://localhost:8080
+    - host: http://localhost:8081
       path: "/graphql"
       method: post
       header:
@@ -375,6 +377,35 @@ test:
         body:
           "$.data.numberHolder.theNumber": 4
     # subscription test has two browser windows and cannot be tested here.
+
+  # dynamic port testing with two instances  
+  dynamic-port-petstore:
+    server:
+    - path: light-example-4j/rest/openapi/dyanmic-port
+      cmd: target/petstore-3.0.1.jar
+    - path: light-example-4j/rest/openapi/dyanmic-port
+      cmd: target/petstore-3.0.1.jar
+    request:
+    - host: https://localhost:2400
+      path: "/v1/pets/111"
+      method: get
+      response:
+        status: 200
+        header:
+          content-type: application/json
+        body:
+          "$.name": Jessica Right
+          "$.id": 1
+    - host: https://localhost:2401
+      path: "/v1/pets/111"
+      method: get
+      response:
+        status: 200
+        header:
+          content-type: application/json
+        body:
+          "$.name": Jessica Right
+          "$.id": 1
           
 # copy individual files
 copyFile:

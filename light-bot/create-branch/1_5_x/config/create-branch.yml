@@ -4,7 +4,7 @@ workspace: createbranch
 # The new branch name that is going to be created
 branch: 1.5.x
 # If the new branch is created from a tag
-from_tag: true
+from_tag: false
 # The original tag to create a new branch if from_tag is true.
 tag: 1.5.32
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -16,7 +16,7 @@ skip_branch: false
 skip_push: false
 # clone and switch to the branch specified in checkout step.
 checkout:
-  - branch: develop
+  - branch: master
     repository:
     - git@github.com:networknt/light-4j.git
     - git@github.com:networknt/json-overlay.git
