@@ -1,20 +1,18 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
-workspace: releasemaven
+workspace: releasemaven_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 1.5.32
+version: 2.0.0
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # You can skip checkout if you are sure that the code in workspace are the latest and
 # you just want to repeat the release process due to some environmental issue before.
 skip_checkout: false
-# You can skip the merge step is this has been done in the previous execution.
-skip_merge: false
 # You can skip the last release step so that you can double check the merged result.
 skip_release: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
-  - branch: develop
+  - branch: jdk11
     repository:
     - git@github.com:networknt/light-4j.git
     - git@github.com:networknt/json-overlay.git
