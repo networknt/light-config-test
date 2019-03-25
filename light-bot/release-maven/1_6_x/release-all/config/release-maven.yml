@@ -34,24 +34,10 @@ checkout:
     - git@github.com:networknt/light-consumer-4j.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
-    - git@github.com:networknt/light-doc.git
-    - git@github.com:networknt/light-config-test.git
     - git@github.com:networknt/light-bot.git
     - git@github.com:networknt/light-config-server.git
-    - git@github.com:networknt/microservices-framework-benchmark.git
-    - git@github.com:networknt/model-config.git
     - git@github.com:networknt/light-portal.git
-    - git@github.com:networknt/react-schema-form.git
     - git@github.com:networknt/light-workflow-4j.git
-    - git@github.com:networknt/swagger-bundler.git
-    - git@github.com:networknt/http2client-benchmark.git
-    - git@github.com:networknt/json-schema-validator-perftest.git
-    - git@github.com:networknt/microbenchmark.git
-    - git@github.com:networknt/react-schema-form-rc-select.git
-    - git@github.com:networknt/light-config-prod.git
-    - git@github.com:networknt/react-file-manager.git
-    - git@github.com:networknt/light-commerce.git
-    - git@github.com:networknt/light-cms.git
     - git@github.com:networknt/light-spring-boot.git
 
 # generate changelog.md from github issues and check in
@@ -76,4 +62,4 @@ release:
   - light-router
   - light-proxy
   - light-spring-boot
-#  - light-oauth2
+
