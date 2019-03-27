@@ -1,3 +1,0 @@
----
-# Enable request validation. Response validation is not done on the server but client.
-enabled: true
