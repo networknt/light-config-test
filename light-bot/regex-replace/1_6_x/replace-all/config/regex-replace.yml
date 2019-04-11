@@ -34,6 +34,7 @@ checkout:
     - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
+    - git@github.com:networknt/light-example-kotlin.git
     - git@github.com:networknt/light-docker.git
     - git@github.com:networknt/light-doc.git
     - git@github.com:networknt/light-config-test.git
@@ -219,5 +220,10 @@ replace:
 
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+  old_value: 1.0.5
+  new_value: 1.0.6
+
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
   old_value: 1.0.5
   new_value: 1.0.6
