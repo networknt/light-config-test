@@ -15,7 +15,7 @@ skip_maven: false
 # skip the regular expression match and replace. It is safe to run it multiple times.
 skip_version: false
 # skip checkin if you want to review the changes before checking in to github.
-skip_checkin: true
+skip_checkin: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   - branch: master
