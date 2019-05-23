@@ -60,7 +60,11 @@ checkout:
     - git@github.com:networknt/http2client-benchmark.git
     - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
-
+    - git@github.com:networknt/maven-plugin.git
+    - git@github.com:networknt/light-monitor.git
+    - git@github.com:networknt/light-java-hybrid-example.git
+    - git@github.com:taiji-chain/web-client.git
+    - git@github.com:taiji-chain/taiji-faucet.git
     # repositories from lightapi.net
     # - git@198.55.49.186:lightapi/tokenization.git
 
@@ -220,10 +224,10 @@ replace:
 
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
-  old_value: 1.0.7
-  new_value: 1.0.8
+  old_value: 1.0.8
+  new_value: 1.0.10
 
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
-  old_value: 1.0.7
-  new_value: 1.0.8
+  old_value: 1.0.8
+  new_value: 1.0.10
