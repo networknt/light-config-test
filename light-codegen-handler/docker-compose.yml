@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+  release:
+    image: networknt/portal-hybrid-query
+    volumes:
+      - ./release/config:/config
+      - ./release/service:/service
+    ports:
+      - 8441:8441
+    environment:
+      - STATUS_HOST_IP=${DOCKER_HOST_IP}
+    network_mode: host    
+
+  snapshot:
+    image: networknt/portal-hybrid-query
+    volumes:
+      - ./snapshot/config:/config
+      - ./snapshot/service:/service
+    ports:
+      - 8442:8442
+    environment:
+      - STATUS_HOST_IP=${DOCKER_HOST_IP}
+    network_mode: host    
+
+  light-router:
+    image:  networknt/light-router:latest
+    environment:
+      - STATUS_HOST_IP=${DOCKER_HOST_IP}
+    network_mode: host    
+    ports:
+    - 443:8443
+    volumes:
+    - ./router/config:/config
+    - ./codegen-web/build:/codegen-web/build
