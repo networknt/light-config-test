@@ -63,8 +63,16 @@ checkout:
     - git@github.com:networknt/maven-plugin.git
     - git@github.com:networknt/light-monitor.git
     - git@github.com:networknt/light-java-hybrid-example.git
+    # Taiji Block Chain Projects
+    - git@github.com:networknt/taiji-blockchain.git
     - git@github.com:taiji-chain/web-client.git
     - git@github.com:taiji-chain/taiji-faucet.git
+    - git@198.55.49.186:steve/kafka-chain.git
+    - git@198.55.49.186:steve/genesis-block.git
+    - git@198.55.49.186:light-chain/chain-reader.git
+    - git@198.55.49.186:light-chain/chain-writer.git
+    - git@198.55.49.186:light-chain/kyc-reader.git
+    - git@198.55.49.186:light-chain/token-reader.git
     # repositories from lightapi.net
     # - git@198.55.49.186:lightapi/tokenization.git
 
