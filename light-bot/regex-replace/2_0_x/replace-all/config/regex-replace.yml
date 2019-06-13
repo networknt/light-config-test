@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'update exception package'
+comment: 'upgrade undertow to 2.0.21.Final'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -12,7 +12,7 @@ skip_checkin: false
 # clone and switch to develop branch or checkout and pull from develop branch. This is to ensure that develop branch for
 # each repository is up-to-date for manipulations. Please update skip_checkout to true if you want to bypass this step.
 checkout:
-  - branch: jdk11
+  - branch: master
     repository:
     # repositories from github.com
     - git@github.com:networknt/light-4j.git
@@ -32,34 +32,47 @@ checkout:
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
     - git@github.com:networknt/light-tokenization.git
-    # - git@github.com:networknt/light-portal.git
-    # - git@github.com:networknt/light-example-4j.git
-    # - git@github.com:networknt/light-docker.git
-    # - git@github.com:networknt/light-doc.git
-    # - git@github.com:networknt/light-config-test.git
-    # - git@github.com:networknt/light-bot.git
-    # - git@github.com:networknt/light-config-server.git
-    # - git@github.com:networknt/microservices-framework-benchmark.git
-    # - git@github.com:networknt/model-config.git
-    # - git@github.com:networknt/light-portal.git
-    # - git@github.com:networknt/react-schema-form.git
-    # - git@github.com:networknt/light-workflow-4j.git
-    # - git@github.com:networknt/swagger-bundler.git
-    # - git@github.com:networknt/openapi-bundler.git
-    # - git@github.com:networknt/http2client-benchmark.git
-    # - git@github.com:networknt/json-schema-validator.git
-    # - git@github.com:networknt/json-schema-validator-perftest.git
-    # - git@github.com:networknt/microbenchmark.git
-    # - git@github.com:networknt/react-schema-form-rc-select.git
-    # - git@github.com:networknt/light-config-prod.git
-    # - git@github.com:networknt/react-file-manager.git
-    # - git@github.com:networknt/light-commerce.git
-    # - git@github.com:networknt/light-cms.git
+    - git@github.com:networknt/light-portal.git
+    - git@github.com:networknt/light-example-4j.git
+    - git@github.com:networknt/light-example-kotlin.git
+    - git@github.com:networknt/light-docker.git
+    - git@github.com:networknt/light-doc.git
+    - git@github.com:networknt/light-config-test.git
+    - git@github.com:networknt/light-bot.git
+    - git@github.com:networknt/light-config-server.git
+    - git@github.com:networknt/microservices-framework-benchmark.git
+    - git@github.com:networknt/model-config.git
+    - git@github.com:networknt/light-portal.git
+    - git@github.com:networknt/react-schema-form.git
+    - git@github.com:networknt/light-workflow-4j.git
+    - git@github.com:networknt/swagger-bundler.git
+    - git@github.com:networknt/openapi-bundler.git
+    - git@github.com:networknt/http2client-benchmark.git
+    - git@github.com:networknt/json-schema-validator.git
+    - git@github.com:networknt/json-schema-validator-perftest.git
+    - git@github.com:networknt/microbenchmark.git
+    - git@github.com:networknt/react-schema-form-rc-select.git
+    - git@github.com:networknt/light-config-prod.git
+    - git@github.com:networknt/react-file-manager.git
+    - git@github.com:networknt/light-commerce.git
+    - git@github.com:networknt/light-cms.git
     - git@github.com:networknt/light-consumer-4j.git
-    # - git@github.com:networknt/http2client-benchmark.git
-    # - git@github.com:networknt/microservices-framework-benchmark.git
+    - git@github.com:networknt/http2client-benchmark.git
+    - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
-
+    - git@github.com:networknt/maven-plugin.git
+    - git@github.com:networknt/light-monitor.git
+    - git@github.com:networknt/light-java-hybrid-example.git
+    # Taiji Block Chain Projects
+    - git@github.com:networknt/taiji-blockchain.git
+    - git@github.com:taiji-chain/web-client.git
+    - git@github.com:taiji-chain/taiji-faucet.git
+    - git@198.55.49.186:steve/kafka-chain.git
+    - git@198.55.49.186:steve/genesis-block.git
+    - git@198.55.49.186:light-chain/chain-reader.git
+    - git@198.55.49.186:light-chain/chain-writer.git
+    - git@198.55.49.186:light-chain/kyc-reader.git
+    - git@198.55.49.186:light-chain/token-reader.git
     # repositories from lightapi.net
     # - git@198.55.49.186:lightapi/tokenization.git
 
@@ -219,10 +232,39 @@ replace:
 
 # - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
 #   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
-#   old_value: 1.0.3
-#   new_value: 1.0.4
+#   old_value: 1.0.8
+#   new_value: 1.0.10
 
-- glob: "{**/*.java}"
-  match: import com.networknt.status.exception.
-  old_value: com.networknt.status.exception
-  new_value: com.networknt.exception
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.8
+#   new_value: 1.0.10
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.9.8
+#   new_value: 2.9.9
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.9.8
+#   new_value: 2.9.9
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 1.0.13
+#   new_value: 1.0.14
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.13
+#   new_value: 1.0.14
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+  old_value: "2.0.16.Final"
+  new_value: "2.0.21.Final"
+
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: undertowVersion=\d*\.\d*\.\d*\.Final
+  old_value: "2.0.16.Final"
+  new_value: "2.0.21.Final"
