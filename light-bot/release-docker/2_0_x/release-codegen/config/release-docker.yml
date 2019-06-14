@@ -24,7 +24,7 @@ skip_docker: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   # here we checkout master branch to publish the images. 
-  - branch: jdk11
+  - branch: master
     repository:
     # - git@github.com:networknt/light-proxy.git
     # - git@github.com:networknt/light-router.git

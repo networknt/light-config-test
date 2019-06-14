@@ -22,7 +22,7 @@ skip_release: false
 skip_release_note: true
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
-  - branch: jdk11
+  - branch: master
     repository:
     - git@github.com:networknt/light-4j.git
     - git@github.com:networknt/json-overlay.git

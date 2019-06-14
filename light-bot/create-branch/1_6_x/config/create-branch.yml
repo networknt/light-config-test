@@ -16,7 +16,7 @@ skip_branch: false
 skip_push: false
 # clone and switch to the branch specified in checkout step.
 checkout:
-  - branch: master
+  - branch: 1.6.x
     repository:
     - git@github.com:networknt/light-4j.git
     - git@github.com:networknt/json-overlay.git
