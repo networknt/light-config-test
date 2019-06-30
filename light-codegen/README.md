@@ -24,3 +24,14 @@ curl -k -X POST https://localhost:8439/codegen -H 'Content-Type: application/jso
 
 To access the services through light-router. 
 
+### docker-compose
+
+There are two docker-compose files.
+
+docker-compose.yaml and docker-compose-local
+
+The docker-compose.yaml is used to deploy on the devops server. 
+The docker-compose-local is used for local testing. 
+
+The major difference is the consul server that is using. The local has configuration to use local consul server started from networknt/light-docker. And the normal docker-compose has config files to connect to the Consul cluster on the cloud. 
+
