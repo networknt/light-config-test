@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+  2_0_x:
+    image: networknt/codegen-server-1.0.0
+    volumes:
+      - ./2_0_x/config:/config
+      - ./2_0_x/service:/service
+    ports:
+      - 8440:8440
+    environment:
+      - STATUS_HOST_IP=${DOCKER_HOST_IP}
+    network_mode: host    
+
+  1_6_x:
+    image: networknt/codegen-server-1.0.0
+    volumes:
+      - ./1_6_x/config:/config
+      - ./1_6_x/service:/service
+    ports:
+      - 8439:8439
+    environment:
+      - STATUS_HOST_IP=${DOCKER_HOST_IP}
+    network_mode: host    
+
+  light-router:
+    image:  networknt/light-router:latest
+    environment:
+      - STATUS_HOST_IP=${DOCKER_HOST_IP}
+    network_mode: host    
+    ports:
+    - 443:8443
+    volumes:
+    - ./router/config:/config
+    - ./codegen-web/build:/codegen-web/build
