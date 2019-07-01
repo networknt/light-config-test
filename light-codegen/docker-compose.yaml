@@ -29,7 +29,7 @@ services:
       - STATUS_HOST_IP=${DOCKER_HOST_IP}
     network_mode: host    
     ports:
-    - 443:8443
+    - 8443:8443
     volumes:
     - ./router/config:/config
     - ./codegen-web/build:/codegen-web/build
