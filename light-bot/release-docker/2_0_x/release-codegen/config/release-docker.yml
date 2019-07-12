@@ -6,7 +6,7 @@ version: 2.0.2
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.0.1
+prev_tag: 1.6.2
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # skip checkout if you know all latest code has been checkout in the previous build
