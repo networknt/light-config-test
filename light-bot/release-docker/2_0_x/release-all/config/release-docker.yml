@@ -75,6 +75,7 @@ docker:
   - light-oauth2/service
   - light-oauth2/token
   - light-oauth2/user
+  - light-oauth2/provider
   - light-tokenization
   - light-portal/hybrid-command
   - light-portal/hybrid-query
