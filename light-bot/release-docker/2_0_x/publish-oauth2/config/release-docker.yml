@@ -58,3 +58,5 @@ docker:
   - light-oauth2/service
   - light-oauth2/token
   - light-oauth2/user
+  - light-oauth2/provider
+  
