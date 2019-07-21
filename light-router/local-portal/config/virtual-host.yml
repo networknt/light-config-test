@@ -23,3 +23,9 @@ hosts:
     base: /lightapi/build
     transferMinSize: 10245760
     directoryListingEnabled: false
+  - domain: signin.lightapi.net
+    path: /
+    #base: /home/steve/networknt/light-config-test/light-router/virtual-host/lightapi/build
+    base: /signin/build
+    transferMinSize: 10245760
+    directoryListingEnabled: false
