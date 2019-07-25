@@ -1,0 +1,44 @@
+# Singleton service factory configuration/IoC injection
+singletons:
+- com.networknt.registry.URL:
+  - com.networknt.registry.URLImpl:
+      protocol: light
+      host: localhost
+      port: 8080
+      path: consul
+      parameters:
+        registryRetryPeriod: '30000'
+- com.networknt.consul.client.ConsulClient:
+  - com.networknt.consul.client.ConsulClientImpl
+- com.networknt.registry.Registry:
+  - com.networknt.consul.ConsulRegistry
+- com.networknt.balance.LoadBalance:
+  - com.networknt.balance.RoundRobinLoadBalance
+- com.networknt.cluster.Cluster:
+  - com.networknt.cluster.LightCluster
+# Default decryptor implementation
+- com.networknt.utility.Decryptor:
+  - com.networknt.decrypt.AESDecryptor
+# StartupHookProvider implementations, there are one to many and they are called in the same sequence defined.
+- com.networknt.server.StartupHookProvider:
+  - com.networknt.oauth.cache.CacheStartupHookProvider
+# ShutdownHookProvider implementations, there are one to many and they are called in the same sequence defined.
+- com.networknt.server.ShutdownHookProvider:
+  - com.networknt.oauth.cache.CacheShutdownHookProvider
+# Authenticator implementation mapping
+- com.networknt.oauth.auth.Authenticator<com.networknt.oauth.auth.DefaultAuth>:
+  - com.networknt.oauth.auth.DefaultAuthenticator
+- com.networknt.oauth.auth.Authenticator<com.networknt.oauth.auth.MarketPlaceAuth>:
+  - com.networknt.oauth.auth.MarketPlaceAuthenticator
+# DataSource mapping
+- javax.sql.DataSource:
+  - com.zaxxer.hikari.HikariDataSource:
+      jdbcUrl: jdbc:mysql://lightapi.net:3306/oauth2?useSSL=false&disableMariaDbDriver
+      username: mysqluser
+      password: mysqlpw
+      maximumPoolSize: 2
+      useServerPrepStmts: true
+      cachePrepStmts: true
+      cacheCallableStmts: true
+      prepStmtCacheSize: 4096
+      prepStmtCacheSqlLimit: 2048
