@@ -5,7 +5,6 @@
 description: Cors Http Handler
 enabled: false
 allowedOrigins:
-- http://localhost:3000
 - https://lightapi.net
 - https://signin.lightapi.net
 allowedMethods:

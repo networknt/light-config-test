@@ -28,7 +28,7 @@ singletons:
 
 - javax.sql.DataSource:
   - com.zaxxer.hikari.HikariDataSource:
-      jdbcUrl: jdbc:mysql://lightapi.net:3306/oauth2?useSSL=false&disableMariaDbDriver
+      jdbcUrl: jdbc:mysql://38.113.162.51:3306/oauth2?useSSL=false&disableMariaDbDriver
       username: mysqluser
       password: mysqlpw
       maximumPoolSize: 2

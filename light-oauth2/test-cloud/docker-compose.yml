@@ -18,7 +18,7 @@
       volumes:
         - ./light-oauth2/mysql/config/oauth2-code:/config
       environment:
-        - STATUS_HOST_IP=lightapi.net
+        - STATUS_HOST_IP=38.113.162.51
       network_mode: host    
       depends_on:
         - mysqldb
@@ -35,7 +35,7 @@
       volumes:
         - ./light-oauth2/mysql/config/oauth2-token:/config
       environment:
-        - STATUS_HOST_IP=lightapi.net
+        - STATUS_HOST_IP=38.113.162.51
       network_mode: host    
       depends_on:
         - mysqldb
@@ -52,7 +52,7 @@
       volumes:
         - ./light-oauth2/mysql/config/oauth2-service:/config
       environment:
-        - STATUS_HOST_IP=lightapi.net
+        - STATUS_HOST_IP=38.113.162.51
       network_mode: host    
       depends_on:
         - mysqldb
@@ -69,7 +69,7 @@
       volumes:
         - ./light-oauth2/mysql/config/oauth2-client:/config
       environment:
-        - STATUS_HOST_IP=lightapi.net
+        - STATUS_HOST_IP=38.113.162.51
       network_mode: host    
       depends_on:
         - mysqldb
@@ -86,7 +86,7 @@
       volumes:
         - ./light-oauth2/mysql/config/oauth2-user:/config
       environment:
-        - STATUS_HOST_IP=lightapi.net
+        - STATUS_HOST_IP=38.113.162.51
       network_mode: host    
       depends_on:
         - mysqldb
@@ -103,7 +103,7 @@
       volumes:
         - ./light-oauth2/mysql/config/oauth2-key:/config
       environment:
-        - STATUS_HOST_IP=lightapi.net
+        - STATUS_HOST_IP=38.113.162.51
       network_mode: host    
       depends_on:
         - mysqldb
@@ -120,7 +120,7 @@
       volumes:
         - ./light-oauth2/mysql/config/oauth2-refresh-token:/config
       environment:
-        - STATUS_HOST_IP=lightapi.net
+        - STATUS_HOST_IP=38.113.162.51
       network_mode: host    
       depends_on:
         - mysqldb
