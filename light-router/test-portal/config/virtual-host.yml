@@ -1,0 +1,31 @@
+hosts:
+  - domain: faucet.taiji.io
+    path: /
+    #base: /home/steve/networknt/light-config-test/light-router/local-portal/faucet/build
+    base: /faucet/build
+    transferMinSize: 10245760
+    directoryListingEnabled: false
+  - domain: demo.taiji.io
+    path: /
+    #base: /home/steve/networknt/light-config-test/light-router/local-portal/faucet/build
+    base: /webclient/build
+    transferMinSize: 10245760
+    directoryListingEnabled: false
+  - domain: taiji.io
+    path: /
+    #base: /home/steve/networknt/light-config-test/light-router/local-portal/taiji/build
+    base: /taiji/build
+    transferMinSize: 10245760
+    directoryListingEnabled: false
+  - domain: lightapi.net
+    path: /
+    #base: /home/steve/networknt/light-config-test/light-router/local-portal/lightapi/build
+    base: /lightapi/build
+    transferMinSize: 10245760
+    directoryListingEnabled: false
+  - domain: signin.lightapi.net
+    path: /
+    #base: /home/steve/networknt/light-config-test/light-router/local-portal/signin/build
+    base: /signin/build
+    transferMinSize: 10245760
+    directoryListingEnabled: false
