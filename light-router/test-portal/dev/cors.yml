@@ -1,6 +1,5 @@
 enabled: true
 allowedOrigins:
-  - http://localhost:3000
   - https://signin.lightapi.net
   - https://lightapi.net
 allowedMethods:

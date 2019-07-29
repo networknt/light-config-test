@@ -24,7 +24,7 @@ oauth:
     # if scope token is not expired but in renew windown, we need slow retry delay.
     earlyRefreshRetryDelay: 4000
     # token server url. The default port number for token service is 6882.
-    server_url: https://lightapi.net:6882
+    # server_url: https://38.113.162.51:6882
     # token service unique id for OAuth 2.0 provider
     serviceId: com.networknt.oauth2-token-1.0.0
     # the following section defines uri and parameters for authorization code grant type
@@ -32,9 +32,9 @@ oauth:
       # token endpoint for authorization code grant
       uri: "/oauth2/token"
       # client_id for authorization code grant flow. client_secret is in secret.yml
-      client_id: f7d42348-c647-4efb-a52d-4c5787421e72
+      client_id: f7d42348-c647-4efb-a52d-4c5787421e73
       # the web server uri that will receive the redirected authorization code
-      redirect_uri: https://lightapi.net/authorization
+      redirect_uri: http://localhost:3000/authorization
       # optional scope, default scope in the client registration will be used if not defined.
       scope:
       - petstore.r
@@ -44,7 +44,7 @@ oauth:
       # token endpoint for client credentials grant
       uri: "/oauth2/token"
       # client_id for client credentials grant flow. client_secret is in secret.yml
-      client_id: f7d42348-c647-4efb-a52d-4c5787421e72
+      client_id: f7d42348-c647-4efb-a52d-4c5787421e73
       # optional scope, default scope in the client registration will be used if not defined.
       scope:
       - petstore.r
@@ -58,4 +58,4 @@ oauth:
     # the path for the key distribution endpoint
     uri: "/oauth2/key"
     # client_id used to access key distribution service. It can be the same client_id with token service or not.
-    client_id: f7d42348-c647-4efb-a52d-4c5787421e72
+    client_id: f7d42348-c647-4efb-a52d-4c5787421e73
