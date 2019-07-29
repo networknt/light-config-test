@@ -9,12 +9,8 @@ services:
     ports:
     - 8443:8443
     volumes:
-    - ./config:/config
-    - ./faucet/build:/faucet/build
-    - ./webclient/build:/webclient/build
+    - ./dev:/config
     - ./lightapi/build:/lightapi/build
-    - ./taiji/build:/taiji/build
-    - ./signin/build:/signin/build
 #
 # Networks
 #
