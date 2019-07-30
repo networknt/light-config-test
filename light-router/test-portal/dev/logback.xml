@@ -3,7 +3,7 @@
   ~ Copyright (c) 2016 Network New Technologies Inc.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
-  ~ You may not use this file except in compliance with the License.
+  ~ you may not use this file except in compliance with the License.
   ~ You may obtain a copy of the License at
   ~
   ~      http://www.apache.org/licenses/LICENSE-2.0
@@ -16,12 +16,34 @@
   -->
 
 <configuration>
+    TODO create logger for audit only.
+    http://stackoverflow.com/questions/2488558/logback-to-log-different-messages-to-two-files
+    <turboFilter class="ch.qos.logback.classic.turbo.MarkerFilter">
+        <Marker>PROFILER</Marker>
+        <!--<OnMatch>DENY</OnMatch>-->
+        <OnMatch>NEUTRAL</OnMatch>
+    </turboFilter>
+
     <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} [%thread] %X{sId} %X{cId} %-5level %logger{36} %M - %msg%n</pattern>
         </encoder>
     </appender>
-    <root level="debug">
+
+    <appender name="log" class="ch.qos.logback.core.FileAppender">
+        <File>target/test.log</File>
+        <Append>false</Append>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>%d{HH:mm:ss.SSS} [%thread] %X{sId} %X{cId} %-5level %class{36}:%L %M - %msg%n</Pattern>
+        </layout>
+    </appender>
+
+    <root level="error">
         <appender-ref ref="stdout"/>
     </root>
+    <logger name="com.networknt" level="debug">
+        <appender-ref ref="stdout"/>
+    </logger>
 </configuration>
