@@ -34,7 +34,7 @@ oauth:
       # client_id for authorization code grant flow. client_secret is in secret.yml
       client_id: f7d42348-c647-4efb-a52d-4c5787421e73
       # the web server uri that will receive the redirected authorization code
-      redirect_uri: http://localhost:3000/authorization
+      redirect_uri: https://localhost:3000/authorization
       # optional scope, default scope in the client registration will be used if not defined.
       scope:
       - petstore.r
