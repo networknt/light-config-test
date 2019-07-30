@@ -1,0 +1,293 @@
+# Handler middleware chain configuration
+---
+enabled: true
+
+#------------------------------------------------------------------------------
+# Support individual handler chains for each separate endpoint. It allows framework
+# handlers like health check, server info to bypass majority of the middleware handlers
+# and allows mixing multiple frameworks like OpenAPI and GraphQL in the same instance.
+#
+# handlers  --  list of handlers to be used across chains in this microservice
+#               including the routing handlers for ALL endpoints
+#           --  format: fully qualified handler class name@optional:given name
+# chains    --  allows forming of [1..N] chains, which could be wholly or
+#               used to form handler chains for each endpoint
+#               ex.: default chain below, reused partially across multiple endpoints
+# paths     --  list all the paths to be used for routing within the microservice
+#           ----  path: the URI for the endpoint (ex.: path: '/v1/pets')
+#           ----  method: the operation in use (ex.: 'post')
+#           ----  exec: handlers to be executed -- this element forms the list and
+#                       the order of execution for the handlers
+#
+# IMPORTANT NOTES:
+# - to avoid executing a handler, it has to be removed/commented out in the chain
+#   or change the enabled:boolean to false for a middleware handler configuration.
+# - all handlers, routing handler included, are to be listed in the execution chain
+# - for consistency, give a name to each handler; it is easier to refer to a name
+#   vs a fully qualified class name and is more elegant
+# - you can list in chains the fully qualified handler class names, and avoid using the
+#   handlers element altogether
+#------------------------------------------------------------------------------
+handlers:
+  # Light-framework cross-cutting concerns implemented in the microservice
+  - com.networknt.exception.ExceptionHandler@exception
+  # - com.networknt.metrics.MetricsHandler@metrics
+  - com.networknt.traceability.TraceabilityHandler@traceability
+  - com.networknt.correlation.CorrelationHandler@correlation
+  #Cors handler to handler post/put pre-flight
+  - com.networknt.cors.CorsHttpHandler@cors
+  # - com.networknt.openapi.OpenApiHandler@specification
+  # - com.networknt.openapi.JwtVerifyHandler@security
+  # - com.networknt.body.BodyHandler@body
+  # - com.networknt.audit.AuditHandler@audit
+  # - com.networknt.sanitizer.SanitizerHandler@sanitizer
+  # - com.networknt.openapi.ValidatorHandler@validator
+  # Header middleware to manipulate request and/or response headers before or after downstream server
+  - com.networknt.header.HeaderHandler@header
+  # Direct requests to named services based on the request path
+  - com.networknt.router.middleware.PathPrefixServiceHandler@path
+  - com.networknt.router.RouterHandler@router
+  - com.networknt.resource.VirtualHostHandler@virtual
+  # Customer business domain specific cross-cutting concerns handlers
+  # - com.example.validator.CustomizedValidator@custvalidator
+  # Framework endpoint handlers
+  - com.networknt.health.HealthGetHandler@health
+  - com.networknt.info.ServerInfoGetHandler@info
+  # - com.networknt.metrics.prometheus.PrometheusGetHandler@getprometheus
+  - com.networknt.auth.StatelessAuthHandler@stateless
+
+chains:
+  default:
+    - exception
+    #- metrics
+    - traceability
+    - correlation
+    - cors
+    - stateless
+    - header
+    - path
+    - router
+    #- specification
+    #- security
+    #- body
+    #- audit
+    #- sanitizer
+    #- validator
+  # for the oauth2/code service that needs to skip stateless.
+  code:
+    - exception
+    - traceability
+    - correlation
+    - cors
+    - header
+    - path
+    - router
+    
+paths:
+  - path: '/authorization'
+    method: 'GET'
+    exec:
+      - default
+  - path: '/faucet/{address}'
+    method: 'GET'
+    exec:
+      - default
+  - path: '/faucet/{address}'
+    method: 'POST'
+    exec:
+      - default
+  - path: '/faucet/{address}/{currency}'
+    method: 'GET'
+    exec:
+      - default
+
+  - path: '/api/webclient'
+    method: 'GET'
+    exec:
+      - default
+  - path: '/api/webclient'
+    method: 'POST'
+    exec:
+      - default
+
+  - path: '/portal/query'
+    method: 'GET'
+    exec:
+      - default
+  - path: '/portal/query'
+    method: 'POST'
+    exec:
+      - default
+  - path: '/portal/command'
+    method: 'POST'
+    exec:
+      - default
+
+  # oauth2-client
+  - path: '/oauth2/client'
+    method: 'post'
+    exec:
+      - default
+  - path: '/oauth2/client'
+    method: 'put'
+    exec:
+      - default
+  - path: '/oauth2/client'
+    method: 'get'
+    exec:
+      - default
+  - path: '/oauth2/client/{clientId}'
+    method: 'delete'
+    exec:
+      - default
+  - path: '/oauth2/client/{clientId}'
+    method: 'get'
+    exec:
+      - default
+  - path: '/oauth2/client/{clientId}/service'
+    method: 'delete'
+    exec:
+      - default
+  - path: '/oauth2/client/{clientId}/service'
+    method: 'get'
+    exec:
+      - default
+  - path: '/oauth2/client/{clientId}/service/{serviceId}'
+    method: 'post'
+    exec:
+      - default
+  - path: '/oauth2/client/{clientId}/service/{serviceId}'
+    method: 'delete'
+    exec:
+      - default
+  - path: '/oauth2/client/{clientId}/service/{serviceId}'
+    method: 'get'
+    exec:
+      - default
+  
+  # oauth2-code
+  - path: '/oauth2/code'
+    method: 'get'
+    exec:
+      - code
+  - path: '/oauth2/code'
+    method: 'post'
+    exec:
+      - code
+
+  # oauth2-key 
+  - path: '/oauth2/key/{keyId}'
+    method: 'get'
+    exec:
+      - default
+  # oauth2-refresh-token
+  - path: '/oauth2/refresh_token'
+    method: 'get'
+    exec:
+      - default
+  - path: '/oauth2/refresh_token/{refreshToken}'
+    method: 'delete'
+    exec:
+      - default
+  - path: '/oauth2/refresh_token/{refreshToken}'
+    method: 'get'
+    exec:
+      - default
+
+  # oauth2-service
+  - path: '/oauth2/service'
+    method: 'post'
+    exec:
+      - default
+  - path: '/oauth2/service'
+    method: 'put'
+    exec:
+      - default
+  - path: '/oauth2/service'
+    method: 'get'
+    exec:
+      - default
+  - path: '/oauth2/service/{serviceId}'
+    method: 'delete'
+    exec:
+      - default
+  - path: '/oauth2/service/{serviceId}'
+    method: 'get'
+    exec:
+      - default
+  - path: '/oauth2/service/{serviceId}/endpoint'
+    method: 'post'
+    exec:
+      - default
+  - path: '/oauth2/service/{serviceId}/endpoint'
+    method: 'delete'
+    exec:
+      - default
+  - path: '/oauth2/service/{serviceId}/endpoint'
+    method: 'get'
+    exec:
+      - default
+  # oauth2-token
+  - path: '/oauth2/token'
+    method: 'post'
+    exec:
+      - default
+  - path: '/oauth2/deref/{token}'
+    method: 'get'
+    exec:
+      - default
+  - path: '/oauth2/signing'
+    method: 'post'
+    exec:
+      - default
+
+  # oauth2-user
+  - path: '/oauth2/user'
+    method: 'get'
+    exec:
+      - default
+  - path: '/oauth2/user'
+    method: 'post'
+    exec:
+      - default
+  - path: '/oauth2/user'
+    method: 'put'
+    exec:
+      - default
+  - path: '/oauth2/user/{userId}'
+    method: 'delete'
+    exec:
+      - default
+  - path: '/oauth2/user/{userId}'
+    method: 'get'
+    exec:
+      - default
+  - path: '/oauth2/password/{userId}'
+    method: 'post'
+    exec:
+      - default
+
+  # - path: '/spec.yaml'
+  #   method: 'get'
+  #   exec:
+  #     - default
+  # - path: '/specui.html'
+  #   method: 'get'
+  #   exec:
+  #     - default
+
+  - path: '/health/com.networknt.router-0.1.0'
+    method: 'get'
+    exec:
+      - health
+
+  # In most case, the /server/info endpoint shouldn't be exposed. If it is, then it must be protected by OAuth 2.0 or Basic Auth
+  - path: '/server/info'
+    method: 'get'
+    exec:
+      - info
+
+
+defaultHandlers:
+  - cors
+  - virtual
