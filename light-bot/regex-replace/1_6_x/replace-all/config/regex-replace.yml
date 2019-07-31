@@ -37,42 +37,42 @@ checkout:
     - git@github.com:networknt/light-example-kotlin.git
     - git@github.com:networknt/light-docker.git
     # - git@github.com:networknt/light-doc.git
-    - git@github.com:networknt/light-config-test.git
-    - git@github.com:networknt/light-bot.git
-    - git@github.com:networknt/light-config-server.git
-    - git@github.com:networknt/microservices-framework-benchmark.git
-    - git@github.com:networknt/model-config.git
+    # - git@github.com:networknt/light-config-test.git
+    # - git@github.com:networknt/light-bot.git
+    # - git@github.com:networknt/light-config-server.git
+    # - git@github.com:networknt/microservices-framework-benchmark.git
+    # - git@github.com:networknt/model-config.git
     - git@github.com:networknt/light-portal.git
-    - git@github.com:networknt/react-schema-form.git
-    - git@github.com:networknt/light-workflow-4j.git
-    - git@github.com:networknt/swagger-bundler.git
-    - git@github.com:networknt/openapi-bundler.git
-    - git@github.com:networknt/http2client-benchmark.git
-    - git@github.com:networknt/json-schema-validator.git
-    - git@github.com:networknt/json-schema-validator-perftest.git
-    - git@github.com:networknt/microbenchmark.git
-    - git@github.com:networknt/react-schema-form-rc-select.git
-    - git@github.com:networknt/light-config-prod.git
-    - git@github.com:networknt/react-file-manager.git
-    - git@github.com:networknt/light-commerce.git
-    - git@github.com:networknt/light-cms.git
+    # - git@github.com:networknt/react-schema-form.git
+    # - git@github.com:networknt/light-workflow-4j.git
+    # - git@github.com:networknt/swagger-bundler.git
+    # - git@github.com:networknt/openapi-bundler.git
+    # - git@github.com:networknt/http2client-benchmark.git
+    # - git@github.com:networknt/json-schema-validator.git
+    # - git@github.com:networknt/json-schema-validator-perftest.git
+    # - git@github.com:networknt/microbenchmark.git
+    # - git@github.com:networknt/react-schema-form-rc-select.git
+    # - git@github.com:networknt/light-config-prod.git
+    # - git@github.com:networknt/react-file-manager.git
+    # - git@github.com:networknt/light-commerce.git
+    # - git@github.com:networknt/light-cms.git
     - git@github.com:networknt/light-consumer-4j.git
-    - git@github.com:networknt/http2client-benchmark.git
-    - git@github.com:networknt/microservices-framework-benchmark.git
+    # - git@github.com:networknt/http2client-benchmark.git
+    # - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
-    - git@github.com:networknt/maven-plugin.git
-    - git@github.com:networknt/light-monitor.git
-    - git@github.com:networknt/light-java-hybrid-example.git
+    # - git@github.com:networknt/maven-plugin.git
+    # - git@github.com:networknt/light-monitor.git
+    # - git@github.com:networknt/light-java-hybrid-example.git
     # Taiji Block Chain Projects
-    - git@github.com:networknt/taiji-blockchain.git
-    - git@github.com:taiji-chain/web-client.git
-    - git@github.com:taiji-chain/taiji-faucet.git
-    - git@198.55.49.186:steve/kafka-chain.git
-    - git@198.55.49.186:steve/genesis-block.git
-    - git@198.55.49.186:light-chain/chain-reader.git
-    - git@198.55.49.186:light-chain/chain-writer.git
-    - git@198.55.49.186:light-chain/kyc-reader.git
-    - git@198.55.49.186:light-chain/token-reader.git
+    # - git@github.com:networknt/taiji-blockchain.git
+    # - git@github.com:taiji-chain/web-client.git
+    # - git@github.com:taiji-chain/taiji-faucet.git
+    # - git@198.55.49.186:steve/kafka-chain.git
+    # - git@198.55.49.186:steve/genesis-block.git
+    # - git@198.55.49.186:light-chain/chain-reader.git
+    # - git@198.55.49.186:light-chain/chain-writer.git
+    # - git@198.55.49.186:light-chain/kyc-reader.git
+    # - git@198.55.49.186:light-chain/token-reader.git
     # repositories from lightapi.net
     # - git@198.55.49.186:lightapi/tokenization.git
 
