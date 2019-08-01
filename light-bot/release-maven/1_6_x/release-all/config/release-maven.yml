@@ -20,6 +20,8 @@ skip_checkin: false
 skip_release: false
 # skip upload release note to the github
 skip_release_note: false
+# skip deploy after the release
+skip_deploy: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   - branch: 1.6.x
@@ -71,4 +73,12 @@ release:
   - light-router
   - light-proxy
   - light-spring-boot
-
+deploy:
+  - light-codegen:
+    - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+    - scp codegen-fwk/target/codegen-fwk.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+    - scp codegen-web/target/codegen-web.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+    - scp light-eventuate-4j/target/light-eventuate-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+    - scp light-graphql-4j/target/light-graphql-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+    - scp light-hybrid-4j/target/light-hybrid-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+    - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service

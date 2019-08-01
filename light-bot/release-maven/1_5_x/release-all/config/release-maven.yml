@@ -20,6 +20,8 @@ skip_checkin: false
 skip_release: false
 # skip upload release note to the github
 skip_release_note: false
+# skip deploy after the release
+skip_deploy: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   - branch: 1.5.x
