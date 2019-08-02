@@ -22,6 +22,8 @@ skip_release: false
 skip_release_note: false
 # skip deploy after the release
 skip_deploy: false
+# skip upload release assets
+skip_upload: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   - branch: master
@@ -82,3 +84,11 @@ deploy:
     - scp light-graphql-4j/target/light-graphql-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
     - scp light-hybrid-4j/target/light-hybrid-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
     - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
+# upload additional assets to the GitHub release page
+upload:
+  - light-codegen:
+    - codegen-cli/target/codegen-cli.jar
+  - light-proxy:
+    - target/light-proxy.jar
+  - light-router:
+    - target/light-router.jar

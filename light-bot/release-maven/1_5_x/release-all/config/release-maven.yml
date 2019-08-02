@@ -21,7 +21,9 @@ skip_release: false
 # skip upload release note to the github
 skip_release_note: false
 # skip deploy after the release
-skip_deploy: false
+skip_deploy: true
+# skip upload release assets
+skip_upload: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   - branch: 1.5.x
@@ -73,3 +75,11 @@ release:
   - light-router
   - light-proxy
   - light-spring-boot
+# upload additional asserts to the GitHub release page.
+upload:
+  - light-codegen:
+    - codegen-cli/target/codegen-cli.jar
+  - light-proxy:
+    - target/light-proxy.jar
+  - light-router:
+    - target/light-router.jar

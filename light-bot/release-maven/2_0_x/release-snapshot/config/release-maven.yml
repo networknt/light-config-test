@@ -22,6 +22,8 @@ skip_release: false
 skip_release_note: true
 # skip deploy after the release
 skip_deploy: true
+# skip upload release assets
+skip_upload: true
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   - branch: master
