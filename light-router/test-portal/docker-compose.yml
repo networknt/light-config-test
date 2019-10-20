@@ -15,6 +15,7 @@ services:
     - ./lightapi/build:/lightapi/build
     - ./taiji/build:/taiji/build
     - ./signin/build:/signin/build
+    - ./networknt/build:/networknt/build
 #
 # Networks
 #
