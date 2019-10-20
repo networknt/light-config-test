@@ -309,10 +309,10 @@ replace:
   new_value: 2.9.10
 
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.jackson-databind>\d*\.\d*\.\d*</version.jackson-databind>
+  match: <version.jackson-databind>\d*\.\d*\.\d*\.\d*</version.jackson-databind>
   old_value: 2.9.9.3
   new_value: 2.9.10
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: jacksonDatabindVersion=\d*\.\d*\.\d*
+  match: jacksonDatabindVersion=\d*\.\d*\.\d*\.\d*
   old_value: 2.9.9.3
   new_value: 2.9.10
