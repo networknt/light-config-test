@@ -14,7 +14,7 @@ services:
     - ./webclient/build:/webclient/build
     - ./lightapi/build:/lightapi/build
     - ./taiji/build:/taiji/build
-
+    - ./networknt/build:/networknt/build
 #
 # Networks
 #
