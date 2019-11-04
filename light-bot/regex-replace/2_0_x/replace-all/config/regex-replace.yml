@@ -317,12 +317,31 @@ replace:
 #   old_value: 2.9.9.3
 #   new_value: 2.9.10
 
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
-  old_value: 1.0.22
-  new_value: 1.0.24
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 1.0.22
+#   new_value: 1.0.24
 
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.22
+#   new_value: 1.0.24
+
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+  old_value: 2.9.10
+  new_value: 2.10.0
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
-  old_value: 1.0.22
-  new_value: 1.0.24
+  match: jacksonVersion=\d*\.\d*\.\d*
+  old_value: 2.9.10
+  new_value: 2.10.0
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.jackson-databind>\d*\.\d*\.\d*</version.jackson-databind>
+  old_value: 2.9.10
+  new_value: 2.10.0
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: jacksonDatabindVersion=\d*\.\d*\.\d*
+  old_value: 2.9.10
+  new_value: 2.10.0
