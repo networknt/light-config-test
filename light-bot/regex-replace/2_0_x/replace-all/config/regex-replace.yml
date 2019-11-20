@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade jackson to 2.10.0'
+comment: 'upgrade undertow to 2.0.28-Final'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -327,21 +327,30 @@ replace:
 #   old_value: 1.0.22
 #   new_value: 1.0.24
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.9.10
+#   new_value: 2.10.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.9.10
+#   new_value: 2.10.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson-databind>\d*\.\d*\.\d*</version.jackson-databind>
+#   old_value: 2.9.10
+#   new_value: 2.10.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonDatabindVersion=\d*\.\d*\.\d*
+#   old_value: 2.9.10
+#   new_value: 2.10.0
 
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
-  old_value: 2.9.10
-  new_value: 2.10.0
-- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: jacksonVersion=\d*\.\d*\.\d*
-  old_value: 2.9.10
-  new_value: 2.10.0
+  match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+  old_value: "2.0.23.Final"
+  new_value: "2.0.28.Final"
 
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.jackson-databind>\d*\.\d*\.\d*</version.jackson-databind>
-  old_value: 2.9.10
-  new_value: 2.10.0
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: jacksonDatabindVersion=\d*\.\d*\.\d*
-  old_value: 2.9.10
-  new_value: 2.10.0
+  match: undertowVersion=\d*\.\d*\.\d*\.Final
+  old_value: "2.0.23.Final"
+  new_value: "2.0.28.Final"
