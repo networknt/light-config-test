@@ -1,12 +1,12 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven_1_6_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 1.6.10
+version: 1.6.11
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 1.6.9
+prev_tag: 1.6.10
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -48,7 +48,7 @@ checkout:
     - git@github.com:networknt/light-consumer-4j.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
-    # - git@github.com:networknt/light-config-server.git
+    - git@github.com:networknt/light-config-server.git
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-workflow-4j.git
     - git@github.com:networknt/light-spring-boot.git
