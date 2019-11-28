@@ -73,6 +73,15 @@ chains:
     #- audit
     #- sanitizer
     #- validator
+  # for taiji-block chain to skip stateless auth handler
+  noauth:
+    - exception
+    - traceability
+    - correlation
+    - cors
+    - header
+    - path
+    - router
   # for the oauth2/code service that needs to skip stateless.
   code:
     - exception
@@ -91,24 +100,24 @@ paths:
   - path: '/faucet/{address}'
     method: 'GET'
     exec:
-      - default
+      - noauth
   - path: '/faucet/{address}'
     method: 'POST'
     exec:
-      - default
+      - noauth
   - path: '/faucet/{address}/{currency}'
     method: 'GET'
     exec:
-      - default
+      - noauth
 
   - path: '/api/webclient'
     method: 'GET'
     exec:
-      - default
+      - noauth
   - path: '/api/webclient'
     method: 'POST'
     exec:
-      - default
+      - noauth
 
   - path: '/portal/query'
     method: 'GET'
