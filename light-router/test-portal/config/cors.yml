@@ -3,7 +3,8 @@ allowedOrigins:
   - https://signin.lightapi.net
   - https://lightapi.net
   - https://dev.lightapi.net
-  - https://localhost:3000
+  - http://localhost:3000
+  - http://networknt.github.io
 allowedMethods:
   - GET
   - POST
