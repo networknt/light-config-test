@@ -12,3 +12,5 @@ mapping:
   /oauth2/token: com.networknt.oauth2-token-1.0.0
   /oauth2/code: com.networknt.oauth2-code-1.0.0
   /oauth2/key: com.networknt.oauth2-key-1.0.0
+  /rdata: com.networknt.reference-1.0.0
+  
