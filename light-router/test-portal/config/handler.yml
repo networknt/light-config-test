@@ -119,6 +119,11 @@ paths:
     exec:
       - noauth
 
+  - path: '/rdata/{host}'
+    method: 'GET'
+    exec:
+      - noauth
+
   - path: '/portal/query'
     method: 'GET'
     exec:
