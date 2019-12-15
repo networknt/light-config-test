@@ -93,6 +93,34 @@ chains:
     - router
     
 paths:
+  - path: '/accounts'
+    method: 'GET'
+    exec:
+      - noauth
+  - path: '/accounts/{AccountId}'
+    method: 'GET'
+    exec:
+      - noauth
+  - path: '/balances/accounts/{AccountId}'
+    method: 'GET'
+    exec:
+      - noauth
+  - path: '/balances'
+    method: 'GET'
+    exec:
+      - noauth
+  - path: '/parties'
+    method: 'GET'
+    exec:
+      - noauth
+  - path: '/transactions/accounts/{AccountId}'
+    method: 'GET'
+    exec:
+      - noauth
+  - path: '/transactions'
+    method: 'GET'
+    exec:
+      - noauth
   - path: '/authorization'
     method: 'GET'
     exec:
