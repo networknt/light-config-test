@@ -5,13 +5,16 @@ services:
     image: networknt/com.networknt.mqproducer-1.0.0
     ports:
     - "8443:8443"
+    volumes:
+    - ./producer:/config
     networks:
     - localnet
-
   consumer:
     image: networknt/com.networknt.mqconsumer-1.0.0
     ports:
     - "8444:8444"
+    volumes:
+    - ./consumer:/config
     networks:
     - localnet
 networks:

@@ -1,0 +1,26 @@
+# If the MQ component is enabled or not
+enabled: true
+# If TLS is used to connect to the MQ server
+loadTrustStore: false
+# The Truststore that contains the MQ client certificate
+trustStore: mq.truststore
+# The password that is used to open the truststore
+trustStorePass: passw0rd
+# Queue Manager
+queueManager: QM1
+# Channel
+channel: DEV.APP.SVRCONN
+# Connection host
+host: 192.168.1.144
+# Connection port
+port: 1414
+# user
+user: app
+# password
+password: passw0rd
+# Cipher Suite used for the TLS
+# cipherSuite: SSL_RSA_WITH_AES_128_CBC_SHA256
+# Default Queue Name
+queue: DEV.QUEUE.1
+# Default Topic Name
+topic: dev/
