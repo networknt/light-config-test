@@ -75,6 +75,10 @@ checkout:
     # - git@198.55.49.186:light-chain/token-reader.git
     # repositories from lightapi.net
     # - git@198.55.49.186:lightapi/tokenization.git
+  - branch: master
+    repository:
+    # Some of the repository stay at Java 8 due to some dependencies.
+    - git@198.55.49.186:networknt/light-mq.git
 
 # regex replacement from old value to new value during a full text search on certain patterns
 # of file names.
