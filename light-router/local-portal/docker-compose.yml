@@ -8,6 +8,9 @@ services:
     - localnet
     ports:
     - 8443:8443
+    extra_hosts:
+    - "lightapi.net:192.168.1.144"
+    - "signin.lightapi.net:192.168.1.144"
     volumes:
     - ./config:/config
     - ./faucet/build:/faucet/build
