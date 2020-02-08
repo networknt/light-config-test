@@ -1,0 +1,13 @@
+hosts:
+  - domain: signin.lightapi.net
+    path: /
+    #base: /home/steve/networknt/light-config-test/light-router/local-portal/signin/build
+    base: /signin/build
+    transferMinSize: 10245760
+    directoryListingEnabled: false
+  - domain: ob.lightapi.net
+    path: /
+    #base: /home/steve/networknt/light-config-test/light-router/local-portal/signin/build
+    base: /ob/build
+    transferMinSize: 10245760
+    directoryListingEnabled: false

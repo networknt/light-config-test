@@ -1,0 +1,24 @@
+version: '2'
+
+services:
+
+  light-router:
+    image:  networknt/light-router:latest
+    networks:
+    - localnet
+    ports:
+    - 8443:8443
+    extra_hosts:
+    - "signin.lightapi.net:192.168.1.144"
+    - "ob.lightapi.net:192.168.1.144"
+    volumes:
+    - ./config:/config
+    - ./signin/build:/signin/build
+    - ./ob/build:/ob/build
+#
+# Networks
+#
+networks:
+    localnet:
+        # driver: bridge
+        external: true

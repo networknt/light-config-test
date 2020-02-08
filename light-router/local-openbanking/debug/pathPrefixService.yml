@@ -1,0 +1,25 @@
+# Whether to enable PathPrefixServiceHandler
+enabled: true
+
+# mapping from request path prefixes to serviceIds
+mapping:
+  # Light OAuth 2.0 APIs
+  /oauth2/service: com.networknt.oauth2-service-1.0.0
+  /oauth2/user: com.networknt.oauth2-user-1.0.0
+  /oauth2/password: com.networknt.oauth2-user-1.0.0
+  /oauth2/client: com.networknt.oauth2-client-1.0.0
+  /oauth2/token: com.networknt.oauth2-token-1.0.0
+  /oauth2/code: com.networknt.oauth2-code-1.0.0
+  /oauth2/key: com.networknt.oauth2-key-1.0.0
+  # Open Banking APIs
+  /accounts: com.networknt.ob.accounts-3.1.2
+  /balances: com.networknt.ob.balances-3.1.2
+  /beneficiaries: com.networknt.ob.beneficiaries-3.1.2
+  /direct-debits: com.networknt.ob.directDebits-3.1.2
+  /offers: com.networknt.ob.offers-3.1.2
+  /parties: com.networknt.ob.parties-3.1.2
+  /products: com.networknt.ob.products-3.1.2
+  /scheduled-payments: com.networknt.ob.scheduledPayments-3.1.2
+  /standing-orders: com.networknt.ob.standingOrders-3.1.2
+  /statements: com.networknt.ob.statements-3.1.2
+  /transactions: com.networknt.ob.transactions-3.1.2

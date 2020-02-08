@@ -1,0 +1,9 @@
+enabled: true
+allowedOrigins:
+  - http://localhost:3000
+  - https://signin.lightapi.net
+  - https://ob.lightapi.net
+allowedMethods:
+  - GET
+  - POST
+  - PUT
