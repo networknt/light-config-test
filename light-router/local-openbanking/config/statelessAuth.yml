@@ -7,11 +7,11 @@
 # Indicate if the StatelessAuthHandler is enabled or not
 enabled: true
 # Once Authorization is done, which path the UI is redirected.
-redirectUri: https://localhost:3000/authorization
+redirectUri: /
 # Request path for the authorization code handling.
 authPath: /authorization
 # Cookie domain
-cookieDomain: lightapi.net
+cookieDomain: ob.lightapi.net
 # Cookie path
 cookiePath: /
 # Cookie maxAge

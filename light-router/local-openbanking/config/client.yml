@@ -32,7 +32,7 @@ oauth:
       # token endpoint for authorization code grant
       uri: "/oauth2/token"
       # client_id for authorization code grant flow. client_secret is in secret.yml
-      client_id: f7d42348-c647-4efb-a52d-4c5787421e75
+      client_id: f7d42348-c647-4efb-a52d-4c5787421e74
       # client_secret for the authorization code flow. For 2.0.x the secret can be set here. 
       client_secret: f6h1FTI8Q3-7UScPZDzfXA
       # the web server uri that will receive the redirected authorization code

@@ -237,11 +237,11 @@ paths:
   - path: '/accounts'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/accounts/{AccountId}'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/balances'
     method: 'get'
     exec:
