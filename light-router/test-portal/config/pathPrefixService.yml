@@ -13,8 +13,3 @@ mapping:
   /oauth2/code: com.networknt.oauth2-code-1.0.0
   /oauth2/key: com.networknt.oauth2-key-1.0.0
   /rdata: com.networknt.reference-1.0.0
-  /accounts: com.networknt.ob.accounts-3.1.2
-  /balances: com.networknt.ob.balances-3.1.2
-  /parties: com.networknt.ob.parties-3.1.2
-  /transactions: com.networknt.ob.transactions-3.1.2
-  
