@@ -245,66 +245,66 @@ paths:
   - path: '/balances'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/balances/{AccountId}'
     method: 'get'
     exec:
-      - code
+      - default
 
   - path: '/beneficiaries'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/beneficiaries/{AccountId}'
     method: 'get'
     exec:
-      - code
+      - default
   
   - path: '/direct-debits'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/direct-debits/{AccountId}'
     method: 'get'
     exec:
-      - code
+      - default
 
   - path: '/offers'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/offers/{AccountId}'
     method: 'get'
     exec:
-      - code
+      - default
 
   - path: '/parties'
     method: 'get'
     exec:
-      - code
+      - default
 
   - path: '/products'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/products/{AccountId}'
     method: 'get'
     exec:
-      - code
+      - default
 
   - path: '/scheduled-payments'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/scheduled-payments/{AccountId}'
     method: 'get'
     exec:
-      - code
+      - default
 
   - path: '/standing-orders'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/standing-orders/{AccountId}'
     method: 'get'
     exec:
@@ -313,32 +313,32 @@ paths:
   - path: '/statements'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/statements/{AccountId}'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/statements/{AccountId}/{StatementId}'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/statements/{AccountId}/{StatementId}/file'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/statements/{AccountId}/{StatementId}/transactions'
     method: 'get'
     exec:
-      - code
+      - default
 
   - path: '/transactions'
     method: 'get'
     exec:
-      - code
+      - default
   - path: '/transactions/{AccountId}'
     method: 'get'
     exec:
-      - code
+      - default
 
 
   # - path: '/spec.yaml'

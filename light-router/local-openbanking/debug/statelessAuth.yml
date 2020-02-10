@@ -11,7 +11,6 @@ redirectUri: /
 # Request path for the authorization code handling.
 authPath: /authorization
 # Cookie domain
-# cookieDomain: lightapi.net
 cookieDomain: ob.lightapi.net
 # Cookie path
 cookiePath: /
