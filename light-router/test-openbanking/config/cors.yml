@@ -1,0 +1,8 @@
+enabled: true
+allowedOrigins:
+  - https://signin.lightapi.net
+  - https://ob.lightapi.net
+allowedMethods:
+  - GET
+  - POST
+  - PUT
