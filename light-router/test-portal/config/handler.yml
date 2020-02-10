@@ -96,7 +96,7 @@ paths:
   - path: '/authorization'
     method: 'GET'
     exec:
-      - noauth
+      - default
   - path: '/faucet/{address}'
     method: 'GET'
     exec:
