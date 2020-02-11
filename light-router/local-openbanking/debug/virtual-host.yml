@@ -1,8 +1,8 @@
 hosts:
-  - domain: signin.lightapi.net
+  - domain: obsignin.lightapi.net
     path: /
-    base: /home/steve/networknt/light-config-test/light-router/local-openbanking/signin/build
-    #base: /signin/build
+    base: /home/steve/networknt/light-config-test/light-router/local-openbanking/obsignin/build
+    #base: /obsignin/build
     transferMinSize: 10245760
     directoryListingEnabled: false
   - domain: ob.lightapi.net
