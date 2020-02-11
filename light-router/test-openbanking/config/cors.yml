@@ -1,6 +1,6 @@
 enabled: true
 allowedOrigins:
-  - https://signin.lightapi.net
+  - https://obsignin.lightapi.net
   - https://ob.lightapi.net
 allowedMethods:
   - GET
