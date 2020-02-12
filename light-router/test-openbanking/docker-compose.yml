@@ -4,18 +4,19 @@ services:
 
   light-router:
     image:  networknt/light-router:latest
-    networks:
-    - localnet
+    # networks:
+    # - localnet
     ports:
     - 8443:8443
     volumes:
     - ./config:/config
     - ./obsignin/build:/obsignin/build
     - ./ob/build:/ob/build
+    network_mode: host
 #
 # Networks
 #
-networks:
-    localnet:
-        # driver: bridge
-        external: true
+# networks:
+#     localnet:
+#         # driver: bridge
+#         external: true
