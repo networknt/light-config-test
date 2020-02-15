@@ -32,7 +32,7 @@ singletons:
   - com.networknt.oauth.auth.MarketPlaceAuthenticator
 - javax.sql.DataSource:
   - com.zaxxer.hikari.HikariDataSource:
-      jdbcUrl: jdbc:mysql://192.168.1.144:3306/oauth2?useSSL=false&disableMariaDbDriver
+      jdbcUrl: jdbc:mysql://oauth.lightapi.net:3306/oauth2?useSSL=false&disableMariaDbDriver
       username: mysqluser
       password: mysqlpw
       maximumPoolSize: 2

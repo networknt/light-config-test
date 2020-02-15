@@ -17,9 +17,11 @@
         - "6881:6881"
       volumes:
         - ./light-oauth2/mysql/config/oauth2-code:/config
+      extra_hosts:
+        - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -34,6 +36,8 @@
         - "6882:6882"
       volumes:
         - ./light-oauth2/mysql/config/oauth2-token:/config
+      extra_hosts:
+        - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
       network_mode: host    
@@ -51,6 +55,8 @@
         - "6883:6883"
       volumes:
         - ./light-oauth2/mysql/config/oauth2-service:/config
+      extra_hosts:
+        - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
       network_mode: host    
@@ -68,6 +74,8 @@
         - "6884:6884"
       volumes:
         - ./light-oauth2/mysql/config/oauth2-client:/config
+      extra_hosts:
+        - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
       network_mode: host    
@@ -85,6 +93,8 @@
         - "6885:6885"
       volumes:
         - ./light-oauth2/mysql/config/oauth2-user:/config
+      extra_hosts:
+        - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
       network_mode: host    
@@ -102,6 +112,8 @@
         - "6886:6886"
       volumes:
         - ./light-oauth2/mysql/config/oauth2-key:/config
+      extra_hosts:
+        - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
       network_mode: host    
@@ -119,6 +131,8 @@
         - "6887:6887"
       volumes:
         - ./light-oauth2/mysql/config/oauth2-refresh-token:/config
+      extra_hosts:
+        - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
       network_mode: host    
