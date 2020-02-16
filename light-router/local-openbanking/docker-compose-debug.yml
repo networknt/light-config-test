@@ -3,7 +3,7 @@ version: '2'
 services:
 
   light-router:
-    image:  networknt/light-router:latest
+    image:  networknt/light-router:debug
     ports:
     - 8443:8443
     extra_hosts:

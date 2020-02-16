@@ -17,6 +17,9 @@ tls:
 oauth:
   # OAuth 2.0 token endpoint configuration
   token:
+    cache:
+      #capacity of caching TOKENs
+      capacity: 200
     # The scope token will be renewed automatically 1 minutes before expiry
     tokenRenewBeforeExpired: 60000
     # if scope token is expired, we need short delay so that we can retry faster.
@@ -27,6 +30,8 @@ oauth:
     # server_url: https://lightapi.net:6882
     # token service unique id for OAuth 2.0 provider
     serviceId: com.networknt.oauth2-token-1.0.0
+    # set to true if the oauth2 provider supports HTTP/2
+    enableHttp2: true
     # the following section defines uri and parameters for authorization code grant type
     authorization_code:
       # token endpoint for authorization code grant

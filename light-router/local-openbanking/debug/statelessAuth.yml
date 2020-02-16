@@ -7,9 +7,13 @@
 # Indicate if the StatelessAuthHandler is enabled or not
 enabled: true
 # Once Authorization is done, which path the UI is redirected.
-redirectUri: /
+redirectUri: https://ob.lightapi.net
+# An optional redirect uri if the user deny or cancel the authorization on the Consent page. Default to redirectUri if missing.
+denyUri: https://ob.lightapi.net
 # Request path for the authorization code handling.
 authPath: /authorization
+# Request path for the deny authorization handling to remove HttpOnly access-token and other cookies
+denyPath: /deny
 # Cookie domain
 cookieDomain: ob.lightapi.net
 # Cookie path
