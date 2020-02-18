@@ -13,10 +13,4 @@ services:
     - ./obsignin/build:/obsignin/build
     - ./ob/build:/ob/build
     network_mode: host
-#
-# Networks
-#
-# networks:
-#     localnet:
-#         # driver: bridge
-#         external: true
+
