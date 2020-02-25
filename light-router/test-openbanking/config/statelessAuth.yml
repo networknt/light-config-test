@@ -13,7 +13,7 @@ denyUri: https://ob.lightapi.net
 # Request path for the authorization code handling.
 authPath: /authorization
 # Request path for the deny authorization handling to remove HttpOnly access-token and other cookies
-denyPath: /deny
+logoutPath: /logout
 # Cookie domain
 cookieDomain: ob.lightapi.net
 # Cookie path
