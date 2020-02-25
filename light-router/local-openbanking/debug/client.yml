@@ -41,7 +41,7 @@ oauth:
       # client_secret for the authorization code flow. For 2.0.x the secret can be set here. 
       client_secret: f6h1FTI8Q3-7UScPZDzfXA
       # the web server uri that will receive the redirected authorization code
-      redirect_uri: https://ob.lightapi.net/authorization
+      # redirect_uri: https://ob.lightapi.net/authorization
       # optional scope, default scope in the client registration will be used if not defined.
       # scope:
       # - petstore.r
