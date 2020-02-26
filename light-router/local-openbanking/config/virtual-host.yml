@@ -5,9 +5,9 @@ hosts:
     base: /obsignin/build
     transferMinSize: 10245760
     directoryListingEnabled: false
-  - domain: ob.lightapi.net
-    path: /
-    #base: /home/steve/networknt/light-config-test/light-router/local-openbanking/ob/build
-    base: /ob/build
-    transferMinSize: 10245760
-    directoryListingEnabled: false
+  # - domain: ob.lightapi.net
+  #   path: /
+  #   #base: /home/steve/networknt/light-config-test/light-router/local-openbanking/ob/build
+  #   base: /ob/build
+  #   transferMinSize: 10245760
+  #   directoryListingEnabled: false

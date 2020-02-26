@@ -12,5 +12,5 @@ services:
     volumes:
     - ./config:/config
     - ./obsignin/build:/obsignin/build
-    - ./ob/build:/ob/build
+    # - ./ob/build:/ob/build
     network_mode: host
