@@ -245,15 +245,15 @@ paths:
   - path: '/oauth2/token'
     method: 'post'
     exec:
-      - default
+      - noauth
   - path: '/oauth2/deref/{token}'
     method: 'get'
     exec:
-      - default
+      - noauth
   - path: '/oauth2/signing'
     method: 'post'
     exec:
-      - default
+      - noauth
 
   # oauth2-user
   - path: '/oauth2/user'
