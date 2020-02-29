@@ -77,46 +77,46 @@ chains:
 paths:
 
   # oauth2-client
-  - path: '/oauth2/client'
-    method: 'post'
-    exec:
-      - default
-  - path: '/oauth2/client'
-    method: 'put'
-    exec:
-      - default
-  - path: '/oauth2/client'
-    method: 'get'
-    exec:
-      - default
-  - path: '/oauth2/client/{clientId}'
-    method: 'delete'
-    exec:
-      - default
-  - path: '/oauth2/client/{clientId}'
-    method: 'get'
-    exec:
-      - default
-  - path: '/oauth2/client/{clientId}/service'
-    method: 'delete'
-    exec:
-      - default
-  - path: '/oauth2/client/{clientId}/service'
-    method: 'get'
-    exec:
-      - default
-  - path: '/oauth2/client/{clientId}/service/{serviceId}'
-    method: 'post'
-    exec:
-      - default
-  - path: '/oauth2/client/{clientId}/service/{serviceId}'
-    method: 'delete'
-    exec:
-      - default
-  - path: '/oauth2/client/{clientId}/service/{serviceId}'
-    method: 'get'
-    exec:
-      - default
+  # - path: '/oauth2/client'
+  #   method: 'post'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/client'
+  #   method: 'put'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/client'
+  #   method: 'get'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/client/{clientId}'
+  #   method: 'delete'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/client/{clientId}'
+  #   method: 'get'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/client/{clientId}/service'
+  #   method: 'delete'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/client/{clientId}/service'
+  #   method: 'get'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/client/{clientId}/service/{serviceId}'
+  #   method: 'post'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/client/{clientId}/service/{serviceId}'
+  #   method: 'delete'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/client/{clientId}/service/{serviceId}'
+  #   method: 'get'
+  #   exec:
+  #     - default
   
   # oauth2-code
   - path: '/oauth2/code'
@@ -148,38 +148,38 @@ paths:
       - default
 
   # oauth2-service
-  - path: '/oauth2/service'
-    method: 'post'
-    exec:
-      - default
-  - path: '/oauth2/service'
-    method: 'put'
-    exec:
-      - default
-  - path: '/oauth2/service'
-    method: 'get'
-    exec:
-      - default
-  - path: '/oauth2/service/{serviceId}'
-    method: 'delete'
-    exec:
-      - default
-  - path: '/oauth2/service/{serviceId}'
-    method: 'get'
-    exec:
-      - default
-  - path: '/oauth2/service/{serviceId}/endpoint'
-    method: 'post'
-    exec:
-      - default
-  - path: '/oauth2/service/{serviceId}/endpoint'
-    method: 'delete'
-    exec:
-      - default
-  - path: '/oauth2/service/{serviceId}/endpoint'
-    method: 'get'
-    exec:
-      - default
+  # - path: '/oauth2/service'
+  #   method: 'post'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/service'
+  #   method: 'put'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/service'
+  #   method: 'get'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/service/{serviceId}'
+  #   method: 'delete'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/service/{serviceId}'
+  #   method: 'get'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/service/{serviceId}/endpoint'
+  #   method: 'post'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/service/{serviceId}/endpoint'
+  #   method: 'delete'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/service/{serviceId}/endpoint'
+  #   method: 'get'
+  #   exec:
+  #     - default
   # oauth2-token
   - path: '/oauth2/token'
     method: 'post'
@@ -195,30 +195,30 @@ paths:
       - default
 
   # oauth2-user
-  - path: '/oauth2/user'
-    method: 'get'
-    exec:
-      - default
-  - path: '/oauth2/user'
-    method: 'post'
-    exec:
-      - default
-  - path: '/oauth2/user'
-    method: 'put'
-    exec:
-      - default
-  - path: '/oauth2/user/{userId}'
-    method: 'delete'
-    exec:
-      - default
-  - path: '/oauth2/user/{userId}'
-    method: 'get'
-    exec:
-      - default
-  - path: '/oauth2/password/{userId}'
-    method: 'post'
-    exec:
-      - default
+  # - path: '/oauth2/user'
+  #   method: 'get'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/user'
+  #   method: 'post'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/user'
+  #   method: 'put'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/user/{userId}'
+  #   method: 'delete'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/user/{userId}'
+  #   method: 'get'
+  #   exec:
+  #     - default
+  # - path: '/oauth2/password/{userId}'
+  #   method: 'post'
+  #   exec:
+  #     - default
 
   - path: '/health/com.networknt.router-0.1.0'
     method: 'get'

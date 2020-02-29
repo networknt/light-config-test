@@ -3,11 +3,7 @@ enabled: true
 
 # mapping from request path prefixes to serviceIds
 mapping:
-  # Light OAuth 2.0 APIs
-  /oauth2/service: com.networknt.oauth2-service-1.0.0
-  /oauth2/user: com.networknt.oauth2-user-1.0.0
-  /oauth2/password: com.networknt.oauth2-user-1.0.0
-  /oauth2/client: com.networknt.oauth2-client-1.0.0
+  # Light OAuth 2.0 APIs that is exposed as SaaS
   /oauth2/token: com.networknt.oauth2-token-1.0.0
   /oauth2/code: com.networknt.oauth2-code-1.0.0
   /oauth2/key: com.networknt.oauth2-key-1.0.0
