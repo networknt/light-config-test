@@ -1,0 +1,15 @@
+
+version: '2'
+
+services:
+
+  light-router:
+    image:  networknt/light-router:latest
+    ports:
+    - 8443:8443
+    extra_hosts:
+    - "login.lightapi.net:192.168.1.144"
+    volumes:
+    - ./config:/config
+    - ./login/build:/login/build
+    network_mode: host
