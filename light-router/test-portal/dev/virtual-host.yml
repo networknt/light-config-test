@@ -1,7 +1,0 @@
-hosts:
-  - domain: dev.lightapi.net
-    path: /
-    #base: /home/steve/networknt/light-config-test/light-router/local-portal/lightapi/build
-    base: /lightapi/build
-    transferMinSize: 10245760
-    directoryListingEnabled: false

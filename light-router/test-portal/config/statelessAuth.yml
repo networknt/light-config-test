@@ -7,11 +7,15 @@
 # Indicate if the StatelessAuthHandler is enabled or not
 enabled: true
 # Once Authorization is done, which path the UI is redirected.
-redirectUri: /
+redirectUri: https://localhost:3000
+# An optional redirect uri if the user deny or cancel the authorization on the Consent page. Default to redirectUri if missing.
+denyUri: https://localhost:3000
 # Request path for the authorization code handling.
 authPath: /authorization
+# Request path for the deny authorization handling to remove HttpOnly access-token and other cookies
+logoutPath: /logout
 # Cookie domain
-cookieDomain: lightapi.net
+cookieDomain: localhost
 # Cookie path
 cookiePath: /
 # Cookie maxAge
