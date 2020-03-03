@@ -64,13 +64,13 @@ chains:
     # - cors
     - header
     # - path
-    - proxy
     - specification
     - security
     #- body
     #- audit
     #- sanitizer
     - validator
+    - proxy
 
 paths:
   - path: '/v1/getData'
