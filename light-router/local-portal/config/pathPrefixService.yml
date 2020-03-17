@@ -3,8 +3,7 @@ enabled: true
 
 # mapping from request path prefixes to serviceIds
 mapping:
-  /faucet: io.taiji.faucet-1.0.0
-  /api/webclient: io.taiji.server-1.0.0
+  # Light OAuth 2.0 APIs
   /oauth2/service: com.networknt.oauth2-service-1.0.0
   /oauth2/user: com.networknt.oauth2-user-1.0.0
   /oauth2/password: com.networknt.oauth2-user-1.0.0
@@ -12,3 +11,4 @@ mapping:
   /oauth2/token: com.networknt.oauth2-token-1.0.0
   /oauth2/code: com.networknt.oauth2-code-1.0.0
   /oauth2/key: com.networknt.oauth2-key-1.0.0
+  /r: com.networknt.reference-1.0.0

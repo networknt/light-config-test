@@ -1,8 +1,8 @@
 enabled: true
 allowedOrigins:
-  - http://localhost:3000
-  - https://signin.lightapi.net
-  - https://lightapi.net
+  - https://dev.signin.lightapi.net
+  - https://dev.lightapi.net
+  - https://localhost:3000
 allowedMethods:
   - GET
   - POST

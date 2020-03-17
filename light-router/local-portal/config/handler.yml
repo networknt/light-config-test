@@ -88,25 +88,8 @@ paths:
     method: 'GET'
     exec:
       - default
-  - path: '/faucet/{address}'
+  - path: '/logout'
     method: 'GET'
-    exec:
-      - default
-  - path: '/faucet/{address}'
-    method: 'POST'
-    exec:
-      - default
-  - path: '/faucet/{address}/{currency}'
-    method: 'GET'
-    exec:
-      - default
-
-  - path: '/api/webclient'
-    method: 'GET'
-    exec:
-      - default
-  - path: '/api/webclient'
-    method: 'POST'
     exec:
       - default
 
