@@ -1,11 +1,10 @@
 # This is the configuration file for Http2Client.
 ---
-bufferSize: 32
 # Settings for TLS
 tls:
   # if the server is using self-signed certificate, this need to be false. If true, you have to use CA signed certificate
   # or load truststore that contains the self-signed cretificate.
-  verifyHostname: true
+  verifyHostname: false
   # trust store contains certifictes that server needs. Enable if tls is used.
   loadTrustStore: true
   # trust store location can be specified here or system properties javax.net.ssl.trustStore and password javax.net.ssl.trustStorePassword
@@ -18,6 +17,9 @@ tls:
 oauth:
   # OAuth 2.0 token endpoint configuration
   token:
+    cache:
+      #capacity of caching TOKENs
+      capacity: 200
     # The scope token will be renewed automatically 1 minutes before expiry
     tokenRenewBeforeExpired: 60000
     # if scope token is expired, we need short delay so that we can retry faster.
@@ -25,21 +27,25 @@ oauth:
     # if scope token is not expired but in renew windown, we need slow retry delay.
     earlyRefreshRetryDelay: 4000
     # token server url. The default port number for token service is 6882.
-    server_url: https://localhost:6882
+    # server_url: https://lightapi.net
     # token service unique id for OAuth 2.0 provider
     serviceId: com.networknt.oauth2-token-1.0.0
+    # set to true if the oauth2 provider supports HTTP/2
+    enableHttp2: true
     # the following section defines uri and parameters for authorization code grant type
     authorization_code:
       # token endpoint for authorization code grant
       uri: "/oauth2/token"
       # client_id for authorization code grant flow. client_secret is in secret.yml
       client_id: f7d42348-c647-4efb-a52d-4c5787421e72
+      # client_secret for the authorization code flow. For 2.0.x the secret can be set here. 
+      client_secret: f6h1FTI8Q3-7UScPZDzfXA
       # the web server uri that will receive the redirected authorization code
-      redirect_uri: https://localhost:8080/authorization_code
+      redirect_uri: https://lightapi.net/authorization
       # optional scope, default scope in the client registration will be used if not defined.
-      scope:
-      - petstore.r
-      - petstore.w
+      # scope:
+      # - petstore.r
+      # - petstore.w
     # the following section defines uri and parameters for client credentials grant type
     client_credentials:
       # token endpoint for client credentials grant
@@ -47,9 +53,9 @@ oauth:
       # client_id for client credentials grant flow. client_secret is in secret.yml
       client_id: f7d42348-c647-4efb-a52d-4c5787421e72
       # optional scope, default scope in the client registration will be used if not defined.
-      scope:
-      - petstore.r
-      - petstore.w
+      # scope:
+      # - petstore.r
+      # - petstore.w
   # light-oauth2 key distribution endpoint configuration
   key:
     # key distribution server url

@@ -1,9 +1,10 @@
-Virutal host configuration for light-portal entry point on portal VM. This is only for the dev environment. Production configuration is not open sourced. 
+Virutal host configuration for light-portal entry point on portal VM. 
 
-The following domains are supported. 
+The following domains are supported as virtual hosts.
 
 lightapi.net
 faucet.taiji.io
 taiji.io
 demo.taiji.io
 
+The deployed server is portal.

@@ -54,6 +54,7 @@ handlers:
   - com.networknt.health.HealthGetHandler@health
   - com.networknt.info.ServerInfoGetHandler@info
   # - com.networknt.metrics.prometheus.PrometheusGetHandler@getprometheus
+  - com.networknt.auth.StatelessAuthHandler@stateless
 
 chains:
   default:
@@ -62,6 +63,7 @@ chains:
     - traceability
     - correlation
     - cors
+    - stateless
     - header
     - path
     - router
@@ -71,29 +73,61 @@ chains:
     #- audit
     #- sanitizer
     #- validator
-
+  # for taiji-block chain to skip stateless auth handler
+  noauth:
+    - exception
+    - traceability
+    - correlation
+    - cors
+    - header
+    - path
+    - router
+  # for the oauth2/code service that needs to skip stateless.
+  code:
+    - exception
+    - traceability
+    - correlation
+    - cors
+    - header
+    - path
+    - router
+    
 paths:
-  - path: '/faucet/{address}'
+  - path: '/authorization'
     method: 'GET'
     exec:
       - default
+  - path: '/logout'
+    method: 'GET'
+    exec:
+      - default
+
+  - path: '/faucet/{address}'
+    method: 'GET'
+    exec:
+      - noauth
   - path: '/faucet/{address}'
     method: 'POST'
     exec:
-      - default
+      - noauth
   - path: '/faucet/{address}/{currency}'
     method: 'GET'
     exec:
-      - default
+      - noauth
 
   - path: '/api/webclient'
     method: 'GET'
     exec:
-      - default
+      - noauth
   - path: '/api/webclient'
     method: 'POST'
     exec:
-      - default
+      - noauth
+
+  - path: '/r/data'
+    method: 'GET'
+    exec:
+      - noauth
 
   - path: '/portal/query'
     method: 'GET'
@@ -154,11 +188,11 @@ paths:
   - path: '/oauth2/code'
     method: 'get'
     exec:
-      - default
+      - code
   - path: '/oauth2/code'
     method: 'post'
     exec:
-      - default
+      - code
 
   # oauth2-key 
   - path: '/oauth2/key/{keyId}'
@@ -274,4 +308,5 @@ paths:
 
 
 defaultHandlers:
+  - cors
   - virtual

@@ -4,8 +4,7 @@ services:
 
   light-router:
     image:  networknt/light-router:latest
-    networks:
-    - localnet
+    network_mode: host
     ports:
     - 8443:8443
     volumes:
@@ -14,11 +13,6 @@ services:
     - ./webclient/build:/webclient/build
     - ./lightapi/build:/lightapi/build
     - ./taiji/build:/taiji/build
+    - ./signin/build:/signin/build
     - ./networknt/build:/networknt/build
-#
-# Networks
-#
-networks:
-    localnet:
-        # driver: bridge
-        external: true
+
