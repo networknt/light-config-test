@@ -43,8 +43,7 @@ CREATE TABLE client (
   authenticate_class VARCHAR(256),
   deref_client_id VARCHAR(36), -- only this client calls AS to deref token to JWT for external client type
   owner_id VARCHAR(32) NOT NULL,
-  PRIMARY KEY (client_id),
-  FOREIGN KEY (owner_id) REFERENCES user_profile(user_id)
+  PRIMARY KEY (client_id)
 )
 ENGINE=INNODB;
 
@@ -56,8 +55,7 @@ CREATE TABLE service (
   service_desc VARCHAR(1024),
   scope VARCHAR(1024),
   owner_id VARCHAR(32) NOT NULL,
-  PRIMARY KEY (service_id),
-  FOREIGN KEY (owner_id) REFERENCES user_profile(user_id)
+  PRIMARY KEY (service_id)
 )
 ENGINE=INNODB;
 
