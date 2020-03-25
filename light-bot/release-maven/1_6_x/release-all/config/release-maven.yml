@@ -35,10 +35,6 @@ checkout:
     - git@github.com:networknt/light-graphql-4j.git
     - git@github.com:networknt/light-hybrid-4j.git
     - git@github.com:networknt/light-codegen.git
-    - git@github.com:networknt/light-eventuate-4j.git
-    - git@github.com:networknt/light-tram-kafka.git
-    - git@github.com:networknt/light-tram-4j.git
-    - git@github.com:networknt/light-saga-4j.git
     - git@github.com:networknt/light-session-4j.git
     - git@github.com:networknt/light-spa-4j.git
     - git@github.com:networknt/light-proxy.git
@@ -65,10 +61,6 @@ release:
   - light-graphql-4j
   - light-hybrid-4j
   - light-codegen
-  - light-eventuate-4j
-  - light-tram-kafka
-  - light-tram-4j
-  - light-saga-4j
   - light-session-4j
   - light-spa-4j
   - light-consumer-4j
@@ -80,7 +72,6 @@ deploy:
     - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
     - scp codegen-fwk/target/codegen-fwk.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
     - scp codegen-web/target/codegen-web.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
-    - scp light-eventuate-4j/target/light-eventuate-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
     - scp light-graphql-4j/target/light-graphql-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
     - scp light-hybrid-4j/target/light-hybrid-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
     - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service

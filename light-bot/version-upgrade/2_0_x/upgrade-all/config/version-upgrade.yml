@@ -27,10 +27,6 @@ checkout:
     - git@github.com:networknt/light-graphql-4j.git
     - git@github.com:networknt/light-hybrid-4j.git
     - git@github.com:networknt/light-codegen.git
-    - git@github.com:networknt/light-eventuate-4j.git
-    - git@github.com:networknt/light-tram-kafka.git
-    - git@github.com:networknt/light-tram-4j.git
-    - git@github.com:networknt/light-saga-4j.git
     - git@github.com:networknt/light-session-4j.git
     - git@github.com:networknt/light-spa-4j.git
     - git@github.com:networknt/light-proxy.git
@@ -78,10 +74,6 @@ maven:
   - light-graphql-4j
   - light-hybrid-4j
   - light-codegen
-  - light-eventuate-4j
-  - light-tram-kafka
-  - light-tram-4j
-  - light-saga-4j
   - light-session-4j
   - light-spa-4j
   - light-proxy
@@ -130,27 +122,7 @@ version:
   # light-rest-4j kotlin
   - path: light-rest-4j/src/main/resources/templates/restkotlin/gradleProperties.rocker.raw
     match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
-  # light-eventuate-4j openapi
-  - path: light-eventuate-4j/src/main/resources/templates/eventuate/rest/openapi/pom.xml.rocker.raw
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  # light-eventuate-4j hybrid
-  - path: light-eventuate-4j/src/main/resources/templates/eventuate/hybrid/server/pom.xml.rocker.raw
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  - path: light-eventuate-4j/src/main/resources/templates/eventuate/hybrid/service/pom.xml.rocker.raw
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
-  light-eventuate-4j:
-  - path: pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  light-tram-kafka:
-  - path: pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  light-tram-4j:
-  - path: pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  light-saga-4j:
-  - path: pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   light-session-4j:
   - path: pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
@@ -217,22 +189,6 @@ version:
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
   light-example-4j:
-  # eventuate framework examples
-  # eventuate account management
-  - path: eventuate/account-management/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  # eventuate todolist
-  - path: eventuate/todo-list/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  - path: eventuate/todo-list/rest-command/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  - path: eventuate/todo-list/hybrid-command/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  - path: eventuate/todo-list/rest-query/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  - path: eventuate/todo-list/hybrid-query/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-
   # discovery
   # discovery api_a
   - path: discovery/api_a/consul-tls/pom.xml
@@ -413,32 +369,6 @@ version:
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   # hybrid service
   - path: hybrid/service/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  
-
-  # light-tram-4j framework
-  # tram todolist
-  - path: tram/light-tram-todolist/multi-module/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  # tram todolist command
-  - path: tram/light-tram-todolist/multi-module/tram-todo-command/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  # tram todolist view
-  - path: tram/light-tram-todolist/multi-module/tram-todo-view/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  # tram todolist single module
-  - path: tram/light-tram-todolist/single-module/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-
-  # light-saga-4j framework
-  # saga customers orders
-  - path: saga/light-saga-cutomers-and-orders/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  # saga customers orders order service
-  - path: saga/light-saga-cutomers-and-orders/order-service/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  # saga customers orders customer service
-  - path: saga/light-saga-cutomers-and-orders/customer-service/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
   # light-rest-4j framework

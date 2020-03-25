@@ -31,12 +31,7 @@ checkout:
     - git@github.com:networknt/light-oauth2.git
     - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-portal.git
-    - git@github.com:networknt/light-eventuate-4j.git
-    - git@github.com:networknt/light-tram-kafka.git
-    - git@github.com:networknt/light-tram-4j.git
     - git@github.com:networknt/light-example-4j.git
-    # - git@github.com:networknt/light-codegen.git
-    # - git@github.com:networknt/light-docker.git
 # maven build
 maven:
   - light-proxy
@@ -44,24 +39,18 @@ maven:
   - light-oauth2
   - light-tokenization
   - light-portal
-  - light-eventuate-4j
-  - light-tram-kafka
-  - light-tram-4j
   - light-example-4j/discovery/api_a/kubernetes
   - light-example-4j/discovery/api_b/kubernetes
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
-  # - light-codegen
 
 # update changelog in master, merge it to develop and publish to github.com
-# please note that light-eventuate-4j and light-tram-4j are released in release-maven task.
 release:
   - light-proxy
   - light-router
   - light-oauth2
   - light-tokenization
   - light-portal
-  # - light-codegen
 
 # build docker image and push to docker hub
 docker:
@@ -82,8 +71,3 @@ docker:
   - light-example-4j/discovery/api_b/kubernetes
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
-  # need to shutdown docker-compose-integration-test.yml before building the following two images.
-  # moved to release-cdc sub task.
-  # - light-eventuate-4j/eventuate-cdc-server
-  # - light-tram-4j/tram-cdc-mysql-server
-  # - light-docker/light-codegen

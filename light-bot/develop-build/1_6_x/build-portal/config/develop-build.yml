@@ -37,7 +37,6 @@ checkout:
       - git@github.com:networknt/light-hybrid-4j.git
       - git@github.com:networknt/openapi-parser.git
       - git@github.com:networknt/light-codegen.git
-      - git@github.com:networknt/light-eventuate-4j.git
       - git@github.com:networknt/light-portal.git
 build:
   buildSetOne:
@@ -48,7 +47,6 @@ build:
     - light-hybrid-4j
     - openapi-parser
     - light-codegen
-    - light-eventuate-4j
     - light-portal
     - light-portal/api-certification
     - light-portal/oauth-playground

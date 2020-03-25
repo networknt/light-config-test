@@ -39,10 +39,6 @@ checkout:
       - git@github.com:networknt/light-graphql-4j.git
       - git@github.com:networknt/light-hybrid-4j.git
       - git@github.com:networknt/light-codegen.git
-      - git@github.com:networknt/light-eventuate-4j.git
-      - git@github.com:networknt/light-tram-kafka.git
-      - git@github.com:networknt/light-tram-4j.git
-      - git@github.com:networknt/light-saga-4j.git
       - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-proxy.git
@@ -69,10 +65,6 @@ build:
     - light-graphql-4j
     - light-hybrid-4j
     - light-codegen
-    - light-eventuate-4j
-    - light-tram-kafka
-    - light-tram-4j
-    - light-saga-4j
     - light-session-4j
     - light-spa-4j
     - light-proxy
@@ -127,14 +119,6 @@ build:
     - light-example-4j/graphql/mutation-idl
     - light-example-4j/graphql/relaytodo
     - light-example-4j/graphql/subscription
-    # light-eventuate-4j
-    - light-example-4j/eventuate/account-management
-    - light-example-4j/eventuate/todo-list
-    # light-tram-4j
-    # - light-example-4j/tram/light-tram-todolist/single-module
-    - light-example-4j/tram/light-tram-todolist/multi-module
-    # light-saga-4j
-    # - light-example-4j/saga/light-saga-cutomers-and-orders
     # middleware-performance
     - light-example-4j/middleware-performance/service-config
     - light-example-4j/middleware-performance/endpoint-individual
