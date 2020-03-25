@@ -30,6 +30,8 @@ singletons:
   - com.networknt.oauth.auth.DefaultAuthenticator
 - com.networknt.oauth.auth.Authenticator<com.networknt.oauth.auth.MarketPlaceAuth>:
   - com.networknt.oauth.auth.MarketPlaceAuthenticator
+- com.networknt.oauth.auth.Authenticator<com.networknt.oauth.auth.LightPortalAuth>:
+  - com.networknt.oauth.auth.LightPortalAuthenticator
 # DataSource mapping
 - javax.sql.DataSource:
   - com.zaxxer.hikari.HikariDataSource:
