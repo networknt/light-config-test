@@ -6,8 +6,12 @@ description: Cors Http Handler
 enabled: false
 allowedOrigins:
 - http://localhost:3000
+- https://localhost:3000
 - https://lightapi.net
 - https://signin.lightapi.net
+- https://dev.lightapi.net
+- https://dev.signin.lightapi.net
+- https://dev.oauth.lightapi.net
 allowedMethods:
 - GET
 - POST
