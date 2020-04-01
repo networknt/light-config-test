@@ -1,12 +1,12 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasedocker_2_0_x
 # new upgraded version. This needs to be changed for every release.
-version: 2.0.11
+version: 2.0.12
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.0.10
+prev_tag: 2.0.11
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # skip checkout if you know all latest code has been checkout in the previous build
@@ -30,7 +30,7 @@ checkout:
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
     - git@github.com:networknt/light-tokenization.git
-    - git@github.com:networknt/light-portal.git
+    # - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
     # - git@github.com:networknt/light-codegen.git
     # - git@github.com:networknt/light-docker.git
@@ -40,7 +40,7 @@ maven:
   - light-router
   - light-oauth2
   - light-tokenization
-  - light-portal
+  # - light-portal
   - light-example-4j/discovery/api_a/kubernetes
   - light-example-4j/discovery/api_b/kubernetes
   - light-example-4j/discovery/api_c/kubernetes
@@ -53,7 +53,7 @@ release:
   - light-router
   - light-oauth2
   - light-tokenization
-  - light-portal
+  # - light-portal
   # - light-codegen
 
 # build docker image and push to docker hub
@@ -70,9 +70,9 @@ docker:
   - light-oauth2/user
   - light-oauth2/provider
   - light-tokenization
-  - light-portal/hybrid-command
-  - light-portal/hybrid-query
-  - light-portal/codegen-server
+  # - light-portal/hybrid-command
+  # - light-portal/hybrid-query
+  # - light-portal/codegen-server
   - light-example-4j/discovery/api_a/kubernetes
   - light-example-4j/discovery/api_b/kubernetes
   - light-example-4j/discovery/api_c/kubernetes

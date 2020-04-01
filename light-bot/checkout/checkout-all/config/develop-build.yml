@@ -51,4 +51,7 @@ checkout:
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:networknt/light-spring-boot.git
+      - git@github.com:networknt/covid-19.git
+      - git@github.com:networknt/light-kafka.git
+      - git@github.com:networknt/light-reference.git
       
