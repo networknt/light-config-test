@@ -56,6 +56,7 @@ checkout:
     # - git@github.com:networknt/http2client-benchmark.git
     # - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
+    - git@github.com:networknt/light-tram-kafka.git
     # - git@github.com:networknt/maven-plugin.git
     # - git@github.com:networknt/light-monitor.git
     # - git@github.com:networknt/light-java-hybrid-example.git

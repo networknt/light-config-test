@@ -54,4 +54,5 @@ checkout:
       - git@github.com:networknt/covid-19.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-reference.git
+      - git@github.com:networknt/light-tram-kafka.git
       

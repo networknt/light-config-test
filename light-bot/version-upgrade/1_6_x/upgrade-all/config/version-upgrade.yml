@@ -42,6 +42,8 @@ checkout:
     - git@github.com:networknt/http2client-benchmark.git
     - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
+    - git@github.com:networknt/light-tram-kafka.git
+
   # some repositories stay with Java 8 for some reason and they have code in master
   - branch: master
     repository:
@@ -65,6 +67,7 @@ maven:
   - light-consumer-4j
   - light-config-server
   - light-spring-boot
+  - light-tram-kafka
   - light-portal/hybrid-command
   - light-portal/hybrid-query
   - light-mq
@@ -134,6 +137,10 @@ version:
   light-spring-boot:
   - path: pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-tram-kafka:
+  - path: pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
   light-portal:
   - path: pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
