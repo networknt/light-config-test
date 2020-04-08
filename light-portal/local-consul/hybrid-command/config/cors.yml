@@ -1,0 +1,12 @@
+description: Cors Http Handler
+enabled: true
+allowedOrigins:
+- https://localhost:3000
+- https://lightapi.net
+- https://dev.lightapi.net
+- https://dev.covid.lightapi.net
+allowedMethods:
+- GET
+- POST
+- PUT
+- DELETE
