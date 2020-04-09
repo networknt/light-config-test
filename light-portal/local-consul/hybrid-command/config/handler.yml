@@ -70,6 +70,10 @@ paths:
     method: 'POST'
     exec:
       - default
+  - path: '/portal/command'
+    method: 'GET'
+    exec:
+      - default
 
   - path: '/health/com.networknt.portal.hybrid.command-1.0.0'
     method: 'get'
