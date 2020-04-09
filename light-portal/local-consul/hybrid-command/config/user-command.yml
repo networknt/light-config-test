@@ -4,7 +4,7 @@ sendEmail: true
 # The event topic for user-command
 topic: portal-event
 # The host of the server that accepts the email confirmation
-cmdHost: https://localhost:8441
+cmdHost: https://localhost:8439
 # The command path of the server that accepts the email confirmation
 cmdPath: /portal/command?cmd=
 # The host for password reset. This is usually the login view site.
