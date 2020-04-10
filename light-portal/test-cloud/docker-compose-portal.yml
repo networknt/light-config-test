@@ -1,0 +1,40 @@
+version: "2"
+#
+# Services
+#
+services:
+  hybrid-command:
+    image: networknt/portal-hybrid-command:2.0.13
+    volumes:
+      - ./hybrid-command/config:/config
+      - ./hybrid-command/service:/service
+    network_mode: host
+    ports:
+      - 8439:8439
+
+  # hybrid-query0:
+  #   image: networknt/portal-hybrid-query:2.0.13-slim
+  #   volumes:
+  #     - ./hybrid-query/config0:/config
+  #     - ./hybrid-query/service:/service
+  #   network_mode: host
+  #   ports:
+  #     - 8440:8440
+
+  # hybrid-query1:
+  #   image: networknt/portal-hybrid-query:2.0.13-slim
+  #   volumes:
+  #     - ./hybrid-query/config1:/config
+  #     - ./hybrid-query/service:/service
+  #   network_mode: host
+  #   ports:
+  #     - 8441:8441
+
+  # hybrid-query2:
+  #   image: networknt/portal-hybrid-query:2.0.13-slim
+  #   volumes:
+  #     - ./hybrid-query/config2:/config
+  #     - ./hybrid-query/service:/service
+  #   network_mode: host
+  #   ports:
+  #     - 8442:8442
