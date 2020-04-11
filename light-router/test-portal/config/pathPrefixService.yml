@@ -12,3 +12,5 @@ mapping:
   /oauth2/code: com.networknt.oauth2-code-1.0.0
   /oauth2/key: com.networknt.oauth2-key-1.0.0
   /r: com.networknt.reference-1.0.0
+  /portal/command: com.networknt.portal.hybrid.command-1.0.0
+  /portal/query: com.networknt.portal.hybrid.query-1.0.0
