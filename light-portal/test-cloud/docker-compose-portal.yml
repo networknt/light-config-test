@@ -5,6 +5,8 @@ version: "2"
 services:
   hybrid-command:
     image: networknt/portal-hybrid-command:2.0.13
+    environment:
+      - NOREPLAY_EMAIL_PASSWORD=${NOREPLAY_EMAIL_PASSWORD}
     volumes:
       - ./hybrid-command/config:/config
       - ./hybrid-command/service:/service
