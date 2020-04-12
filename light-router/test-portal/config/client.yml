@@ -27,9 +27,9 @@ oauth:
     # if scope token is not expired but in renew windown, we need slow retry delay.
     earlyRefreshRetryDelay: 4000
     # token server url. The default port number for token service is 6882.
-    # server_url: https://dev.lightapi.net
+    server_url: https://dev.oauth.lightapi.net
     # token service unique id for OAuth 2.0 provider
-    serviceId: com.networknt.oauth2-token-1.0.0
+    # serviceId: com.networknt.oauth2-token-1.0.0
     # set to true if the oauth2 provider supports HTTP/2
     enableHttp2: true
     # the following section defines uri and parameters for authorization code grant type

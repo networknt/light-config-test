@@ -20,3 +20,6 @@ reuseXForwarded: false
 
 # Max Connection Retries
 maxConnectionRetries: 3
+# Whitelist of hosts for static routing. Use Regex to do wildcard match
+hostWhitelist:
+  - dev.oauth.lightapi.net
