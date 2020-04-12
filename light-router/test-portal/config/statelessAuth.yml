@@ -15,7 +15,7 @@ authPath: /authorization
 # Request path for the deny authorization handling to remove HttpOnly access-token and other cookies
 logoutPath: /logout
 # Cookie domain
-cookieDomain: localhost
+cookieDomain: dev.lightapi.net
 # Cookie path
 cookiePath: /
 # Cookie maxAge
