@@ -3,14 +3,16 @@ version: "2"
 # Services
 #
 services:
-  # hybrid-command:
-  #   image: networknt/portal-hybrid-command:2.0.13
-  #   volumes:
-  #     - ./hybrid-command/config:/config
-  #     - ./hybrid-command/service:/service
-  #   network_mode: host
-  #   ports:
-  #     - 8439:8439
+  hybrid-command:
+    image: networknt/portal-hybrid-command:2.0.13
+    environment:
+      - NOREPLAY_EMAIL_PASSWORD=${NOREPLAY_EMAIL_PASSWORD}
+    volumes:
+      - ./hybrid-command/config:/config
+      - ./hybrid-command/service:/service
+    network_mode: host
+    ports:
+      - 8439:8439
 
   # hybrid-query0:
   #   image: networknt/portal-hybrid-query:2.0.13-slim
