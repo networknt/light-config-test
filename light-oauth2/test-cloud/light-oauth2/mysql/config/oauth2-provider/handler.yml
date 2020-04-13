@@ -1,8 +1,17 @@
 
 
 # Handler middleware chain configuration
----
+#----------------------------------------
 enabled: true
+
+# Configuration for the LightHttpHandler. The handler is the base class  for all middleware, server and health handlers
+# set the Status Object in the AUDIT_INFO, for auditing purposes
+# default, if not set:false
+auditOnError: ${handler.auditOnError:false}
+
+# set the StackTrace in the AUDIT_INFO, for auditing purposes
+# default, if not set:false
+auditStackTrace: ${handler.auditStackTrace:false}
 
 #------------------------------------------------------------------------------
 # Support individual handler chains for each separate endpoint. It allows framework
@@ -34,101 +43,68 @@ handlers:
   # Light-framework cross-cutting concerns implemented in the microservice
   - com.networknt.exception.ExceptionHandler@exception
   - com.networknt.metrics.MetricsHandler@metrics
-  # - com.networknt.traceability.TraceabilityHandler@traceability
-  # - com.networknt.correlation.CorrelationHandler@correlation
-  - com.networknt.jaeger.tracing.JaegerHandler@jaeger
+  - com.networknt.traceability.TraceabilityHandler@traceability
+  - com.networknt.correlation.CorrelationHandler@correlation
   - com.networknt.openapi.OpenApiHandler@specification
   - com.networknt.openapi.JwtVerifyHandler@security
   - com.networknt.body.BodyHandler@body
   - com.networknt.audit.AuditHandler@audit
-  # - com.networknt.sanitizer.SanitizerHandler@sanitizer
+  # DumpHandler is to dump detail request/response info to log, useful for troubleshooting but not suggested to use in production due to it may lower the performance
+  # - com.networknt.dump.DumpHandler@dump
+  - com.networknt.sanitizer.SanitizerHandler@sanitizer
   - com.networknt.openapi.ValidatorHandler@validator
   # Customer business domain specific cross-cutting concerns handlers
   # - com.example.validator.CustomizedValidator@custvalidator
   # Framework endpoint handlers
   - com.networknt.health.HealthGetHandler@health
   - com.networknt.info.ServerInfoGetHandler@info
+  - com.networknt.specification.SpecDisplayHandler@spec
+  - com.networknt.specification.SpecSwaggerUIHandler@swaggerui
   # - com.networknt.metrics.prometheus.PrometheusGetHandler@getprometheus
   # Business Handlers
-  - com.networknt.oauth.client.handler.Oauth2ClientPostHandler
-  - com.networknt.oauth.client.handler.Oauth2ClientPutHandler
-  - com.networknt.oauth.client.handler.Oauth2ClientGetHandler
-  - com.networknt.oauth.client.handler.Oauth2ClientClientIdDeleteHandler
-  - com.networknt.oauth.client.handler.Oauth2ClientClientIdGetHandler
-  - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceDeleteHandler
-  - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceGetHandler
-  - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceServiceIdPostHandler
-  - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceServiceIdDeleteHandler
-  - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceServiceIdGetHandler
+  - com.networknt.oauth.provider.handler.Oauth2ProviderPostHandler
+  - com.networknt.oauth.provider.handler.Oauth2ProviderPutHandler
+  - com.networknt.oauth.provider.handler.Oauth2ProviderGetHandler
+  - com.networknt.oauth.provider.handler.Oauth2ProviderProviderIdDeleteHandler
 
 
 chains:
   default:
     - exception
     - metrics
-    # - traceability
-    # - correlation
-    - jaeger
+    - traceability
+    - correlation
     - specification
     - security
     - body
     - audit
-    # - sanitizer
+#    - dump
+    - sanitizer
     - validator
 
 paths:
-  - path: '/oauth2/client'
-    method: 'post'
+  - path: '/oauth2/provider'
+    method: 'POST'
     exec:
       - default
-      - com.networknt.oauth.client.handler.Oauth2ClientPostHandler
-  - path: '/oauth2/client'
-    method: 'put'
+      - com.networknt.oauth.provider.handler.Oauth2ProviderPostHandler
+  - path: '/oauth2/provider'
+    method: 'PUT'
     exec:
       - default
-      - com.networknt.oauth.client.handler.Oauth2ClientPutHandler
-  - path: '/oauth2/client'
-    method: 'get'
+      - com.networknt.oauth.provider.handler.Oauth2ProviderPutHandler
+  - path: '/oauth2/provider'
+    method: 'GET'
     exec:
       - default
-      - com.networknt.oauth.client.handler.Oauth2ClientGetHandler
-  - path: '/oauth2/client/{clientId}'
-    method: 'delete'
+      - com.networknt.oauth.provider.handler.Oauth2ProviderGetHandler
+  - path: '/oauth2/provider/{providerId}'
+    method: 'DELETE'
     exec:
       - default
-      - com.networknt.oauth.client.handler.Oauth2ClientClientIdDeleteHandler
-  - path: '/oauth2/client/{clientId}'
-    method: 'get'
-    exec:
-      - default
-      - com.networknt.oauth.client.handler.Oauth2ClientClientIdGetHandler
-  - path: '/oauth2/client/{clientId}/service'
-    method: 'delete'
-    exec:
-      - default
-      - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceDeleteHandler
-  - path: '/oauth2/client/{clientId}/service'
-    method: 'get'
-    exec:
-      - default
-      - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceGetHandler
-  - path: '/oauth2/client/{clientId}/service/{serviceId}'
-    method: 'post'
-    exec:
-      - default
-      - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceServiceIdPostHandler
-  - path: '/oauth2/client/{clientId}/service/{serviceId}'
-    method: 'delete'
-    exec:
-      - default
-      - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceServiceIdDeleteHandler
-  - path: '/oauth2/client/{clientId}/service/{serviceId}'
-    method: 'get'
-    exec:
-      - default
-      - com.networknt.oauth.client.handler.Oauth2ClientClientIdServiceServiceIdGetHandler
+      - com.networknt.oauth.provider.handler.Oauth2ProviderProviderIdDeleteHandler
 
-  - path: '/health/com.networknt.oauth2-client-1.0.0'
+  - path: '/health/${server.serviceId:com.networknt.oauth2-provider-1.0.0}'
     method: 'get'
     exec:
       - health
@@ -138,3 +114,12 @@ paths:
     exec:
       - info
 
+
+  - path: '/spec.yaml'
+    method: 'get'
+    exec:
+      - spec
+  - path: '/specui.html'
+    method: 'get'
+    exec:
+      - swaggerui
