@@ -32,8 +32,9 @@ handlers:
   # Light-framework cross-cutting concerns implemented in the microservice
   - com.networknt.exception.ExceptionHandler@exception
   # - com.networknt.metrics.MetricsHandler@metrics
-  - com.networknt.traceability.TraceabilityHandler@traceability
-  - com.networknt.correlation.CorrelationHandler@correlation
+  # - com.networknt.traceability.TraceabilityHandler@traceability
+  # - com.networknt.correlation.CorrelationHandler@correlation
+  - com.networknt.jaeger.tracing.JaegerHandler@jaeger
   #Cors handler to handler post/put pre-flight
   - com.networknt.cors.CorsHttpHandler@cors
   # - com.networknt.openapi.OpenApiHandler@specification
@@ -60,8 +61,9 @@ chains:
   default:
     - exception
     #- metrics
-    - traceability
-    - correlation
+    # - traceability
+    # - correlation
+    - jaeger
     - cors
     - stateless
     - header

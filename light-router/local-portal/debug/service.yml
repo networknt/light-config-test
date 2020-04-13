@@ -16,3 +16,5 @@ singletons:
   - com.networknt.balance.RoundRobinLoadBalance
 - com.networknt.cluster.Cluster:
   - com.networknt.cluster.LightCluster
+- com.networknt.server.StartupHookProvider:
+  - com.networknt.jaeger.tracing.JaegerStartupHookProvider
