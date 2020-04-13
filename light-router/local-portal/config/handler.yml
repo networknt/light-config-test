@@ -78,8 +78,9 @@ chains:
   # for the oauth2/code service that needs to skip stateless.
   code:
     - exception
-    - traceability
-    - correlation
+    # - traceability
+    # - correlation
+    - jaeger
     - cors
     - header
     - path
