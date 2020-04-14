@@ -9,8 +9,8 @@ allowedOrigins:
 - https://lightapi.net
 - https://signin.lightapi.net
 - https://dev.lightapi.net
-- https://dev.signin.lightapi.net
-- https://dev.oauth.lightapi.net
+- https://devsignin.lightapi.net
+- https://devoauth.lightapi.net
 allowedMethods:
 - GET
 - POST

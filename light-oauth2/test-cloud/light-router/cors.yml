@@ -4,7 +4,7 @@ allowedOrigins:
   - https://login.lightapi.net
   - https://ob.lightapi.net
   - https://dev.lightapi.net
-  - https://dev.signin.lightapi.net
+  - https://devsignin.lightapi.net
   - https://localhost:3000
 allowedMethods:
   - GET

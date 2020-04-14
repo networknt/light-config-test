@@ -5,7 +5,7 @@ hosts:
     base: /lightapi/build
     transferMinSize: 10245760
     directoryListingEnabled: false
-  - domain: dev.signin.lightapi.net
+  - domain: devsignin.lightapi.net
     path: /
     #base: /home/steve/networknt/light-config-test/light-router/local-portal/signin/build
     base: /signin/build

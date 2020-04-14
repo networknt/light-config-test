@@ -8,6 +8,6 @@ cmdHost: https://dev.lightapi.net
 # The command path of the server that accepts the email confirmation
 cmdPath: /portal/command?cmd=
 # The host for password reset. This is usually the login view site.
-resetHost: https://dev.signin.lightapi.net
+resetHost: https://devsignin.lightapi.net
 # Admin user email for the bootstrap
 admin: stevehu@gmail.com
