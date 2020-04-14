@@ -30,7 +30,7 @@
             <pattern>%d{HH:mm:ss.SSS} [%thread] %X{sId} %X{cId} %-5level %logger{36} %M - %msg%n</pattern>
         </encoder>
     </appender>
-    <root level="trace">
+    <root level="error">
         <appender-ref ref="stdout"/>
     </root>
 </configuration>

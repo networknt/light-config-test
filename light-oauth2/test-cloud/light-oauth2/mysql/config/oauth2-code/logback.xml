@@ -34,7 +34,7 @@
         <appender-ref ref="stdout"/>
     </root>
 
-    <logger name="com.networknt" level="debug" additivity="false">
+    <logger name="com.networknt" level="error" additivity="false">
         <appender-ref ref="stdout"/>
     </logger>
 
