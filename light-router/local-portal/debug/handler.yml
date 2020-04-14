@@ -108,6 +108,10 @@ paths:
     method: 'POST'
     exec:
       - default
+  - path: '/portal/command'
+    method: 'GET'
+    exec:
+      - default
 
   # oauth2-client
   - path: '/oauth2/client'
