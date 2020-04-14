@@ -11,7 +11,7 @@ valueDeSerializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
 sessionTimeout: 30000
 autoOffsetreset: earliest
 enableAutoCommit: false
-bootstrapServers: 38.113.162.51:9092
+bootstrapServers: 38.113.162.53:9092
 topic: portal-event
 # every server instance will have a unique transactionId
 transactionId: T1000

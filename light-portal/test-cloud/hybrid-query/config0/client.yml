@@ -57,7 +57,7 @@ oauth:
       # client_secret for authorization code grant flow.
       client_secret: ${client.tokenAcClientSecret:f6h1FTI8Q3-7UScPZDzfXA}
       # the web server uri that will receive the redirected authorization code
-      redirect_uri: ${client.tokenAcRedirectUri:https://dev.lightapi.net/authorization_code}
+      redirect_uri: ${client.tokenAcRedirectUri:https://dev.lightapi.net/authorization}
       # optional scope, default scope in the client registration will be used if not defined.
       # If there are scopes specified here, they will be verified against the registered scopes.
       # scope:
@@ -158,7 +158,7 @@ request:
   # reset the circuit after this timeout in millisecond
   resetTimeout: ${client.resetTimeout:7000}
   # if open tracing is enable. traceability, correlation and metrics should not be in the chain if opentracing is used.
-  injectOpenTracing: ${client.injectOpenTracing:false}
+  injectOpenTracing: ${client.injectOpenTracing:true}
   # the flag to indicate whether http/2 is enabled when calling client.callService()
   enableHttp2: ${client.enableHttp2:true}
   # the maximum host capacity of connection pool

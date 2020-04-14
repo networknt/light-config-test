@@ -17,13 +17,11 @@ singletons:
   - com.networknt.balance.RoundRobinLoadBalance
 - com.networknt.cluster.Cluster:
   - com.networknt.cluster.LightCluster
-# HandlerProvider implementation
-- com.networknt.handler.HandlerProvider:
-  - com.networknt.rpc.router.RpcRouter
 # StartupHookProvider implementations, there are one to many and they are called in the same sequence defined.
 - com.networknt.server.StartupHookProvider:
   # registry all service handlers by from annotations
   - com.networknt.rpc.router.RpcStartupHookProvider
+  - com.networknt.jaeger.tracing.JaegerStartupHookProvider
   # User Query Startup Hook
   - net.lightapi.portal.user.query.UserQueryStartup
   # Covid Query Startup Hook

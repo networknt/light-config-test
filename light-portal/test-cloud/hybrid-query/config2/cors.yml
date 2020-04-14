@@ -3,7 +3,6 @@ enabled: true
 allowedOrigins:
 - https://localhost:3000
 - https://dev.lightapi.net
-- https://dev.covid-19.lightapi.net
 allowedMethods:
 - GET
 - POST
