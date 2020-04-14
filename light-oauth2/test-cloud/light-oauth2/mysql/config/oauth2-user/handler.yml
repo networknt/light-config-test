@@ -34,13 +34,14 @@ handlers:
   # Light-framework cross-cutting concerns implemented in the microservice
   - com.networknt.exception.ExceptionHandler@exception
   - com.networknt.metrics.MetricsHandler@metrics
-  - com.networknt.traceability.TraceabilityHandler@traceability
-  - com.networknt.correlation.CorrelationHandler@correlation
+  # - com.networknt.traceability.TraceabilityHandler@traceability
+  # - com.networknt.correlation.CorrelationHandler@correlation
+  - com.networknt.jaeger.tracing.JaegerHandler@jaeger
   - com.networknt.openapi.OpenApiHandler@specification
   - com.networknt.openapi.JwtVerifyHandler@security
   - com.networknt.body.BodyHandler@body
   - com.networknt.audit.AuditHandler@audit
-  - com.networknt.sanitizer.SanitizerHandler@sanitizer
+  # - com.networknt.sanitizer.SanitizerHandler@sanitizer
   - com.networknt.openapi.ValidatorHandler@validator
   # Customer business domain specific cross-cutting concerns handlers
   # - com.example.validator.CustomizedValidator@custvalidator
@@ -61,13 +62,14 @@ chains:
   default:
     - exception
     - metrics
-    - traceability
-    - correlation
+    # - traceability
+    # - correlation
+    - jaeger
     - specification
     - security
     - body
     - audit
-    - sanitizer
+    # - sanitizer
     - validator
 
 paths:

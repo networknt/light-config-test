@@ -3,9 +3,8 @@
 # from another domain/host. You may need to update allowedOrigins.
 ---
 description: Cors Http Handler
-enabled: false
+enabled: true
 allowedOrigins:
-- http://localhost:3000
 - https://localhost:3000
 - https://lightapi.net
 - https://signin.lightapi.net
