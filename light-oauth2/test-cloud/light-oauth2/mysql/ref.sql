@@ -145,9 +145,26 @@ INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VAL
 -- INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Liaoning', 'province', 'Liaoning', 500, 'Y');
 
 
-INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Toronto', 'city', 'Toroton', 100, 'Y');
-INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Mississauga', 'city', 'Mississauga', 200, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Barrie', 'city', 'Barrie', 110, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Brampton', 'city', 'Brampton', 120, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Burlington', 'city', 'Burlington', 130, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Cambridge', 'city', 'Cambridge', 140, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Guelph', 'city', 'Guelph', 150, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Hamilton', 'city', 'Hamilton', 160, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Kingston', 'city', 'Kingston', 170, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Kitchener', 'city', 'Kitchener', 180, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('London', 'city', 'London', 190, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Markham', 'city', 'Markham', 200, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Mississauga', 'city', 'Mississauga', 210, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Oshawa', 'city', 'Oshawa', 220, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Pickering', 'city', 'Pickering', 230, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Richmond Hill', 'city', 'Richmond Hill', 240, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Toronto', 'city', 'Toroton', 250, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Vaughan', 'city', 'Vaughan', 260, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Waterloo', 'city', 'Waterloo', 270, 'Y');
+
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Vancouver', 'city', 'Vancouver', 300, 'Y');
+
 
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('New York City', 'city', 'New York City', 400, 'Y');
 
@@ -251,10 +268,25 @@ INSERT INTO value_locale(value_id, language, value_desc) VALUES ('WY', 'en', 'Wy
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Liaoning', 'zh', '辽宁');
 
 -- city
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Barrie', 'en', 'Barrie');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Brampton', 'en', 'Brampton');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Burlington', 'en', 'Burlington');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Cambridge', 'en', 'Cambridge');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Guelph', 'en', 'Guelph');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Hamilton', 'en', 'Hamilton');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Kingston', 'en', 'Kingston');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Kitchener', 'en', 'Kitchener');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('London', 'en', 'London');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Markham', 'en', 'Markham');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Mississauga', 'en', 'Mississauga');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Oshawa', 'en', 'Oshawa');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Pickering', 'en', 'Pickering');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Richmond Hill', 'en', 'Richmond Hill');
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Toronto', 'en', 'Toronto');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Vaughan', 'en', 'Vaughan');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Waterloo', 'en', 'Waterloo');
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Toronto', 'fr', 'Toronto');
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Toronto', 'zh', '多伦多');
-INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Mississauga', 'en', 'Mississauga');
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Mississauga', 'fr', 'Mississauga');
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Mississauga', 'zh', '密西沙加');
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Vancouver', 'en', 'Vancouver');
@@ -344,8 +376,24 @@ INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('ctry-prov
 -- INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('ctry-prov', 'France', 'Orleanais');
 -- INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('ctry-prov', 'China', 'Liaoning');
 
-INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Toronto');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Barrie');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Brampton');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Burlington');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Cambridge');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Guelph');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Hamilton');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Kingston');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Kitchener');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'London');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Markham');
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Mississauga');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Oshawa');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Pickering');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Richmond Hill');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Toronto');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Vaughan');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Waterloo');
+
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'BC', 'Vancouver');
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'NY', 'New York City');
 -- INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'Orleanais', 'Orleans');
@@ -372,7 +420,8 @@ INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VAL
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('psychological-consultant', 'covid-subcategory', 'psychological-consultant', 500, 'Y');
 
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('face-mask', 'covid-subcategory', 'face-mask', 500, 'Y');
-INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('hand-sanitizer', 'covid-subcategory', 'hand-sanitizer', 500, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('grocery', 'covid-subcategory', 'grocery', 500, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('pharmacy', 'covid-subcategory', 'pharmacy', 500, 'Y');
 
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('requester', 'en', 'requester');
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('volunteer', 'en', 'volunteer');
@@ -388,8 +437,9 @@ INSERT INTO value_locale(value_id, language, value_desc) VALUES ('personal-care'
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('medical-consultant', 'en', 'medical consultant');
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('psychological-consultant', 'en', 'psychological consultant');
 
-INSERT INTO value_locale(value_id, language, value_desc) VALUES ('face-mask', 'en', 'face mask');
-INSERT INTO value_locale(value_id, language, value_desc) VALUES ('hand-sanitizer', 'en', 'hand sanitizer');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('face-mask', 'en', 'face-mask');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('grocery', 'en', 'grocery');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('pharmacy', 'en', 'pharmacy');
 
 
 INSERT INTO relation_type(relation_id, relation_name, relation_desc) VALUES ('cov-cat', 'covid-category', 'covid categroy and sub category');
@@ -405,5 +455,6 @@ INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat',
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'volunteer', 'psychological-consultant');
 
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'vendor', 'face-mask');
-INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'vendor', 'hand-sanitizer');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'vendor', 'grocery');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'vendor', 'pharmacy');
 
