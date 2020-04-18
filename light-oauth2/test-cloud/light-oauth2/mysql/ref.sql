@@ -407,7 +407,14 @@ INSERT INTO ref_table(table_id, table_name, table_desc, host) values ('covid-sub
 
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('requester', 'covid-category', 'requester', 400, 'Y');
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('volunteer', 'covid-category', 'volunteer', 500, 'Y');
-INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('vendor', 'covid-category', 'vendor', 600, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('retail', 'covid-category', 'retail', 600, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('service', 'covid-category', 'service', 700, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('manufacture', 'covid-category', 'manufacture', 800, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('healthcare', 'covid-category', 'healthcare', 900, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('education', 'covid-category', 'education', 1000, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('government', 'covid-category', 'government', 1100, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('entertainment', 'covid-category', 'entertainment', 1200, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('recreation', 'covid-category', 'recreation', 1300, 'Y');
 
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('isolated', 'covid-subcategory', 'isolated', 400, 'Y');
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('confirmed', 'covid-subcategory', 'confirmed', 500, 'Y');
@@ -423,9 +430,19 @@ INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VAL
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('grocery', 'covid-subcategory', 'grocery', 500, 'Y');
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('pharmacy', 'covid-subcategory', 'pharmacy', 500, 'Y');
 
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('restaurant', 'covid-subcategory', 'restaurant', 500, 'Y');
+
+
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('requester', 'en', 'requester');
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('volunteer', 'en', 'volunteer');
-INSERT INTO value_locale(value_id, language, value_desc) VALUES ('vendor', 'en', 'vendor');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('retail', 'en', 'retail');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('service', 'en', 'service');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('manufacture', 'en', 'manufacture');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('healthcare', 'en', 'healthcare');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('education', 'en', 'education');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('government', 'en', 'government');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('entertainment', 'en', 'entertainment');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('recreation', 'en', 'recreation');
 
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('isolated', 'en', 'isolated');
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('confirmed', 'en', 'confirmed');
@@ -441,6 +458,8 @@ INSERT INTO value_locale(value_id, language, value_desc) VALUES ('face-mask', 'e
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('grocery', 'en', 'grocery');
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('pharmacy', 'en', 'pharmacy');
 
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('restaurant', 'en', 'restaurant');
+
 
 INSERT INTO relation_type(relation_id, relation_name, relation_desc) VALUES ('cov-cat', 'covid-category', 'covid categroy and sub category');
 
@@ -454,7 +473,8 @@ INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat',
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'volunteer', 'medical-consultant');
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'volunteer', 'psychological-consultant');
 
-INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'vendor', 'face-mask');
-INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'vendor', 'grocery');
-INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'vendor', 'pharmacy');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'retail', 'face-mask');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'retail', 'grocery');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'retail', 'pharmacy');
 
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('cov-cat', 'service', 'restaurant');
