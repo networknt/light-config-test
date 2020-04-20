@@ -70,8 +70,8 @@ INSERT INTO ref_table(table_id, table_name, table_desc, host) values ('language'
 
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('CAN', 'country', 'CAN', 100, 'Y');
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('USA', 'country', 'USA', 200, 'Y');
--- INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('France', 'country', 'FRA', 300, 'Y');
--- INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('China', 'country', 'CHN', 400, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('France', 'country', 'FRA', 300, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('China', 'country', 'CHN', 400, 'Y');
 
 
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('ON', 'province', 'ON', 100, 'Y');
@@ -140,9 +140,8 @@ INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VAL
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('WI', 'province', 'WI', 5000, 'Y');
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('WY', 'province', 'WY', 5100, 'Y');
 
--- INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Orleanais', 'province', 'Orleanais', 400, 'Y');
-
--- INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Liaoning', 'province', 'Liaoning', 500, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Orleanais', 'province', 'Orleanais', 400, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Liaoning', 'province', 'Liaoning', 500, 'Y');
 
 
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Barrie', 'city', 'Barrie', 110, 'Y');
@@ -165,27 +164,26 @@ INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VAL
 
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Vancouver', 'city', 'Vancouver', 300, 'Y');
 
-
 INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('New York City', 'city', 'New York City', 400, 'Y');
 
--- INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Orleans', 'city', 'Orleans', 500, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Orleans', 'city', 'Orleans', 500, 'Y');
 
--- INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Dalian', 'city', 'Dalian', 600, 'Y');
+INSERT INTO ref_value(value_id, table_id, value_code, display_order, active) VALUES ('Dalian', 'city', 'Dalian', 600, 'Y');
 
 
 -- country
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('CAN', 'en', 'Canada');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Canada', 'fr', 'Canada');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Canada', 'zh', '加拿大');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Canada', 'fr', 'Canada');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Canada', 'zh', '加拿大');
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('USA', 'en', 'USA');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('USA', 'fr', 'USA');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('USA', 'zh', '美国');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('France', 'en', 'France');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('France', 'fr', 'France');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('France', 'zh', '法国');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('China', 'en', 'China');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('China', 'fr', 'Chine');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('China', 'zh', '中国');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('USA', 'fr', 'USA');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('USA', 'zh', '美国');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('France', 'en', 'France');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('France', 'fr', 'France');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('France', 'zh', '法国');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('China', 'en', 'China');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('China', 'fr', 'Chine');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('China', 'zh', '中国');
 
 -- province
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('ON', 'en', 'Ontario');
@@ -265,7 +263,7 @@ INSERT INTO value_locale(value_id, language, value_desc) VALUES ('WY', 'en', 'Wy
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Orleanais', 'zh', '奥尔良');
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Liaoning', 'en', 'Liaoning');
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Liaoning', 'fr', 'Liaoning');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Liaoning', 'zh', '辽宁');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Liaoning', 'zh', '辽宁');
 
 -- city
 INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Barrie', 'en', 'Barrie');
@@ -300,7 +298,7 @@ INSERT INTO value_locale(value_id, language, value_desc) VALUES ('New York City'
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Orleans', 'zh', '奥尔良');
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Dalian', 'en', 'Dalian');
 -- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Dalian', 'fr', 'Dalian');
--- INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Dalian', 'zh', '大连');
+INSERT INTO value_locale(value_id, language, value_desc) VALUES ('Dalian', 'zh', '大连');
 
 -- relation type
 INSERT INTO relation_type(relation_id, relation_name, relation_desc) VALUES ('ctry-prov', 'country-province', 'country province dropdown');
@@ -374,7 +372,7 @@ INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('ctry-prov
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('ctry-prov', 'USA', 'WY');
 
 -- INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('ctry-prov', 'France', 'Orleanais');
--- INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('ctry-prov', 'China', 'Liaoning');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('ctry-prov', 'China', 'Liaoning');
 
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Barrie');
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'ON', 'Brampton');
@@ -397,7 +395,7 @@ INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'BC', 'Vancouver');
 INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'NY', 'New York City');
 -- INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'Orleanais', 'Orleans');
--- INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'Liaoning', 'Dalian');
+INSERT INTO relation(relation_id, value_id_from, value_id_to) VALUES ('prov-city', 'Liaoning', 'Dalian');
 
 
 

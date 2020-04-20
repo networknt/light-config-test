@@ -110,10 +110,10 @@ create table audit_log (
   log_id BIGINT, -- system milliseonds from 1970.
   service_id VARCHAR(32) NOT NULL,
   endpoint VARCHAR(256) NOT NULL,
-  request_header VARCHAR(4096),
+  request_header VARCHAR(2048),
   request_body VARCHAR(4096),
   response_code INT,
-  response_header VARCHAR(4096),
+  response_header VARCHAR(2048),
   response_body VARCHAR(4096)
 )
 ENGINE=INNODB;

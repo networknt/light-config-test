@@ -1,13 +1,19 @@
   version: '2'
   services:
+    # mysql 8.0.x has connection issue so we have used the latest 5.7 version
+    # uft8 is supported so that we can use Chinese and Japanese in database tables.
+    # to start this docker container, you need to create the mysql folder under user steve
     mysqldb:
-      image: mysql:5.7.16
+      image: mysql:5.7.29
+      command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
       ports:
         - 3306:3306
       volumes:
         - ./light-oauth2/mysql:/docker-entrypoint-initdb.d
+        - /home/steve/mysql:/var/lib/mysql
       network_mode: host    
       environment:
+        LANG: C.UTF-8
         MYSQL_ROOT_PASSWORD: rootpassword
         MYSQL_USER: mysqluser
         MYSQL_PASSWORD: mysqlpw
