@@ -1,3 +1,6 @@
+### The final configuration has been moved to the taiji-chain/light-config-test due to security reason.
+
+
 This is the folder that contains the docker-compose files to start the light-portal hybrid-query and hybrid-command servers on the test cloud. 
 
 There are four servers that will be involved for query0, query1, query2 and command.

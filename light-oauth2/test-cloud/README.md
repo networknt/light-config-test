@@ -1,3 +1,5 @@
+### The final configuration has been moved to the taiji-chain/light-config-test due to security reason.
+
 This is the light-oauth2 started in the test cloud and register all of them to the test consul cluster. 
 
 This compose needs light-router to proxy all the requests to the multiple backend services and serve the login-view and light-oauth2 console application. 
