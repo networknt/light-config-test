@@ -47,7 +47,8 @@ checkout:
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-consumer-4j.git
       - git@github.com:networknt/light-spring-boot.git
-      - git@github.com:networknt/light-portal.git
+      # light-portal only has Java 11 version in master
+      # - git@github.com:networknt/light-portal.git
       - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-docker.git
       - git@github.com:networknt/http2client-benchmark.git
@@ -75,13 +76,14 @@ build:
     - light-consumer-4j
     - light-spring-boot
     - light-tram-kafka
-    - light-portal
-    - light-portal/api-certification
-    - light-portal/host-menu
-    - light-portal/schema-form
-    - light-portal/user-management
-    - light-portal/hybrid-command
-    - light-portal/hybrid-query
+    # light-portal only has Java 11 version in master
+    # - light-portal
+    # - light-portal/api-certification
+    # - light-portal/host-menu
+    # - light-portal/schema-form
+    # - light-portal/user-management
+    # - light-portal/hybrid-command
+    # - light-portal/hybrid-query
     - http2client-benchmark/httpserver
     - http2client-benchmark/lightclient
     - microservices-framework-benchmark/light-4j  
