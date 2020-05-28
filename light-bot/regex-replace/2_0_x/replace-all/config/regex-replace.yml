@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'add jdk.crypto.ec to Dockerfile for additional cipher suite'
+comment: 'upgrade to undertow 2.1.1.Final'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -55,7 +55,7 @@ checkout:
     - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-tram-kafka.git
     - git@github.com:networknt/light-monitor.git
-    - git@github.com:networknt/light-java-hybrid-example.git
+    # - git@github.com:networknt/light-java-hybrid-example.git
     - git@github.com:networknt/light-reference.git
     - git@github.com:networknt/light-kafka.git
     
@@ -382,8 +382,17 @@ replace:
 #   old_value: "2.0.30.Final"
 #   new_value: "2.0.29.Final"
 
-- glob: "{**/Dockerfile}"
-  match: java.base,java.sql,java.naming,java.desktop,java.xml,jdk.crypto.cryptoki,jdk.unsupported,java.management,java.security.jgss
-  old_value: "jdk.crypto.cryptoki,jdk.unsupported"
-  new_value: "jdk.crypto.cryptoki,jdk.crypto.ec,jdk.unsupported"
+# - glob: "{**/Dockerfile}"
+#   match: java.base,java.sql,java.naming,java.desktop,java.xml,jdk.crypto.cryptoki,jdk.unsupported,java.management,java.security.jgss
+#   old_value: "jdk.crypto.cryptoki,jdk.unsupported"
+#   new_value: "jdk.crypto.cryptoki,jdk.crypto.ec,jdk.unsupported"
 
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+  old_value: "2.0.29.Final"
+  new_value: "2.1.1.Final"
+
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: undertowVersion=\d*\.\d*\.\d*\.Final
+  old_value: "2.0.29.Final"
+  new_value: "2.1.1.Final"
