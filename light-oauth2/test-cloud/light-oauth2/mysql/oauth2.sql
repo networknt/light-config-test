@@ -42,7 +42,8 @@ CREATE TABLE client (
   redirect_uri VARCHAR(1024),
   authenticate_class VARCHAR(256),
   deref_client_id VARCHAR(36), -- only this client calls AS to deref token to JWT for external client type
-  owner_id VARCHAR(32) NOT NULL,
+  owner_id VARCHAR(64) NOT NULL,
+  host VARCHAR(64) NOT NULL,
   PRIMARY KEY (client_id)
 )
 ENGINE=INNODB;
@@ -54,7 +55,8 @@ CREATE TABLE service (
   service_name VARCHAR(32) NOT NULL,
   service_desc VARCHAR(1024),
   scope VARCHAR(1024),
-  owner_id VARCHAR(32) NOT NULL,
+  owner_id VARCHAR(64) NOT NULL,
+  host VARCHAR(64) NOT NULL,
   PRIMARY KEY (service_id)
 )
 ENGINE=INNODB;
@@ -185,22 +187,22 @@ INSERT INTO user_profile(user_id, user_type, first_name, last_name, email, roles
 VALUES('ericbroda', 'customer', 'Eric', 'Broda', 'ericbroda@gmail.com', 'user', '1000:5b39342c202d37372c203132302c202d3132302c2034372c2032332c2034352c202d34342c202d31362c2034372c202d35392c202d35362c2039302c202d352c202d38322c202d32385d:949e6fcf9c4bb8a3d6a8c141a3a9182a572fb95fe8ccdc93b54ba53df8ef2e930f7b0348590df0d53f242ccceeae03aef6d273a34638b49c559ada110ec06992');
 
 -- light-portal client registration redirect to https://lightapi.net/authorization for production
-INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id, authenticate_class)
-VALUES('f7d42348-c647-4efb-a52d-4c5787421e71', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Light Portal Web Application', 'Light Portal React Single Page Application', 'portal.r portal.w', null, 'https://lightapi.net/authorization', 'stevehu@gmail.com', 'com.networknt.oauth.auth.LightPortalAuth');
+INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id, authenticate_class, host)
+VALUES('f7d42348-c647-4efb-a52d-4c5787421e71', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Light Portal Web Application', 'Light Portal React Single Page Application', 'portal.r portal.w', null, 'https://lightapi.net/authorization', 'stevehu@gmail.com', 'com.networknt.oauth.auth.LightPortalAuth', 'lightapi.net');
 -- light-portal client registration redirect to https://dev.lightapi.net/authorization for test cloud
-INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id, authenticate_class)
-VALUES('f7d42348-c647-4efb-a52d-4c5787421e72', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Light Portal Web Application', 'Light Portal React Single Page Application', 'portal.r portal.w', null, 'https://dev.lightapi.net/authorization', 'stevehu@gmail.com', 'com.networknt.oauth.auth.LightPortalAuth');
+INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id, authenticate_class, host)
+VALUES('f7d42348-c647-4efb-a52d-4c5787421e72', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Light Portal Web Application', 'Light Portal React Single Page Application', 'portal.r portal.w', null, 'https://dev.lightapi.net/authorization', 'stevehu@gmail.com', 'com.networknt.oauth.auth.LightPortalAuth', 'lightapi.net');
 -- light-portal client registration redirect to https://localhost:3000/authorization for local testing
-INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id, authenticate_class)
-VALUES('f7d42348-c647-4efb-a52d-4c5787421e73', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Light Portal Web Application', 'Light Portal React Single Page Application', 'portal.r portal.w', null, 'https://localhost:3000/authorization', 'stevehu@gmail.com', 'com.networknt.oauth.auth.LightPortalAuth');
+INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id, authenticate_class, host)
+VALUES('f7d42348-c647-4efb-a52d-4c5787421e73', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Light Portal Web Application', 'Light Portal React Single Page Application', 'portal.r portal.w', null, 'https://localhost:3000/authorization', 'stevehu@gmail.com', 'com.networknt.oauth.auth.LightPortalAuth', 'lightapi.net');
 
 -- Open Banking SPA demo client registration to https://ob.lightapi.net/authorization
-INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id)
-VALUES('f7d42348-c647-4efb-a52d-4c5787421e74', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Open Banking SPA Demo', 'Open Banking Single Page Application React Client', 'accounts', '{"c1": "361", "c2": "67"}', 'https://ob.lightapi.net/authorization', 'admin');
+INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id, host)
+VALUES('f7d42348-c647-4efb-a52d-4c5787421e74', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Open Banking SPA Demo', 'Open Banking Single Page Application React Client', 'accounts', '{"c1": "361", "c2": "67"}', 'https://ob.lightapi.net/authorization', 'admin', 'lightapi.net');
 -- Open Banking SPA demo client registration to https://localhost:3000/authorization
-INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id)
-VALUES('f7d42348-c647-4efb-a52d-4c5787421e75', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Open Banking SPA Demo', 'Open Banking Single Page Application React Client', 'accounts', '{"c1": "361", "c2": "67"}', 'https://localhost:3000/authorization', 'admin');
+INSERT INTO client (client_id, client_secret, client_type, client_profile, client_name, client_desc, scope, custom_claim, redirect_uri, owner_id, host)
+VALUES('f7d42348-c647-4efb-a52d-4c5787421e75', '1000:5b37332c202d36362c202d36392c203131362c203132362c2036322c2037382c20342c202d37382c202d3131352c202d35332c202d34352c202d342c202d3132322c203130322c2033325d:29ad1fe88d66584c4d279a6f58277858298dbf9270ffc0de4317a4d38ba4b41f35f122e0825c466f2fa14d91e17ba82b1a2f2a37877a2830fae2973076d93cc2', 'public', 'browser', 'Open Banking SPA Demo', 'Open Banking Single Page Application React Client', 'accounts', '{"c1": "361", "c2": "67"}', 'https://localhost:3000/authorization', 'admin', 'lightapi.net');
 
-INSERT INTO service (service_id, service_type, service_name, service_desc, scope, owner_id)
-VALUES ('AACT0001', 'openapi', 'Account Service', 'A microservice that serves account information', 'a.r b.r', 'admin');
+INSERT INTO service (service_id, service_type, service_name, service_desc, scope, owner_id, host)
+VALUES ('AACT0001', 'openapi', 'Account Service', 'A microservice that serves account information', 'a.r b.r', 'admin', 'lightapi.net');
 
