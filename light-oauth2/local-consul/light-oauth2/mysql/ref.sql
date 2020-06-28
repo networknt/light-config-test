@@ -58,6 +58,7 @@ CREATE TABLE relation (
   relation_id           VARCHAR(10) NOT NULL,
   value_id_from         VARCHAR(160) NOT NULL,
   value_id_to           VARCHAR(160) NOT NULL,
+  active                VARCHAR(1) NOT NULL DEFAULT 'Y',
   PRIMARY KEY(relation_id, value_id_from, value_id_to)
 );
 
