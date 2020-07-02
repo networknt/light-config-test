@@ -44,6 +44,7 @@ checkout:
     - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-tram-kafka.git
     - git@github.com:networknt/light-kafka.git
+    - git@github.com:networknt/light-reference.git
     # Taiji-chain repositories
     - git@github.com:networknt/taiji-blockchain.git
     - git@github.com:taiji-chain/web-client.git
@@ -67,8 +68,8 @@ checkout:
     - git@github.com:open-banking/beneficiaries.git
     - git@github.com:open-banking/parties.git
 
-    # Covid-19 API
-    - git@github.com:networknt/covid-19.git
+    # MapRoot API
+    - git@github.com:networknt/maproot.git
 
 # run mvn versions:set command in the following folders.
 maven:
@@ -163,6 +164,9 @@ version:
   light-kafka:
   - path: gradle.properties
     match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+  light-reference:
+  - path: pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   
   light-portal:
   - path: pom.xml
@@ -694,7 +698,7 @@ version:
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
   # Covid-19 API
-  covid-19:
+  maproot:
   - path: covid-command/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   - path: covid-query/pom.xml
