@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade to mysql connector to 8.0.16'
+comment: 'upgrade to snakeyaml to 1.26'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -424,12 +424,17 @@ replace:
 #   old_value: 2.10.0
 #   new_value: 2.10.4
 
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.mysql>\d*\.\d*\.\d*</version.mysql>
-  old_value: 6.0.5
-  new_value: 8.0.16
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.mysql>\d*\.\d*\.\d*</version.mysql>
+#   old_value: 6.0.5
+#   new_value: 8.0.16
 
-- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: mysqlVersion=\d*\.\d*\.\d*
-  old_value: 6.0.5
-  new_value: 8.0.16
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: mysqlVersion=\d*\.\d*\.\d*
+#   old_value: 6.0.5
+#   new_value: 8.0.16
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+  old_value: "1.20"
+  new_value: "1.26"
