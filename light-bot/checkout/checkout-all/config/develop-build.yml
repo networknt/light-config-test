@@ -22,9 +22,37 @@ skip_start: true
 # teardown and stop are called regardless of a succesful/failed light-bot run
 tasks:
   # one set of operations
+  checkoutSet160: checkout
   checkoutSetOne: checkout
 
 checkout:
+  checkoutSet160: 
+    - branch: 1.6.x
+      skip: false
+      repository:
+      - git@github.com:networknt/light-4j.git
+      - git@github.com:networknt/json-overlay.git
+      - git@github.com:networknt/openapi-parser.git
+      - git@github.com:networknt/light-rest-4j.git
+      - git@github.com:networknt/light-graphql-4j.git
+      - git@github.com:networknt/light-hybrid-4j.git
+      - git@github.com:networknt/light-codegen.git
+      - git@github.com:networknt/light-session-4j.git
+      - git@github.com:networknt/light-spa-4j.git
+      - git@github.com:networknt/light-proxy.git
+      - git@github.com:networknt/light-router.git
+      - git@github.com:networknt/light-oauth2.git
+      - git@github.com:networknt/light-tokenization.git
+      - git@github.com:networknt/light-portal.git
+      - git@github.com:networknt/light-example-4j.git
+      - git@github.com:networknt/light-docker.git
+      - git@github.com:networknt/light-config-server.git
+      - git@github.com:networknt/light-consumer-4j.git
+      - git@github.com:networknt/http2client-benchmark.git
+      - git@github.com:networknt/microservices-framework-benchmark.git
+      - git@github.com:networknt/light-spring-boot.git
+      - git@github.com:networknt/light-tram-kafka.git
+  
   checkoutSetOne: 
     - branch: master
       skip: false
@@ -51,8 +79,7 @@ checkout:
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:networknt/light-spring-boot.git
-      - git@github.com:networknt/covid-19.git
+      - git@github.com:networknt/maproot.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-reference.git
       - git@github.com:networknt/light-tram-kafka.git
-      
