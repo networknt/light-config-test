@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade_1_6_x
 # git commit comment for this task
-comment: 'upgrade to version 1.6.27-SNAPSHOT after release'
+comment: 'upgrade to version 1.6.27 before release'
 # old existing version that need to be upgraded
-old_version: 1.6.26
+old_version: 1.6.27-SNAPSHOT
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 1.6.27-SNAPSHOT
+new_version: 1.6.27
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
