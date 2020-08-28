@@ -1,0 +1,53 @@
+workspace: test-portal
+# indicate if you want to skip checkout. yes if you know that all repositories are just checkout
+# or the last time the build was failed and you just want to retry without changing anything.
+skip_checkout: false
+# Just checkout the repositories for backup or some other tasks
+skip_build: false
+# If this value is set to true, then only checkout and build will be called. It is
+# very useful if you just want to install the develop branch modules into your .m2
+# local repo. Also, some of our customers have constraint test environment to run
+# unit and integration test only and another environment to run all of tests.
+skip_test: false
+# skip copy file if necessary.
+skip_copyFile: true
+# skip copyWildcardFile
+skip_copyWildcardFile: true
+# skip start
+skip_start: true
+
+# Execute this set of tasks in order
+# setup is called before any of the tasks
+# teardown and stop are called regardless of a succesful/failed light-bot run
+tasks:
+  # one set of operations
+  checkoutSetOne: checkout
+  buildSetOne: build
+  copyProjectFiles: copyFile 
+  copyWildcardFile: copyWildcardFile
+
+checkout:
+  checkoutSetOne: 
+    - branch: master
+      skip: false
+      repository:
+      # - git@github.com:networknt/light-kafka.git
+      - git@github.com:networknt/light-portal.git
+      - git@github.com:networknt/oauth-kafka.git
+      - git@github.com:networknt/light-oauth2.git
+      - git@github.com:networknt/maproot.git
+
+build:
+  buildSetOne:
+    skip: false
+    project:
+    # - light-kafka
+    - light-portal
+    - oauth-kafka
+    - maproot
+          
+# copy individual files
+copyFile:
+
+# copy wildcard files
+copyWildcardFile:
