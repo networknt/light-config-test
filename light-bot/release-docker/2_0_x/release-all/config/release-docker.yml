@@ -29,6 +29,7 @@ checkout:
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
+    - git@github.com:networknt/oauth-kafka.git
     - git@github.com:networknt/light-tokenization.git
     # - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
@@ -39,6 +40,7 @@ maven:
   - light-proxy
   - light-router
   - light-oauth2
+  - oauth-kafka
   - light-tokenization
   # - light-portal
   - light-example-4j/discovery/api_a/kubernetes
@@ -52,6 +54,7 @@ release:
   - light-proxy
   - light-router
   - light-oauth2
+  - oauth-kafka
   - light-tokenization
   # - light-portal
   # - light-codegen
@@ -69,6 +72,9 @@ docker:
   - light-oauth2/token
   - light-oauth2/user
   - light-oauth2/provider
+  - oauth-kafka/oauth-code
+  - oauth-kafka/oauth-token
+  - oauth-kafka/oauth-key
   - light-tokenization
   # - light-portal/hybrid-command
   # - light-portal/hybrid-query

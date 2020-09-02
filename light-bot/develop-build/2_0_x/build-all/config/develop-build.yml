@@ -44,6 +44,7 @@ checkout:
       - git@github.com:networknt/light-proxy.git
       - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-oauth2.git
+      - git@github.com:networknt/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-consumer-4j.git
       - git@github.com:networknt/light-spring-boot.git
@@ -65,6 +66,7 @@ build:
     - light-proxy
     - light-router
     - light-oauth2
+    - oauth-kafka
     - light-tokenization
     - light-consumer-4j
     - light-spring-boot
