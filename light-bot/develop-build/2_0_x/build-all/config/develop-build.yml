@@ -46,6 +46,7 @@ checkout:
       - git@github.com:networknt/light-oauth2.git
       - git@github.com:networknt/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
+      - git@github.com:networknt/light-reference.git
       - git@github.com:networknt/light-consumer-4j.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-tram-kafka.git
@@ -68,6 +69,7 @@ build:
     - light-oauth2
     - oauth-kafka
     - light-tokenization
+    - light-reference
     - light-consumer-4j
     - light-spring-boot
     - light-tram-kafka
