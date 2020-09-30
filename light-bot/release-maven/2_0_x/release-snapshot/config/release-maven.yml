@@ -36,6 +36,8 @@ checkout:
     - git@github.com:networknt/light-hybrid-4j.git
     - git@github.com:networknt/light-codegen.git
     - git@github.com:networknt/light-session-4j.git
+    - git@github.com:networknt/light-kafka.git
+    - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-spa-4j.git
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
@@ -45,7 +47,6 @@ checkout:
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-docker.git
     # - git@github.com:networknt/light-config-server.git
-    - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-workflow-4j.git
     - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-tram-kafka.git
@@ -63,6 +64,8 @@ release:
   - light-hybrid-4j
   - light-codegen
   - light-session-4j
+  - light-kafka
+  - light-portal
   - light-spa-4j
   - light-consumer-4j
   - light-router
