@@ -31,6 +31,7 @@ checkout:
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
+    - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/oauth-kafka.git
     - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-reference.git
@@ -43,6 +44,7 @@ maven:
   - light-proxy
   - light-router
   - light-oauth2
+  - light-portal
   - oauth-kafka
   - light-tokenization
   - light-reference
