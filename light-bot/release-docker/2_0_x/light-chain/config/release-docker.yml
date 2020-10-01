@@ -70,4 +70,5 @@ docker:
   - token-reader
   - kyc-reader
   - web-client/server
-
+  - taiji-faucet
+  
