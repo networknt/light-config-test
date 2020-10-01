@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade_2_0_x
 # git commit comment for this task
-comment: 'upgrade to version 2.0.18-SNAPSHOT after release'
+comment: 'upgrade to version 2.0.18 before release'
 # old existing version that need to be upgraded
-old_version: 2.0.17
+old_version: 2.0.18-SNAPSHOT
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 2.0.18-SNAPSHOT
+new_version: 2.0.18
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -86,6 +86,7 @@ maven:
   - light-proxy
   - light-router
   - light-oauth2
+  - light-kafka
   - oauth-kafka
   - light-tokenization
   - light-consumer-4j
@@ -126,9 +127,6 @@ version:
   # light-rest-4j openapi  
   - path: light-rest-4j/src/main/resources/templates/rest/openapi/pom.xml.rocker.raw
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  # light-rest-4j swagger
-  - path: light-rest-4j/src/main/resources/templates/rest/swagger/pom.xml.rocker.raw
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   # light-rest-4j kotlin
   - path: light-rest-4j/src/main/resources/templates/restkotlin/gradleProperties.rocker.raw
     match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
@@ -167,11 +165,8 @@ version:
   - path: pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   light-kafka:
-  - path: gradle.properties
-    match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
-  - path: build.gradle.kts
-    match: version = "((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)"
-
+  - path: pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   light-reference:
   - path: pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
