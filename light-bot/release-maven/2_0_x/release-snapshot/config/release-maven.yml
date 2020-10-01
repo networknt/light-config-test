@@ -1,12 +1,12 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releassnapshot_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.0.18-SNAPSHOT
+version: 2.0.19-SNAPSHOT
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.0.17
+prev_tag: 2.0.18
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -37,7 +37,6 @@ checkout:
     - git@github.com:networknt/light-codegen.git
     - git@github.com:networknt/light-session-4j.git
     - git@github.com:networknt/light-kafka.git
-    - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-spa-4j.git
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
@@ -65,7 +64,6 @@ release:
   - light-codegen
   - light-session-4j
   - light-kafka
-  - light-portal
   - light-spa-4j
   - light-consumer-4j
   - light-router
