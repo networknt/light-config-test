@@ -1,0 +1,38 @@
+# networknt is the working directory under user home. Change this to your working directory
+workspace: light-chain
+# indicate if you want to skip checkout. yes if you know that all repositories are just checkout
+# or the last time the build was failed and you just want to retry without changing anything.
+skip_checkout: false
+# Just checkout the repositories for backup or some other tasks
+skip_build: true
+# If this value is set to true, then only checkout and build will be called. It is
+# very useful if you just want to install the develop branch modules into your .m2
+# local repo. Also, some of our customers have constraint test environment to run
+# unit and integration test only and another environment to run all of tests.
+skip_test: true
+# skip copy file if necessary.
+skip_copyFile: true
+# skip copyWildcardFile
+skip_copyWildcardFile: true
+# skip start
+skip_start: true
+
+# Execute this set of tasks in order
+# setup is called before any of the tasks
+# teardown and stop are called regardless of a succesful/failed light-bot run
+tasks:
+  # one set of operations
+  checkoutSetOne: checkout
+
+checkout:
+  checkoutSetOne: 
+    - branch: master
+      skip: false
+      repository:
+      - git@github.com:networknt/taiji-blockchain.git
+      - git@198.55.49.186:light-chain/token-reader.git
+      - git@198.55.49.186:light-chain/kyc-reader.git
+      - git@198.55.49.186:light-chain/chain-writer.git
+      - git@198.55.49.186:light-chain/chain-reader.git
+      - git@github.com:taiji-chain/taiji-faucet.git
+      - git@github.com:taiji-chain/web-client.git
