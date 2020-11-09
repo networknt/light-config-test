@@ -29,6 +29,9 @@ enableTwoWayTls: false
 # Truststore file name in config folder. TruststorePass is in secret.yml to access it.
 truststoreName: server.truststore
 
+# Truststore password
+truststorePass: ${server.truststorePass:password}
+
 # Unique service identifier. Used in service registration and discovery etc.
 serviceId: com.networknt.router-0.1.0
 
