@@ -435,7 +435,12 @@ replace:
 #   old_value: 6.0.5
 #   new_value: 8.0.16
 
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
-  old_value: "1.20"
-  new_value: "1.26"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.20"
+#   new_value: "1.26"
+
+- glob: "{**/Dockerfile}"
+  match: java.base,java.sql,java.naming,java.desktop,java.xml,jdk.crypto.cryptoki,jdk.crypto.ec,jdk.unsupported,java.management,java.security.jgss
+  old_value: "java.security.jgss"
+  new_value: "java.security.jgss,java.net.http"
