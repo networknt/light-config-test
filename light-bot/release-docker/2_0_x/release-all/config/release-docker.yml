@@ -68,13 +68,13 @@ release:
 
 # build docker image and push to docker hub
 docker:
-  # - light-proxy
-  # - light-router
-  # - light-oauth2/authorize
-  # - light-oauth2/client
-  # - light-oauth2/code
-  # - light-oauth2/key
-  # - light-oauth2/refresh-token
+  - light-proxy
+  - light-router
+  - light-oauth2/authorize
+  - light-oauth2/client
+  - light-oauth2/code
+  - light-oauth2/key
+  - light-oauth2/refresh-token
   - light-oauth2/service
   - light-oauth2/token
   - light-oauth2/user
