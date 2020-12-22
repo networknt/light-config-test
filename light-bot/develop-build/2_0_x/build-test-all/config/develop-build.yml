@@ -57,7 +57,7 @@ checkout:
       # - git@github.com:networknt/http2client-benchmark.git
       # - git@github.com:networknt/microservices-framework-benchmark.git
       # - git@github.com:networknt/light-config-server.git
-
+      - git@github.com:networknt/light-aws-lambda.git
 build:
   buildSetOne:
     skip: false
@@ -132,6 +132,9 @@ build:
     # - light-example-4j/middleware-performance/service-config
     # - light-example-4j/middleware-performance/endpoint-individual
     # - light-example-4j/middleware-performance/endpoint-source
+    - light-aws-lambda
+    - light-aws-lambda/jwt-authorizer/Authorizer
+    
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.
 test:

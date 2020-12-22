@@ -82,6 +82,11 @@ checkout:
     - git@github.com:open-banking/balances.git
     - git@github.com:open-banking/transactions.git
     - git@github.com:open-banking/accounts.git
+
+    # Maproot
+    - git@github.com:networknt/maproot.git
+    # Light-aws-lambda
+    - git@github.com:networknt/light-aws-lambda.git
 # regex replacement from old value to new value during a full text search on certain patterns
 # of file names.
 replace:
