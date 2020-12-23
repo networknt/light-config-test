@@ -132,6 +132,9 @@ version:
   # light-rest-4j kotlin
   - path: light-rest-4j/src/main/resources/templates/restkotlin/gradleProperties.rocker.raw
     match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+  # light-rest-4j lambda
+  - path: light-rest-4j/src/main/resources/templates/lambda/pom.xml.rocker.raw
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
   light-session-4j:
   - path: pom.xml
