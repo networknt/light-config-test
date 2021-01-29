@@ -74,6 +74,8 @@ build:
     - light-kafka
     - light-portal
     - light-spa-4j
+    - light-aws-lambda
+    - light-aws-lambda/jwt-authorizer/Authorizer
     - light-proxy
     - light-router
     - light-oauth2
@@ -133,8 +135,6 @@ build:
     # - light-example-4j/middleware-performance/service-config
     # - light-example-4j/middleware-performance/endpoint-individual
     # - light-example-4j/middleware-performance/endpoint-source
-    - light-aws-lambda
-    - light-aws-lambda/jwt-authorizer/Authorizer
     - light-chaos-monkey
     
 # This section defines end-to-end tests with real live servers, if you want to skip

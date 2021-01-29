@@ -68,6 +68,7 @@ build:
     - light-codegen
     - light-session-4j
     - light-spa-4j
+    - light-aws-lambda
     - light-proxy
     - light-router
     - light-oauth2
@@ -79,7 +80,6 @@ build:
     - light-consumer-4j
     - light-spring-boot
     - light-tram-kafka
-    - light-aws-lambda
     - light-chaos-monkey
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.
