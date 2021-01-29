@@ -87,6 +87,9 @@ checkout:
     - git@github.com:networknt/maproot.git
     # Light-aws-lambda
     - git@github.com:networknt/light-aws-lambda.git
+    # light-chaos-monkey
+    - git@github.com:networknt/light-chaos-monkey.git
+    
 # regex replacement from old value to new value during a full text search on certain patterns
 # of file names.
 replace:
