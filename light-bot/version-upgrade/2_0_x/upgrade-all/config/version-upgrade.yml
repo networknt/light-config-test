@@ -47,7 +47,6 @@ checkout:
     - git@github.com:networknt/light-kafka.git
     - git@github.com:networknt/light-reference.git
     # Taiji-chain repositories
-    - git@github.com:networknt/taiji-blockchain.git
     - git@github.com:taiji-chain/web-client.git
     - git@github.com:taiji-chain/taiji-faucet.git
     - git@198.55.49.186:steve/kafka-chain.git
