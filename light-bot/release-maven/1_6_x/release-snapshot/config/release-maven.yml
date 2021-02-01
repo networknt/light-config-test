@@ -48,9 +48,9 @@ checkout:
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-workflow-4j.git
     - git@github.com:networknt/light-spring-boot.git
+    - git@github.com:networknt/light-tram-kafka.git
     - git@github.com:networknt/light-eventuate-4j.git
     - git@github.com:networknt/light-tram-4j.git
-    - git@github.com:networknt/light-tram-kafka.git
 
 # generate changelog.md from github issues and check in
 # release to maven central
