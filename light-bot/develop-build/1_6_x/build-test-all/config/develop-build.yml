@@ -54,7 +54,11 @@ checkout:
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:networknt/light-config-server.git
+      - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-tram-kafka.git
+      - git@github.com:networknt/light-tram-4j.git
+      - git@github.com:networknt/light-eventuate-4j.git
+
 
 build:
   buildSetOne:
@@ -75,7 +79,10 @@ build:
     - light-tokenization
     - light-consumer-4j
     - light-spring-boot
+    - light-kafka
     - light-tram-kafka
+    - light-eventuate-4j
+    - light-tram-4j
     # light-portal only has Java 11 version in master
     # - light-portal
     # - light-portal/api-certification

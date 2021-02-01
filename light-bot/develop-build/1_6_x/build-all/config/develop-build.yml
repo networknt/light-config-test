@@ -53,7 +53,10 @@ checkout:
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:networknt/light-config-server.git
       - git@github.com:networknt/light-spring-boot.git
+      - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-tram-kafka.git
+      - git@github.com:networknt/light-tram-4j.git
+      - git@github.com:networknt/light-eventuate-4j.git
 
 build:
   buildSetOne:
@@ -85,7 +88,10 @@ build:
     - microservices-framework-benchmark/light-4j  
     - light-config-server
     - light-spring-boot
+    - light-kafka
     - light-tram-kafka
+    - light-eventuate-4j
+    - light-tram-4j
     - light-example-4j/rest/openapi/petstore
     - light-example-4j/rest/openapi/proxy-backend
     - light-example-4j/rest/openapi/cors

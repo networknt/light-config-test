@@ -51,6 +51,7 @@ checkout:
     - git@github.com:networknt/light-eventuate-4j.git
     - git@github.com:networknt/light-tram-4j.git
     - git@github.com:networknt/light-tram-kafka.git
+    - git@github.com:networknt/light-kafka.git
 
 # generate changelog.md from github issues and check in
 # release to maven central
@@ -70,9 +71,10 @@ release:
   - light-router
   - light-proxy
   - light-spring-boot
+  - light-kafka
+  - light-tram-kafka
   - light-eventuate-4j
   - light-tram-4j
-  - light-tram-kafka
 deploy:
   - light-codegen:
     - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
