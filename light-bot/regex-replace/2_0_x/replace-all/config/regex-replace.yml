@@ -447,7 +447,16 @@ replace:
 #   old_value: "1.20"
 #   new_value: "1.26"
 
-- glob: "{**/Dockerfile}"
-  match: java.base,java.sql,java.naming,java.desktop,java.xml,jdk.crypto.cryptoki,jdk.crypto.ec,jdk.unsupported,java.management,java.security.jgss
-  old_value: "java.security.jgss"
-  new_value: "java.security.jgss,java.net.http"
+# - glob: "{**/Dockerfile}"
+#   match: java.base,java.sql,java.naming,java.desktop,java.xml,jdk.crypto.cryptoki,jdk.crypto.ec,jdk.unsupported,java.management,java.security.jgss
+#   old_value: "java.security.jgss"
+#   new_value: "java.security.jgss,java.net.http"
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+  old_value: 2.10.0
+  new_value: 2.12.1
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: jacksonVersion=\d*\.\d*\.\d*
+  old_value: 2.10.0
+  new_value: 2.12.1

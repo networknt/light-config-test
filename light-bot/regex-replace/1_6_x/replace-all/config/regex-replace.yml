@@ -399,7 +399,16 @@ replace:
 #   old_value: 6.0.5
 #   new_value: 8.0.16
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.20"
+#   new_value: "1.26"
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
-  old_value: "1.20"
-  new_value: "1.26"
+  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+  old_value: 2.8.2
+  new_value: 2.12.1
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: jacksonVersion=\d*\.\d*\.\d*
+  old_value: 2.8.2
+  new_value: 2.12.1
