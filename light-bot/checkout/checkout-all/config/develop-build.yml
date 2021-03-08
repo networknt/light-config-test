@@ -52,7 +52,7 @@ checkout:
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-tram-kafka.git
-  
+
   checkoutSetOne: 
     - branch: master
       skip: false
@@ -84,3 +84,5 @@ checkout:
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-reference.git
       - git@github.com:networknt/light-tram-kafka.git
+      - git@github.com:networknt/light-mesh.git
+      
