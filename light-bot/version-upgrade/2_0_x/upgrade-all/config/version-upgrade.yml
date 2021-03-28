@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade_2_0_x
 # git commit comment for this task
-comment: 'upgrade to version 2.0.25-SNAPSHOT after release'
+comment: 'upgrade to version 2.0.25 before release'
 # old existing version that need to be upgraded
-old_version: 2.0.24
+old_version: 2.0.25-SNAPSHOT
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 2.0.25-SNAPSHOT
+new_version: 2.0.25
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -129,14 +129,24 @@ version:
   - path: light-hybrid-4j/src/main/resources/templates/hybrid/service/pom.xml.rocker.raw
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   # light-rest-4j openapi  
-  - path: light-rest-4j/src/main/resources/templates/rest/openapi/pom.xml.rocker.raw
+  - path: light-rest-4j/src/main/resources/templates/rest/single/pom.xml.rocker.raw
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  - path: light-rest-4j/src/main/resources/templates/rest/parent/pom.xml.rocker.raw
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  - path: light-rest-4j/src/main/resources/templates/rest/single/gradleProperties.rocker.raw
+    match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+  - path: light-rest-4j/src/main/resources/templates/rest/parent/gradleProperties.rocker.raw
+    match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+
   # light-rest-4j kotlin
   - path: light-rest-4j/src/main/resources/templates/restkotlin/gradleProperties.rocker.raw
     match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
   # light-rest-4j lambda
   - path: light-rest-4j/src/main/resources/templates/lambda/pom.xml.rocker.raw
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  - path: light-rest-4j/src/main/resources/templates/lambda/gradleProperties.rocker.raw
+    match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
 
   light-session-4j:
   - path: pom.xml
@@ -497,8 +507,16 @@ version:
   - path: rest/openapi/cors/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
-  - path: rest/openapi/petstore/pom.xml
+  # rest petstore examples  
+  - path: rest/petstore-maven-single/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  - path: rest/petstore-maven-multiple/pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  - path: rest/petstore-gradle-single/gradle.properties
+    match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+  - path: rest/petstore-gradle-multiple/gradle.properties
+    match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+
 
   - path: rest/openapi/petstore-jaeger/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
@@ -622,17 +640,22 @@ version:
 
 
   # light-kafka
+  - path: kafka/ksqldb-backend/pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   - path: kafka/ksqldb-query/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  - path: kafka/ksqldb-report/pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  - path: kafka/ksqldb-sidecar/pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   - path: kafka/producer-consumer/pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  - path: kafka/sidecar-backend/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   - path: kafka/stream-query/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   - path: kafka/stream-report/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  - path: kafka/ksqldb-report/pom.xml
-    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-
 
   # http2client-benchmark
   http2client-benchmark:
@@ -658,9 +681,10 @@ version:
 
 
   ### Taiji-chain repositories
-  taiji-blockchain:
-  - path: gradle.properties
-    match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+  # taiji-blockchain is built with Java 8 in the master branch with 1.6.x tag
+  # taiji-blockchain:
+  # - path: gradle.properties
+  #   match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
   web-client:
   - path: currency/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
