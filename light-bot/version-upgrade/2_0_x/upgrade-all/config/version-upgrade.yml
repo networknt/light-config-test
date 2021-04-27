@@ -74,6 +74,7 @@ checkout:
     - git@github.com:networknt/light-aws-lambda.git  
     # light-chaos-monkey
     - git@github.com:networknt/light-chaos-monkey.git
+    - git@github.com:networknt/light-controller.git
 # run mvn versions:set command in the following folders.
 maven:
   - light-4j
@@ -100,6 +101,7 @@ maven:
   - light-portal/hybrid-query
   - light-aws-lambda
   - light-chaos-monkey
+  - light-controller
 # regex replacement for dependencies
 version:
   json-overlay:
@@ -809,5 +811,10 @@ version:
 
   # Light-chaos-monkey
   light-chaos-monkey:
+  - path: pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # Light-controller
+  light-controller:
   - path: pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
