@@ -54,7 +54,7 @@ checkout:
       - git@github.com:networknt/light-portal.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-chaos-monkey.git
-
+      - git@github.com:networknt/light-mesh.git
 build:
   buildSetOne:
     skip: false
@@ -81,6 +81,8 @@ build:
     - light-spring-boot
     - light-tram-kafka
     - light-chaos-monkey
+    - light-mesh/kafka-sidecar
+    - light-mesh/http-sidecar
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.
 test:
