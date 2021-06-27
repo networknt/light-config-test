@@ -1,12 +1,12 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasedocker_2_0_x
 # new upgraded version. This needs to be changed for every release.
-version: 2.0.27
+version: 2.0.28
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.0.26
+prev_tag: 2.0.27
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # skip checkout if you know all latest code has been checkout in the previous build
@@ -39,7 +39,7 @@ checkout:
     - git@github.com:networknt/light-example-4j.git
     # - git@github.com:networknt/light-codegen.git
     # - git@github.com:networknt/light-docker.git
-    - git@github.com:networknt/light-mesh.git
+    # - git@github.com:networknt/light-mesh.git
 # maven build
 maven:
   - light-proxy
@@ -55,8 +55,8 @@ maven:
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
   # - light-codegen
-  - light-mesh/kafka-sidecar
-  - light-mesh/http-sidecar
+  # - light-mesh/kafka-sidecar
+  # - light-mesh/http-sidecar
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
@@ -66,7 +66,8 @@ release:
   - oauth-kafka
   - light-tokenization
   - light-reference
-  - light-mesh
+  # - light-mesh/http-sidecar
+  # - light-mesh/kafka-sidecar
   # - light-portal
   # - light-codegen
 
@@ -96,5 +97,5 @@ docker:
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
   # - light-docker/light-codegen
-  - light-mesh/kafka-sidecar
-  - light-mesh/http-sidecar
+  # - light-mesh/kafka-sidecar
+  # - light-mesh/http-sidecar
