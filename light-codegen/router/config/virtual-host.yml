@@ -1,7 +1,0 @@
-hosts:
-  - domain: codegen.lightapi.net
-    path: /
-    # base: /home/steve/networknt/light-config-test/light-codegen/codegen-web/build
-    base: /codegen-web/build
-    transferMinSize: 10245760
-    directoryListingEnabled: true
