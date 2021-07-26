@@ -76,6 +76,7 @@ checkout:
     - git@github.com:networknt/light-chaos-monkey.git
     - git@github.com:networknt/light-controller.git
     - git@github.com:networknt/light-mesh.git
+    - git@github.com:networknt/http-sidecar.git
 # run mvn versions:set command in the following folders.
 maven:
   - light-4j
@@ -104,6 +105,7 @@ maven:
   - light-chaos-monkey
   - light-controller
   - light-mesh
+  - http-sidecar
 # regex replacement for dependencies
 version:
   json-overlay:
@@ -826,5 +828,7 @@ version:
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   - path: kafka-sidecar/pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  - path: http-sidecar/pom.xml
+  # Light-controller
+  http-sidecar:
+  - path: pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>

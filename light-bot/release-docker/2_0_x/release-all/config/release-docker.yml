@@ -40,6 +40,7 @@ checkout:
     # - git@github.com:networknt/light-codegen.git
     # - git@github.com:networknt/light-docker.git
     # - git@github.com:networknt/light-mesh.git
+    # - git@github.com:networknt/http-sidecar.git
 # maven build
 maven:
   - light-proxy
@@ -56,7 +57,7 @@ maven:
   - light-example-4j/discovery/api_d/kubernetes
   # - light-codegen
   # - light-mesh/kafka-sidecar
-  # - light-mesh/http-sidecar
+  # - http-sidecar
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
@@ -66,7 +67,7 @@ release:
   - oauth-kafka
   - light-tokenization
   - light-reference
-  # - light-mesh/http-sidecar
+  # - http-sidecar
   # - light-mesh/kafka-sidecar
   # - light-portal
   # - light-codegen
@@ -98,4 +99,4 @@ docker:
   - light-example-4j/discovery/api_d/kubernetes
   # - light-docker/light-codegen
   # - light-mesh/kafka-sidecar
-  # - light-mesh/http-sidecar
+  # - http-sidecar

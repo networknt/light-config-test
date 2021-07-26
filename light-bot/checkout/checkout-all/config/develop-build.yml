@@ -84,5 +84,6 @@ checkout:
       - git@github.com:networknt/light-reference.git
       - git@github.com:networknt/light-tram-kafka.git
       - git@github.com:networknt/light-mesh.git
+      - git@github.com:networknt/http-sidecar.git
       - git@github.com:networknt/light-controller.git
       - git@github.com:networknt/light-chaos-monkey.git
