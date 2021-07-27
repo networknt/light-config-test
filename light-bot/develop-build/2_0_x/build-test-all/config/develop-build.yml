@@ -59,7 +59,7 @@ checkout:
       # - git@github.com:networknt/light-config-server.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-chaos-monkey.git
-      - git@github.com:networknt/light-mesh.git
+      - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/http-sidecar.git
 build:
   buildSetOne:
@@ -139,7 +139,7 @@ build:
     # - light-example-4j/middleware-performance/endpoint-individual
     # - light-example-4j/middleware-performance/endpoint-source
     - light-chaos-monkey
-    - light-mesh/kafka-sidecar
+    - kafka-sidecar
     - http-sidecar
     
 # This section defines end-to-end tests with real live servers, if you want to skip

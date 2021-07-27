@@ -90,7 +90,7 @@ checkout:
     # light-chaos-monkey
     - git@github.com:networknt/light-chaos-monkey.git
     - git@github.com:networknt/light-controller.git
-    - git@github.com:networknt/light-mesh.git
+    - git@github.com:networknt/kafka-sidecar.git
     - git@github.com:networknt/http-sidecar.git
     
 # regex replacement from old value to new value during a full text search on certain patterns
