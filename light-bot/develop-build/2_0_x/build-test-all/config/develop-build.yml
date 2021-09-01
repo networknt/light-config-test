@@ -41,7 +41,6 @@ checkout:
       - git@github.com:networknt/light-codegen.git
       - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-kafka.git
-      - git@github.com:networknt/light-portal.git
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-proxy.git
       - git@github.com:networknt/light-router.git
@@ -61,6 +60,7 @@ checkout:
       - git@github.com:networknt/light-chaos-monkey.git
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/http-sidecar.git
+      - git@github.com:lightapi/light-portal.git
 build:
   buildSetOne:
     skip: false
@@ -74,7 +74,6 @@ build:
     - light-codegen
     - light-session-4j
     - light-kafka
-    - light-portal
     - light-spa-4j
     - light-aws-lambda
     - light-aws-lambda/jwt-authorizer/Authorizer
@@ -141,6 +140,7 @@ build:
     - light-chaos-monkey
     - kafka-sidecar
     - http-sidecar
+    - light-portal
     
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.

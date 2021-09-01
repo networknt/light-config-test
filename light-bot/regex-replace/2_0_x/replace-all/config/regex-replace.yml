@@ -29,7 +29,7 @@ checkout:
     - git@github.com:networknt/light-oauth2.git
     - git@github.com:networknt/oauth-kafka.git
     - git@github.com:networknt/light-tokenization.git
-    - git@github.com:networknt/light-portal.git
+    # - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-example-kotlin.git
     - git@github.com:networknt/light-docker.git
@@ -58,6 +58,9 @@ checkout:
     - git@github.com:networknt/light-reference.git
     - git@github.com:networknt/light-kafka.git
     
+    # LightApi
+    - git@github.com:lightapi/light-portal.git
+
     # Taiji Block Chain Projects
     - git@github.com:networknt/taiji-blockchain.git
     - git@github.com:taiji-chain/web-client.git
