@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade_2_0_x
 # git commit comment for this task
-comment: 'upgrade to version 2.0.31-SNAPSHOT after release'
+comment: 'upgrade to version 2.0.32-SNAPSHOT after release'
 # old existing version that need to be upgraded
-old_version: 2.0.30
+old_version: 2.0.31
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 2.0.31-SNAPSHOT
+new_version: 2.0.32-SNAPSHOT
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -79,6 +79,7 @@ checkout:
     - git@github.com:networknt/http-sidecar.git
     # Light portal
     - git@github.com:lightapi/light-portal.git
+    - git@github.com:networknt/light-scheduler.git
 
 # run mvn versions:set command in the following folders.
 maven:
@@ -102,13 +103,14 @@ maven:
   - light-spring-boot
   - light-tram-kafka
   - light-portal
-  - light-portal/hybrid-command
-  - light-portal/hybrid-query
+  # - light-portal/hybrid-command
+  # - light-portal/hybrid-query
   - light-aws-lambda
   - light-chaos-monkey
   - light-controller
   - kafka-sidecar
   - http-sidecar
+  - light-scheduler
 # regex replacement for dependencies
 version:
   json-overlay:
@@ -832,5 +834,10 @@ version:
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   # http-sidecar
   http-sidecar:
+  - path: pom.xml
+    match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # light-scheduler
+  light-scheduler:
   - path: pom.xml
     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>

@@ -70,7 +70,6 @@ checkout:
       - git@github.com:networknt/light-oauth2.git
       - git@github.com:networknt/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
-      - git@github.com:networknt/light-portal.git
       - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-docker.git
       - git@github.com:networknt/light-doc.git
@@ -87,3 +86,6 @@ checkout:
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:networknt/light-controller.git
       - git@github.com:networknt/light-chaos-monkey.git
+      - git@github.com:networknt/light-scheduler.git
+      # light-portal
+      - git@github.com:lightapi/light-portal.git

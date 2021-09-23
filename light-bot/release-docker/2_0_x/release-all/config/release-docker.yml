@@ -1,12 +1,12 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasedocker_2_0_x
 # new upgraded version. This needs to be changed for every release.
-version: 2.0.30
+version: 2.0.31
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.0.29
+prev_tag: 2.0.30
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # skip checkout if you know all latest code has been checkout in the previous build
@@ -41,6 +41,7 @@ checkout:
     # - git@github.com:networknt/light-docker.git
     # - git@github.com:networknt/kafka-sidecar.git
     # - git@github.com:networknt/http-sidecar.git
+    # - git@github.com:networknt/light-scheduler.git
 # maven build
 maven:
   - light-proxy
@@ -58,6 +59,7 @@ maven:
   # - light-codegen
   # - kafka-sidecar
   # - http-sidecar
+  # - light-scheduler
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
@@ -69,6 +71,7 @@ release:
   - light-reference
   # - http-sidecar
   # - kafka-sidecar
+  # - light-scheduler
   # - light-portal
   # - light-codegen
 
@@ -100,3 +103,4 @@ docker:
   # - light-docker/light-codegen
   # - kafka-sidecar
   # - http-sidecar
+  # - light-scheduler
