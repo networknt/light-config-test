@@ -352,3 +352,13 @@ replace:
 #   match: docker push
 #   old_value: "IMAGE_NAME"
 #   new_value: "IMAGE_NAME -a"
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+  old_value: 1.0.49
+  new_value: 1.0.63
+
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+  old_value: 1.0.49
+  new_value: 1.0.63
