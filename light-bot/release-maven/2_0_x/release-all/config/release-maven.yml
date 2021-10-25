@@ -70,8 +70,8 @@ release:
   - light-kafka
   - light-spa-4j
   - light-consumer-4j
-  - light-router
   - light-aws-lambda
+  - light-router
   - light-proxy
   - light-spring-boot
   - light-tram-kafka

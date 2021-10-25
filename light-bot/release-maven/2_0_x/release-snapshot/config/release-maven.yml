@@ -52,6 +52,8 @@ checkout:
     - git@github.com:networknt/light-aws-lambda.git
     - git@github.com:networknt/light-chaos-monkey.git
     - git@github.com:lightapi/light-portal.git
+    - git@github.com:networknt/light-scheduler.git
+
 # generate changelog.md from github issues and check in
 # release to maven central
 # merge the changelog.md to develop branch
@@ -75,3 +77,5 @@ release:
   - light-tram-kafka
   - light-chaos-monkey
   - light-portal
+  - light-scheduler
+
