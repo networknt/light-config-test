@@ -56,6 +56,17 @@ checkout:
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/light-portal.git
+      - git@github.com:lightapi/hybrid-command.git
+      - git@github.com:lightapi/hybrid-query.git
+      - git@github.com:lightapi/market-command.git
+      - git@github.com:lightapi/market-query.git
+      - git@github.com:lightapi/user-query.git
+      - git@github.com:lightapi/user-command.git
+      - git@github.com:lightapi/ref-query.git
+      - git@github.com:lightapi/ref-command.git
+      - git@github.com:lightapi/event-exporter.git
+      - git@github.com:lightapi/event-importer.git
+
 build:
   buildSetOne:
     skip: false
@@ -84,6 +95,16 @@ build:
     - kafka-sidecar
     - http-sidecar
     - light-portal
+    - hybrid-command
+    - hybrid-query
+    - market-command
+    - market-query
+    - user-command
+    - user-query
+    - ref-command
+    - ref-query
+    - event-exporter
+    - event-importer
 
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.

@@ -35,13 +35,14 @@ checkout:
     - git@github.com:networknt/oauth-kafka.git
     - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-reference.git
-    # - git@github.com:networknt/light-portal.git
+    - git@github.com:lightapi/hybrid-command.git
+    - git@github.com:lightapi/hybrid-query.git
     - git@github.com:networknt/light-example-4j.git
     # - git@github.com:networknt/light-codegen.git
     # - git@github.com:networknt/light-docker.git
-    # - git@github.com:networknt/kafka-sidecar.git
-    # - git@github.com:networknt/http-sidecar.git
-    # - git@github.com:networknt/light-scheduler.git
+    - git@github.com:networknt/kafka-sidecar.git
+    - git@github.com:networknt/http-sidecar.git
+    - git@github.com:networknt/light-scheduler.git
 # maven build
 maven:
   - light-proxy
@@ -51,7 +52,7 @@ maven:
   - oauth-kafka
   - light-tokenization
   - light-reference
-  # - light-portal
+
   - light-example-4j/discovery/api_a/kubernetes
   - light-example-4j/discovery/api_b/kubernetes
   - light-example-4j/discovery/api_c/kubernetes
@@ -93,14 +94,14 @@ docker:
   - oauth-kafka/oauth-key
   - light-tokenization
   - light-reference
-  # - light-portal/hybrid-command
-  # - light-portal/hybrid-query
+  - hybrid-command
+  - hybrid-query
   # - light-portal/codegen-server
   - light-example-4j/discovery/api_a/kubernetes
   - light-example-4j/discovery/api_b/kubernetes
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
   # - light-docker/light-codegen
-  # - kafka-sidecar
-  # - http-sidecar
-  # - light-scheduler
+  - kafka-sidecar
+  - http-sidecar
+  - light-scheduler

@@ -89,3 +89,13 @@ checkout:
       - git@github.com:networknt/light-scheduler.git
       # light-portal
       - git@github.com:lightapi/light-portal.git
+      - git@github.com:lightapi/hybrid-command.git
+      - git@github.com:lightapi/hybrid-query.git
+      - git@github.com:lightapi/market-command.git
+      - git@github.com:lightapi/market-query.git
+      - git@github.com:lightapi/user-query.git
+      - git@github.com:lightapi/user-command.git
+      - git@github.com:lightapi/ref-query.git
+      - git@github.com:lightapi/ref-command.git
+      - git@github.com:lightapi/event-exporter.git
+      - git@github.com:lightapi/event-importer.git

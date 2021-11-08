@@ -53,6 +53,14 @@ checkout:
     - git@github.com:networknt/light-chaos-monkey.git
     - git@github.com:lightapi/light-portal.git
     - git@github.com:networknt/light-scheduler.git
+    - git@github.com:lightapi/hybrid-command.git
+    - git@github.com:lightapi/hybrid-query.git
+    - git@github.com:lightapi/market-command.git
+    - git@github.com:lightapi/market-query.git
+    - git@github.com:lightapi/user-query.git
+    - git@github.com:lightapi/user-command.git
+    - git@github.com:lightapi/ref-query.git
+    - git@github.com:lightapi/ref-command.git
 
 # generate changelog.md from github issues and check in
 # release to maven central
@@ -78,6 +86,14 @@ release:
   - light-chaos-monkey
   - light-portal
   - light-scheduler
+  - hybrid-command
+  - hybrid-query
+  - market-command
+  - market-query
+  - user-command
+  - user-query
+  - ref-command
+  - ref-query
   
 deploy:
   - light-codegen:

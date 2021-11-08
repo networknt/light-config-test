@@ -79,6 +79,18 @@ checkout:
     - git@github.com:networknt/http-sidecar.git
     # Light portal
     - git@github.com:lightapi/light-portal.git
+    - git@github.com:lightapi/hybrid-query.git
+    - git@github.com:lightapi/hybrid-command.git
+    - git@github.com:lightapi/market-command.git
+    - git@github.com:lightapi/market-query.git
+    - git@github.com:lightapi/user-query.git
+    - git@github.com:lightapi/user-command.git
+    - git@github.com:lightapi/ref-query.git
+    - git@github.com:lightapi/ref-command.git
+    - git@github.com:lightapi/event-exporter.git
+    - git@github.com:lightapi/event-importer.git
+
+    # Light scheduler
     - git@github.com:networknt/light-scheduler.git
 
 # run mvn versions:set command in the following folders.
@@ -103,8 +115,8 @@ maven:
   - light-spring-boot
   - light-tram-kafka
   - light-portal
-  # - light-portal/hybrid-command
-  # - light-portal/hybrid-query
+  - hybrid-command
+  - hybrid-query
   - light-aws-lambda
   - light-chaos-monkey
   - light-controller
