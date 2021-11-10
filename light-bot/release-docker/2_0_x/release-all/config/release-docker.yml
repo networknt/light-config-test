@@ -43,6 +43,7 @@ checkout:
     - git@github.com:networknt/kafka-sidecar.git
     - git@github.com:networknt/http-sidecar.git
     - git@github.com:networknt/light-scheduler.git
+
 # maven build
 maven:
   - light-proxy
@@ -61,6 +62,8 @@ maven:
   # - kafka-sidecar
   # - http-sidecar
   # - light-scheduler
+  # - hybrid-query
+  # - hybrid-command
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
@@ -73,7 +76,8 @@ release:
   # - http-sidecar
   # - kafka-sidecar
   # - light-scheduler
-  # - light-portal
+  # - hybrid-query
+  # - hybrid-command
   # - light-codegen
 
 # build docker image and push to docker hub
@@ -105,3 +109,5 @@ docker:
   - kafka-sidecar
   - http-sidecar
   - light-scheduler
+  - hybrid-query
+  - hybrid-command

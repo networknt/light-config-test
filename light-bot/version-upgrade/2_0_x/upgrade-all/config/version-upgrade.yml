@@ -117,6 +117,14 @@ maven:
   - light-portal
   - hybrid-command
   - hybrid-query
+  - market-command
+  - market-query
+  - user-command
+  - user-query
+  - ref-command
+  - ref-query
+  - event-exporter
+  - event-importer
   - light-aws-lambda
   - light-chaos-monkey
   - light-controller
