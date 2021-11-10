@@ -59,11 +59,11 @@ maven:
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
   # - light-codegen
-  # - kafka-sidecar
-  # - http-sidecar
-  # - light-scheduler
-  # - hybrid-query
-  # - hybrid-command
+  - kafka-sidecar
+  - http-sidecar
+  - light-scheduler
+  - hybrid-query
+  - hybrid-command
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
@@ -73,6 +73,7 @@ release:
   - oauth-kafka
   - light-tokenization
   - light-reference
+  # no need to release as the release job has done.
   # - http-sidecar
   # - kafka-sidecar
   # - light-scheduler
