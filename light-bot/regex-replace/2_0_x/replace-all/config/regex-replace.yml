@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'update build.sh to add option to push all tags'
+comment: 'upgrade to common codec 1.13 to resolve some x-ray warnnings'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -420,12 +420,36 @@ replace:
 #   old_value: "IMAGE_NAME"
 #   new_value: "IMAGE_NAME -a"
 
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
-  old_value: 1.0.49
-  new_value: 1.0.63
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 1.0.49
+#   new_value: 1.0.63
 
-- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
-  old_value: 1.0.49
-  new_value: 1.0.63
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.49
+#   new_value: 1.0.63
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.2.4.Final"
+#   new_value: "2.2.14.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.2.4.Final"
+#   new_value: "2.2.14.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.2.3
+#   new_value: 1.2.7
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.2.3
+#   new_value: 1.2.7
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.commons.codec>\d*\.\d*</version.commons.codec>
+  old_value: "1.11"
+  new_value: "1.13"
