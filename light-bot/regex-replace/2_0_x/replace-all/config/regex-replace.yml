@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade to common codec 1.13 to resolve some x-ray warnnings'
+comment: 'upgrade to slf4j to 1.7.32 to be in sync with logback 1.2.7'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -76,12 +76,6 @@ checkout:
     - git@github.com:networknt/taiji-blockchain.git
     - git@github.com:taiji-chain/web-client.git
     - git@github.com:taiji-chain/taiji-faucet.git
-    - git@198.55.49.186:steve/kafka-chain.git
-    - git@198.55.49.186:steve/genesis-block.git
-    - git@198.55.49.186:light-chain/chain-reader.git
-    - git@198.55.49.186:light-chain/chain-writer.git
-    - git@198.55.49.186:light-chain/kyc-reader.git
-    - git@198.55.49.186:light-chain/token-reader.git
     # repositories from lightapi.net
     # - git@198.55.49.186:lightapi/tokenization.git
     # Open Banking Projects
@@ -107,6 +101,13 @@ checkout:
     - git@github.com:networknt/kafka-sidecar.git
     - git@github.com:networknt/http-sidecar.git
     - git@github.com:networknt/light-scheduler.git
+
+    - git@198.55.49.186:steve/kafka-chain.git
+    - git@198.55.49.186:steve/genesis-block.git
+    - git@198.55.49.186:light-chain/chain-reader.git
+    - git@198.55.49.186:light-chain/chain-writer.git
+    - git@198.55.49.186:light-chain/kyc-reader.git
+    - git@198.55.49.186:light-chain/token-reader.git
     
 # regex replacement from old value to new value during a full text search on certain patterns
 # of file names.
@@ -449,7 +450,16 @@ replace:
 #   old_value: 1.2.3
 #   new_value: 1.2.7
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons.codec>\d*\.\d*</version.commons.codec>
+#   old_value: "1.11"
+#   new_value: "1.13"
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.commons.codec>\d*\.\d*</version.commons.codec>
-  old_value: "1.11"
-  new_value: "1.13"
+  match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+  old_value: 1.7.25
+  new_value: 1.7.32
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: slf4jVersion=\d*\.\d*\.\d*
+  old_value: 1.7.25
+  new_value: 1.7.32
