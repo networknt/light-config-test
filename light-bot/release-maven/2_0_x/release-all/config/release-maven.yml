@@ -54,6 +54,7 @@ checkout:
     - git@github.com:networknt/light-chaos-monkey.git
     - git@github.com:lightapi/light-portal.git
     - git@github.com:networknt/light-scheduler.git
+    - git@github.com:networknt/light-controller.git
     - git@github.com:lightapi/hybrid-command.git
     - git@github.com:lightapi/hybrid-query.git
     - git@github.com:lightapi/market-command.git
@@ -91,6 +92,7 @@ release:
   - oauth-kafka
   - light-portal
   - light-scheduler
+  - light-controller
   - hybrid-command
   - hybrid-query
   - market-command
