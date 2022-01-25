@@ -35,7 +35,7 @@ checkout:
     - git@github.com:networknt/light-graphql-4j.git
     - git@github.com:networknt/light-hybrid-4j.git
     - git@github.com:networknt/light-codegen.git
-    - git@github.com:networknt/light-session-4j.git
+    # - git@github.com:networknt/light-session-4j.git
     - git@github.com:networknt/light-spa-4j.git
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
@@ -65,7 +65,7 @@ release:
   - light-graphql-4j
   - light-hybrid-4j
   - light-codegen
-  - light-session-4j
+  # - light-session-4j
   - light-spa-4j
   - light-consumer-4j
   - light-router
