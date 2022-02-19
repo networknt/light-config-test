@@ -1,12 +1,12 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven_1_6_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 1.6.37
+version: 1.6.38
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 1.6.36
+prev_tag: 1.6.37
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -21,7 +21,7 @@ skip_release: false
 # skip upload release note to the github
 skip_release_note: false
 # skip deploy after the release
-skip_deploy: false
+skip_deploy: true
 # skip upload release assets
 skip_upload: false
 # clone and switch to develop branch / checkout and pull from develop branch
@@ -75,14 +75,14 @@ release:
   - light-tram-kafka
   - light-eventuate-4j
   - light-tram-4j
-deploy:
-  - light-codegen:
-    - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
-    - scp codegen-fwk/target/codegen-fwk.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
-    - scp codegen-web/target/codegen-web.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
-    - scp light-graphql-4j/target/light-graphql-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
-    - scp light-hybrid-4j/target/light-hybrid-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
-    - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+# deploy:
+#   - light-codegen:
+#     - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+#     - scp codegen-fwk/target/codegen-fwk.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+#     - scp codegen-web/target/codegen-web.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+#     - scp light-graphql-4j/target/light-graphql-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+#     - scp light-hybrid-4j/target/light-hybrid-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
+#     - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
 # upload additional assets to the GitHub release page
 upload:
   - light-codegen:

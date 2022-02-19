@@ -21,7 +21,7 @@ skip_release: false
 # skip upload release note to the github
 skip_release_note: false
 # skip deploy after the release
-skip_deploy: false
+skip_deploy: true
 # skip upload release assets
 skip_upload: false
 # clone and switch to develop branch / checkout and pull from develop branch
@@ -104,14 +104,14 @@ release:
   - event-exporter
   - event-importer
   
-deploy:
-  - light-codegen:
-    - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-    - scp codegen-fwk/target/codegen-fwk.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-    - scp codegen-web/target/codegen-web.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-    - scp light-graphql-4j/target/light-graphql-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-    - scp light-hybrid-4j/target/light-hybrid-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-    - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
+# deploy:
+#   - light-codegen:
+#     - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
+#     - scp codegen-fwk/target/codegen-fwk.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
+#     - scp codegen-web/target/codegen-web.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
+#     - scp light-graphql-4j/target/light-graphql-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
+#     - scp light-hybrid-4j/target/light-hybrid-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
+#     - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
 # upload additional assets to the GitHub release page
 upload:
   - light-codegen:
