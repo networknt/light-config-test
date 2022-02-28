@@ -20,7 +20,7 @@ skip_release_note: false
 # skip deploy after the release
 skip_deploy: true
 # skip upload release assets
-skip_upload: false
+skip_upload: true
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   - branch: master
@@ -77,14 +77,14 @@ release:
   - networknt/light-spa-4j
   - networknt/light-consumer-4j
   - networknt/light-aws-lambda
+  - networknt/light-chaos-monkey
   - networknt/light-router
   - networknt/light-proxy
   - networknt/light-spring-boot
   - networknt/light-tram-kafka
-  - networknt/light-chaos-monkey
   - networknt/light-oauth2
-  - networknt/oauth-kafka
   - lightapi/light-portal
+  - networknt/oauth-kafka
   - networknt/light-scheduler
   - networknt/light-controller
   - lightapi/hybrid-command
@@ -107,10 +107,10 @@ release:
 #     - scp light-hybrid-4j/target/light-hybrid-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
 #     - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
 # upload additional assets to the GitHub release page
-upload:
-  - networknt/light-codegen:
-    - codegen-cli/target/codegen-cli.jar
-  - networknt/light-proxy:
-    - target/light-proxy.jar
-  - networknt/light-router:
-    - target/light-router.jar
+# upload:
+#   - networknt/light-codegen:
+#     - codegen-cli/target/codegen-cli.jar
+#   - networknt/light-proxy:
+#     - target/light-proxy.jar
+#   - networknt/light-router:
+#     - target/light-router.jar
