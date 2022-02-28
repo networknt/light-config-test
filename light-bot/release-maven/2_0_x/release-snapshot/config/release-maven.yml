@@ -1,12 +1,12 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releassnapshot_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.0.33-SNAPSHOT
+version: 2.1.1-SNAPSHOT
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.0.32
+prev_tag: 2.0.33
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -71,35 +71,35 @@ checkout:
 # merge the changelog.md to develop branch
 # publish the release to github repository
 release:
-  - light-4j
-  - json-overlay
-  - openapi-parser
-  - light-rest-4j
-  - light-graphql-4j
-  - light-hybrid-4j
-  - light-codegen
+  - networknt/light-4j
+  - networknt/json-overlay
+  - networknt/openapi-parser
+  - networknt/light-rest-4j
+  - networknt/light-graphql-4j
+  - networknt/light-hybrid-4j
+  - networknt/light-codegen
   # - light-session-4j
-  - light-kafka
-  - light-spa-4j
-  - light-consumer-4j
-  - light-aws-lambda
-  - light-router
-  - light-proxy
-  - light-spring-boot
-  - light-tram-kafka
-  - light-chaos-monkey
-  - light-oauth2
-  - oauth-kafka
-  - light-portal
-  - light-scheduler
-  - light-controller
-  - hybrid-command
-  - hybrid-query
-  - market-command
-  - market-query
-  - user-command
-  - user-query
-  - ref-command
-  - ref-query
-  - event-exporter
-  - event-importer
+  - networknt/light-kafka
+  - networknt/light-spa-4j
+  - networknt/light-consumer-4j
+  - networknt/light-aws-lambda
+  - networknt/light-router
+  - networknt/light-proxy
+  - networknt/light-spring-boot
+  - networknt/light-tram-kafka
+  - networknt/light-chaos-monkey
+  - networknt/light-oauth2
+  - networknt/oauth-kafka
+  - lightapi/light-portal
+  - networknt/light-scheduler
+  - networknt/light-controller
+  - lightapi/hybrid-command
+  - lightapi/hybrid-query
+  - lightapi/market-command
+  - lightapi/market-query
+  - lightapi/user-command
+  - lightapi/user-query
+  - lightapi/ref-command
+  - lightapi/ref-query
+  - lightapi/event-exporter
+  - lightapi/event-importer

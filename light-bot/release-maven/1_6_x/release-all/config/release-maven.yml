@@ -2,9 +2,6 @@
 workspace: releasemaven_1_6_x
 # release version that is used to generate changelog. This need to be changed every time
 version: 1.6.38
-# github organization as the token is bound to the org in changelog generator. This
-# means that you can only release multiple repositories within the same org each time.
-organization: networknt
 # previous tag used to calculate how many commits in between in the git log
 prev_tag: 1.6.37
 # last number of pull requests retrieved from the GitHub. 100 minimum.
@@ -58,23 +55,23 @@ checkout:
 # merge the changelog.md to develop branch
 # publish the release to github repository
 release:
-  - light-4j
-  - json-overlay
-  - openapi-parser
-  - light-rest-4j
-  - light-graphql-4j
-  - light-hybrid-4j
-  - light-codegen
+  - networknt/light-4j
+  - networknt/json-overlay
+  - networknt/openapi-parser
+  - networknt/light-rest-4j
+  - networknt/light-graphql-4j
+  - networknt/light-hybrid-4j
+  - networknt/light-codegen
   # - light-session-4j
-  - light-spa-4j
-  - light-consumer-4j
-  - light-router
-  - light-proxy
-  - light-spring-boot
-  - light-kafka
-  - light-tram-kafka
-  - light-eventuate-4j
-  - light-tram-4j
+  - networknt/light-spa-4j
+  - networknt/light-consumer-4j
+  - networknt/light-router
+  - networknt/light-proxy
+  - networknt/light-spring-boot
+  - networknt/light-kafka
+  - networknt/light-tram-kafka
+  - networknt/light-eventuate-4j
+  - networknt/light-tram-4j
 # deploy:
 #   - light-codegen:
 #     - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
@@ -85,9 +82,9 @@ release:
 #     - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/1_6_x/service
 # upload additional assets to the GitHub release page
 upload:
-  - light-codegen:
+  - networknt/light-codegen:
     - codegen-cli/target/codegen-cli.jar
-  - light-proxy:
+  - networknt/light-proxy:
     - target/light-proxy.jar
-  - light-router:
+  - networknt/light-router:
     - target/light-router.jar
