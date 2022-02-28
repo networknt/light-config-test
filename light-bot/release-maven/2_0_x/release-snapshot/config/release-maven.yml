@@ -38,6 +38,7 @@ checkout:
     # - git@github.com:networknt/light-session-4j.git
     - git@github.com:networknt/light-kafka.git
     - git@github.com:networknt/light-spa-4j.git
+    - git@github.com:networknt/light-chaos-monkey.git
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-oauth2.git
@@ -51,7 +52,6 @@ checkout:
     - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-tram-kafka.git
     - git@github.com:networknt/light-aws-lambda.git
-    - git@github.com:networknt/light-chaos-monkey.git
     - git@github.com:lightapi/light-portal.git
     - git@github.com:networknt/light-scheduler.git
     - git@github.com:networknt/light-controller.git
@@ -83,14 +83,14 @@ release:
   - networknt/light-spa-4j
   - networknt/light-consumer-4j
   - networknt/light-aws-lambda
+  - networknt/light-chaos-monkey
   - networknt/light-router
   - networknt/light-proxy
   - networknt/light-spring-boot
   - networknt/light-tram-kafka
-  - networknt/light-chaos-monkey
   - networknt/light-oauth2
-  - networknt/oauth-kafka
   - lightapi/light-portal
+  - networknt/oauth-kafka
   - networknt/light-scheduler
   - networknt/light-controller
   - lightapi/hybrid-command
