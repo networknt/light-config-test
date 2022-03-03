@@ -43,6 +43,8 @@ checkout:
     - git@github.com:networknt/kafka-sidecar.git
     - git@github.com:networknt/http-sidecar.git
     - git@github.com:networknt/light-scheduler.git
+    - git@github.com:networknt/light-controller.git
+    - git@github.com:networknt/light-config-server.git
 
 # maven build
 maven:
@@ -62,6 +64,8 @@ maven:
   - kafka-sidecar
   - http-sidecar
   - light-scheduler
+  - light-controller
+  - light-config-server
   - hybrid-query
   - hybrid-command
 
@@ -110,5 +114,7 @@ docker:
   - kafka-sidecar
   - http-sidecar
   - light-scheduler
+  - light-controller
+  - light-config-server
   - hybrid-query
   - hybrid-command
