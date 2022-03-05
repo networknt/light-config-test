@@ -99,3 +99,5 @@ checkout:
       - git@github.com:lightapi/ref-command.git
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
+      - git@github.com:lightapi/maproot-command.git
+      - git@github.com:lightapi/maproot-query.git

@@ -72,6 +72,9 @@ checkout:
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
       - git@github.com:networknt/light-scheduler.git
+      - git@github.com:lightapi/maproot-command.git
+      - git@github.com:lightapi/maproot-query.git
+
 build:
   buildSetOne:
     skip: false
@@ -163,7 +166,9 @@ build:
     - event-exporter
     - event-importer
     - light-scheduler
-    
+    - maproot-command
+    - maproot-query
+
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.
 test:

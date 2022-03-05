@@ -59,6 +59,8 @@ checkout:
     - git@github.com:lightapi/ref-command.git
     - git@github.com:lightapi/event-exporter.git
     - git@github.com:lightapi/event-importer.git
+    - git@github.com:lightapi/maproot-command.git
+    - git@github.com:lightapi/maproot-query.git
 
 # generate changelog.md from github issues and check in
 # release to maven central
@@ -97,6 +99,8 @@ release:
   - lightapi/ref-query
   - lightapi/event-exporter
   - lightapi/event-importer
+  - lightapi/maproot-command
+  - lightapi/maproot-query
   
 # deploy:
 #   - light-codegen:

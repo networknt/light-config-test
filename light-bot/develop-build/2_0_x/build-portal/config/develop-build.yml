@@ -43,7 +43,8 @@ checkout:
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
       - git@github.com:networknt/oauth-kafka.git
-      - git@github.com:networknt/maproot.git
+      - git@github.com:lightapi/maproot-command.git
+      - git@github.com:lightapi/maproot-query.git
 
 build:
   buildSetOne:
@@ -61,7 +62,8 @@ build:
     - event-importer
     - event-exporter
     - oauth-kafka
-    # - maproot
+    - maproot-command
+    - maproot-query
           
 # copy individual files by specify exact src and dst relative to home and workspace path.
 copyFile:

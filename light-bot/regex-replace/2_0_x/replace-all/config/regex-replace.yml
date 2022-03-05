@@ -92,7 +92,8 @@ checkout:
     - git@github.com:open-banking/accounts.git
 
     # Maproot
-    - git@github.com:networknt/maproot.git
+    - git@github.com:lightapi/maproot-command.git
+    - git@github.com:lightapi/maproot-query.git
     # Light-aws-lambda
     - git@github.com:networknt/light-aws-lambda.git
     # light-chaos-monkey
