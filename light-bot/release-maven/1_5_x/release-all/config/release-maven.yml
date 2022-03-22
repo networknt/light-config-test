@@ -75,3 +75,5 @@ upload:
     - target/light-proxy.jar
   - networknt/light-router:
     - target/light-router.jar
+  - networknt/light-gateway:
+    - target/light-gateway.jar

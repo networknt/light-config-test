@@ -30,6 +30,7 @@ checkout:
     repository:
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
+    - git@github.com:networknt/light-gateway.git
     - git@github.com:networknt/light-oauth2.git
     - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/oauth-kafka.git
@@ -50,6 +51,7 @@ checkout:
 maven:
   - light-proxy
   - light-router
+  - light-gateway
   - light-oauth2
   - light-portal
   - oauth-kafka
@@ -73,6 +75,7 @@ maven:
 release:
   - light-proxy
   - light-router
+  - light-gateway
   - light-oauth2
   - oauth-kafka
   - light-tokenization
@@ -89,6 +92,7 @@ release:
 docker:
   - light-proxy
   - light-router
+  - light-gateway
   # - light-oauth2/authorize
   - light-oauth2/client
   - light-oauth2/code
