@@ -58,20 +58,20 @@ checkout:
 # merge the changelog.md to develop branch
 # publish the release to github repository
 release:
-  - light-4j
-  - json-overlay
-  - openapi-parser
-  - light-rest-4j
-  - light-graphql-4j
-  - light-hybrid-4j
-  - light-codegen
+  - networknt/light-4j
+  - networknt/json-overlay
+  - networknt/openapi-parser
+  - networknt/light-rest-4j
+  - networknt/light-graphql-4j
+  - networknt/light-hybrid-4j
+  - networknt/light-codegen
   # - light-session-4j
-  - light-spa-4j
-  - light-consumer-4j
-  - light-router
-  - light-proxy
-  - light-spring-boot
-  - light-kafka
-  - light-tram-kafka
-  - light-eventuate-4j
-  - light-tram-4j
+  - networknt/light-spa-4j
+  - networknt/light-consumer-4j
+  - networknt/light-router
+  - networknt/light-proxy
+  - networknt/light-spring-boot
+  - networknt/light-kafka
+  - networknt/light-tram-kafka
+  - networknt/light-eventuate-4j
+  - networknt/light-tram-4j
