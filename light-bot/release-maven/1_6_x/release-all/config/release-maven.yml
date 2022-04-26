@@ -1,9 +1,9 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven_1_6_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 1.6.38
+version: 1.6.39
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 1.6.37
+prev_tag: 1.6.38
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -20,7 +20,7 @@ skip_release_note: false
 # skip deploy after the release
 skip_deploy: true
 # skip upload release assets
-skip_upload: false
+skip_upload: true
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
   - branch: 1.6.x
@@ -47,7 +47,7 @@ checkout:
     - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-eventuate-4j.git
     - git@github.com:networknt/light-tram-4j.git
-    - git@github.com:networknt/light-tram-kafka.git
+    # - git@github.com:networknt/light-tram-kafka.git
     - git@github.com:networknt/light-kafka.git
 
 # generate changelog.md from github issues and check in
@@ -69,7 +69,7 @@ release:
   - networknt/light-proxy
   - networknt/light-spring-boot
   - networknt/light-kafka
-  - networknt/light-tram-kafka
+  # - networknt/light-tram-kafka
   - networknt/light-eventuate-4j
   - networknt/light-tram-4j
 # deploy:
