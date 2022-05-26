@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade avro to 1.11.0'
+comment: 'upgrade jackson to 2.13.3'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -53,7 +53,7 @@ checkout:
     - git@github.com:networknt/light-consumer-4j.git
     - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
-    - git@github.com:networknt/light-tram-kafka.git
+    # - git@github.com:networknt/light-tram-kafka.git
     - git@github.com:networknt/light-monitor.git
     # - git@github.com:networknt/light-java-hybrid-example.git
     - git@github.com:networknt/light-reference.git
@@ -476,23 +476,32 @@ replace:
 #   old_value: 1.0.63
 #   new_value: 1.0.65
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.avro>\d*\.\d*\.\d*</version.avro>
+#   old_value: 1.9.2
+#   new_value: 1.11.0
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: avroVersion=\d*\.\d*\.\d*
+#   old_value: 1.9.2
+#   new_value: 1.11.0
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.avro>\d*\.\d*\.\d*</version.avro>
+#   old_value: 1.10.2
+#   new_value: 1.11.0
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: avroVersion=\d*\.\d*\.\d*
+#   old_value: 1.10.2
+#   new_value: 1.11.0
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.avro>\d*\.\d*\.\d*</version.avro>
-  old_value: 1.9.2
-  new_value: 1.11.0
-
+  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+  old_value: 2.12.1
+  new_value: 2.13.3
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: avroVersion=\d*\.\d*\.\d*
-  old_value: 1.9.2
-  new_value: 1.11.0
-
-
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.avro>\d*\.\d*\.\d*</version.avro>
-  old_value: 1.10.2
-  new_value: 1.11.0
-
-- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: avroVersion=\d*\.\d*\.\d*
-  old_value: 1.10.2
-  new_value: 1.11.0
+  match: jacksonVersion=\d*\.\d*\.\d*
+  old_value: 2.12.1
+  new_value: 2.13.3
