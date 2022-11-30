@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade snakeyaml to 1.31'
+comment: 'upgrade graphql-java to 19.0'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -562,7 +562,51 @@ replace:
 #   new_value: "2.2.19.Final"
 
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.29"
+#   new_value: "1.31"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.13.3
+#   new_value: 2.14.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.13.3
+#   new_value: 2.14.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.2.19.Final"
+#   new_value: "2.3.0.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.2.19.Final"
+#   new_value: "2.3.0.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.31"
+#   new_value: "1.33"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons.codec>\d*\.\d*</version.commons.codec>
+#   old_value: "1.13"
+#   new_value: "1.15"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jaeger>\d*\.\d*\.\d*</version.jaeger>
+#   old_value: 1.8.0
+#   new_value: 1.8.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jcommander>\d*\.\d*</version.jcommander>
+#   old_value: "1.72"
+#   new_value: "1.82"
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
-  old_value: "1.29"
-  new_value: "1.31"
+  match: <version.graphql>\d*\.\d*</version.graphql>
+  old_value: "13.0"
+  new_value: "19.0"
