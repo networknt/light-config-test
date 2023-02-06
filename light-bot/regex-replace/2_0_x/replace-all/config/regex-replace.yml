@@ -606,7 +606,12 @@ replace:
 #   old_value: "1.72"
 #   new_value: "1.82"
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.graphql>\d*\.\d*</version.graphql>
+#   old_value: "13.0"
+#   new_value: "19.0"
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.graphql>\d*\.\d*</version.graphql>
-  old_value: "13.0"
-  new_value: "19.0"
+  match: <version.maven-javadoc>\d*\.\d*\.\d*</version.maven-javadoc>
+  old_value: 3.1.0
+  new_value: 3.4.1
