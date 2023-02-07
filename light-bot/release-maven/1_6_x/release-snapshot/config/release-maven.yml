@@ -50,6 +50,8 @@ checkout:
     - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-kafka.git
     - git@github.com:networknt/light-eventuate-4j.git
+    - git@github.com:networknt/light-tram-kafka.git
+    - git@github.com:networknt/light-tram-4j.git
 
 # generate changelog.md from github issues and check in
 # release to maven central
@@ -71,3 +73,5 @@ release:
   - networknt/light-spring-boot
   - networknt/light-kafka
   - networknt/light-eventuate-4j
+  - networknt/light-tram-kafka
+  - networknt/light-tram-4j
