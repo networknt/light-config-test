@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade graphql-java to 19.0'
+comment: 'upgrade kafka-clients to 3.4.0'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -53,7 +53,6 @@ checkout:
     - git@github.com:networknt/light-consumer-4j.git
     - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
-    # - git@github.com:networknt/light-tram-kafka.git
     - git@github.com:networknt/light-monitor.git
     # - git@github.com:networknt/light-java-hybrid-example.git
     - git@github.com:networknt/light-reference.git
@@ -611,7 +610,55 @@ replace:
 #   old_value: "13.0"
 #   new_value: "19.0"
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-javadoc>\d*\.\d*\.\d*</version.maven-javadoc>
+#   old_value: 3.1.0
+#   new_value: 3.4.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.14.0
+#   new_value: 2.14.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.14.0
+#   new_value: 2.14.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.0.Final"
+#   new_value: "2.3.3.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.0.Final"
+#   new_value: "2.3.3.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.mysql>\d*\.\d*\.\d*</version.mysql>
+#   old_value: 8.0.27
+#   new_value: 8.0.32
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: mysqlVersion=\d*\.\d*\.\d*
+#   old_value: 8.0.27
+#   new_value: 8.0.32
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.4.3
+#   new_value: 42.5.3
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: postgresVersion=\d*\.\d*\.\d*
+#   old_value: 42.4.3
+#   new_value: 42.5.3
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.maven-javadoc>\d*\.\d*\.\d*</version.maven-javadoc>
-  old_value: 3.1.0
-  new_value: 3.4.1
+  match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+  old_value: 3.2.0
+  new_value: 3.4.0
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: kafkaVersion=\d*\.\d*\.\d*
+  old_value: 3.2.0
+  new_value: 3.4.0
