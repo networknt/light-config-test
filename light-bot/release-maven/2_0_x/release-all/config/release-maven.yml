@@ -38,6 +38,7 @@ checkout:
     - git@github.com:networknt/light-proxy.git
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-gateway.git
+    - git@github.com:networknt/http-sidecar.git
     - git@github.com:networknt/light-oauth2.git
     - git@github.com:networknt/oauth-kafka.git
     - git@github.com:networknt/light-tokenization.git
@@ -83,6 +84,7 @@ release:
   - networknt/light-router
   - networknt/light-proxy
   - networknt/light-gateway
+  - networknt/http-sidecar
   - networknt/light-spring-boot
   - networknt/light-oauth2
   - lightapi/light-portal
