@@ -86,9 +86,7 @@ release:
   - networknt/light-gateway
   - networknt/http-sidecar
   - networknt/light-spring-boot
-  - networknt/light-oauth2
   - lightapi/light-portal
-  - networknt/oauth-kafka
   - networknt/light-scheduler
   - networknt/light-controller
   - lightapi/hybrid-command
@@ -103,6 +101,8 @@ release:
   - lightapi/event-importer
   - lightapi/maproot-command
   - lightapi/maproot-query
+  - networknt/light-oauth2
+  - networknt/oauth-kafka
   
 # deploy:
 #   - light-codegen:
