@@ -1,9 +1,9 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.1.12
+version: 2.1.13
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.1.11
+prev_tag: 2.1.12
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -25,43 +25,43 @@ skip_upload: true
 checkout:
   - branch: master
     repository:
-    - git@github.com:networknt/light-4j.git
-    - git@github.com:networknt/json-overlay.git
-    - git@github.com:networknt/openapi-parser.git
-    - git@github.com:networknt/light-rest-4j.git
-    - git@github.com:networknt/light-graphql-4j.git
-    - git@github.com:networknt/light-hybrid-4j.git
-    - git@github.com:networknt/light-codegen.git
-    - git@github.com:networknt/light-session-4j.git
-    - git@github.com:networknt/light-kafka.git
-    - git@github.com:networknt/light-spa-4j.git
-    - git@github.com:networknt/light-proxy.git
-    - git@github.com:networknt/light-router.git
-    - git@github.com:networknt/light-gateway.git
-    - git@github.com:networknt/http-sidecar.git
-    - git@github.com:networknt/light-oauth2.git
-    - git@github.com:networknt/oauth-kafka.git
-    - git@github.com:networknt/light-tokenization.git
-    - git@github.com:networknt/light-consumer-4j.git
+      - git@github.com:networknt/light-4j.git
+      - git@github.com:networknt/json-overlay.git
+      - git@github.com:networknt/openapi-parser.git
+      - git@github.com:networknt/light-rest-4j.git
+      - git@github.com:networknt/light-graphql-4j.git
+      - git@github.com:networknt/light-hybrid-4j.git
+      - git@github.com:networknt/light-codegen.git
+      - git@github.com:networknt/light-session-4j.git
+      - git@github.com:networknt/light-kafka.git
+      - git@github.com:networknt/light-spa-4j.git
+      - git@github.com:networknt/light-proxy.git
+      - git@github.com:networknt/light-router.git
+      - git@github.com:networknt/light-gateway.git
+      - git@github.com:networknt/http-sidecar.git
+      - git@github.com:networknt/light-oauth2.git
+      - git@github.com:networknt/oauth-kafka.git
+      - git@github.com:networknt/light-tokenization.git
+      - git@github.com:networknt/light-consumer-4j.git
     # - git@github.com:networknt/light-config-server.git
-    - git@github.com:networknt/light-spring-boot.git
-    - git@github.com:networknt/light-aws-lambda.git
-    - git@github.com:networknt/light-chaos-monkey.git
-    - git@github.com:lightapi/light-portal.git
-    - git@github.com:networknt/light-scheduler.git
-    - git@github.com:networknt/light-controller.git
-    - git@github.com:lightapi/hybrid-command.git
-    - git@github.com:lightapi/hybrid-query.git
-    - git@github.com:lightapi/market-command.git
-    - git@github.com:lightapi/market-query.git
-    - git@github.com:lightapi/user-query.git
-    - git@github.com:lightapi/user-command.git
-    - git@github.com:lightapi/ref-query.git
-    - git@github.com:lightapi/ref-command.git
-    - git@github.com:lightapi/event-exporter.git
-    - git@github.com:lightapi/event-importer.git
-    - git@github.com:lightapi/maproot-command.git
-    - git@github.com:lightapi/maproot-query.git
+      - git@github.com:networknt/light-spring-boot.git
+      - git@github.com:networknt/light-aws-lambda.git
+      - git@github.com:networknt/light-chaos-monkey.git
+      - git@github.com:lightapi/light-portal.git
+      - git@github.com:networknt/light-scheduler.git
+      - git@github.com:networknt/light-controller.git
+      - git@github.com:lightapi/hybrid-command.git
+      - git@github.com:lightapi/hybrid-query.git
+      - git@github.com:lightapi/market-command.git
+      - git@github.com:lightapi/market-query.git
+      - git@github.com:lightapi/user-query.git
+      - git@github.com:lightapi/user-command.git
+      - git@github.com:lightapi/ref-query.git
+      - git@github.com:lightapi/ref-command.git
+      - git@github.com:lightapi/event-exporter.git
+      - git@github.com:lightapi/event-importer.git
+      - git@github.com:lightapi/maproot-command.git
+      - git@github.com:lightapi/maproot-query.git
 
 # generate changelog.md from github issues and check in
 # release to maven central
@@ -103,7 +103,7 @@ release:
   - lightapi/maproot-query
   - networknt/light-oauth2
   - networknt/oauth-kafka
-  
+
 # deploy:
 #   - light-codegen:
 #     - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
