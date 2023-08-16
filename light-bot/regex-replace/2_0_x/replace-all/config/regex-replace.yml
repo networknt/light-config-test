@@ -815,12 +815,26 @@ replace:
 #   old_value: 1.0.1
 #   new_value: 1.0.2
 
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
-  old_value: "2.3.6.Final"
-  new_value: "2.3.7.Final"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.6.Final"
+#   new_value: "2.3.7.Final"
 
-- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: undertowVersion=\d*\.\d*\.\d*\.Final
-  old_value: "2.3.6.Final"
-  new_value: "2.3.7.Final"
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.6.Final"
+#   new_value: "2.3.7.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 7.3.3
+#   new_value: 7.4.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 7.3.3
+#   new_value: 7.4.0
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.redisson>\d*\.\d*\.\d*</version.redisson>
+  old_value: "3.20.1"
+  new_value: "3.23.2"
