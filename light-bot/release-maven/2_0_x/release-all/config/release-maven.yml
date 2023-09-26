@@ -1,4 +1,4 @@
-# Workspace that is used for this operation. Most of time, this is done on local.
+cd# Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
 version: 2.1.26
@@ -42,8 +42,8 @@ checkout:
       - git@github.com:networknt/light-oauth2.git
       - git@github.com:networknt/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
-      - git@github.com:networknt/light-consumer-4j.git
-    # - git@github.com:networknt/light-config-server.git
+      # - git@github.com:networknt/light-consumer-4j.git
+      # - git@github.com:networknt/light-config-server.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-chaos-monkey.git
@@ -78,7 +78,7 @@ release:
   - networknt/light-session-4j
   - networknt/light-kafka
   - networknt/light-spa-4j
-  - networknt/light-consumer-4j
+  # - networknt/light-consumer-4j
   - networknt/light-aws-lambda
   - networknt/light-chaos-monkey
   - networknt/light-router

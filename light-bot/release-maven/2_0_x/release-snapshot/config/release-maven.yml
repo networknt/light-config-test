@@ -47,12 +47,12 @@ checkout:
       - git@github.com:networknt/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-consumer-4j.git
-      - git@github.com:networknt/light-example-4j.git
+      # - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-docker.git
-    # - git@github.com:networknt/light-config-server.git
+      # - git@github.com:networknt/light-config-server.git
       - git@github.com:networknt/light-workflow-4j.git
       - git@github.com:networknt/light-spring-boot.git
-    # - git@github.com:networknt/light-tram-kafka.git
+      # - git@github.com:networknt/light-tram-kafka.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:lightapi/light-portal.git
       - git@github.com:networknt/light-scheduler.git
@@ -86,7 +86,7 @@ release:
   # - light-session-4j
   - networknt/light-kafka
   - networknt/light-spa-4j
-  - networknt/light-consumer-4j
+  # - networknt/light-consumer-4j
   - networknt/light-aws-lambda
   - networknt/light-chaos-monkey
   - networknt/light-router
