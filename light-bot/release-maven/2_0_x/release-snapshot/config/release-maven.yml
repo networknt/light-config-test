@@ -1,12 +1,12 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releassnapshot_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.1.27-SNAPSHOT
+version: 2.1.28-SNAPSHOT
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.1.26
+prev_tag: 2.1.27
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -35,7 +35,6 @@ checkout:
       - git@github.com:networknt/light-graphql-4j.git
       - git@github.com:networknt/light-hybrid-4j.git
       - git@github.com:networknt/light-codegen.git
-    # - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-chaos-monkey.git
@@ -52,7 +51,6 @@ checkout:
       # - git@github.com:networknt/light-config-server.git
       - git@github.com:networknt/light-workflow-4j.git
       - git@github.com:networknt/light-spring-boot.git
-      # - git@github.com:networknt/light-tram-kafka.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:lightapi/light-portal.git
       - git@github.com:networknt/light-scheduler.git
@@ -83,10 +81,8 @@ release:
   - networknt/light-graphql-4j
   - networknt/light-hybrid-4j
   - networknt/light-codegen
-  # - light-session-4j
   - networknt/light-kafka
   - networknt/light-spa-4j
-  # - networknt/light-consumer-4j
   - networknt/light-aws-lambda
   - networknt/light-chaos-monkey
   - networknt/light-router
@@ -94,7 +90,6 @@ release:
   - networknt/light-gateway
   - networknt/http-sidecar
   - networknt/light-spring-boot
-  # - networknt/light-tram-kafka
   - lightapi/light-portal
   - networknt/light-scheduler
   - networknt/light-controller
