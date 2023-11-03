@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_1_6_x
 # git commit comment for the current task
-comment: 'downgrade undertow to 2.2.21.Final'
+comment: 'downgrade jackson to 2.15.3'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -506,12 +506,26 @@ replace:
 #   old_value: "1.13"
 #   new_value: "1.15"
 
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
-  old_value: "2.3.0.Final"
-  new_value: "2.2.21.Final"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.0.Final"
+#   new_value: "2.2.21.Final"
 
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.0.Final"
+#   new_value: "2.2.21.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.33"
+#   new_value: "2.2"
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+  old_value: 2.14.0
+  new_value: 2.15.3
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: undertowVersion=\d*\.\d*\.\d*\.Final
-  old_value: "2.3.0.Final"
-  new_value: "2.2.21.Final"
+  match: jacksonVersion=\d*\.\d*\.\d*
+  old_value: 2.14.0
+  new_value: 2.15.3
