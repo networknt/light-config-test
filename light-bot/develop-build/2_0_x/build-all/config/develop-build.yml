@@ -39,7 +39,6 @@ checkout:
       - git@github.com:networknt/light-graphql-4j.git
       - git@github.com:networknt/light-hybrid-4j.git
       - git@github.com:networknt/light-codegen.git
-      # - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-proxy.git
       - git@github.com:networknt/light-router.git
@@ -48,9 +47,7 @@ checkout:
       - git@github.com:networknt/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-reference.git
-      - git@github.com:networknt/light-consumer-4j.git
       - git@github.com:networknt/light-spring-boot.git
-      - git@github.com:networknt/light-tram-kafka.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-chaos-monkey.git
@@ -81,9 +78,9 @@ build:
     - light-graphql-4j
     - light-hybrid-4j
     - light-codegen
-    # - light-session-4j
     - light-spa-4j
     - light-aws-lambda
+    - light-aws-lambda/ccc-lambda/middleware-function
     - light-proxy
     - light-router
     - light-gateway
@@ -92,9 +89,7 @@ build:
     - oauth-kafka
     - light-tokenization
     - light-reference
-    - light-consumer-4j
     - light-spring-boot
-    - light-tram-kafka
     - light-chaos-monkey
     - kafka-sidecar
     - http-sidecar

@@ -39,7 +39,6 @@ checkout:
       - git@github.com:networknt/light-graphql-4j.git
       - git@github.com:networknt/light-hybrid-4j.git
       - git@github.com:networknt/light-codegen.git
-      # - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-proxy.git
@@ -49,14 +48,9 @@ checkout:
       - git@github.com:networknt/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-reference.git
-      - git@github.com:networknt/light-consumer-4j.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-example-4j.git
-      - git@github.com:networknt/light-tram-kafka.git
-      # - git@github.com:networknt/light-docker.git
-      # - git@github.com:networknt/http2client-benchmark.git
-      # - git@github.com:networknt/microservices-framework-benchmark.git
-      # - git@github.com:networknt/light-config-server.git
+      - git@github.com:networknt/light-config-server.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-chaos-monkey.git
       - git@github.com:networknt/kafka-sidecar.git
@@ -87,11 +81,12 @@ build:
     - light-graphql-4j
     - light-hybrid-4j
     - light-codegen
-    # - light-session-4j
     - light-kafka
     - light-spa-4j
     - light-aws-lambda
     - light-aws-lambda/jwt-authorizer/Authorizer
+    - light-aws-lambda/ccc-lambda/middleware-function
+
     - light-proxy
     - light-router
     - light-gateway
@@ -99,9 +94,7 @@ build:
     - oauth-kafka
     - light-tokenization
     - light-reference
-    - light-consumer-4j
     - light-spring-boot
-    - light-tram-kafka
     # - light-portal
     # - light-portal/api-certification
     # - light-portal/host-menu
