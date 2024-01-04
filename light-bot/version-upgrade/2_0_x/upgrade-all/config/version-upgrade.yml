@@ -32,7 +32,7 @@ checkout:
       - git@github.com:networknt/light-proxy.git
       - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
-      - git@github.com:networknt/light-oauth2.git
+      # - git@github.com:networknt/light-oauth2.git
       - git@github.com:networknt/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-example-4j.git
@@ -108,7 +108,7 @@ maven:
   - light-proxy
   - light-router
   - light-gateway
-  - light-oauth2
+  # - light-oauth2
   - light-kafka
   - oauth-kafka
   - light-tokenization
@@ -197,9 +197,9 @@ version:
   light-gateway:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  light-oauth2:
-    - path: pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  # light-oauth2:
+  #   - path: pom.xml
+  #     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   oauth-kafka:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
