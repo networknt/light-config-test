@@ -37,7 +37,6 @@ checkout:
       - git@github.com:networknt/light-graphql-4j.git
       - git@github.com:networknt/light-hybrid-4j.git
       - git@github.com:networknt/light-codegen.git
-      # - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-proxy.git
       - git@github.com:networknt/light-router.git
@@ -47,7 +46,6 @@ checkout:
       - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-docker.git
       - git@github.com:networknt/light-config-server.git
-      - git@github.com:networknt/light-consumer-4j.git
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:networknt/light-spring-boot.git
@@ -63,7 +61,6 @@ checkout:
       - git@github.com:networknt/light-graphql-4j.git
       - git@github.com:networknt/light-hybrid-4j.git
       - git@github.com:networknt/light-codegen.git
-      # - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-proxy.git
       - git@github.com:networknt/light-router.git
@@ -75,7 +72,6 @@ checkout:
       - git@github.com:networknt/light-docker.git
       - git@github.com:networknt/light-doc.git
       - git@github.com:networknt/light-config-server.git
-      - git@github.com:networknt/light-consumer-4j.git
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:networknt/light-spring-boot.git

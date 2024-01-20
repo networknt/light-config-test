@@ -50,7 +50,6 @@ checkout:
     - git@github.com:networknt/microbenchmark.git
     - git@github.com:networknt/react-schema-form-rc-select.git
     - git@github.com:networknt/light-config-prod.git
-    - git@github.com:networknt/light-consumer-4j.git
     - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-monitor.git
