@@ -76,6 +76,8 @@ release:
   - networknt/light-kafka
   - networknt/light-spa-4j
   - networknt/light-aws-lambda
+  - networknt/light-aws-lambda/jwt-authorizer/jwt-authorizer
+  - networknt/light-aws-lambda/ccc-lambda/middleware-function
   - networknt/light-chaos-monkey
   - networknt/light-router
   - networknt/light-proxy
