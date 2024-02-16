@@ -1,6 +1,6 @@
 ### The purpose of this config
 
-The config files in this folder is to backup GitHub reposistories to internal Git server. Also, sync the updated sync branch to the GitHub from the internal Git server. 
+The config files in this folder is to backup GitHub reposistories to internal Git server. Also, sync the updated sync branch to the GitHub from the internal Git server.
 
 
 ### Prepare the environment
@@ -10,7 +10,7 @@ time to use light-bot, then you need to checkout both light-bot and light-config
 
 I am using networknt under my user home directory as workspace and all scripts are based on that assumtpion. If
 you want use another folder as your workspace, please fork the light-config-test repo and update the scripts
-accordingly. 
+accordingly.
 
 ```
 cd ~
@@ -21,7 +21,7 @@ cd light-bot
 ./gradlew build
 ```
 
-Now you should have light-bot built already. 
+Now you should have light-bot built already.
 
 ### To start the command line
 
@@ -34,8 +34,6 @@ java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -j
 
 ### Environment Setup
 
-In the local environment, we need to create a key and upload the key to both GitHub and internal Git server. 
+In the local environment, we need to create a key and upload the key to both GitHub and internal Git server.
 
 For all the repositories on the GitHub that we want to backup, we need to create an empty repo on the internal Git server.
-
-

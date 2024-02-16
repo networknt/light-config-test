@@ -4,11 +4,11 @@ The config files in this folder are pointing to the cloud services.
 
 ### Prepare the environment
 
-There are several repositories need to be cloned to your local and built. 
+There are several repositories need to be cloned to your local and built.
 
 The setting use networknt under user home directory as workspace and all scripts
 are based on that assumption. If user want use another folder as local workspace,
-please fork the light-config-test repo and update the scripts accordingly. 
+please fork the light-config-test repo and update the scripts accordingly.
 
 ```
 cd ~
@@ -19,7 +19,7 @@ cd ~/networknt/light-example-4j/eventuate/todo-list
 mvn clean install
 ```
 
-Now you should have light-bot built already. 
+Now you should have light-bot built already.
 
 ### To start the command line
 
@@ -34,4 +34,3 @@ To start rest query side service:
 ```
 java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-example-4j/eventuate/todo-list/rest-query/target/rest-query-1.0.0.jar
 ```
-

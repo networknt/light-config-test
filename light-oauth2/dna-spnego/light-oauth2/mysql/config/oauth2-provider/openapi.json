@@ -18,7 +18,7 @@
               }
             }
           }
-        },        
+        },
         "tags": [
           "providers"
         ],
@@ -45,7 +45,7 @@
             "description": "Null response"
           }
         }
-      },   
+      },
       "put": {
         "summary": "Update oauth provider ",
         "operationId": "updateProvider",
@@ -59,7 +59,7 @@
               }
             }
           }
-        },        
+        },
         "tags": [
           "providers"
         ],
@@ -86,7 +86,7 @@
             "description": "Null response"
           }
         }
-      },        
+      },
       "get": {
         "summary": "Return list of registed oauth provider ",
         "operationId": "getProviders",

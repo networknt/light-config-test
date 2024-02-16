@@ -23,10 +23,10 @@ tasks:
   # one set of operations
   checkoutSetOne: checkout
   buildSetOne: build
-  testProjects: test     
-  copyProjectFiles: copyFile 
+  testProjects: test
+  copyProjectFiles: copyFile
   copyWildcardFile: copyWildcardFile
-  
+
 checkout:
   checkoutSetOne:
     - branch: 1.6.x
@@ -66,10 +66,10 @@ copyFile:
   # oauth-playground
   - src: light-portal/oauth-playground/target/playground-1.0.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/playground-1.0.0.jar
-  # light-portal common-util  
+  # light-portal common-util
   - src: light-portal/common-util/target/common-util-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/common-util-0.1.0.jar
-  # host-menu  
+  # host-menu
   - src: light-portal/host-menu/common/target/host-menu-common-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-query/service/host-menu-common-0.1.0.jar
   - src: light-portal/host-menu/command/target/host-menu-command-0.1.0.jar
@@ -114,7 +114,7 @@ copyFile:
   # populate hybrid-command services
   - src: light-portal/hybrid-command/target/hybrid-command.jar
     dst: light-config-test/light-portal/hybrid-command/service/hybrid-command.jar
-  # common-util  
+  # common-util
   - src: light-portal/common-util/target/common-util-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/common-util-0.1.0.jar
   # host-menu
@@ -131,7 +131,7 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-command/service/schema-form-command-0.1.0.jar
   - src: light-portal/schema-form/hybrid-command/target/form-command-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/form-command-0.1.0.jar
-  # user-management  
+  # user-management
   - src: light-portal/user-management/common/target/user-common-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/user-common-0.1.0.jar
   - src: light-portal/user-management/command/target/user-command-0.1.0.jar
@@ -140,11 +140,11 @@ copyFile:
     dst: light-config-test/light-portal/hybrid-command/service/user-query-0.1.0.jar
   - src: light-portal/user-management/hybrid-command/target/user-hybrid-command-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-command-0.1.0.jar
-  
+
 # copy files with Glob pattern from src folder to dst folder both in home and workspace.
 # copyWildcardFile:
-  # light-codegen 
-  # The jar file has version number and we are using glob patter to locate the jar files. 
+  # light-codegen
+  # The jar file has version number and we are using glob patter to locate the jar files.
   # - src: light-codegen//codegen-core/target
   #   dst: light-config-test/light-portal/hybrid-query/service
   #   pattern: codegen-core-*[!javadoc][!sources].jar
@@ -153,7 +153,7 @@ copyFile:
   #   pattern: codegen-fwk-*[!javadoc][!sources].jar
   # - src: light-codegen/light-graphql-4j/target
   #   dst: light-config-test/light-portal/hybrid-query/service
-  #   pattern: light-graphql-4j-generator-*[!javadoc][!sources].jar   
+  #   pattern: light-graphql-4j-generator-*[!javadoc][!sources].jar
   # - src: light-codegen/light-rest-4j/target
   #   dst: light-config-test/light-portal/hybrid-query/service
   #   pattern: light-rest-4j-generator-*[!javadoc][!sources].jar

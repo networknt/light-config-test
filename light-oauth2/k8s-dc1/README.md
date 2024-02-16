@@ -1,2 +1,1 @@
-This folder contains the configuration and Kubernetes deployment files to setup a light-oauth2 cluster on the first node in the cluster to simulate the data center 1 in a standalone deployment or first cluster in the federated deployment. 
-
+This folder contains the configuration and Kubernetes deployment files to setup a light-oauth2 cluster on the first node in the cluster to simulate the data center 1 in a standalone deployment or first cluster in the federated deployment.

@@ -23,12 +23,12 @@ tasks:
   # one set of operations
   checkoutSetOne: checkout
   buildSetOne: build
-  testProjects: test     
-  copyProjectFiles: copyFile 
+  testProjects: test
+  copyProjectFiles: copyFile
   copyWildcardFile: copyWildcardFile
 
 checkout:
-  checkoutSetOne: 
+  checkoutSetOne:
     - branch: master
       skip: false
       repository:
@@ -104,7 +104,7 @@ build:
     # - light-portal/hybrid-query
     # - http2client-benchmark/httpserver
     # - http2client-benchmark/lightclient
-    # - microservices-framework-benchmark/light-4j  
+    # - microservices-framework-benchmark/light-4j
     # - light-config-server
     - light-example-4j/rest/petstore-maven-single
     - light-example-4j/rest/petstore-maven-multiple
@@ -418,7 +418,7 @@ test:
           "$.data.numberHolder.theNumber": 4
     # subscription test has two browser windows and cannot be tested here.
 
-  # dynamic port testing with two instances  
+  # dynamic port testing with two instances
   dynamic-port-petstore:
     server:
     - path: light-example-4j/rest/openapi/dyanmic-port
@@ -446,7 +446,7 @@ test:
         body:
           "$.name": Jessica Right
           "$.id": 1
-          
+
 # copy individual files
 copyFile:
 

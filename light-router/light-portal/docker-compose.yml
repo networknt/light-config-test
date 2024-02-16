@@ -15,4 +15,3 @@ services:
     - ./taiji/build:/taiji/build
     - ./signin/build:/signin/build
     - ./networknt/build:/networknt/build
-

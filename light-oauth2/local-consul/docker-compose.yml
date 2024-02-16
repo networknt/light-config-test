@@ -11,7 +11,7 @@
       volumes:
         - ./light-oauth2/mysql:/docker-entrypoint-initdb.d
         - /home/steve/mysql:/var/lib/mysql
-      network_mode: host    
+      network_mode: host
       environment:
         LANG: C.UTF-8
         MYSQL_ROOT_PASSWORD: rootpassword
@@ -46,7 +46,7 @@
         - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -65,7 +65,7 @@
         - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -84,7 +84,7 @@
         - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -103,7 +103,7 @@
         - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -122,7 +122,7 @@
         - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -141,7 +141,7 @@
         - "oauth.lightapi.net:192.168.1.144"
       environment:
         - STATUS_HOST_IP=192.168.1.144
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
