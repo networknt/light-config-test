@@ -1,7 +1,7 @@
 # light-exempla-4j DEMO app
 #### Overview
 
-* This is a snapshot of a sample app created by to demonstrate microservices service registration/discovery with Consul. Source repo can be found at 
+* This is a snapshot of a sample app created by to demonstrate microservices service registration/discovery with Consul. Source repo can be found at
 
 https://github.com/networknt/light-example-4j
 
@@ -31,7 +31,7 @@ https://hub.docker.com/r/networknt/com.networknt.apid-1.0.0/tags/
 
    _Note:_ the api deployment requires hostNetwork for port binding and will allocate ports from a pre-defined range (30000~30499 in this case). Not only the SCC has to be granted to the serviceaccount but also iptables firewall rule needs to be added. <br/>
 
-    iptables -I INPUT 6 -p tcp -m multiport --dports 30000:30499 -j ACCEPT 
+    iptables -I INPUT 6 -p tcp -m multiport --dports 30000:30499 -j ACCEPT
 
 * Push the api container images to the above openshift registry
 
@@ -64,7 +64,7 @@ https://hub.docker.com/r/networknt/com.networknt.apid-1.0.0/tags/
     oc create -f ./api_c/apic-dc.yaml
     oc create -f ./api_d/apid-dc.yaml
 
-* Verify the logs of all 4 pods and make a note the listen address/port of each (they're all dynamically assigned at runtime). 
+* Verify the logs of all 4 pods and make a note the listen address/port of each (they're all dynamically assigned at runtime).
 
   You can test the API's by accessing https://LISTEN_IP:LISTEN_PORT/v1/data, e.g. https://172.26.152.232:30000
 
@@ -73,4 +73,3 @@ https://hub.docker.com/r/networknt/com.networknt.apid-1.0.0/tags/
     ["API D: Message 1 from port 7444","API D: Message 2 from port 7444","API B: Message 1","API B: Message 2"]
 
 * The services can also be seen on the Consul UI.
-

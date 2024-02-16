@@ -25,7 +25,7 @@ tasks:
   checkoutSetOne: checkout
 
 checkout:
-  checkoutSetOne: 
+  checkoutSetOne:
     - branch: master
       skip: false
       repository:

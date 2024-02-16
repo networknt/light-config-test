@@ -5,12 +5,12 @@ The config files in this folder are used to release docker images to docker hub 
 This task can run right after the release-maven task as build is on the local computer. light-codegen is not
 included in this task as it is built in docker and jar files from maven central won't be available immediately.
 
-There is a separate task for light-codegen release with both maven and docker together. 
+There is a separate task for light-codegen release with both maven and docker together.
 
 
 ### Prepare the environment
 
-If this is your first time to use light-bot, then you need to clone both light-bot and light-config-test repository to a workspace and follow the instructions below to build light-bot. 
+If this is your first time to use light-bot, then you need to clone both light-bot and light-config-test repository to a workspace and follow the instructions below to build light-bot.
 
 https://www.networknt.com/tutorial/bot/build-light-bot/
 
@@ -25,4 +25,3 @@ Or
 ```
 ./run.sh
 ```
-

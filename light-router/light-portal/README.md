@@ -1,4 +1,4 @@
-Virutal host configuration for light-portal entry point on portal VM. 
+Virutal host configuration for light-portal entry point on portal VM.
 
 The following domains are supported as virtual hosts.
 

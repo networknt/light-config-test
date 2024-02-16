@@ -56,7 +56,7 @@ checkout:
     # - git@github.com:networknt/light-java-hybrid-example.git
     - git@github.com:networknt/light-reference.git
     - git@github.com:networknt/light-kafka.git
-    
+
     # LightApi
     - git@github.com:lightapi/light-portal.git
     - git@github.com:lightapi/hybrid-command.git
@@ -111,7 +111,7 @@ checkout:
     - git@198.55.49.186:light-chain/chain-writer.git
     - git@198.55.49.186:light-chain/kyc-reader.git
     - git@198.55.49.186:light-chain/token-reader.git
-    
+
 # regex replacement from old value to new value during a full text search on certain patterns
 # of file names.
 replace:

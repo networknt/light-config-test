@@ -1,6 +1,6 @@
 This folder contains docker-compose.yml to start mqproducer and mqconsumer examples at the same time. These two examples are part of the light-mq that is a commercial component offered by Network New Technologies Inc. for our enterprise customers who have application integration with IBM MQ. If you are interested in buying the license, please contact sales@lightapi.net
 
-Before starting the docker-compose in this folder, please start the MQ docker container first. 
+Before starting the docker-compose in this folder, please start the MQ docker container first.
 
 ```
 docker run --env LICENSE=accept \
@@ -21,4 +21,3 @@ docker-compose up -d
 For documentation on this component, please refer to [light-mq document]()
 
 For tutorial on the above example, please refer to [light-mq tutorial]()
-

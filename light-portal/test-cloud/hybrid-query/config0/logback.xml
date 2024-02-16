@@ -64,8 +64,8 @@
     </root>
     <logger name="com.networknt" level="debug" additivity="false">
         <appender-ref ref="stdout"/>
-    </logger>    
+    </logger>
     <logger name="net.lightapi" level="debug" additivity="false">
         <appender-ref ref="stdout"/>
-    </logger>    
+    </logger>
 </configuration>

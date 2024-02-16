@@ -25,7 +25,7 @@ skip_release_note: true
 skip_docker: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
-  # here we checkout master branch to publish the images. 
+  # here we checkout master branch to publish the images.
   - branch: master
     repository:
     # - git@github.com:networknt/light-proxy.git
@@ -61,4 +61,3 @@ docker:
   - light-oauth2/token
   - light-oauth2/user
   - light-oauth2/provider
-  

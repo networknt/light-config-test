@@ -25,7 +25,7 @@ skip_release_note: true
 skip_docker: false
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
-  # here we checkout master branch to publish the images. 
+  # here we checkout master branch to publish the images.
   - branch: master
     repository:
     - git@github.com:networknt/taiji-blockchain.git
@@ -71,4 +71,3 @@ docker:
   - kyc-reader
   - web-client/server
   - taiji-faucet
-  

@@ -11,7 +11,7 @@
       volumes:
         - ./light-oauth2/mysql:/docker-entrypoint-initdb.d
         - /home/steve/mysql:/var/lib/mysql
-      network_mode: host    
+      network_mode: host
       environment:
         LANG: C.UTF-8
         MYSQL_ROOT_PASSWORD: rootpassword
@@ -42,7 +42,7 @@
         - ./light-oauth2/mysql/config/oauth2-token:/config
       environment:
         - STATUS_HOST_IP=38.113.162.51
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -59,7 +59,7 @@
         - ./light-oauth2/mysql/config/oauth2-service:/config
       environment:
         - STATUS_HOST_IP=38.113.162.51
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -76,7 +76,7 @@
         - ./light-oauth2/mysql/config/oauth2-client:/config
       environment:
         - STATUS_HOST_IP=38.113.162.51
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -93,7 +93,7 @@
         - ./light-oauth2/mysql/config/oauth2-user:/config
       environment:
         - STATUS_HOST_IP=38.113.162.51
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -110,7 +110,7 @@
         - ./light-oauth2/mysql/config/oauth2-key:/config
       environment:
         - STATUS_HOST_IP=38.113.162.51
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:
@@ -127,7 +127,7 @@
         - ./light-oauth2/mysql/config/oauth2-refresh-token:/config
       environment:
         - STATUS_HOST_IP=38.113.162.51
-      network_mode: host    
+      network_mode: host
       depends_on:
         - mysqldb
       #logging:

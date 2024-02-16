@@ -85,7 +85,7 @@ chains:
     - header
     - path
     - router
-    
+
 paths:
   - path: '/authorization'
     method: 'GET'
@@ -154,7 +154,7 @@ paths:
     method: 'get'
     exec:
       - default
-  
+
   # oauth2-code
   - path: '/oauth2/code'
     method: 'get'
@@ -165,7 +165,7 @@ paths:
     exec:
       - code
 
-  # oauth2-key 
+  # oauth2-key
   - path: '/oauth2/key/{keyId}'
     method: 'get'
     exec:

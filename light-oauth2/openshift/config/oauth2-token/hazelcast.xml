@@ -76,7 +76,7 @@
                         <property name="service-label-value">true</property>
                         <property name="namespace">dit1</property>
                     </properties>
-                </discovery-strategy>                
+                </discovery-strategy>
             </discovery-strategies>
         </join>
         <interfaces enabled="false">

@@ -7,7 +7,7 @@ Please follow the build steps by:
  [--Build Service](https://github.com/networknt/light-config-test/tree/develop/light-example-4j/eventuate/todo-list/local)
 
 
-Now you should have light-bot built already. 
+Now you should have light-bot built already.
 
 ### To start the command line
 
@@ -22,4 +22,3 @@ To start rest command side service:
 ```
 java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-example-4j/eventuate/todo-list/rest-command/target/rest-command-1.0.0.jar
 ```
-

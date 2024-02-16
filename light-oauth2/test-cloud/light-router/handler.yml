@@ -75,7 +75,7 @@ chains:
     #- audit
     #- sanitizer
     #- validator
-    
+
 paths:
 
   # oauth2-client
@@ -119,7 +119,7 @@ paths:
   #   method: 'get'
   #   exec:
   #     - default
-  
+
   # oauth2-code
   - path: '/oauth2/code'
     method: 'get'
@@ -130,7 +130,7 @@ paths:
     exec:
       - default
 
-  # oauth2-key 
+  # oauth2-key
   - path: '/oauth2/key/{keyId}'
     method: 'get'
     exec:
