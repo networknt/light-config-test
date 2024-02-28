@@ -37,3 +37,19 @@ java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -j
 In the local environment, we need to create a key and upload the key to both GitHub and internal Git server.
 
 For all the repositories on the GitHub that we want to backup, we need to create an empty repo on the internal Git server.
+
+
+### All Commmands
+
+```
+bash, -c, git fetch ; git checkout master ; git pull origin master
+bash, -c, if git show-ref --verify --quiet refs/heads/sync; then git checkout sync; else git checkout -b sync; fi; git merge master;
+
+bash, -c, if ! git remote get-url internal &>/dev/null; then git remote add internal git@198.55.49.186:networknt/light-monorepo-4j.git; fi; git checkout sync; git pull internal sync; git push internal sync;
+
+bash, -c, if ! git remote get-url internal &>/dev/null; then git remote add internal git@198.55.49.186:networknt/light-monorepo-4j.git; fi; git checkout master; git pull internal master; git push internal master;
+
+bash, -c, git fetch ; git checkout sync ; git pull internal sync
+
+bash, -c, if ! git remote get-url origin &>/dev/null; then git remote add origin git@github.com:networknt/light-monorepo-4j.git; fi; git checkout sync; git pull origin sync; git push origin sync;
+```
