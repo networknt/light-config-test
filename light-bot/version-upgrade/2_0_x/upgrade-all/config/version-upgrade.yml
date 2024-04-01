@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade_2_0_x
 # git commit comment for this task
-comment: 'upgrade to version 2.1.33-SNAPSHOT after release'
+comment: 'upgrade to version 2.1.34-SNAPSHOT after release'
 # old existing version that need to be upgraded
-old_version: 2.1.32
+old_version: 2.1.33
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 2.1.33-SNAPSHOT
+new_version: 2.1.34-SNAPSHOT
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -32,7 +32,6 @@ checkout:
       - git@github.com:networknt/light-proxy.git
       - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
-      # - git@github.com:networknt/light-oauth2.git
       - git@github.com:networknt/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-example-4j.git
@@ -72,9 +71,10 @@ checkout:
 
     # AWS Lambda
       - git@github.com:networknt/light-aws-lambda.git
+      - git@github.com:networknt/light-lambda-native.git
+
     # light-chaos-monkey
       - git@github.com:networknt/light-chaos-monkey.git
-      - git@github.com:networknt/light-controller.git
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/http-sidecar.git
     # Light portal
@@ -92,6 +92,8 @@ checkout:
 
     # Light scheduler
       - git@github.com:networknt/light-scheduler.git
+    # Light controller
+      - git@github.com:lightapi/light-controller.git
 
 # run mvn versions:set command in the following folders.
 maven:
@@ -127,11 +129,12 @@ maven:
   - maproot-command
   - maproot-query
   - light-aws-lambda
+  - light-lambda-native
   - light-chaos-monkey
-  - light-controller
   - kafka-sidecar
   - http-sidecar
   - light-scheduler
+  - light-controller
 # regex replacement for dependencies
 version:
   json-overlay:
@@ -843,7 +846,9 @@ version:
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
     - path: jwt-authorizer/Authorizer/pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-    - path: ccc-lambda/middleware-function/pom.xml
+
+  light-lambda-native:
+    - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
   # Light-chaos-monkey

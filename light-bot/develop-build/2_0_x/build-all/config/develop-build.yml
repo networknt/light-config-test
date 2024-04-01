@@ -50,6 +50,7 @@ checkout:
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-aws-lambda.git
+      - git@github.com:networknt/light-lambda-native.git
       - git@github.com:networknt/light-chaos-monkey.git
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/http-sidecar.git

@@ -1,9 +1,9 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.1.32
+version: 2.1.33
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.1.31
+prev_tag: 2.1.32
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -14,7 +14,7 @@ skip_change_log: false
 # skip check in the generated changelog
 skip_checkin: false
 # You can skip the last release step so that you can double check the merged result.
-skip_release: false
+skip_release: true
 # skip upload release note to the github
 skip_release_note: false
 # skip deploy after the release
@@ -43,10 +43,11 @@ checkout:
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
+      - git@github.com:networknt/light-lambda-native.git
       - git@github.com:networknt/light-chaos-monkey.git
       - git@github.com:lightapi/light-portal.git
       - git@github.com:networknt/light-scheduler.git
-      - git@github.com:networknt/light-controller.git
+      - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/hybrid-command.git
       - git@github.com:lightapi/hybrid-query.git
       - git@github.com:lightapi/market-command.git
@@ -76,7 +77,7 @@ release:
   - networknt/light-kafka
   - networknt/light-spa-4j
   - networknt/light-aws-lambda
-  # - networknt/light-aws-lambda/ccc-lambda/middleware-function
+  - networknt/light-lambda-native
   - networknt/light-chaos-monkey
   - networknt/light-router
   - networknt/light-proxy
@@ -85,7 +86,7 @@ release:
   - networknt/light-spring-boot
   - lightapi/light-portal
   - networknt/light-scheduler
-  - networknt/light-controller
+  - lightapi/light-controller
   - lightapi/hybrid-command
   - lightapi/hybrid-query
   - lightapi/market-command
