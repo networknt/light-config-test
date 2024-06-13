@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade logback to 1.5.6'
+comment: 'upgrade jackson to 2.17.1'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -995,11 +995,20 @@ replace:
 #   old_value: 2.0.9
 #   new_value: 2.0.13
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.4.14
+#   new_value: 1.5.6
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.4.14
+#   new_value: 1.5.6
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.logback>\d*\.\d*\.\d*</version.logback>
-  old_value: 1.4.14
-  new_value: 1.5.6
+  match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+  old_value: 2.17.0
+  new_value: 2.17.1
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: logbackVersion=\d*\.\d*\.\d*
-  old_value: 1.4.14
-  new_value: 1.5.6
+  match: jacksonVersion=\d*\.\d*\.\d*
+  old_value: 2.17.0
+  new_value: 2.17.1
