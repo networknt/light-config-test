@@ -51,6 +51,7 @@ checkout:
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
+      - git@github.com:networknt/openapi-petstore.git
       - git@github.com:lightapi/light-portal.git
       - git@github.com:networknt/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
@@ -108,3 +109,4 @@ release:
   - lightapi/maproot-query
   # - networknt/light-oauth2
   - networknt/oauth-kafka
+  - networknt/openapi-petstore

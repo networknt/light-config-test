@@ -56,6 +56,8 @@ checkout:
     # - git@github.com:networknt/light-java-hybrid-example.git
     - git@github.com:networknt/light-reference.git
     - git@github.com:networknt/light-kafka.git
+    - git@github.com:networknt/openapi-petstore.git
+    - git@github.com:networknt/lambda-petstore.git
 
     # LightApi
     - git@github.com:lightapi/light-portal.git

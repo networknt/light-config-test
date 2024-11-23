@@ -94,7 +94,8 @@ checkout:
       - git@github.com:networknt/light-scheduler.git
     # Light controller
       - git@github.com:lightapi/light-controller.git
-
+    # examples
+      - git@github.com:networknt/openapi-petstore.git
 # run mvn versions:set command in the following folders.
 maven:
   - light-4j
@@ -135,6 +136,7 @@ maven:
   - http-sidecar
   - light-scheduler
   - light-controller
+  - openapi-petstore
 # regex replacement for dependencies
 version:
   json-overlay:
@@ -871,5 +873,10 @@ version:
 
   # light-scheduler
   light-scheduler:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # openapi-petstore
+  openapi-petstore:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
