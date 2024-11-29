@@ -53,7 +53,7 @@ checkout:
       - git@github.com:networknt/light-docker.git
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
-      - git@github.com:networknt/light-config-server.git
+      - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-tram-kafka.git
       - git@github.com:networknt/light-tram-4j.git

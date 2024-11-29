@@ -1,0 +1,270 @@
+# Workspace that is used for this operation. Most of time, this is done on local.
+workspace: versionupgrade_patch
+# git commit comment for this task
+comment: 'upgrade to version 2.1.38-SNAPSHOT after release of 2.1.37'
+# old existing version that need to be upgraded
+old_version: 2.1.37
+# new upgraded version. These two versions need to be updated every time to run this command
+new_version: 2.1.38-SNAPSHOT
+# only skip the checkout if you are sure that the latest code is in the workspace. It is
+# OK to execute it several times.
+skip_checkout: false
+# skip maven version upgrade. It should not be skip if you haven't run it yet. It is OK
+# to execute it several times.
+skip_maven: false
+# skip the regular expression match and replace. It is safe to run it multiple times.
+skip_version: false
+# skip checkin if you want to review the changes before checking in to github.
+skip_checkin: false
+# clone and switch to develop branch / checkout and pull from develop branch
+checkout:
+  - branch: patch
+    repository:
+      - git@github.com:networknt/light-4j.git
+      - git@github.com:networknt/json-overlay.git
+      - git@github.com:networknt/openapi-parser.git
+      - git@github.com:networknt/light-rest-4j.git
+      - git@github.com:networknt/light-graphql-4j.git
+      - git@github.com:networknt/light-hybrid-4j.git
+      - git@github.com:networknt/light-codegen.git
+      - git@github.com:networknt/light-kafka.git
+      - git@github.com:networknt/light-spa-4j.git
+      - git@github.com:networknt/light-chaos-monkey.git
+      - git@github.com:networknt/light-proxy.git
+      - git@github.com:networknt/light-router.git
+      - git@github.com:networknt/light-gateway.git
+      - git@github.com:networknt/http-sidecar.git
+      - git@github.com:lightapi/oauth-kafka.git
+      - git@github.com:networknt/light-tokenization.git
+      # - git@github.com:lightapi/light-config-server.git
+      - git@github.com:networknt/light-spring-boot.git
+      - git@github.com:networknt/light-aws-lambda.git
+      - git@github.com:networknt/light-lambda-native.git
+      - git@github.com:lightapi/light-portal.git
+      - git@github.com:lightapi/light-scheduler.git
+      - git@github.com:lightapi/light-controller.git
+      - git@github.com:lightapi/hybrid-command.git
+      - git@github.com:lightapi/hybrid-query.git
+      - git@github.com:lightapi/market-command.git
+      - git@github.com:lightapi/market-query.git
+      - git@github.com:lightapi/user-query.git
+      - git@github.com:lightapi/user-command.git
+      - git@github.com:lightapi/ref-query.git
+      - git@github.com:lightapi/ref-command.git
+      - git@github.com:lightapi/event-exporter.git
+      - git@github.com:lightapi/event-importer.git
+      - git@github.com:lightapi/maproot-command.git
+      - git@github.com:lightapi/maproot-query.git
+      - git@github.com:networknt/light-session-4j.git
+      - git@github.com:networknt/kafka-sidecar.git
+# run mvn versions:set command in the following folders.
+maven:
+  - light-4j
+  - json-overlay
+  - openapi-parser
+  - light-rest-4j
+  - light-graphql-4j
+  - light-hybrid-4j
+  - light-codegen
+  - light-session-4j
+  - light-spa-4j
+  - light-proxy
+  - light-router
+  - light-gateway
+  # - light-oauth2
+  - light-kafka
+  - oauth-kafka
+  - light-tokenization
+  # - light-config-server
+  - light-spring-boot
+  - light-portal
+  - hybrid-command
+  - hybrid-query
+  - market-command
+  - market-query
+  - user-command
+  - user-query
+  - ref-command
+  - ref-query
+  - event-exporter
+  - event-importer
+  - maproot-command
+  - maproot-query
+  - light-aws-lambda
+  - light-lambda-native
+  - light-chaos-monkey
+  - kafka-sidecar
+  - http-sidecar
+  - light-scheduler
+  - light-controller
+  # - openapi-petstore
+# regex replacement for dependencies
+version:
+  json-overlay:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  openapi-parser:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-rest-4j:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-graphql-4j:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-hybrid-4j:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-codegen:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  # light-graphql-4j
+    - path: light-graphql-4j/src/main/resources/templates/graphql/pom.xml.rocker.raw
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  # light-hybrid-4j
+    - path: light-hybrid-4j/src/main/resources/templates/hybrid/server/pom.xml.rocker.raw
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+    - path: light-hybrid-4j/src/main/resources/templates/hybrid/service/pom.xml.rocker.raw
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  # light-rest-4j openapi
+    - path: light-rest-4j/src/main/resources/templates/rest/single/pom.xml.rocker.raw
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+    - path: light-rest-4j/src/main/resources/templates/rest/parent/pom.xml.rocker.raw
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+    - path: light-rest-4j/src/main/resources/templates/rest/single/gradleProperties.rocker.raw
+      match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+    - path: light-rest-4j/src/main/resources/templates/rest/parent/gradleProperties.rocker.raw
+      match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+
+  # light-rest-4j kotlin
+    - path: light-rest-4j/src/main/resources/templates/restkotlin/gradleProperties.rocker.raw
+      match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+  # light-rest-4j lambda
+    - path: light-rest-4j/src/main/resources/templates/lambda/pom.xml.rocker.raw
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+    - path: light-rest-4j/src/main/resources/templates/lambda/gradleProperties.rocker.raw
+      match: light4jVersion=((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)
+
+  light-session-4j:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-spa-4j:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-proxy:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-router:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-gateway:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  # light-oauth2:
+  #   - path: pom.xml
+  #     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  oauth-kafka:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-tokenization:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  # light-config-server:
+  #   - path: pom.xml
+  #     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-spring-boot:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  light-kafka:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  # light-reference:
+  #   - path: pom.xml
+  #     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  light-portal:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  market-command:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  market-query:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  user-command:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  user-query:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  ref-command:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  ref-query:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  hybrid-command:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  hybrid-query:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  event-importer:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  event-exporter:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # Maproot API
+  maproot-command:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  maproot-query:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # Light-aws-lambda
+  light-aws-lambda:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+    - path: jwt-authorizer/Authorizer/pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  light-lambda-native:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # Light-chaos-monkey
+  light-chaos-monkey:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # Light-controller
+  light-controller:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  # kafka-sidecar
+  kafka-sidecar:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  # http-sidecar
+  http-sidecar:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # light-scheduler
+  light-scheduler:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # openapi-petstore
+  # openapi-petstore:
+  #   - path: pom.xml
+  #     match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>

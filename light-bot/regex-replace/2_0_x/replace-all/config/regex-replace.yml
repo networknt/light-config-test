@@ -28,7 +28,7 @@ checkout:
     - git@github.com:networknt/light-router.git
     - git@github.com:networknt/light-gateway.git
     # - git@github.com:networknt/light-oauth2.git
-    - git@github.com:networknt/oauth-kafka.git
+    - git@github.com:lightapi/oauth-kafka.git
     - git@github.com:networknt/light-tokenization.git
     # - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
@@ -37,7 +37,7 @@ checkout:
     - git@github.com:networknt/light-doc.git
     # - git@github.com:networknt/light-config-test.git
     - git@github.com:networknt/light-bot.git
-    - git@github.com:networknt/light-config-server.git
+    - git@github.com:lightapi/light-config-server.git
     - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/model-config.git
     - git@github.com:networknt/react-schema-form.git
@@ -103,7 +103,7 @@ checkout:
     - git@github.com:lightapi/light-controller.git
     - git@github.com:networknt/kafka-sidecar.git
     - git@github.com:networknt/http-sidecar.git
-    - git@github.com:networknt/light-scheduler.git
+    - git@github.com:lightapi/light-scheduler.git
     # yaml rule and plugin
     - git@github.com:networknt/yaml-rule.git
     - git@github.com:networknt/yaml-rule-plugin.git

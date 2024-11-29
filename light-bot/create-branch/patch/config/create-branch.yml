@@ -1,0 +1,59 @@
+# This task is used to create a new branch from an existing tag.
+# Workspace that is used for this operation. Most of time, this is done on local.
+# Note: as you cannot create a new branch if the branch is there already. You have to remove
+# the workspace before running the command.
+workspace: createbranch_patch
+# The new branch name that is going to be created
+branch: patch
+# If the new branch is created from a tag
+from_tag: true
+# The original tag to create a new branch if from_tag is true.
+tag: 2.1.37
+# You can skip checkout if you are sure that the code in workspace are the latest and
+# you just want to repeat the create branch process due to some environmental issue before.
+skip_checkout: false
+# You can skip the create branch step is this has been done in the previous execution.
+skip_branch: false
+# You can skip the git push after the branch is created. The default is push to the git server.
+skip_push: false
+# clone and switch to the branch specified in checkout step.
+checkout:
+  - branch: master
+    repository:
+      - git@github.com:networknt/light-4j.git
+      - git@github.com:networknt/json-overlay.git
+      - git@github.com:networknt/openapi-parser.git
+      - git@github.com:networknt/light-rest-4j.git
+      - git@github.com:networknt/light-graphql-4j.git
+      - git@github.com:networknt/light-hybrid-4j.git
+      - git@github.com:networknt/light-codegen.git
+      - git@github.com:networknt/light-kafka.git
+      - git@github.com:networknt/light-spa-4j.git
+      - git@github.com:networknt/light-chaos-monkey.git
+      - git@github.com:networknt/light-proxy.git
+      - git@github.com:networknt/light-router.git
+      - git@github.com:networknt/light-gateway.git
+      - git@github.com:networknt/http-sidecar.git
+      - git@github.com:lightapi/oauth-kafka.git
+      - git@github.com:networknt/light-tokenization.git
+      # - git@github.com:lightapi/light-config-server.git
+      - git@github.com:networknt/light-spring-boot.git
+      - git@github.com:networknt/light-aws-lambda.git
+      - git@github.com:networknt/light-lambda-native.git
+      - git@github.com:lightapi/light-portal.git
+      - git@github.com:lightapi/light-scheduler.git
+      - git@github.com:lightapi/light-controller.git
+      - git@github.com:lightapi/hybrid-command.git
+      - git@github.com:lightapi/hybrid-query.git
+      - git@github.com:lightapi/market-command.git
+      - git@github.com:lightapi/market-query.git
+      - git@github.com:lightapi/user-query.git
+      - git@github.com:lightapi/user-command.git
+      - git@github.com:lightapi/ref-query.git
+      - git@github.com:lightapi/ref-command.git
+      - git@github.com:lightapi/event-exporter.git
+      - git@github.com:lightapi/event-importer.git
+      - git@github.com:lightapi/maproot-command.git
+      - git@github.com:lightapi/maproot-query.git
+      - git@github.com:networknt/light-session-4j.git
+      - git@github.com:networknt/kafka-sidecar.git

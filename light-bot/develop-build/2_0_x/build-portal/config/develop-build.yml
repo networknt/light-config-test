@@ -42,7 +42,7 @@ checkout:
       - git@github.com:lightapi/ref-query.git
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
-      - git@github.com:networknt/oauth-kafka.git
+      - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:lightapi/maproot-command.git
       - git@github.com:lightapi/maproot-query.git
 

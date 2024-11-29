@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade_2_0_x
 # git commit comment for this task
-comment: 'upgrade to version 2.1.38-SNAPSHOT after release'
+comment: 'upgrade to version 2.2.0-SNAPSHOT after release in master branch'
 # old existing version that need to be upgraded
-old_version: 2.1.37
+old_version: 2.1.38-SNAPSHOT
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 2.1.38-SNAPSHOT
+new_version: 2.2.0-SNAPSHOT
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -32,12 +32,12 @@ checkout:
       - git@github.com:networknt/light-proxy.git
       - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
-      - git@github.com:networknt/oauth-kafka.git
+      - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-example-kotlin.git
       - git@github.com:networknt/light-docker.git
-      - git@github.com:networknt/light-config-server.git
+      - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:networknt/light-spring-boot.git
@@ -91,7 +91,7 @@ checkout:
       - git@github.com:lightapi/event-importer.git
 
     # Light scheduler
-      - git@github.com:networknt/light-scheduler.git
+      - git@github.com:lightapi/light-scheduler.git
     # Light controller
       - git@github.com:lightapi/light-controller.git
     # examples

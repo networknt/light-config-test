@@ -1,29 +1,32 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
-workspace: releasemaven_2_0_x
+workspace: releasesnapshot_patch
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.1.37
+version: 2.2.38-SNAPSHOT
+# github organization as the token is bound to the org in changelog generator. This
+# means that you can only release multiple repositories within the same org each time.
+organization: networknt
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.1.36
+prev_tag: 2.1.37
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
 # you just want to repeat the release process due to some environmental issue before.
 skip_checkout: false
 # skip change log generation
-skip_change_log: false
+skip_change_log: true
 # skip check in the generated changelog
-skip_checkin: false
+skip_checkin: true
 # You can skip the last release step so that you can double check the merged result.
 skip_release: false
 # skip upload release note to the github
-skip_release_note: false
+skip_release_note: true
 # skip deploy after the release
 skip_deploy: true
 # skip upload release assets
 skip_upload: true
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
-  - branch: master
+  - branch: patch
     repository:
       - git@github.com:networknt/light-4j.git
       - git@github.com:networknt/json-overlay.git
@@ -32,19 +35,20 @@ checkout:
       - git@github.com:networknt/light-graphql-4j.git
       - git@github.com:networknt/light-hybrid-4j.git
       - git@github.com:networknt/light-codegen.git
-      - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
+      - git@github.com:networknt/light-chaos-monkey.git
       - git@github.com:networknt/light-proxy.git
       - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
+      # - git@github.com:networknt/light-example-4j.git
+      # - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
-      - git@github.com:networknt/light-chaos-monkey.git
       # - git@github.com:networknt/openapi-petstore.git
       - git@github.com:lightapi/light-portal.git
       - git@github.com:lightapi/light-scheduler.git
@@ -63,6 +67,7 @@ checkout:
       - git@github.com:lightapi/maproot-query.git
       - git@github.com:networknt/kafka-sidecar.git
 
+
 # generate changelog.md from github issues and check in
 # release to maven central
 # merge the changelog.md to develop branch
@@ -75,10 +80,10 @@ release:
   - networknt/light-graphql-4j
   - networknt/light-hybrid-4j
   - networknt/light-codegen
-  - networknt/light-session-4j
   - networknt/light-kafka
   - networknt/light-spa-4j
   - networknt/light-aws-lambda
+  # - networknt/light-aws-lambda/jwt-authorizer/jwt-authorizer
   - networknt/light-lambda-native
   - networknt/light-chaos-monkey
   - networknt/light-router
@@ -101,23 +106,7 @@ release:
   - lightapi/event-importer
   - lightapi/maproot-command
   - lightapi/maproot-query
+  # - networknt/light-oauth2
   - networknt/oauth-kafka
   # - networknt/openapi-petstore
   - networknt/kafka-sidecar
-
-# deploy:
-#   - light-codegen:
-#     - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-#     - scp codegen-fwk/target/codegen-fwk.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-#     - scp codegen-web/target/codegen-web.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-#     - scp light-graphql-4j/target/light-graphql-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-#     - scp light-hybrid-4j/target/light-hybrid-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-#     - scp light-rest-4j/target/light-rest-4j-generator.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service
-# upload additional assets to the GitHub release page
-# upload:
-#   - networknt/light-codegen:
-#     - codegen-cli/target/codegen-cli.jar
-#   - networknt/light-proxy:
-#     - target/light-proxy.jar
-#   - networknt/light-router:
-#     - target/light-router.jar

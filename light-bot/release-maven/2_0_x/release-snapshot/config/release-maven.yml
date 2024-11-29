@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releassnapshot_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.1.38-SNAPSHOT
+version: 2.2.38-SNAPSHOT
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
@@ -42,18 +42,18 @@ checkout:
       - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:networknt/http-sidecar.git
-      - git@github.com:networknt/oauth-kafka.git
+      - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       # - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-docker.git
-      # - git@github.com:networknt/light-config-server.git
+      # - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-workflow-4j.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
-      - git@github.com:networknt/openapi-petstore.git
+      # - git@github.com:networknt/openapi-petstore.git
       - git@github.com:lightapi/light-portal.git
-      - git@github.com:networknt/light-scheduler.git
+      - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/hybrid-command.git
       - git@github.com:lightapi/hybrid-query.git
@@ -67,6 +67,7 @@ checkout:
       - git@github.com:lightapi/event-importer.git
       - git@github.com:lightapi/maproot-command.git
       - git@github.com:lightapi/maproot-query.git
+      - git@github.com:networknt/kafka-sidecar.git
 
 
 # generate changelog.md from github issues and check in
@@ -109,4 +110,5 @@ release:
   - lightapi/maproot-query
   # - networknt/light-oauth2
   - networknt/oauth-kafka
-  - networknt/openapi-petstore
+  # - networknt/openapi-petstore
+  - networknt/kafka-sidecar
