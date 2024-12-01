@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasesnapshot_patch
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.2.38-SNAPSHOT
+version: 2.1.38-SNAPSHOT
 # github organization as the token is bound to the org in changelog generator. This
 # means that you can only release multiple repositories within the same org each time.
 organization: networknt
@@ -38,8 +38,6 @@ checkout:
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-chaos-monkey.git
-      - git@github.com:networknt/light-proxy.git
-      - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/oauth-kafka.git
@@ -86,8 +84,6 @@ release:
   # - networknt/light-aws-lambda/jwt-authorizer/jwt-authorizer
   - networknt/light-lambda-native
   - networknt/light-chaos-monkey
-  - networknt/light-router
-  - networknt/light-proxy
   - networknt/light-gateway
   - networknt/http-sidecar
   - networknt/light-spring-boot
@@ -106,7 +102,6 @@ release:
   - lightapi/event-importer
   - lightapi/maproot-command
   - lightapi/maproot-query
-  # - networknt/light-oauth2
   - networknt/oauth-kafka
   # - networknt/openapi-petstore
   - networknt/kafka-sidecar

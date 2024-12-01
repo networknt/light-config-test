@@ -41,10 +41,7 @@ checkout:
       - git@github.com:networknt/light-codegen.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
-      - git@github.com:networknt/light-proxy.git
-      - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
-      # - git@github.com:networknt/light-oauth2.git
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-reference.git
@@ -89,10 +86,7 @@ build:
     # - light-aws-lambda/jwt-authorizer/Authorizer
     - light-lambda-native
     - light-chaos-monkey
-    - light-proxy
-    - light-router
     - light-gateway
-    # - light-oauth2
     - light-tokenization
     - light-reference
     - light-spring-boot

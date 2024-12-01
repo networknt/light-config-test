@@ -45,20 +45,14 @@ maven:
   - maproot/covid-command
   - maproot/covid-query
   # - chain-reader
-  # - light-router
   # - taiji-blockchain
   # - light-codegen
 # gradle build
 gradle:
-  # - light-proxy
-  # - light-router
   # - light-codegen
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
-  # - light-proxy
-  # - light-router
-  # - light-oauth2
   # - light-codegen
 
 # build docker image and push to docker hub

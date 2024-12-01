@@ -28,8 +28,6 @@ checkout:
   # here we checkout master branch to publish the images.
   - branch: master
     repository:
-      - git@github.com:networknt/light-proxy.git
-      - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:lightapi/light-portal.git
       - git@github.com:lightapi/oauth-kafka.git
@@ -48,8 +46,6 @@ checkout:
 
 # maven build
 maven:
-  - light-proxy
-  - light-router
   - light-gateway
   - light-portal
   - oauth-kafka
@@ -71,8 +67,6 @@ maven:
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
-  - light-proxy
-  - light-router
   - light-gateway
   - oauth-kafka
   - light-tokenization
@@ -87,8 +81,6 @@ release:
 
 # build docker image and push to docker hub
 docker:
-  - light-proxy
-  - light-router
   - light-gateway
   - oauth-kafka
   - light-tokenization

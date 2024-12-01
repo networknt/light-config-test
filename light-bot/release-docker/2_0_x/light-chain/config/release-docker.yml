@@ -44,13 +44,10 @@ maven:
   - web-client/token
   - web-client/wallet
   # - chain-reader
-  # - light-router
   # - taiji-blockchain
   # - light-codegen
 # gradle build
 gradle:
-  # - light-proxy
-  # - light-router
   - taiji-blockchain
   - genesis-block
   - kafka-chain
@@ -58,9 +55,6 @@ gradle:
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
-  # - light-proxy
-  # - light-router
-  # - light-oauth2
   # - light-codegen
 
 # build docker image and push to docker hub

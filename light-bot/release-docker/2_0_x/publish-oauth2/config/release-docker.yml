@@ -28,36 +28,16 @@ checkout:
   # here we checkout master branch to publish the images.
   - branch: master
     repository:
-    # - git@github.com:networknt/light-proxy.git
-    # - git@github.com:networknt/light-router.git
-    - git@github.com:networknt/light-oauth2.git
     # - git@github.com:networknt/light-codegen.git
     # - git@github.com:networknt/light-docker.git
 # maven build
 maven:
-  # - light-proxy
-  # - light-router
-  - light-oauth2
   # - light-codegen
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
-  # - light-proxy
-  # - light-router
-  # - light-oauth2
   # - light-codegen
 
 # build docker image and push to docker hub
 docker:
-  # - light-proxy
-  # - light-router
   # - light-docker/light-codegen
-  - light-oauth2/authorize
-  - light-oauth2/client
-  - light-oauth2/code
-  - light-oauth2/key
-  - light-oauth2/refresh-token
-  - light-oauth2/service
-  - light-oauth2/token
-  - light-oauth2/user
-  - light-oauth2/provider

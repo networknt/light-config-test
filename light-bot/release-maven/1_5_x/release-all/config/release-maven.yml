@@ -37,9 +37,6 @@ checkout:
     - git@github.com:networknt/light-codegen.git
     # - git@github.com:networknt/light-session-4j.git
     - git@github.com:networknt/light-spa-4j.git
-    - git@github.com:networknt/light-proxy.git
-    - git@github.com:networknt/light-router.git
-    - git@github.com:networknt/light-oauth2.git
     - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-consumer-4j.git
     - git@github.com:networknt/light-example-4j.git
@@ -64,16 +61,10 @@ release:
   # - light-session-4j
   - networknt/light-spa-4j
   - networknt/light-consumer-4j
-  - networknt/light-router
-  - networknt/light-proxy
   - networknt/light-spring-boot
 # upload additional asserts to the GitHub release page.
 upload:
   - networknt/light-codegen:
     - codegen-cli/target/codegen-cli.jar
-  - networknt/light-proxy:
-    - target/light-proxy.jar
-  - networknt/light-router:
-    - target/light-router.jar
   - networknt/light-gateway:
     - target/light-gateway.jar

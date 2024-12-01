@@ -41,9 +41,6 @@ checkout:
       - git@github.com:networknt/light-codegen.git
       # - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-spa-4j.git
-      - git@github.com:networknt/light-proxy.git
-      - git@github.com:networknt/light-router.git
-      - git@github.com:networknt/light-oauth2.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-consumer-4j.git
       - git@github.com:networknt/light-spring-boot.git
@@ -73,9 +70,6 @@ build:
     - light-codegen
     # - light-session-4j
     - light-spa-4j
-    - light-proxy
-    - light-router
-    - light-oauth2
     - light-tokenization
     - light-consumer-4j
     - light-spring-boot

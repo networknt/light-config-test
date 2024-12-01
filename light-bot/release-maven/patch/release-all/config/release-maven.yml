@@ -1,9 +1,9 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
-workspace: releasemaven_2_0_x
+workspace: releasemaven_patch
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.1.37
+version: 2.1.38
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.1.36
+prev_tag: 2.1.37
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -23,7 +23,7 @@ skip_deploy: true
 skip_upload: true
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
-  - branch: master
+  - branch: patch
     repository:
       - git@github.com:networknt/light-4j.git
       - git@github.com:networknt/json-overlay.git
@@ -35,8 +35,6 @@ checkout:
       - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
-      - git@github.com:networknt/light-proxy.git
-      - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/oauth-kafka.git
@@ -45,7 +43,6 @@ checkout:
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
       - git@github.com:networknt/light-chaos-monkey.git
-      # - git@github.com:networknt/openapi-petstore.git
       - git@github.com:lightapi/light-portal.git
       - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
@@ -62,6 +59,7 @@ checkout:
       - git@github.com:lightapi/maproot-command.git
       - git@github.com:lightapi/maproot-query.git
       - git@github.com:networknt/kafka-sidecar.git
+      # - git@github.com:networknt/openapi-petstore.git
 
 # generate changelog.md from github issues and check in
 # release to maven central
@@ -81,8 +79,6 @@ release:
   - networknt/light-aws-lambda
   - networknt/light-lambda-native
   - networknt/light-chaos-monkey
-  - networknt/light-router
-  - networknt/light-proxy
   - networknt/light-gateway
   - networknt/http-sidecar
   - networknt/light-spring-boot
@@ -117,7 +113,3 @@ release:
 # upload:
 #   - networknt/light-codegen:
 #     - codegen-cli/target/codegen-cli.jar
-#   - networknt/light-proxy:
-#     - target/light-proxy.jar
-#   - networknt/light-router:
-#     - target/light-router.jar

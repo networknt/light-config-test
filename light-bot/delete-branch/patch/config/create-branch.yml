@@ -1,21 +1,15 @@
-# This task is used to create a new branch from an existing tag.
+# This task is used to delete patch branch from master.
 # Workspace that is used for this operation. Most of time, this is done on local.
-# Note: as you cannot create a new branch if the branch is there already. You have to remove
-# the workspace before running the command.
-workspace: createbranch_patch
+workspace: deletebranch_patch
 # The new branch name that is going to be created
 branch: patch
-# If the new branch is created from a tag
-from_tag: true
-# The original tag to create a new branch if from_tag is true.
-tag: 2.1.37
 # You can skip checkout if you are sure that the code in workspace are the latest and
 # you just want to repeat the create branch process due to some environmental issue before.
 skip_checkout: false
-# You can skip the create branch step is this has been done in the previous execution.
-skip_branch: false
-# You can skip the git push after the branch is created. The default is push to the git server.
-skip_push: false
+# You can skip the delete branch locally if you don't want to remove the local patch branch.
+skip_local: false
+# You can skip the delete branch remotely if you don't want to remove the remote branch on GitHub.
+skip_remote: false
 # clone and switch to the branch specified in checkout step.
 checkout:
   - branch: master

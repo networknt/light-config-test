@@ -35,8 +35,6 @@ checkout:
       - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
-      - git@github.com:networknt/light-proxy.git
-      - git@github.com:networknt/light-router.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/oauth-kafka.git
@@ -81,8 +79,6 @@ release:
   - networknt/light-aws-lambda
   - networknt/light-lambda-native
   - networknt/light-chaos-monkey
-  - networknt/light-router
-  - networknt/light-proxy
   - networknt/light-gateway
   - networknt/http-sidecar
   - networknt/light-spring-boot
