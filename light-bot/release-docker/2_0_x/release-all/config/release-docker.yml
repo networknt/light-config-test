@@ -43,6 +43,8 @@ checkout:
       - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/light-config-server.git
+      - git@github.com:networknt/openapi-petstore.git
+      - git@github.com:networknt/openapi-market.git
 
 # maven build
 maven:
@@ -64,6 +66,8 @@ maven:
   - light-config-server
   - hybrid-query
   - hybrid-command
+  - openapi-petstore
+  - openapi-market
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
@@ -100,3 +104,5 @@ docker:
   - light-config-server
   - hybrid-query
   - hybrid-command
+  - openapi-petstore
+  - openapi-market

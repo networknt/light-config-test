@@ -70,3 +70,5 @@ checkout:
       # - git@github.com:lightapi/event-importer.git
       # - git@github.com:lightapi/maproot-command.git
       # - git@github.com:lightapi/maproot-query.git
+      - git@github.com:networknt/openapi-petstore.git
+      - git@github.com:networknt/openapi-market.git

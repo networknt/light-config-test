@@ -39,3 +39,5 @@ checkout:
     - git@github.com:networknt/model-config.git
     - git@github.com:networknt/light-workflow-4j.git
     - git@github.com:networknt/light-config-prod.git
+    - git@github.com:networknt/openapi-petstore.git
+    - git@github.com:networknt/openapi-market.git

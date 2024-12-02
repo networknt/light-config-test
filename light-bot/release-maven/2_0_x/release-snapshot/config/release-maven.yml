@@ -42,14 +42,12 @@ checkout:
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
-      # - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-docker.git
       # - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-workflow-4j.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
-      # - git@github.com:networknt/openapi-petstore.git
       - git@github.com:lightapi/light-portal.git
       - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
@@ -66,6 +64,8 @@ checkout:
       - git@github.com:lightapi/maproot-command.git
       - git@github.com:lightapi/maproot-query.git
       - git@github.com:networknt/kafka-sidecar.git
+      - git@github.com:networknt/openapi-petstore.git
+      - git@github.com:networknt/openapi-market.git
 
 
 # generate changelog.md from github issues and check in
@@ -106,5 +106,6 @@ release:
   - lightapi/maproot-query
   # - networknt/light-oauth2
   - networknt/oauth-kafka
-  # - networknt/openapi-petstore
+  - networknt/openapi-petstore
+  - networknt/openapi-market
   - networknt/kafka-sidecar

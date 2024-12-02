@@ -55,3 +55,5 @@ checkout:
       - git@github.com:lightapi/maproot-query.git
       - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/kafka-sidecar.git
+      - git@github.com:networknt/openapi-petstore.git
+      - git@github.com:networknt/openapi-market.git

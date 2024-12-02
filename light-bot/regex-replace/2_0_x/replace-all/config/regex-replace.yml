@@ -53,6 +53,9 @@ checkout:
     - git@github.com:networknt/light-kafka.git
     - git@github.com:networknt/openapi-petstore.git
     - git@github.com:networknt/lambda-petstore.git
+    - git@github.com:networknt/openapi-market.git
+    - git@github.com:networknt/lambda-market.git
+
 
     # LightApi
     - git@github.com:lightapi/light-portal.git
