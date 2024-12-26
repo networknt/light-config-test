@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade lambda-awssdk to 2.29.23'
+comment: 'upgrade yaml-rule to 2.0.0'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -1183,11 +1183,20 @@ replace:
 #   old_value: 3.11.6
 #   new_value: 3.14.0
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.26.4
+#   new_value: 2.29.23
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.26.4
+#   new_value: 2.29.23
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
-  old_value: 2.26.4
-  new_value: 2.29.23
+  match: <version.yaml-rule>\d*\.\d*\.\d*</version.yaml-rule>
+  old_value: 1.0.5
+  new_value: 2.0.0
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: lambdaAwssdkVersion=\d*\.\d*\.\d*
-  old_value: 2.26.4
-  new_value: 2.29.23
+  match: yamlruleVersion=\d*\.\d*\.\d*
+  old_value: 1.0.5
+  new_value: 2.0.0
