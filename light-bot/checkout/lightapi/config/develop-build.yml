@@ -1,0 +1,50 @@
+# networknt is the working directory under user home. Change this to your working directory
+workspace: lightapi
+# indicate if you want to skip checkout. yes if you know that all repositories are just checkout
+# or the last time the build was failed and you just want to retry without changing anything.
+skip_checkout: false
+# Just checkout the repositories for backup or some other tasks
+skip_build: true
+# If this value is set to true, then only checkout and build will be called. It is
+# very useful if you just want to install the develop branch modules into your .m2
+# local repo. Also, some of our customers have constraint test environment to run
+# unit and integration test only and another environment to run all of tests.
+skip_test: true
+# skip copy file if necessary.
+skip_copyFile: true
+# skip copyWildcardFile
+skip_copyWildcardFile: true
+# skip start
+skip_start: true
+
+# Execute this set of tasks in order
+# setup is called before any of the tasks
+# teardown and stop are called regardless of a succesful/failed light-bot run
+tasks:
+  # one set of operations
+  checkoutSetOne: checkout
+
+checkout:
+  checkoutSetOne:
+    - branch: master
+      skip: false
+      repository:
+        - git@github.com:lightapi/oauth-kafka.git
+        - git@github.com:lightapi/light-config-server.git
+        - git@github.com:lightapi/light-scheduler.git
+        - git@github.com:lightapi/light-portal.git
+        - git@github.com:lightapi/hybrid-command.git
+        - git@github.com:lightapi/hybrid-query.git
+        - git@github.com:lightapi/market-command.git
+        - git@github.com:lightapi/market-query.git
+        - git@github.com:lightapi/user-query.git
+        - git@github.com:lightapi/user-command.git
+        - git@github.com:lightapi/ref-query.git
+        - git@github.com:lightapi/ref-command.git
+        - git@github.com:lightapi/event-exporter.git
+        - git@github.com:lightapi/event-importer.git
+        - git@github.com:lightapi/maproot-command.git
+        - git@github.com:lightapi/maproot-query.git
+        - git@github.com:lightapi/portal-config-loc.git
+        - git@github.com:lightapi/light-portal-doc.git
+        - git@github.com:lightapi/portal-view.git

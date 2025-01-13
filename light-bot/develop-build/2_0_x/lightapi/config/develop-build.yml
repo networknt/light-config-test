@@ -1,0 +1,177 @@
+workspace: lightapi
+# indicate if you want to skip checkout. yes if you know that all repositories are just checkout
+# or the last time the build was failed and you just want to retry without changing anything.
+skip_checkout: false
+# Just checkout the repositories for backup or some other tasks
+skip_build: false
+# If this value is set to true, then only checkout and build will be called. It is
+# very useful if you just want to install the develop branch modules into your .m2
+# local repo. Also, some of our customers have constraint test environment to run
+# unit and integration test only and another environment to run all of tests.
+skip_test: false
+# skip copy file if necessary.
+skip_copyFile: true
+# skip copyWildcardFile
+skip_copyWildcardFile: true
+# skip start
+skip_start: true
+
+# Execute this set of tasks in order
+# setup is called before any of the tasks
+# teardown and stop are called regardless of a succesful/failed light-bot run
+tasks:
+  # one set of operations
+  checkoutSetOne: checkout
+  buildSetOne: build
+  copyProjectFiles: copyFile
+  copyWildcardFile: copyWildcardFile
+
+checkout:
+  checkoutSetOne:
+    - branch: master
+      skip: false
+      repository:
+        - git@github.com:lightapi/light-portal.git
+        - git@github.com:lightapi/hybrid-query.git
+        - git@github.com:lightapi/hybrid-command.git
+        - git@github.com:lightapi/user-query.git
+        - git@github.com:lightapi/user-command.git
+        - git@github.com:lightapi/market-query.git
+        - git@github.com:lightapi/market-command.git
+        - git@github.com:lightapi/ref-command.git
+        - git@github.com:lightapi/ref-query.git
+        - git@github.com:lightapi/event-exporter.git
+        - git@github.com:lightapi/event-importer.git
+        - git@github.com:lightapi/oauth-kafka.git
+        - git@github.com:lightapi/light-scheduler.git
+        - git@github.com:lightapi/light-controller.git
+        - git@github.com:lightapi/light-config-server.git
+        - git@github.com:lightapi/maproot-command.git
+        - git@github.com:lightapi/maproot-query.git
+        - git@github.com:lightapi/portal-config-loc.git
+        - git@github.com:lightapi/light-portal-doc.git
+        - git@github.com:lightapi/portal-view.git
+
+build:
+  buildSetOne:
+    skip: false
+    project:
+      - light-portal
+      - hybrid-query
+      - hybrid-command
+      - user-query
+      - user-command
+      - market-query
+      - market-command
+      - ref-query
+      - ref-command
+      - event-importer
+      - event-exporter
+      - oauth-kafka
+      - maproot-command
+      - maproot-query
+
+# copy individual files by specify exact src and dst relative to home and workspace path.
+copyFile:
+  # populate hybrid-query services
+  # api-certification
+  - src: light-portal/api-certification/target/api-certification-1.0.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/api-certification-1.0.0.jar
+  # oauth-playground
+  - src: light-portal/oauth-playground/target/playground-1.0.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/playground-1.0.0.jar
+  # light-portal common-util
+  - src: light-portal/common-util/target/common-util-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/common-util-0.1.0.jar
+  # host-menu
+  - src: light-portal/host-menu/common/target/host-menu-common-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/host-menu-common-0.1.0.jar
+  - src: light-portal/host-menu/command/target/host-menu-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/host-menu-command-0.1.0.jar
+  - src: light-portal/hybrid-query/target/hybrid-query.jar
+    dst: light-config-test/light-portal/hybrid-query/service/hybrid-query.jar
+  - src: light-portal/host-menu/query/target/host-menu-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/host-menu-query-0.1.0.jar
+  - src: light-portal/host-menu/hybrid-query/target/menu-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/menu-query-0.1.0.jar
+  # schema-form
+  - src: light-portal/schema-form/common/target/schema-form-common-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/schema-form-common-0.1.0.jar
+  - src: light-portal/schema-form/command/target/schema-form-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/schema-form-command-0.1.0.jar
+  - src: light-portal/schema-form/query/target/schema-form-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/schema-form-query-0.1.0.jar
+  - src: light-portal/schema-form/hybrid-query/target/form-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/form-query-0.1.0.jar
+  # user-management
+  - src: light-portal/user-management/common/target/user-common-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/user-common-0.1.0.jar
+  - src: light-portal/user-management/query/target/user-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/user-query-0.1.0.jar
+  - src: light-portal/user-management/hybrid-query/target/user-hybrid-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-query/service/user-hybrid-query-0.1.0.jar
+  # light-codegen
+  - src: light-codegen/codegen-core/target/codegen-core.jar
+    dst: light-config-test/light-portal/hybrid-query/service/coregen-core.jar
+  - src: light-codegen/codegen-fwk/target/codegen-fwk.jar
+    dst: light-config-test/light-portal/hybrid-query/service/codegen-fwk.jar
+  - src: light-codegen/light-graphql-4j/target/light-graphql-4j-generator.jar
+    dst: light-config-test/light-portal/hybrid-query/service/light-graphql-4j-generator.jar
+  - src: light-codegen/light-rest-4j/target/light-rest-4j-generator.jar
+    dst: light-config-test/light-portal/hybrid-query/service/light-rest-4j-generator.jar
+  - src: light-codegen/light-hybrid-4j/target/light-hybrid-4j-generator.jar
+    dst: light-config-test/light-portal/hybrid-query/service//light-hybrid-4j-generator.jar
+  - src: light-codegen/codegen-web/target/codegen-web.jar
+    dst: light-config-test/light-portal/hybrid-query/service/codegen-web.jar
+
+  # populate hybrid-command services
+  - src: light-portal/hybrid-command/target/hybrid-command.jar
+    dst: light-config-test/light-portal/hybrid-command/service/hybrid-command.jar
+  # common-util
+  - src: light-portal/common-util/target/common-util-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/common-util-0.1.0.jar
+  # host-menu
+  - src: light-portal/host-menu/common/target/host-menu-common-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/host-menu-common-0.1.0.jar
+  - src: light-portal/host-menu/command/target/host-menu-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/host-menu-command-0.1.0.jar
+  - src: light-portal/host-menu/hybrid-command/target/menu-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/menu-command-0.1.0.jar
+  # schema-form
+  - src: light-portal/schema-form/common/target/schema-form-common-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/schema-form-common-0.1.0.jar
+  - src: light-portal/schema-form/command/target/schema-form-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/schema-form-command-0.1.0.jar
+  - src: light-portal/schema-form/hybrid-command/target/form-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/form-command-0.1.0.jar
+  # user-management
+  - src: light-portal/user-management/common/target/user-common-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-common-0.1.0.jar
+  - src: light-portal/user-management/command/target/user-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-command-0.1.0.jar
+  - src: light-portal/user-management/query/target/user-query-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-query-0.1.0.jar
+  - src: light-portal/user-management/hybrid-command/target/user-hybrid-command-0.1.0.jar
+    dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-command-0.1.0.jar
+# copy files with Glob pattern from src folder to dst folder both in home and workspace.
+# copyWildcardFile:
+# light-codegen
+# The jar file has version number and we are using glob patter to locate the jar files.
+# - src: light-codegen//codegen-core/target
+#   dst: light-config-test/light-portal/hybrid-query/service
+#   pattern: codegen-core-*[!javadoc][!sources].jar
+# - src: light-codegen/codegen-fwk/target
+#   dst: light-config-test/light-portal/hybrid-query/service
+#   pattern: codegen-fwk-*[!javadoc][!sources].jar
+# - src: light-codegen/light-graphql-4j/target
+#   dst: light-config-test/light-portal/hybrid-query/service
+#   pattern: light-graphql-4j-generator-*[!javadoc][!sources].jar
+# - src: light-codegen/light-rest-4j/target
+#   dst: light-config-test/light-portal/hybrid-query/service
+#   pattern: light-rest-4j-generator-*[!javadoc][!sources].jar
+# - src: light-codegen/light-hybrid-4j/target
+#   dst: light-config-test/light-portal/hybrid-query/service
+#   pattern: light-hybrid-4j-generator-*[!javadoc][!sources].jar
+# - src: light-codegen/codegen-web/target
+#   dst: light-config-test/light-portal/hybrid-query/service
+#   pattern: codegen-web-*[!javadoc][!sources].jar
