@@ -12,7 +12,7 @@ skip_test: false
 # skip copy file if necessary.
 skip_copyFile: true
 # skip copyWildcardFile
-skip_copyWildcardFile: true
+skip_copyWildcardFile: false
 # skip start
 skip_start: true
 
@@ -36,8 +36,8 @@ checkout:
         - git@github.com:lightapi/hybrid-command.git
         - git@github.com:lightapi/user-query.git
         - git@github.com:lightapi/user-command.git
-        - git@github.com:lightapi/market-query.git
-        - git@github.com:lightapi/market-command.git
+        # - git@github.com:lightapi/market-query.git
+        # - git@github.com:lightapi/market-command.git
         - git@github.com:lightapi/ref-command.git
         - git@github.com:lightapi/ref-query.git
         - git@github.com:lightapi/event-exporter.git
@@ -51,6 +51,23 @@ checkout:
         - git@github.com:lightapi/portal-config-loc.git
         - git@github.com:lightapi/light-portal-doc.git
         - git@github.com:lightapi/portal-view.git
+        - git@github.com:lightapi/client-query.git
+        - git@github.com:lightapi/client-command.git
+        - git@github.com:lightapi/oauth-command.git
+        - git@github.com:lightapi/oauth-query.git
+        - git@github.com:lightapi/service-query.git
+        - git@github.com:lightapi/service-command.git
+        - git@github.com:lightapi/rule-query.git
+        - git@github.com:lightapi/rule-command.git
+        - git@github.com:lightapi/role-command.git
+        - git@github.com:lightapi/role-query.git
+        - git@github.com:lightapi/position-query.git
+        - git@github.com:lightapi/position-command.git
+        - git@github.com:lightapi/attribute-command.git
+        - git@github.com:lightapi/attribute-query.git
+        - git@github.com:lightapi/group-query.git
+        - git@github.com:lightapi/group-command.git
+
 
 build:
   buildSetOne:
@@ -61,15 +78,32 @@ build:
       - hybrid-command
       - user-query
       - user-command
-      - market-query
-      - market-command
+      # - market-query
+      # - market-command
       - ref-query
       - ref-command
       - event-importer
       - event-exporter
       - oauth-kafka
-      - maproot-command
-      - maproot-query
+      # - maproot-command
+      # - maproot-query
+      - client-query
+      - client-command
+      - oauth-query
+      - oauth-command
+      - service-query
+      - service-command
+      - rule-query
+      - rule-command
+      - role-query
+      - role-command
+      - position-query
+      - position-command
+      - attribute-query
+      - attribute-command
+      - group-query
+      - group-command
+
 
 # copy individual files by specify exact src and dst relative to home and workspace path.
 copyFile:
@@ -154,7 +188,66 @@ copyFile:
   - src: light-portal/user-management/hybrid-command/target/user-hybrid-command-0.1.0.jar
     dst: light-config-test/light-portal/hybrid-command/service/user-hybrid-command-0.1.0.jar
 # copy files with Glob pattern from src folder to dst folder both in home and workspace.
-# copyWildcardFile:
+copyWildcardFile:
+  # query
+  - src: client-query/target
+    dst: portal-config-loc/all-in-one/hybrid-query/service
+    pattern: client-query-*[!javadoc][!sources].jar
+  - src: oauth-query/target
+    dst: portal-config-loc/all-in-one/hybrid-query/service
+    pattern: oauth-query-*[!javadoc][!sources].jar
+  - src: service-query/target
+    dst: portal-config-loc/all-in-one/hybrid-query/service
+    pattern: service-query-*[!javadoc][!sources].jar
+  - src: rule-query/target
+    dst: portal-config-loc/all-in-one/hybrid-query/service
+    pattern: rule-query-*[!javadoc][!sources].jar
+  - src: role-query/target
+    dst: portal-config-loc/all-in-one/hybrid-query/service
+    pattern: role-query-*[!javadoc][!sources].jar
+  - src: position-query/target
+    dst: portal-config-loc/all-in-one/hybrid-query/service
+    pattern: position-query-*[!javadoc][!sources].jar
+  - src: attribute-query/target
+    dst: portal-config-loc/all-in-one/hybrid-query/service
+    pattern: attribute-query-*[!javadoc][!sources].jar
+  - src: group-query/target
+    dst: portal-config-loc/all-in-one/hybrid-query/service
+    pattern: group-query-*[!javadoc][!sources].jar
+  - src: user-query/target
+    dst: portal-config-loc/all-in-one/hybrid-query/service
+    pattern: user-query-*[!javadoc][!sources].jar
+
+  # command
+  - src: client-command/target
+    dst: portal-config-loc/all-in-one/hybrid-command/service
+    pattern: client-command-*[!javadoc][!sources].jar
+  - src: oauth-command/target
+    dst: portal-config-loc/all-in-one/hybrid-command/service
+    pattern: oauth-command-*[!javadoc][!sources].jar
+  - src: service-command/target
+    dst: portal-config-loc/all-in-one/hybrid-command/service
+    pattern: service-command-*[!javadoc][!sources].jar
+  - src: rule-command/target
+    dst: portal-config-loc/all-in-one/hybrid-command/service
+    pattern: rule-command-*[!javadoc][!sources].jar
+  - src: role-command/target
+    dst: portal-config-loc/all-in-one/hybrid-command/service
+    pattern: role-command-*[!javadoc][!sources].jar
+  - src: position-command/target
+    dst: portal-config-loc/all-in-one/hybrid-command/service
+    pattern: position-command-*[!javadoc][!sources].jar
+  - src: attribute-command/target
+    dst: portal-config-loc/all-in-one/hybrid-command/service
+    pattern: attribute-command-*[!javadoc][!sources].jar
+  - src: group-command/target
+    dst: portal-config-loc/all-in-one/hybrid-command/service
+    pattern: group-command-*[!javadoc][!sources].jar
+  - src: user-command/target
+    dst: portal-config-loc/all-in-one/hybrid-command/service
+    pattern: user-command-*[!javadoc][!sources].jar
+
+
 # light-codegen
 # The jar file has version number and we are using glob patter to locate the jar files.
 # - src: light-codegen//codegen-core/target
