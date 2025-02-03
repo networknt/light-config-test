@@ -35,23 +35,46 @@ checkout:
       - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
+      - git@github.com:networknt/light-chaos-monkey.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
+      # - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
-      - git@github.com:networknt/light-chaos-monkey.git
       - git@github.com:lightapi/light-portal.git
       - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/hybrid-command.git
       - git@github.com:lightapi/hybrid-query.git
-      - git@github.com:lightapi/market-command.git
-      - git@github.com:lightapi/market-query.git
       - git@github.com:lightapi/user-query.git
       - git@github.com:lightapi/user-command.git
+      - git@github.com:lightapi/oauth-query.git
+      - git@github.com:lightapi/oauth-command.git
+      - git@github.com:lightapi/rule-query.git
+      - git@github.com:lightapi/rule-command.git
+      - git@github.com:lightapi/role-query.git
+      - git@github.com:lightapi/role-command.git
+      - git@github.com:lightapi/group-query.git
+      - git@github.com:lightapi/group-command.git
+      - git@github.com:lightapi/position-query.git
+      - git@github.com:lightapi/position-command.git
+      - git@github.com:lightapi/attribute-query.git
+      - git@github.com:lightapi/attribute-command.git
+      - git@github.com:lightapi/client-query.git
+      - git@github.com:lightapi/client-command.git
+      - git@github.com:lightapi/service-query.git
+      - git@github.com:lightapi/service-command.git
+      - git@github.com:lightapi/host-query.git
+      - git@github.com:lightapi/host-command.git
+      - git@github.com:lightapi/product-query.git
+      - git@github.com:lightapi/product-command.git
+      - git@github.com:lightapi/deployment-query.git
+      - git@github.com:lightapi/deployment-command.git
+      - git@github.com:lightapi/instance-query.git
+      - git@github.com:lightapi/instance-command.git
       - git@github.com:lightapi/ref-query.git
       - git@github.com:lightapi/ref-command.git
       - git@github.com:lightapi/event-exporter.git
@@ -61,6 +84,7 @@ checkout:
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
+
 
 # generate changelog.md from github issues and check in
 # release to maven central
@@ -88,10 +112,33 @@ release:
   - lightapi/light-controller
   - lightapi/hybrid-command
   - lightapi/hybrid-query
-  - lightapi/market-command
-  - lightapi/market-query
   - lightapi/user-command
   - lightapi/user-query
+  - lightapi/oauth-command
+  - lightapi/oauth-query
+  - lightapi/rule-command
+  - lightapi/rule-query
+  - lightapi/user-command
+  - lightapi/role-query
+  - lightapi/role-command
+  - lightapi/group-query
+  - lightapi/group-command
+  - lightapi/position-query
+  - lightapi/position-command
+  - lightapi/attribute-query
+  - lightapi/attribute-command
+  - lightapi/client-query
+  - lightapi/client-command
+  - lightapi/service-query
+  - lightapi/service-command
+  - lightapi/host-query
+  - lightapi/host-command
+  - lightapi/product-query
+  - lightapi/product-command
+  - lightapi/deployment-query
+  - lightapi/deployment-command
+  - lightapi/instance-query
+  - lightapi/instance-command
   - lightapi/ref-command
   - lightapi/ref-query
   - lightapi/event-exporter

@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade yaml-rule to 2.0.0'
+comment: 'upgrade snakeyaml to 2.3'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -25,20 +25,15 @@ checkout:
     - git@github.com:networknt/light-session-4j.git
     - git@github.com:networknt/light-spa-4j.git
     - git@github.com:networknt/light-gateway.git
-    - git@github.com:lightapi/oauth-kafka.git
     - git@github.com:networknt/light-tokenization.git
-    # - git@github.com:networknt/light-portal.git
     - git@github.com:networknt/light-example-4j.git
     - git@github.com:networknt/light-example-kotlin.git
     - git@github.com:networknt/light-docker.git
     - git@github.com:networknt/light-doc.git
-    # - git@github.com:networknt/light-config-test.git
     - git@github.com:networknt/light-bot.git
-    - git@github.com:lightapi/light-config-server.git
     - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/model-config.git
     - git@github.com:networknt/light-workflow-4j.git
-    # - git@github.com:networknt/swagger-bundler.git
     - git@github.com:networknt/openapi-bundler.git
     - git@github.com:networknt/http2client-benchmark.git
     - git@github.com:networknt/json-schema-validator.git
@@ -48,7 +43,6 @@ checkout:
     - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-monitor.git
-    # - git@github.com:networknt/light-java-hybrid-example.git
     - git@github.com:networknt/light-reference.git
     - git@github.com:networknt/light-kafka.git
     - git@github.com:networknt/openapi-petstore.git
@@ -59,17 +53,62 @@ checkout:
 
     # LightApi
     - git@github.com:lightapi/light-portal.git
-    - git@github.com:lightapi/hybrid-command.git
     - git@github.com:lightapi/hybrid-query.git
-    - git@github.com:lightapi/market-command.git
-    - git@github.com:lightapi/market-query.git
+    - git@github.com:lightapi/hybrid-command.git
     - git@github.com:lightapi/user-query.git
     - git@github.com:lightapi/user-command.git
-    - git@github.com:lightapi/ref-query.git
     - git@github.com:lightapi/ref-command.git
+    - git@github.com:lightapi/ref-query.git
     - git@github.com:lightapi/event-exporter.git
     - git@github.com:lightapi/event-importer.git
-
+    - git@github.com:lightapi/oauth-kafka.git
+    - git@github.com:lightapi/light-scheduler.git
+    - git@github.com:lightapi/light-controller.git
+    - git@github.com:lightapi/light-config-server.git
+    - git@github.com:lightapi/maproot-command.git
+    - git@github.com:lightapi/maproot-query.git
+    - git@github.com:lightapi/portal-config-loc.git
+    - git@github.com:lightapi/light-portal-doc.git
+    - git@github.com:lightapi/portal-view.git
+    - git@github.com:lightapi/client-query.git
+    - git@github.com:lightapi/client-command.git
+    - git@github.com:lightapi/oauth-command.git
+    - git@github.com:lightapi/oauth-query.git
+    - git@github.com:lightapi/service-query.git
+    - git@github.com:lightapi/service-command.git
+    - git@github.com:lightapi/rule-query.git
+    - git@github.com:lightapi/rule-command.git
+    - git@github.com:lightapi/role-command.git
+    - git@github.com:lightapi/role-query.git
+    - git@github.com:lightapi/position-query.git
+    - git@github.com:lightapi/position-command.git
+    - git@github.com:lightapi/attribute-command.git
+    - git@github.com:lightapi/attribute-query.git
+    - git@github.com:lightapi/group-query.git
+    - git@github.com:lightapi/group-command.git
+    - git@github.com:lightapi/blog-query.git
+    - git@github.com:lightapi/blog-command.git
+    - git@github.com:lightapi/category-query.git
+    - git@github.com:lightapi/category-command.git
+    - git@github.com:lightapi/config-query.git
+    - git@github.com:lightapi/config-command.git
+    - git@github.com:lightapi/document-query.git
+    - git@github.com:lightapi/document-command.git
+    - git@github.com:lightapi/error-query.git
+    - git@github.com:lightapi/error-command.git
+    - git@github.com:lightapi/form-query.git
+    - git@github.com:lightapi/form-command.git
+    - git@github.com:lightapi/host-command.git
+    - git@github.com:lightapi/host-query.git
+    - git@github.com:lightapi/news-query.git
+    - git@github.com:lightapi/news-command.git
+    - git@github.com:lightapi/page-query.git
+    - git@github.com:lightapi/page-command.git
+    - git@github.com:lightapi/schema-query.git
+    - git@github.com:lightapi/schema-command.git
+    - git@github.com:lightapi/tag-query.git
+    - git@github.com:lightapi/template-query.git
+    - git@github.com:lightapi/template-command.git
 
     # Taiji Block Chain Projects
     - git@github.com:networknt/taiji-blockchain.git
@@ -98,10 +137,8 @@ checkout:
     - git@github.com:networknt/light-lambda-native.git
     # light-chaos-monkey
     - git@github.com:networknt/light-chaos-monkey.git
-    - git@github.com:lightapi/light-controller.git
     - git@github.com:networknt/kafka-sidecar.git
     - git@github.com:networknt/http-sidecar.git
-    - git@github.com:lightapi/light-scheduler.git
     # yaml rule and plugin
     - git@github.com:networknt/yaml-rule.git
     - git@github.com:networknt/yaml-rule-plugin.git
@@ -1192,11 +1229,16 @@ replace:
 #   old_value: 2.26.4
 #   new_value: 2.29.23
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.yaml-rule>\d*\.\d*\.\d*</version.yaml-rule>
+#   old_value: 1.0.5
+#   new_value: 2.0.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: yamlruleVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.5
+#   new_value: 2.0.0
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.yaml-rule>\d*\.\d*\.\d*</version.yaml-rule>
-  old_value: 1.0.5
-  new_value: 2.0.0
-- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: yamlruleVersion=\d*\.\d*\.\d*
-  old_value: 1.0.5
-  new_value: 2.0.0
+  match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+  old_value: "2.2"
+  new_value: "2.3"
