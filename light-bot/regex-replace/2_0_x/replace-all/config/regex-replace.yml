@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade snakeyaml to 2.3'
+comment: 'downgrade kafka to 3.8.1'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -1238,7 +1238,16 @@ replace:
 #   old_value: 1.0.5
 #   new_value: 2.0.0
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "2.2"
+#   new_value: "2.3"
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
-  old_value: "2.2"
-  new_value: "2.3"
+  match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+  old_value: 2.5.0
+  new_value: 3.8.1
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: kafkaVersion=\d*\.\d*\.\d*
+  old_value: 2.5.0
+  new_value: 3.8.1
