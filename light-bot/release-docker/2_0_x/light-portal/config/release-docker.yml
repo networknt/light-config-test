@@ -33,17 +33,6 @@ checkout:
 # maven build
 maven:
   - light-portal
-  - light-portal/user-command
-  - light-portal/user-query
-  - light-portal/ref-command
-  - light-portal/ref-query
-  - light-portal/oauth-playground
-  - light-portal/market-query
-  - light-portal/market-command
-  - light-portal/event-exporter
-  - light-portal/event-importer
-  - maproot/covid-command
-  - maproot/covid-query
   # - chain-reader
   # - taiji-blockchain
   # - light-codegen

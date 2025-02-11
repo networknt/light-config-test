@@ -36,8 +36,32 @@ checkout:
       - git@github.com:lightapi/hybrid-command.git
       - git@github.com:lightapi/user-query.git
       - git@github.com:lightapi/user-command.git
-      - git@github.com:lightapi/market-query.git
-      - git@github.com:lightapi/market-command.git
+      - git@github.com:lightapi/oauth-query.git
+      - git@github.com:lightapi/oauth-command.git
+      - git@github.com:lightapi/rule-query.git
+      - git@github.com:lightapi/rule-command.git
+      - git@github.com:lightapi/role-query.git
+      - git@github.com:lightapi/role-command.git
+      - git@github.com:lightapi/group-query.git
+      - git@github.com:lightapi/group-command.git
+      - git@github.com:lightapi/position-query.git
+      - git@github.com:lightapi/position-command.git
+      - git@github.com:lightapi/attribute-query.git
+      - git@github.com:lightapi/attribute-command.git
+      - git@github.com:lightapi/client-query.git
+      - git@github.com:lightapi/client-command.git
+      - git@github.com:lightapi/service-query.git
+      - git@github.com:lightapi/service-command.git
+      - git@github.com:lightapi/host-query.git
+      - git@github.com:lightapi/host-command.git
+      - git@github.com:lightapi/product-query.git
+      - git@github.com:lightapi/product-command.git
+      - git@github.com:lightapi/deployment-query.git
+      - git@github.com:lightapi/deployment-command.git
+      - git@github.com:lightapi/instance-query.git
+      - git@github.com:lightapi/instance-command.git
+      - git@github.com:lightapi/config-query.git
+      - git@github.com:lightapi/config-command.git
       - git@github.com:lightapi/ref-command.git
       - git@github.com:lightapi/ref-query.git
       - git@github.com:lightapi/event-exporter.git
@@ -53,10 +77,35 @@ build:
     - light-portal
     - hybrid-query
     - hybrid-command
-    - user-query
     - user-command
-    - market-query
-    - market-command
+    - user-query
+    - oauth-command
+    - oauth-query
+    - rule-command
+    - rule-query
+    - user-command
+    - role-query
+    - role-command
+    - group-query
+    - group-command
+    - position-query
+    - position-command
+    - attribute-query
+    - attribute-command
+    - client-query
+    - client-command
+    - service-query
+    - service-command
+    - host-query
+    - host-command
+    - product-query
+    - product-command
+    - deployment-query
+    - deployment-command
+    - instance-query
+    - instance-command
+    - config-query
+    - config-command
     - ref-query
     - ref-command
     - event-importer

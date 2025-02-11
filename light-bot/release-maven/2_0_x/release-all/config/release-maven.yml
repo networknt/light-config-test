@@ -120,7 +120,6 @@ release:
   - lightapi/oauth-query
   - lightapi/rule-command
   - lightapi/rule-query
-  - lightapi/user-command
   - lightapi/role-query
   - lightapi/role-command
   - lightapi/group-query
