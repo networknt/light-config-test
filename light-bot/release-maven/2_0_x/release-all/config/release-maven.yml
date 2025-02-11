@@ -1,9 +1,9 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.1.37
+version: 2.2.0
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.1.36
+prev_tag: 2.1.38
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
@@ -47,8 +47,8 @@ checkout:
       - git@github.com:lightapi/light-portal.git
       - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
-      - git@github.com:lightapi/hybrid-command.git
       - git@github.com:lightapi/hybrid-query.git
+      - git@github.com:lightapi/hybrid-command.git
       - git@github.com:lightapi/user-query.git
       - git@github.com:lightapi/user-command.git
       - git@github.com:lightapi/oauth-query.git
@@ -75,6 +75,8 @@ checkout:
       - git@github.com:lightapi/deployment-command.git
       - git@github.com:lightapi/instance-query.git
       - git@github.com:lightapi/instance-command.git
+      - git@github.com:lightapi/config-query.git
+      - git@github.com:lightapi/config-command.git
       - git@github.com:lightapi/ref-query.git
       - git@github.com:lightapi/ref-command.git
       - git@github.com:lightapi/event-exporter.git
@@ -139,6 +141,8 @@ release:
   - lightapi/deployment-command
   - lightapi/instance-query
   - lightapi/instance-command
+  - lightapi/config-query
+  - lightapi/config-command
   - lightapi/ref-command
   - lightapi/ref-query
   - lightapi/event-exporter
