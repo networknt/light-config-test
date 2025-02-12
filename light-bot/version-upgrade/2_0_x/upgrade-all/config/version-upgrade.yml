@@ -146,7 +146,6 @@ maven:
   - oauth-query
   - rule-command
   - rule-query
-  - user-command
   - role-query
   - role-command
   - group-query
