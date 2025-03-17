@@ -53,6 +53,7 @@ checkout:
         - git@github.com:networknt/openapi-petstore.git
         - git@github.com:networknt/openapi-market.git
         - git@github.com:networknt/light-example-4j.git
+        - git@github.com:networknt/graphql-petstore.git
 
 build:
   buildSetOne:
@@ -78,6 +79,7 @@ build:
       - http-sidecar
       - openapi-petstore
       - openapi-market
+      - graphql-petstore
       - light-example-4j/rest/openapi/proxy-backend
       - light-example-4j/rest/openapi/cors
       # - light-example-4j/rest/openapi/ms-aggregate/aa/generated

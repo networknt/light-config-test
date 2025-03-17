@@ -45,6 +45,7 @@ checkout:
       - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
+      - git@github.com:networknt/graphql-petstore.git
 
 # maven build
 maven:
@@ -68,6 +69,7 @@ maven:
   - hybrid-command
   - openapi-petstore
   - openapi-market
+  - graphql-petstore
 
 # update changelog in master, merge it to develop and publish to github.com
 release:
@@ -106,3 +108,4 @@ docker:
   - hybrid-command
   - openapi-petstore
   - openapi-market
+  - graphql-petstore

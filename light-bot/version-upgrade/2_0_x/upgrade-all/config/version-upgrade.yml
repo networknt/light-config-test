@@ -119,6 +119,7 @@ checkout:
     # examples
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
+      - git@github.com:networknt/graphql-petstore.git
 
 # run mvn versions:set command in the following folders.
 maven:
@@ -183,6 +184,7 @@ maven:
   - light-controller
   - openapi-petstore
   - openapi-market
+  - graphql-petstore
 # regex replacement for dependencies
 version:
   json-overlay:
@@ -973,4 +975,7 @@ version:
   openapi-market:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-
+  # graphql-petstore
+  graphql-petstore:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
