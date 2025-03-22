@@ -35,7 +35,6 @@ checkout:
     - git@github.com:lightapi/light-config-server.git
     - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/light-portal.git
-    - git@github.com:networknt/light-workflow-4j.git
     - git@github.com:networknt/http2client-benchmark.git
     - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-tram-kafka.git
