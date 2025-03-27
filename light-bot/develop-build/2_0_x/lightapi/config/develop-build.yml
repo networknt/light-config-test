@@ -136,19 +136,19 @@ build:
       - document-command
       - error-query
       - error-command
-      # - form-query
-      # - form-command
-      # - host-command
-      # - host-query
-      # - news-query
-      # - news-command
-      # - page-query
-      # - page-command
-      # - schema-query
-      # - schema-command
-      # - tag-query
-      # - template-query
-      # - template-command
+      - form-query
+      - form-command
+      - host-command
+      - host-query
+      - news-query
+      - news-command
+      - page-query
+      - page-command
+      - schema-query
+      - schema-command
+      - tag-query
+      - template-query
+      - template-command
 
 # copy individual files by specify exact src and dst relative to home and workspace path.
 copyFile:

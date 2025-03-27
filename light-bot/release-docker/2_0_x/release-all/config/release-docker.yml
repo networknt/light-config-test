@@ -104,8 +104,6 @@ docker:
   - light-scheduler
   - light-controller
   - light-config-server
-  - hybrid-query
-  - hybrid-command
   - openapi-petstore
   - openapi-market
   - graphql-petstore

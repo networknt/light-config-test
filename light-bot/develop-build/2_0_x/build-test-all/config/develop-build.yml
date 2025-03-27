@@ -39,13 +39,14 @@ checkout:
       - git@github.com:networknt/light-graphql-4j.git
       - git@github.com:networknt/light-hybrid-4j.git
       - git@github.com:networknt/light-codegen.git
-      - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
+      - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-reference.git
       - git@github.com:networknt/light-spring-boot.git
+      - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-example-4j.git
       - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-aws-lambda.git
@@ -92,6 +93,25 @@ checkout:
       - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/maproot-command.git
       - git@github.com:lightapi/maproot-query.git
+      - git@github.com:lightapi/error-query.git
+      - git@github.com:lightapi/error-command.git
+      - git@github.com:lightapi/document-query.git
+      - git@github.com:lightapi/document-command.git
+      - git@github.com:lightapi/form-query.git
+      - git@github.com:lightapi/form-command.git
+      - git@github.com:lightapi/blog-query.git
+      - git@github.com:lightapi/blog-command.git
+      - git@github.com:lightapi/category-query.git
+      - git@github.com:lightapi/category-command.git
+      - git@github.com:lightapi/schema-query.git
+      - git@github.com:lightapi/schema-command.git
+      - git@github.com:lightapi/page-query.git
+      - git@github.com:lightapi/page-command.git
+      - git@github.com:lightapi/news-query.git
+      - git@github.com:lightapi/news-command.git
+      - git@github.com:lightapi/tag-query.git
+      - git@github.com:lightapi/template-query.git
+      - git@github.com:lightapi/template-command.git
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
       - git@github.com:networknt/graphql-petstore.git
@@ -110,13 +130,18 @@ build:
     - light-kafka
     - light-spa-4j
     - light-aws-lambda
-    # - light-aws-lambda/jwt-authorizer/Authorizer
+    - light-aws-lambda/jwt-authorizer/Authorizer
+    - light-aws-lambda/ccc-lambda/middleware-function
     - light-lambda-native
     - light-chaos-monkey
     - light-gateway
+    - light-kafka
+    - oauth-kafka
     - light-tokenization
+    - light-config-server
     - light-reference
     - light-spring-boot
+    - light-chaos-monkey
     # - light-portal
     # - light-portal/api-certification
     # - light-portal/host-menu
@@ -207,7 +232,25 @@ build:
     - light-controller
     - maproot-command
     - maproot-query
-    - oauth-kafka
+    - error-query
+    - error-command
+    - document-query
+    - document-command
+    - form-query
+    - form-command
+    - blog-query
+    - blog-command
+    - category-query
+    - category-command
+    - schema-query
+    - schema-command
+    - page-query
+    - page-command
+    - news-query
+    - news-command
+    - tag-query
+    - template-query
+    - template-command
     - openapi-petstore
     - openapi-market
     - graphql-petstore

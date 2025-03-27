@@ -73,3 +73,22 @@ checkout:
         - git@github.com:lightapi/light-controller.git  
         - git@github.com:lightapi/oauth-kafka.git
         - git@github.com:lightapi/light-config-server.git
+        - git@github.com:lightapi/error-query.git
+        - git@github.com:lightapi/error-command.git
+        - git@github.com:lightapi/document-query.git
+        - git@github.com:lightapi/document-command.git
+        - git@github.com:lightapi/form-query.git
+        - git@github.com:lightapi/form-command.git
+        - git@github.com:lightapi/blog-query.git
+        - git@github.com:lightapi/blog-command.git
+        - git@github.com:lightapi/category-query.git
+        - git@github.com:lightapi/category-command.git
+        - git@github.com:lightapi/schema-query.git
+        - git@github.com:lightapi/schema-command.git
+        - git@github.com:lightapi/page-query.git
+        - git@github.com:lightapi/page-command.git
+        - git@github.com:lightapi/news-query.git
+        - git@github.com:lightapi/news-command.git
+        - git@github.com:lightapi/tag-query.git
+        - git@github.com:lightapi/template-query.git
+        - git@github.com:lightapi/template-command.git

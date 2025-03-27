@@ -49,7 +49,6 @@ checkout:
         - git@github.com:networknt/light-tram-kafka.git
         - git@github.com:networknt/kafka-sidecar.git
         - git@github.com:networknt/http-sidecar.git
-        - git@github.com:networknt/light-controller.git
         - git@github.com:networknt/light-chaos-monkey.git
         - git@github.com:networknt/openapi-petstore.git
         - git@github.com:networknt/openapi-market.git
