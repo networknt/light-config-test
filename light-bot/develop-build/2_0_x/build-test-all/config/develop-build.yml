@@ -131,7 +131,6 @@ build:
     - light-spa-4j
     - light-aws-lambda
     - light-aws-lambda/jwt-authorizer/Authorizer
-    - light-aws-lambda/ccc-lambda/middleware-function
     - light-lambda-native
     - light-chaos-monkey
     - light-gateway
