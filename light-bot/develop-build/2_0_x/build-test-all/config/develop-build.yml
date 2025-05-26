@@ -48,7 +48,6 @@ checkout:
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-example-4j.git
-      - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
       - git@github.com:networknt/light-chaos-monkey.git
@@ -110,6 +109,7 @@ checkout:
       - git@github.com:lightapi/news-query.git
       - git@github.com:lightapi/news-command.git
       - git@github.com:lightapi/tag-query.git
+      - git@github.com:lightapi/tag-command.git
       - git@github.com:lightapi/template-query.git
       - git@github.com:lightapi/template-command.git
       - git@github.com:networknt/openapi-petstore.git
@@ -134,7 +134,6 @@ build:
     - light-lambda-native
     - light-chaos-monkey
     - light-gateway
-    - light-kafka
     - oauth-kafka
     - light-tokenization
     - light-config-server
@@ -248,6 +247,7 @@ build:
     - news-query
     - news-command
     - tag-query
+    - tag-command
     - template-query
     - template-command
     - openapi-petstore
