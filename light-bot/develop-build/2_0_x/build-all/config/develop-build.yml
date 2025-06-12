@@ -110,6 +110,7 @@ checkout:
       - git@github.com:lightapi/news-query.git
       - git@github.com:lightapi/news-command.git
       - git@github.com:lightapi/tag-query.git
+      - git@github.com:lightapi/tag-command.git
       - git@github.com:lightapi/template-query.git
       - git@github.com:lightapi/template-command.git
       - git@github.com:networknt/openapi-petstore.git
@@ -200,6 +201,7 @@ build:
     - news-query
     - news-command
     - tag-query
+    - tag-command
     - template-query
     - template-command
     - openapi-petstore

@@ -107,6 +107,7 @@ checkout:
     - git@github.com:lightapi/schema-query.git
     - git@github.com:lightapi/schema-command.git
     - git@github.com:lightapi/tag-query.git
+    - git@github.com:lightapi/tag-command.git
     - git@github.com:lightapi/template-query.git
     - git@github.com:lightapi/template-command.git
     - git@github.com:lightapi/product-query.git

@@ -90,5 +90,6 @@ checkout:
         - git@github.com:lightapi/news-query.git
         - git@github.com:lightapi/news-command.git
         - git@github.com:lightapi/tag-query.git
+        - git@github.com:lightapi/tag-command.git
         - git@github.com:lightapi/template-query.git
         - git@github.com:lightapi/template-command.git

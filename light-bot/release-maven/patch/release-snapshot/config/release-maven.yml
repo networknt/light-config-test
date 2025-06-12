@@ -82,6 +82,12 @@ checkout:
       - git@github.com:lightapi/config-command.git
       - git@github.com:lightapi/ref-query.git
       - git@github.com:lightapi/ref-command.git
+      - git@github.com:lightapi/tag-query.git
+      - git@github.com:lightapi/tag-command.git
+      - git@github.com:lightapi/category-query.git
+      - git@github.com:lightapi/category-command.git
+      - git@github.com:lightapi/schema-query.git
+      - git@github.com:lightapi/schema-command.git
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
       - git@github.com:lightapi/maproot-command.git
@@ -149,6 +155,12 @@ release:
   - lightapi/config-command
   - lightapi/ref-command
   - lightapi/ref-query
+  - lightapi/tag-query
+  - lightapi/tag-command
+  - lightapi/category-query
+  - lightapi/category-command
+  - lightapi/schema-command
+  - lightapi/schema-query
   - lightapi/event-exporter
   - lightapi/event-importer
   - lightapi/maproot-command
