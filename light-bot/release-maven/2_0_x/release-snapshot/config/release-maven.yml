@@ -88,6 +88,8 @@ checkout:
       - git@github.com:lightapi/category-command.git
       - git@github.com:lightapi/schema-query.git
       - git@github.com:lightapi/schema-command.git
+      - git@github.com:lightapi/schedule-query.git
+      - git@github.com:lightapi/schedule-command.git
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
       - git@github.com:lightapi/maproot-command.git
@@ -130,7 +132,6 @@ release:
   - lightapi/oauth-query
   - lightapi/rule-command
   - lightapi/rule-query
-  - lightapi/user-command
   - lightapi/role-query
   - lightapi/role-command
   - lightapi/group-query
@@ -153,14 +154,16 @@ release:
   - lightapi/instance-command
   - lightapi/config-query
   - lightapi/config-command
-  - lightapi/ref-command
   - lightapi/ref-query
-  - lightapi/tag-command
+  - lightapi/ref-command
   - lightapi/tag-query
-  - lightapi/category-command
+  - lightapi/tag-command
   - lightapi/category-query
+  - lightapi/category-command
   - lightapi/schema-command
   - lightapi/schema-query
+  - lightapi/schedule-command
+  - lightapi/schedule-query
   - lightapi/event-exporter
   - lightapi/event-importer
   - lightapi/maproot-command

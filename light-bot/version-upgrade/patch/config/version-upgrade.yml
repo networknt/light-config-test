@@ -127,6 +127,8 @@ checkout:
       - git@github.com:lightapi/news-command.git
       - git@github.com:lightapi/tag-query.git
       - git@github.com:lightapi/tag-command.git
+      - git@github.com:lightapi/schedule-query.git
+      - git@github.com:lightapi/schedule-command.git
       - git@github.com:lightapi/template-query.git
       - git@github.com:lightapi/template-command.git
       - git@github.com:lightapi/event-exporter.git
@@ -209,6 +211,8 @@ maven:
   - news-command
   - tag-query
   - tag-command
+  - schedule-query
+  - schedule-command
   - template-query
   - template-command
   - event-exporter
@@ -449,6 +453,12 @@ version:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   tag-query:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  schedule-command:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  schedule-query:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   template-command:

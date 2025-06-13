@@ -86,8 +86,11 @@ checkout:
         - git@github.com:lightapi/schema-query.git
         - git@github.com:lightapi/schema-command.git
         - git@github.com:lightapi/tag-query.git
+        - git@github.com:lightapi/tag-command.git
         - git@github.com:lightapi/template-query.git
         - git@github.com:lightapi/template-command.git
+        - git@github.com:lightapi/schedule-query.git
+        - git@github.com:lightapi/schedule-command.git
 
 
 
@@ -147,8 +150,11 @@ build:
       - schema-query
       - schema-command
       - tag-query
+      - tag-command
       - template-query
       - template-command
+      - schedule-query
+      - schedule-command
 
 # copy individual files by specify exact src and dst relative to home and workspace path.
 copyFile:

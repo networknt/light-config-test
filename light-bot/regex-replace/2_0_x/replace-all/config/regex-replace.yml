@@ -116,6 +116,8 @@ checkout:
     - git@github.com:lightapi/deployment-command.git
     - git@github.com:lightapi/instance-query.git
     - git@github.com:lightapi/instance-command.git
+    - git@github.com:lightapi/schedule-query.git
+    - git@github.com:lightapi/schedule-command.git
 
     # Taiji Block Chain Projects
     - git@github.com:networknt/taiji-blockchain.git

@@ -113,6 +113,8 @@ checkout:
       - git@github.com:lightapi/tag-command.git
       - git@github.com:lightapi/template-query.git
       - git@github.com:lightapi/template-command.git
+      - git@github.com:lightapi/schedule-query.git
+      - git@github.com:lightapi/schedule-command.git
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
       - git@github.com:networknt/graphql-petstore.git
@@ -132,7 +134,6 @@ build:
     - light-spa-4j
     - light-aws-lambda
     - light-aws-lambda/jwt-authorizer/Authorizer
-    - light-aws-lambda/ccc-lambda/middleware-function
     - light-lambda-native
     - light-chaos-monkey
     - light-gateway
@@ -204,6 +205,8 @@ build:
     - tag-command
     - template-query
     - template-command
+    - schedule-query
+    - schedule-command
     - openapi-petstore
     - openapi-market
     - graphql-petstore

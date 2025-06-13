@@ -85,6 +85,8 @@ checkout:
       - git@github.com:lightapi/category-command.git
       - git@github.com:lightapi/schema-query.git
       - git@github.com:lightapi/schema-command.git
+      - git@github.com:lightapi/schedule-query.git
+      - git@github.com:lightapi/schedule-command.git
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
       - git@github.com:lightapi/maproot-command.git
@@ -157,6 +159,8 @@ release:
   - lightapi/category-command
   - lightapi/schema-command
   - lightapi/schema-query
+  - lightapi/schedule-command
+  - lightapi/schedule-query
   - lightapi/event-exporter
   - lightapi/event-importer
   - lightapi/maproot-command
