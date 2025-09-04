@@ -95,6 +95,7 @@ checkout:
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
       - git@github.com:networknt/graphql-petstore.git
+      - git@github.com:networknt/light-reference.git
 
 
 # generate changelog.md from github issues and check in
@@ -170,6 +171,7 @@ release:
   - networknt/openapi-market
   - networknt/kafka-sidecar
   - networknt/graphql-petstore
+  - networknt/light-reference
 
 # deploy:
 #   - light-codegen:

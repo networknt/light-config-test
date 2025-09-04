@@ -157,6 +157,7 @@ maven:
   - light-gateway
   - light-kafka
   - oauth-kafka
+  - light-reference
   - light-tokenization
   - light-config-server
   - light-spring-boot
