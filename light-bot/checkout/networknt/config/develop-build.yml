@@ -55,4 +55,3 @@ checkout:
         - git@github.com:networknt/graphql-petstore.git
         - git@github.com:networknt/light-aws-lambda.git
         - git@github.com:networknt/light-lambda-native.git
-
