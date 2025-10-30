@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'update http-client to 1.0.16'
+comment: 'update undertow to 2.3.20.Final'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -1439,12 +1439,22 @@ replace:
 #   old_value: 7.9.0
 #   new_value: 7.9.1
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.http-client>\d*\.\d*\.\d*</version.http-client>
+#   old_value: 1.0.13
+#   new_value: 1.0.16
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: httpClientVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.13
+#   new_value: 1.0.16
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.http-client>\d*\.\d*\.\d*</version.http-client>
-  old_value: 1.0.13
-  new_value: 1.0.16
+  match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+  old_value: "2.3.18.Final"
+  new_value: "2.3.20.Final"
 
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: httpClientVersion=\d*\.\d*\.\d*
-  old_value: 1.0.13
-  new_value: 1.0.16
+  match: undertowVersion=\d*\.\d*\.\d*\.Final
+  old_value: "2.3.18.Final"
+  new_value: "2.3.20.Final"
