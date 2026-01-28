@@ -142,6 +142,7 @@ checkout:
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
       - git@github.com:networknt/graphql-petstore.git
+      - git@github.com:networknt/light-websocket-4j.git
 
 # run mvn versions:set command in the following folders.
 maven:
@@ -230,6 +231,8 @@ maven:
   - openapi-petstore
   - openapi-market
   - graphql-petstore
+  - light-websocket-4j
+
 # regex replacement for dependencies
 version:
   json-overlay:
@@ -1089,5 +1092,10 @@ version:
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   # graphql-petstore
   graphql-petstore:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+
+  # Light-websocket-4j
+  light-websocket-4j:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>

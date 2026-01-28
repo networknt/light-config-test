@@ -41,3 +41,4 @@ checkout:
     - git@github.com:networknt/openapi-petstore.git
     - git@github.com:networknt/openapi-market.git
     - git@github.com:networknt/graphql-petstore.git
+    - git@github.com:networknt/light-websocket-4j.git
