@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'update logback to 1.5.26'
+comment: 'update commons-text to 1.15.0'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -51,6 +51,7 @@ checkout:
     - git@github.com:networknt/lambda-market.git
     - git@github.com:networknt/graphql-petstore.git
     - git@github.com:networknt/light-websocket-4j.git
+    - git@github.com:networknt/light-genai-4j.git
 
     # LightApi
     - git@github.com:lightapi/light-portal.git
@@ -1470,11 +1471,16 @@ replace:
 #   old_value: 2.1.0
 #   new_value: 3.27.7
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.5.18
+#   new_value: 1.5.26
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.5.18
+#   new_value: 1.5.26
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.logback>\d*\.\d*\.\d*</version.logback>
-  old_value: 1.5.18
-  new_value: 1.5.26
-- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: logbackVersion=\d*\.\d*\.\d*
-  old_value: 1.5.18
-  new_value: 1.5.26
+  match: <version.commons-text>\d*\.\d*\.\d*</version.commons-text>
+  old_value: 1.10.0
+  new_value: 1.15.0

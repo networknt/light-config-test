@@ -96,7 +96,8 @@ checkout:
       - git@github.com:networknt/openapi-market.git
       - git@github.com:networknt/graphql-petstore.git
       - git@github.com:networknt/light-reference.git
-
+      - git@github.com:networknt/light-websocket-4j.git
+      - git@github.com:networknt/light-genai-4j.git
 
 # generate changelog.md from github issues and check in
 # release to maven central
@@ -172,7 +173,8 @@ release:
   - networknt/kafka-sidecar
   - networknt/graphql-petstore
   - networknt/light-reference
-
+  - networknt/light-websocket-4j
+  - networknt/light-genai-4j
 # deploy:
 #   - light-codegen:
 #     - scp codegen-core/target/codegen-core.jar steve@devops:/home/steve/networknt/light-config-test/light-codegen/2_0_x/service

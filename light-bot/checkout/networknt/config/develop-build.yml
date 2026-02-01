@@ -56,3 +56,4 @@ checkout:
         - git@github.com:networknt/light-aws-lambda.git
         - git@github.com:networknt/light-lambda-native.git
         - git@github.com:networknt/light-websocket-4j.git
+        - git@github.com:networknt/light-genai-4j.git
