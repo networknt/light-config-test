@@ -73,6 +73,8 @@ build:
       - light-aws-lambda
       - light-lambda-native
       - light-chaos-monkey
+      - light-websocket-4j
+      - light-genai-4j
       - light-gateway
       - light-tokenization
       - light-reference
@@ -82,8 +84,6 @@ build:
       - openapi-petstore
       - openapi-market
       - graphql-petstore
-      - light-websocket-4j
-      - light-genai-4j
       - light-example-4j/rest/openapi/proxy-backend
       - light-example-4j/rest/openapi/cors
       # - light-example-4j/rest/openapi/ms-aggregate/aa/generated

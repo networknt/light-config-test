@@ -137,6 +137,8 @@ build:
     - light-aws-lambda/jwt-authorizer/Authorizer
     - light-lambda-native
     - light-chaos-monkey
+    - light-websocket-4j
+    - light-genai-4j
     - light-gateway
     - light-kafka
     - oauth-kafka
@@ -260,8 +262,6 @@ build:
     - openapi-petstore
     - openapi-market
     - graphql-petstore
-    - light-websocket-4j
-    - light-genai-4j
     
 # This section defines end-to-end tests with real live servers, if you want to skip
 # these tests, please change the same level skipE2ETest to true.
