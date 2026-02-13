@@ -160,6 +160,13 @@ build:
     # - light-config-server
     - light-example-4j/rest/openapi/proxy-backend
     - light-example-4j/rest/openapi/cors
+
+    - light-example-4j/kafka-sidecar/kafka-streams-dsl
+    - light-example-4j/kafka-sidecar/kafka-streams-processor-api
+    - light-example-4j/kafka-sidecar/reactive-consumer-producer
+    - light-example-4j/websocket/llmchat-callback
+    - light-example-4j/websocket/llmchat-server
+
     # - light-example-4j/rest/openapi/ms-aggregate/aa/generated
     # - light-example-4j/rest/openapi/ms-aggregate/aa/https
     # - light-example-4j/rest/openapi/ms-aggregate/ab/generated
@@ -196,6 +203,7 @@ build:
     # - light-example-4j/middleware-performance/service-config
     # - light-example-4j/middleware-performance/endpoint-individual
     # - light-example-4j/middleware-performance/endpoint-source
+
     - kafka-sidecar
     - http-sidecar
     - light-portal
