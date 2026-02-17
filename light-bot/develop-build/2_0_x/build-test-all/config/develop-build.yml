@@ -1,9 +1,9 @@
 workspace: developbuild_2_0_x
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 # or the last time the build was failed and you just want to retry without changing anything.
-skip_checkout: false
+skip_checkout: true
 # Just checkout the repositories for backup or some other tasks
-skip_build: false
+skip_build: true
 # If this value is set to true, then only checkout and build will be called. It is
 # very useful if you just want to install the develop branch modules into your .m2
 # local repo. Also, some of our customers have constraint test environment to run
@@ -277,9 +277,9 @@ test:
   openapi-petstore:
     server:
     - path: openapi-petstore
-      cmd: target/petstore-3.1.0.jar
+      cmd: target/openapi-petstore.jar
     request:
-    - host: https://localhost:8443
+    - host: https://localhost:9443
       path: "/v1/pets/111"
       method: get
       response:
@@ -294,8 +294,8 @@ test:
     - path: openapi-market
       cmd: target/openapi-market.jar
     request:
-    - host: https://localhost:8443
-      path: "/v1/pets/111"
+    - host: https://localhost:6443
+      path: "/v1/market/111/products"
       method: get
       response:
         status: 200
