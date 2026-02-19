@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'update version.lambda-awssdk to 2.41.24'
+comment: 'update version.avro to 1.12.1'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -1532,11 +1532,21 @@ replace:
 #   old_value: 1.0.16
 #   new_value: 1.0.17
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.41.18
+#   new_value: 2.41.24
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.41.18
+#   new_value: 2.41.24
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
-  old_value: 2.41.18
-  new_value: 2.41.24
+  match: <version.avro>\d*\.\d*\.\d*</version.avro>
+  old_value: 1.12.0
+  new_value: 1.12.1
+
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: lambdaAwssdkVersion=\d*\.\d*\.\d*
-  old_value: 2.41.18
-  new_value: 2.41.24
+  match: avroVersion=\d*\.\d*\.\d*
+  old_value: 1.12.0
+  new_value: 1.12.1
