@@ -90,6 +90,8 @@ checkout:
       - git@github.com:lightapi/schema-command.git
       - git@github.com:lightapi/schedule-query.git
       - git@github.com:lightapi/schedule-command.git
+      - git@github.com:lightapi/genai-query.git
+      - git@github.com:lightapi/genai-command.git
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
       - git@github.com:lightapi/maproot-command.git
@@ -168,6 +170,8 @@ release:
   - lightapi/schema-query
   - lightapi/schedule-command
   - lightapi/schedule-query
+  - lightapi/genai-command
+  - lightapi/genai-query
   - lightapi/event-exporter
   - lightapi/event-importer
   - lightapi/maproot-command

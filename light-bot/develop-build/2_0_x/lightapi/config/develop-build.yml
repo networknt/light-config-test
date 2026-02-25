@@ -91,6 +91,8 @@ checkout:
         - git@github.com:lightapi/template-command.git
         - git@github.com:lightapi/schedule-query.git
         - git@github.com:lightapi/schedule-command.git
+        - git@github.com:lightapi/genai-query.git
+        - git@github.com:lightapi/genai-command.git
 
 
 
@@ -155,6 +157,8 @@ build:
       - template-command
       - schedule-query
       - schedule-command
+      - genai-query
+      - genai-command
 
 # copy individual files by specify exact src and dst relative to home and workspace path.
 copyFile:
