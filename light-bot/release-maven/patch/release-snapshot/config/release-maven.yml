@@ -43,7 +43,7 @@ checkout:
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
-      # - git@github.com:lightapi/light-config-server.git
+      - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
@@ -175,7 +175,8 @@ release:
   - lightapi/event-importer
   - lightapi/maproot-command
   - lightapi/maproot-query
-  - networknt/oauth-kafka
+  - lightapi/oauth-kafka
+  - lightapi/light-config-server
   - networknt/openapi-petstore
   - networknt/openapi-market
   - networknt/kafka-sidecar

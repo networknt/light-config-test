@@ -40,7 +40,7 @@ checkout:
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
-      # - git@github.com:lightapi/light-config-server.git
+      - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
@@ -179,6 +179,7 @@ release:
   - networknt/kafka-sidecar
   - networknt/graphql-petstore
   - networknt/light-reference
+  - lightapi/light-config-server
 
 # deploy:
 #   - light-codegen:
