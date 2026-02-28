@@ -46,7 +46,6 @@ checkout:
         - git@github.com:networknt/light-spring-boot.git
         - git@github.com:networknt/light-kafka.git
         - git@github.com:networknt/light-reference.git
-        - git@github.com:networknt/light-tram-kafka.git
         - git@github.com:networknt/kafka-sidecar.git
         - git@github.com:networknt/http-sidecar.git
         - git@github.com:networknt/http-client.git
