@@ -136,7 +136,6 @@ build:
     - light-kafka
     - light-spa-4j
     - light-aws-lambda
-    - light-aws-lambda/jwt-authorizer/Authorizer
     - light-lambda-native
     - light-chaos-monkey
     - light-websocket-4j

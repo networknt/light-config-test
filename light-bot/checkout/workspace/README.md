@@ -1,10 +1,8 @@
 ### The purpose of this config
 
-The config files in this folder is just check out all the repositories in networknt github organization to
-a local working directory which is normally called networknt. This is used by developers who are working on
-the frameworks or libraries and need the synch all changes to their local working directory on a daily basis.
-
-We recommend run this task everyday in the morning to ensure your local repositories are up to date.
+The config files in this folder is just check out all the repositories in workspace folder for AI to work on
+all repositories at the same time. We recommend run this task everyday in the morning to ensure your local 
+repositories are up to date.
 
 ### Prepare the environment
 
