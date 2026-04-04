@@ -70,6 +70,10 @@ checkout:
       - git@github.com:lightapi/light-config-server.git
       - git@github.com:lightapi/maproot-command.git
       - git@github.com:lightapi/maproot-query.git
+      - git@github.com:lightapi/genai-query.git
+      - git@github.com:lightapi/genai-command.git
+      - git@github.com:lightapi/workflow-query.git
+      - git@github.com:lightapi/workflow-command.git
 
 build:
   buildSetOne:
@@ -114,6 +118,10 @@ build:
     - light-config-server
     - maproot-command
     - maproot-query
+    - genai-query
+    - genai-command
+    - workflow-query
+    - workflow-command
 
 # copy individual files by specify exact src and dst relative to home and workspace path.
 copyFile:

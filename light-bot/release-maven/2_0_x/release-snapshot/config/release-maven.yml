@@ -103,6 +103,8 @@ checkout:
       - git@github.com:networknt/light-reference.git
       - git@github.com:networknt/light-websocket-4j.git
       - git@github.com:networknt/light-genai-4j.git
+      - git@github.com:lightapi/workflow-query.git
+      - git@github.com:lightapi/workflow-command.git
 
 # generate changelog.md from github issues and check in
 # release to maven central
@@ -183,3 +185,5 @@ release:
   - networknt/kafka-sidecar
   - networknt/graphql-petstore
   - networknt/light-reference
+  - lightapi/workflow-query
+  - lightapi/workflow-command

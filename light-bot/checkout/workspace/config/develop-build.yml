@@ -127,3 +127,5 @@ checkout:
         - git@github.com:lightapi/schedule-command.git
         - git@github.com:lightapi/genai-query.git
         - git@github.com:lightapi/genai-command.git
+        - git@github.com:lightapi/workflow-query.git
+        - git@github.com:lightapi/workflow-command.git
