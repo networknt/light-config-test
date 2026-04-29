@@ -99,7 +99,7 @@ checkout:
       - git@github.com:networknt/graphql-petstore.git
       - git@github.com:networknt/light-reference.git
       - git@github.com:networknt/light-websocket-4j.git
-      - git@github.com:networknt/light-genai-4j.git
+      # - git@github.com:networknt/light-genai-4j.git
       - git@github.com:lightapi/workflow-query.git
       - git@github.com:lightapi/workflow-command.git
 
@@ -122,7 +122,7 @@ release:
   - networknt/light-lambda-native
   - networknt/light-chaos-monkey
   - networknt/light-websocket-4j
-  - networknt/light-genai-4j
+  # - networknt/light-genai-4j
   - networknt/light-gateway
   - networknt/http-sidecar
   - networknt/light-spring-boot
