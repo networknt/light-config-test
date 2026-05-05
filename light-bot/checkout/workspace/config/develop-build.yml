@@ -129,3 +129,4 @@ checkout:
         - git@github.com:lightapi/genai-command.git
         - git@github.com:lightapi/workflow-query.git
         - git@github.com:lightapi/workflow-command.git
+        - git@github.com:lightapi/service-asset.git
