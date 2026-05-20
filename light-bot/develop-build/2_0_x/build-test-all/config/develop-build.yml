@@ -89,7 +89,6 @@ checkout:
       - git@github.com:lightapi/ref-command.git
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
-      - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/maproot-command.git
       - git@github.com:lightapi/maproot-query.git
@@ -245,7 +244,6 @@ build:
     - ref-query
     - event-exporter
     - event-importer
-    - light-scheduler
     - light-controller
     - maproot-command
     - maproot-query

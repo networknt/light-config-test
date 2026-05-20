@@ -45,7 +45,6 @@ checkout:
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
       - git@github.com:lightapi/light-portal.git
-      - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/hybrid-query.git
       - git@github.com:lightapi/hybrid-command.git
@@ -125,7 +124,6 @@ release:
   - networknt/http-sidecar
   - networknt/light-spring-boot
   - lightapi/light-portal
-  - networknt/light-scheduler
   - lightapi/light-controller
   - lightapi/hybrid-command
   - lightapi/hybrid-query

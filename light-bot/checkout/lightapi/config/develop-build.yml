@@ -69,7 +69,6 @@ checkout:
         - git@github.com:lightapi/portal-config-loc.git
         - git@github.com:lightapi/light-portal-doc.git
         - git@github.com:lightapi/portal-view.git
-        - git@github.com:lightapi/light-scheduler.git
         - git@github.com:lightapi/light-controller.git
         - git@github.com:lightapi/oauth-kafka.git
         - git@github.com:lightapi/light-config-server.git

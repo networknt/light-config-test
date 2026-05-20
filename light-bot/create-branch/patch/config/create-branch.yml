@@ -39,7 +39,6 @@ checkout:
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
       - git@github.com:lightapi/light-portal.git
-      - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/hybrid-command.git
       - git@github.com:lightapi/hybrid-query.git

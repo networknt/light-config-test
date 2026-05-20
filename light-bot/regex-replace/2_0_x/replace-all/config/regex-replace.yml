@@ -63,7 +63,6 @@ checkout:
     - git@github.com:lightapi/event-exporter.git
     - git@github.com:lightapi/event-importer.git
     - git@github.com:lightapi/oauth-kafka.git
-    - git@github.com:lightapi/light-scheduler.git
     - git@github.com:lightapi/light-controller.git
     - git@github.com:lightapi/light-config-server.git
     - git@github.com:lightapi/maproot-command.git

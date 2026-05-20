@@ -40,7 +40,6 @@ checkout:
     # - git@github.com:networknt/light-docker.git
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/http-sidecar.git
-      # - git@github.com:lightapi/light-scheduler.git
       - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/openapi-petstore.git
@@ -62,7 +61,6 @@ maven:
   # - light-codegen
   - kafka-sidecar
   - http-sidecar
-  # - light-scheduler
   - light-controller
   - light-config-server
   - hybrid-query
@@ -80,7 +78,6 @@ release:
   # no need to release as the release job has done.
   # - http-sidecar
   # - kafka-sidecar
-  # - light-scheduler
   # - hybrid-query
   # - hybrid-command
   # - light-codegen
@@ -101,7 +98,6 @@ docker:
   # - light-docker/light-codegen
   - kafka-sidecar
   - http-sidecar
-  # - light-scheduler
   - light-controller
   - light-config-server
   - openapi-petstore
