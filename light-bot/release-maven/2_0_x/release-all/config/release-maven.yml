@@ -41,7 +41,7 @@ checkout:
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:lightapi/light-config-server.git
-      - git@github.com:networknt/light-spring-boot.git
+      # - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
       - git@github.com:lightapi/light-portal.git
@@ -124,7 +124,7 @@ release:
   # - networknt/light-genai-4j
   - networknt/light-gateway
   - networknt/http-sidecar
-  - networknt/light-spring-boot
+  # - networknt/light-spring-boot
   - lightapi/light-portal
   - lightapi/light-controller
   - lightapi/hybrid-command
