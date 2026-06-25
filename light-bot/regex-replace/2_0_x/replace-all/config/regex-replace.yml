@@ -1599,12 +1599,30 @@ replace:
 #   old_value: 42.7.7
 #   new_value: 42.7.11
 
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
-  old_value: "2.3.22.Final"
-  new_value: "2.4.1.Final"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.22.Final"
+#   new_value: "2.4.1.Final"
 
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.22.Final"
+#   new_value: "2.4.1.Final"
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+  old_value: 3.9.1
+  new_value: 3.9.2
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: undertowVersion=\d*\.\d*\.\d*\.Final
-  old_value: "2.3.22.Final"
-  new_value: "2.4.1.Final"
+  match: kafkaVersion=\d*\.\d*\.\d*
+  old_value: 3.9.1
+  new_value: 3.9.2
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+  old_value: 7.9.1
+  new_value: 7.9.2
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: confluentVersion=\d*\.\d*\.\d*
+  old_value: 7.9.1
+  new_value: 7.9.2
