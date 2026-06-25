@@ -156,12 +156,12 @@ checkout:
     - git@github.com:networknt/yaml-rule.git
     - git@github.com:networknt/yaml-rule-plugin.git
 
-    - git@198.55.49.186:steve/kafka-chain.git
-    - git@198.55.49.186:steve/genesis-block.git
-    - git@198.55.49.186:light-chain/chain-reader.git
-    - git@198.55.49.186:light-chain/chain-writer.git
-    - git@198.55.49.186:light-chain/kyc-reader.git
-    - git@198.55.49.186:light-chain/token-reader.git
+    # - git@198.55.49.186:steve/kafka-chain.git
+    # - git@198.55.49.186:steve/genesis-block.git
+    # - git@198.55.49.186:light-chain/chain-reader.git
+    # - git@198.55.49.186:light-chain/chain-writer.git
+    # - git@198.55.49.186:light-chain/kyc-reader.git
+    # - git@198.55.49.186:light-chain/token-reader.git
 
 # regex replacement from old value to new value during a full text search on certain patterns
 # of file names.
@@ -1609,20 +1609,29 @@ replace:
 #   old_value: "2.3.22.Final"
 #   new_value: "2.4.1.Final"
 
-- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
-  old_value: 3.9.1
-  new_value: 3.9.2
-- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: kafkaVersion=\d*\.\d*\.\d*
-  old_value: 3.9.1
-  new_value: 3.9.2
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 3.9.1
+#   new_value: 3.9.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 3.9.1
+#   new_value: 3.9.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 7.9.1
+#   new_value: 7.9.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 7.9.1
+#   new_value: 7.9.2
 
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
-  old_value: 7.9.1
-  new_value: 7.9.2
+  match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+  old_value: 2.41.24
+  new_value: 2.46.16
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: confluentVersion=\d*\.\d*\.\d*
-  old_value: 7.9.1
-  new_value: 7.9.2
+  match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+  old_value: 2.41.24
+  new_value: 2.46.16
