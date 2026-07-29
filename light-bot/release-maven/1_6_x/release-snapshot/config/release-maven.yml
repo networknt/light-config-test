@@ -43,7 +43,6 @@ checkout:
     - git@github.com:networknt/light-docker.git
     # - git@github.com:lightapi/light-config-server.git
     - git@github.com:networknt/light-portal.git
-    - git@github.com:networknt/light-spring-boot.git
     - git@github.com:networknt/light-kafka.git
     - git@github.com:networknt/light-eventuate-4j.git
     - git@github.com:networknt/light-tram-kafka.git
@@ -64,7 +63,6 @@ release:
   # - light-session-4j
   - networknt/light-spa-4j
   - networknt/light-consumer-4j
-  - networknt/light-spring-boot
   - networknt/light-kafka
   - networknt/light-eventuate-4j
   - networknt/light-tram-kafka

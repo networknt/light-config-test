@@ -45,7 +45,6 @@ checkout:
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-reference.git
-      - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-example-4j.git
       - git@github.com:lightapi/light-config-server.git
@@ -120,7 +119,6 @@ checkout:
       - git@github.com:networknt/openapi-market.git
       - git@github.com:networknt/graphql-petstore.git
       - git@github.com:networknt/light-websocket-4j.git
-      - git@github.com:networknt/light-genai-4j.git
       - git@github.com:lightapi/workflow-query.git
       - git@github.com:lightapi/workflow-command.git
 
@@ -141,14 +139,12 @@ build:
     - light-lambda-native
     - light-chaos-monkey
     - light-websocket-4j
-    - light-genai-4j
     - light-gateway
     - light-kafka
     - oauth-kafka
     - light-tokenization
     - light-config-server
     - light-reference
-    - light-spring-boot
     - light-chaos-monkey
     - kafka-sidecar
     - http-sidecar

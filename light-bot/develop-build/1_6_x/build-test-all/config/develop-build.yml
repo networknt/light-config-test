@@ -43,7 +43,6 @@ checkout:
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-consumer-4j.git
-      - git@github.com:networknt/light-spring-boot.git
       # light-portal only has Java 11 version in master
       # - git@github.com:networknt/light-portal.git
       - git@github.com:networknt/light-example-4j.git
@@ -72,7 +71,6 @@ build:
     - light-spa-4j
     - light-tokenization
     - light-consumer-4j
-    - light-spring-boot
     - light-kafka
     - light-tram-kafka
     - light-eventuate-4j

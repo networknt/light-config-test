@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade_2_0_x
 # git commit comment for this task
-comment: 'upgrade to version 2.3.5-SNAPSHOT after release in master branch'
+comment: 'upgrade to version 2.3.5 before release in master branch'
 # old existing version that need to be upgraded
-old_version: 2.3.4
+old_version: 2.3.5-SNAPSHOT
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 2.3.5-SNAPSHOT
+new_version: 2.3.5
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -38,18 +38,17 @@ checkout:
       - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
-      - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-reference.git
     # Taiji-chain repositories
       - git@github.com:taiji-chain/web-client.git
       - git@github.com:taiji-chain/taiji-faucet.git
-      - git@198.55.49.186:steve/kafka-chain.git
-      - git@198.55.49.186:steve/genesis-block.git
-      - git@198.55.49.186:light-chain/chain-reader.git
-      - git@198.55.49.186:light-chain/chain-writer.git
-      - git@198.55.49.186:light-chain/kyc-reader.git
-      - git@198.55.49.186:light-chain/token-reader.git
+      - git@github.com:taiji-chain/kafka-chain.git
+      - git@github.com:taiji-chain/genesis-block.git
+      - git@github.com:taiji-chain/chain-reader.git
+      - git@github.com:taiji-chain/chain-writer.git
+      - git@github.com:taiji-chain/kyc-reader.git
+      - git@github.com:taiji-chain/token-reader.git
     # Open-Banking APIs
       - git@github.com:open-banking/accounts.git
       - git@github.com:open-banking/transactions.git
@@ -143,7 +142,6 @@ checkout:
       - git@github.com:networknt/openapi-market.git
       - git@github.com:networknt/graphql-petstore.git
       - git@github.com:networknt/light-websocket-4j.git
-      - git@github.com:networknt/light-genai-4j.git
       - git@github.com:lightapi/workflow-query.git
       - git@github.com:lightapi/workflow-command.git
 
@@ -164,7 +162,6 @@ maven:
   - light-reference
   - light-tokenization
   - light-config-server
-  - light-spring-boot
   - light-portal
   - hybrid-command
   - hybrid-query
@@ -236,7 +233,6 @@ maven:
   - openapi-market
   - graphql-petstore
   - light-websocket-4j
-  - light-genai-4j
   - workflow-query
   - workflow-command
 
@@ -304,9 +300,6 @@ version:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   light-config-server:
-    - path: pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  light-spring-boot:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   light-kafka:
@@ -1115,7 +1108,3 @@ version:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
-  # Light-genai-4j
-  light-genai-4j:
-    - path: pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>

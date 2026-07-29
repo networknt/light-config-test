@@ -49,7 +49,6 @@ checkout:
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:lightapi/light-config-server.git
-      - git@github.com:networknt/light-spring-boot.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-tram-kafka.git
       - git@github.com:networknt/light-tram-4j.git
@@ -81,7 +80,6 @@ build:
     - http2client-benchmark/lightclient
     - microservices-framework-benchmark/light-4j
     - light-config-server
-    - light-spring-boot
     - light-kafka
     - light-tram-kafka
     - light-eventuate-4j
