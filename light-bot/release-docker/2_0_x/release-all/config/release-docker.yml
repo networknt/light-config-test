@@ -37,7 +37,6 @@ checkout:
       - git@github.com:lightapi/hybrid-query.git
       - git@github.com:networknt/light-example-4j.git
     # - git@github.com:networknt/light-codegen.git
-    # - git@github.com:networknt/light-docker.git
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/light-controller.git
@@ -95,7 +94,6 @@ docker:
   - light-example-4j/discovery/api_b/kubernetes
   - light-example-4j/discovery/api_c/kubernetes
   - light-example-4j/discovery/api_d/kubernetes
-  # - light-docker/light-codegen
   - kafka-sidecar
   - http-sidecar
   - light-controller

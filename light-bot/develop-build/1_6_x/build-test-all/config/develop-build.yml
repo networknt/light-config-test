@@ -46,7 +46,6 @@ checkout:
       # light-portal only has Java 11 version in master
       # - git@github.com:networknt/light-portal.git
       - git@github.com:networknt/light-example-4j.git
-      - git@github.com:networknt/light-docker.git
       - git@github.com:networknt/http2client-benchmark.git
       - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:lightapi/light-config-server.git

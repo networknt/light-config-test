@@ -85,8 +85,6 @@ build:
       - light-example-4j/kafka-sidecar/kafka-streams-dsl
       - light-example-4j/kafka-sidecar/kafka-streams-processor-api
       - light-example-4j/kafka-sidecar/reactive-consumer-producer
-      - light-example-4j/websocket/llmchat-callback
-      - light-example-4j/websocket/llmchat-server
       
       # - light-example-4j/rest/openapi/ms-aggregate/aa/generated
       # - light-example-4j/rest/openapi/ms-aggregate/aa/https
