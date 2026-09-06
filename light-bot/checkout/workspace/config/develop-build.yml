@@ -56,6 +56,15 @@ checkout:
         - git@github.com:networknt/light-lambda-native.git
         - git@github.com:networknt/light-websocket-4j.git
         - git@github.com:networknt/networknt-doc.git
+        - git@github.com:networknt/light-fabric.git
+        - git@github.com:networknt/light-config-test.git
+        - git@github.com:networknt/react-schema-form.git
+        - git@github.com:networknt/devops.git
+        - git@github.com:networknt/yaml-rule.git
+        - git@github.com:networknt/yaml-rule-plugin.git
+        - git@github.com:networknt/json-schema-validator.git
+        - git@github.com:networknt/implementation.git
+        - git@github.com:networknt/light-example-rs.git
         - git@github.com:lightapi/light-portal.git
         - git@github.com:lightapi/hybrid-command.git
         - git@github.com:lightapi/hybrid-query.git
