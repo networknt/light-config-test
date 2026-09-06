@@ -20,3 +20,6 @@ dist/
 hs_err_pid*
 
 .DS_Store
+.claude/
+AGENTS.md
+CLAUDE.md
