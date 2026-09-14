@@ -35,6 +35,7 @@ checkout:
       - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-spa-4j.git
+      - git@github.com:networknt/yaml-rule-plugin.git
       - git@github.com:networknt/light-chaos-monkey.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:networknt/http-sidecar.git
@@ -115,6 +116,7 @@ release:
   - networknt/light-session-4j
   - networknt/light-kafka
   - networknt/light-spa-4j
+  - networknt/yaml-rule-plugin
   - networknt/light-aws-lambda
   - networknt/light-lambda-native
   - networknt/light-chaos-monkey

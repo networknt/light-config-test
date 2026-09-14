@@ -41,6 +41,7 @@ checkout:
         - git@github.com:networknt/light-codegen.git
         - git@github.com:networknt/light-kafka.git
         - git@github.com:networknt/light-spa-4j.git
+        - git@github.com:networknt/yaml-rule-plugin.git
         - git@github.com:networknt/light-aws-lambda.git
         - git@github.com:networknt/light-lambda-native.git
         - git@github.com:networknt/light-chaos-monkey.git
@@ -68,6 +69,7 @@ build:
       - light-codegen
       - light-kafka
       - light-spa-4j
+      - yaml-rule-plugin
       - light-aws-lambda
       - light-lambda-native
       - light-chaos-monkey

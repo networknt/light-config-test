@@ -29,6 +29,7 @@ checkout:
       - git@github.com:networknt/light-codegen.git
       - git@github.com:networknt/light-session-4j.git
       - git@github.com:networknt/light-spa-4j.git
+      - git@github.com:networknt/yaml-rule-plugin.git
       - git@github.com:networknt/light-gateway.git
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
@@ -155,6 +156,7 @@ maven:
   - light-codegen
   - light-session-4j
   - light-spa-4j
+  - yaml-rule-plugin
   - light-gateway
   - light-kafka
   - oauth-kafka
@@ -287,6 +289,9 @@ version:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   light-spa-4j:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
+  yaml-rule-plugin:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   light-gateway:
