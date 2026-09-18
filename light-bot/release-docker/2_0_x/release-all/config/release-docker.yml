@@ -33,8 +33,6 @@ checkout:
       - git@github.com:lightapi/oauth-kafka.git
       - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-reference.git
-      - git@github.com:lightapi/hybrid-command.git
-      - git@github.com:lightapi/hybrid-query.git
       - git@github.com:networknt/light-example-4j.git
     # - git@github.com:networknt/light-codegen.git
       - git@github.com:networknt/kafka-sidecar.git
@@ -62,8 +60,6 @@ maven:
   - http-sidecar
   - light-controller
   - light-config-server
-  - hybrid-query
-  - hybrid-command
   - openapi-petstore
   - openapi-market
   - graphql-petstore
@@ -87,8 +83,6 @@ docker:
   - oauth-kafka
   - light-tokenization
   - light-reference
-  - hybrid-command
-  - hybrid-query
   # - light-portal/codegen-server
   - light-example-4j/discovery/api_a/kubernetes
   - light-example-4j/discovery/api_b/kubernetes
