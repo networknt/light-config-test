@@ -39,12 +39,9 @@ checkout:
         - git@github.com:networknt/light-session-4j.git
         - git@github.com:networknt/light-spa-4j.git
         - git@github.com:networknt/light-gateway.git
-        - git@github.com:networknt/light-tokenization.git
         - git@github.com:networknt/light-example-4j.git
         - git@github.com:networknt/light-doc.git
-        - git@github.com:networknt/http2client-benchmark.git
         - git@github.com:networknt/light-kafka.git
-        - git@github.com:networknt/light-reference.git
         - git@github.com:networknt/kafka-sidecar.git
         - git@github.com:networknt/http-sidecar.git
         - git@github.com:networknt/http-client.git
@@ -58,20 +55,17 @@ checkout:
         - git@github.com:networknt/networknt-doc.git
         - git@github.com:networknt/light-fabric.git
         - git@github.com:networknt/light-config-test.git
-        - git@github.com:networknt/react-schema-form.git
         - git@github.com:networknt/devops.git
         - git@github.com:networknt/yaml-rule.git
         - git@github.com:networknt/yaml-rule-plugin.git
         - git@github.com:networknt/json-schema-validator.git
         - git@github.com:networknt/implementation.git
         - git@github.com:networknt/light-example-rs.git
+        - git@github.com:networknt/light-bot.git
+        - git@github.com:networknt/light-encryptor.git
         - git@github.com:lightapi/light-portal.git
         - git@github.com:lightapi/event-exporter.git
         - git@github.com:lightapi/event-importer.git
         - git@github.com:lightapi/portal-config-loc.git
         - git@github.com:lightapi/light-portal-doc.git
         - git@github.com:lightapi/portal-view.git
-        - git@github.com:lightapi/light-controller.git
-        - git@github.com:lightapi/oauth-kafka.git
-        - git@github.com:lightapi/light-config-server.git
-        - git@github.com:lightapi/service-asset.git

@@ -43,19 +43,15 @@ checkout:
       - git@github.com:networknt/light-gateway.git
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:lightapi/oauth-kafka.git
-      - git@github.com:networknt/light-tokenization.git
-      - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
       - git@github.com:lightapi/light-portal.git
-      - git@github.com:lightapi/light-controller.git
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
       - git@github.com:networknt/graphql-petstore.git
-      - git@github.com:networknt/light-reference.git
       - git@github.com:networknt/light-websocket-4j.git
 
 # generate changelog.md from github issues and check in
@@ -81,13 +77,9 @@ release:
   - networknt/light-gateway
   - networknt/http-sidecar
   - lightapi/light-portal
-  - lightapi/light-controller
   - lightapi/event-exporter
   - lightapi/event-importer
-  - lightapi/oauth-kafka
-  - lightapi/light-config-server
   - networknt/openapi-petstore
   - networknt/openapi-market
   - networknt/kafka-sidecar
   - networknt/graphql-petstore
-  - networknt/light-reference

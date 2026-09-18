@@ -46,8 +46,6 @@ checkout:
         - git@github.com:networknt/light-lambda-native.git
         - git@github.com:networknt/light-chaos-monkey.git
         - git@github.com:networknt/light-gateway.git
-        - git@github.com:networknt/light-tokenization.git
-        - git@github.com:networknt/light-reference.git
         - git@github.com:networknt/kafka-sidecar.git
         - git@github.com:networknt/http-sidecar.git
         - git@github.com:networknt/openapi-petstore.git
@@ -75,8 +73,6 @@ build:
       - light-chaos-monkey
       - light-websocket-4j
       - light-gateway
-      - light-tokenization
-      - light-reference
       - kafka-sidecar
       - http-sidecar
       - openapi-petstore

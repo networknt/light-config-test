@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade h2 to 2.5.250 from 2.3.232'
+comment: 'upgrade logback to 1.6.3 from 1.5.37'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -25,21 +25,14 @@ checkout:
     - git@github.com:networknt/light-session-4j.git
     - git@github.com:networknt/light-spa-4j.git
     - git@github.com:networknt/light-gateway.git
-    - git@github.com:networknt/light-tokenization.git
     - git@github.com:networknt/light-example-4j.git
-    - git@github.com:networknt/light-example-kotlin.git
     - git@github.com:networknt/light-doc.git
     - git@github.com:networknt/light-bot.git
-    - git@github.com:networknt/microservices-framework-benchmark.git
     - git@github.com:networknt/model-config.git
     - git@github.com:networknt/http-client.git
-    - git@github.com:networknt/http2client-benchmark.git
     - git@github.com:networknt/json-schema-validator.git
-    - git@github.com:networknt/json-schema-validator-perftest.git
     - git@github.com:networknt/microbenchmark.git
     - git@github.com:networknt/light-config-prod.git
-    - git@github.com:networknt/microservices-framework-benchmark.git
-    - git@github.com:networknt/light-reference.git
     - git@github.com:networknt/light-kafka.git
     - git@github.com:networknt/openapi-petstore.git
     - git@github.com:networknt/lambda-petstore.git
@@ -52,9 +45,6 @@ checkout:
     - git@github.com:lightapi/light-portal.git
     - git@github.com:lightapi/event-exporter.git
     - git@github.com:lightapi/event-importer.git
-    - git@github.com:lightapi/oauth-kafka.git
-    - git@github.com:lightapi/light-controller.git
-    - git@github.com:lightapi/light-config-server.git
     - git@github.com:lightapi/portal-config-loc.git
     - git@github.com:lightapi/light-portal-doc.git
     - git@github.com:lightapi/portal-view.git
@@ -1664,7 +1654,30 @@ replace:
 #   old_value: 8.2.1
 #   new_value: 8.3.1
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.h2>\d*\.\d*\.\d*</version.h2>
+#   old_value: "2.3.232"
+#   new_value: "2.5.250"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-jar>\d*\.\d*\.\d*</version.maven-jar>
+#   old_value: 3.1.2
+#   new_value: 3.5.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.caffeine>\d*\.\d*\.\d*</version.caffeine>
+#   old_value: 3.2.0
+#   new_value: 3.2.4
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: caffeineVersion=\d*\.\d*\.\d*
+#   old_value: 3.2.0
+#   new_value: 3.2.4
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.h2>\d*\.\d*\.\d*</version.h2>
-  old_value: "2.3.232"
-  new_value: "2.5.250"
+  match: <version.logback>\d*\.\d*\.\d*</version.logback>
+  old_value: 1.5.37
+  new_value: 1.6.3
+- glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+  match: logbackVersion=\d*\.\d*\.\d*
+  old_value: 1.5.37
+  new_value: 1.6.3

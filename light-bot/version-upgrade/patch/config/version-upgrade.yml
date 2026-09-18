@@ -31,15 +31,9 @@ checkout:
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/yaml-rule-plugin.git
       - git@github.com:networknt/light-gateway.git
-      - git@github.com:lightapi/oauth-kafka.git
-      - git@github.com:networknt/light-tokenization.git
       - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-example-kotlin.git
-      - git@github.com:lightapi/light-config-server.git
-      - git@github.com:networknt/http2client-benchmark.git
-      - git@github.com:networknt/microservices-framework-benchmark.git
       - git@github.com:networknt/light-kafka.git
-      - git@github.com:networknt/light-reference.git
     # Taiji-chain repositories
       - git@github.com:taiji-chain/web-client.git
       - git@github.com:taiji-chain/taiji-faucet.git
@@ -77,8 +71,6 @@ checkout:
       - git@github.com:lightapi/event-exporter.git
       - git@github.com:lightapi/event-importer.git
 
-    # Light controller
-      - git@github.com:lightapi/light-controller.git
     # examples
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
@@ -99,10 +91,6 @@ maven:
   - yaml-rule-plugin
   - light-gateway
   - light-kafka
-  - oauth-kafka
-  - light-reference
-  - light-tokenization
-  - light-config-server
   - light-portal
   - event-exporter
   - event-importer
@@ -111,7 +99,6 @@ maven:
   - light-chaos-monkey
   - kafka-sidecar
   - http-sidecar
-  - light-controller
   - openapi-petstore
   - openapi-market
   - graphql-petstore
@@ -177,19 +164,7 @@ version:
   light-gateway:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  oauth-kafka:
-    - path: pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  light-tokenization:
-    - path: pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  light-config-server:
-    - path: pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   light-kafka:
-    - path: pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-  light-reference:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
@@ -621,19 +596,6 @@ version:
     - path: kafka-sidecar/kafka-streams-dsl/pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
-  # http2client-benchmark
-  http2client-benchmark:
-    - path: httpserver/pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-
-    - path: httpclient/pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-
-  # microservices-framework-benchmark
-  microservices-framework-benchmark:
-    - path: light-4j/pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
-
   ### Gradle
 
   # light-example-kotlin
@@ -773,10 +735,6 @@ version:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
 
-  # Light-controller
-  light-controller:
-    - path: pom.xml
-      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   # kafka-sidecar
   kafka-sidecar:
     - path: pom.xml

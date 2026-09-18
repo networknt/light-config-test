@@ -30,15 +30,10 @@ checkout:
     repository:
       - git@github.com:networknt/light-gateway.git
       - git@github.com:lightapi/light-portal.git
-      - git@github.com:lightapi/oauth-kafka.git
-      - git@github.com:networknt/light-tokenization.git
-      - git@github.com:networknt/light-reference.git
       - git@github.com:networknt/light-example-4j.git
     # - git@github.com:networknt/light-codegen.git
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/http-sidecar.git
-      - git@github.com:lightapi/light-controller.git
-      - git@github.com:lightapi/light-config-server.git
       - git@github.com:networknt/openapi-petstore.git
       - git@github.com:networknt/openapi-market.git
       - git@github.com:networknt/graphql-petstore.git
@@ -47,9 +42,6 @@ checkout:
 maven:
   - light-gateway
   - light-portal
-  - oauth-kafka
-  - light-tokenization
-  - light-reference
 
   - light-example-4j/discovery/api_a/kubernetes
   - light-example-4j/discovery/api_b/kubernetes
@@ -58,8 +50,6 @@ maven:
   # - light-codegen
   - kafka-sidecar
   - http-sidecar
-  - light-controller
-  - light-config-server
   - openapi-petstore
   - openapi-market
   - graphql-petstore
@@ -67,9 +57,6 @@ maven:
 # update changelog in master, merge it to develop and publish to github.com
 release:
   - light-gateway
-  - oauth-kafka
-  - light-tokenization
-  - light-reference
   # no need to release as the release job has done.
   # - http-sidecar
   # - kafka-sidecar
@@ -80,9 +67,6 @@ release:
 # build docker image and push to docker hub
 docker:
   - light-gateway
-  - oauth-kafka
-  - light-tokenization
-  - light-reference
   # - light-portal/codegen-server
   - light-example-4j/discovery/api_a/kubernetes
   - light-example-4j/discovery/api_b/kubernetes
@@ -90,8 +74,6 @@ docker:
   - light-example-4j/discovery/api_d/kubernetes
   - kafka-sidecar
   - http-sidecar
-  - light-controller
-  - light-config-server
   - openapi-petstore
   - openapi-market
   - graphql-petstore
