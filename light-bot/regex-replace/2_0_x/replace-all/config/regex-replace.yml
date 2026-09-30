@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade logback to 1.6.3 from 1.5.37'
+comment: 'upgrade slf4j to 2.0.19 from 2.0.17'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -40,6 +40,7 @@ checkout:
     - git@github.com:networknt/lambda-market.git
     - git@github.com:networknt/graphql-petstore.git
     - git@github.com:networknt/light-websocket-4j.git
+    - git@github.com:networknt/light-encryptor.git
 
     # LightApi
     - git@github.com:lightapi/light-portal.git
@@ -1673,11 +1674,34 @@ replace:
 #   old_value: 3.2.0
 #   new_value: 3.2.4
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.5.37
+#   new_value: 1.6.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.5.37
+#   new_value: 1.6.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.caffeine>\d*\.\d*\.\d*</version.caffeine>
+#   old_value: 3.2.4
+#   new_value: 3.3.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: caffeineVersion=\d*\.\d*\.\d*
+#   old_value: 3.2.4
+#   new_value: 3.3.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
+#   old_value: "6.2.1"
+#   new_value: "7.1.0"
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.logback>\d*\.\d*\.\d*</version.logback>
-  old_value: 1.5.37
-  new_value: 1.6.3
+  match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+  old_value: 2.0.17
+  new_value: 2.0.19
 - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-  match: logbackVersion=\d*\.\d*\.\d*
-  old_value: 1.5.37
-  new_value: 1.6.3
+  match: slf4jVersion=\d*\.\d*\.\d*
+  old_value: 2.0.17
+  new_value: 2.0.19
