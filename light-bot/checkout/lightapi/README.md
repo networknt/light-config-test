@@ -21,7 +21,7 @@ mkdir networknt
 git clone https://github.com/networknt/light-bot.git
 git clone https://github.com/networknt/light-config-test.git
 cd light-bot
-./gradlew build
+mvn clean verify
 ```
 
 Now you should have light-bot built already.
@@ -33,3 +33,5 @@ Run the following command at the same location as this README.md
 ```
 ./run.sh
 ```
+
+Current light-bot requires JDK 25 or newer to build and run, and Maven 3.6.3 or newer to build.

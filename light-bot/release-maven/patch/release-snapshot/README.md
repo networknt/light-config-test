@@ -28,7 +28,7 @@ mkdir networknt
 git clone https://github.com/networknt/light-bot.git
 git clone https://github.com/networknt/light-config-test.git
 cd light-bot
-./gradlew build
+mvn clean verify
 ```
 
 Now you should have light-bot built already.
@@ -36,5 +36,7 @@ Now you should have light-bot built already.
 ### To start the command line
 
 ```
-java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-bot/bot-cli/build/libs/bot-cli-fat-1.0.jar -t release-maven
+java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-bot/bot-cli/target/bot-cli.jar -t release-maven
 ```
+
+Current light-bot requires JDK 25 or newer to build and run, and Maven 3.6.3 or newer to build.

@@ -29,7 +29,7 @@ https://www.networknt.com/tutorial/bot/build-light-bot/
 ### To start the command line
 
 ```
-java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-bot/bot-cli/build/libs/bot-cli-fat-1.0.jar -t regex-replace
+java -Dlight-4j-config-dir=./config -Dlogback.configurationFile=./logback.xml -jar ~/networknt/light-bot/bot-cli/target/bot-cli.jar -t regex-replace
 ```
 
 Or
@@ -45,3 +45,5 @@ cd ~/regexreplace
 grep -R --include="pom.xml" "2.9.1" .
 ```
 You can also, use "git status" to check how many files are updated.
+
+Current light-bot requires JDK 25 or newer to build and run, and Maven 3.6.3 or newer to build.
