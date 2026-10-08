@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_2_0_x
 # git commit comment for the current task
-comment: 'upgrade postgres to 42.7.14 from 42.7.13'
+comment: 'upgrade redisson to 4.8.0 from 3.45.1'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -1763,12 +1763,42 @@ replace:
 #   old_value: 2.51.3
 #   new_value: 2.55.12
 
-# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
-#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
 #   old_value: "2.4.1.Final"
 #   new_value: "2.4.4.Final"
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.7.13
+#   new_value: 42.7.14
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 2.0.7
+#   new_value: 2.0.8
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "2.4"
+#   new_value: "2.7"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.testcontainers>\d*\.\d*\.\d*</version.testcontainers>
+#   old_value: 1.8.0
+#   new_value: 2.0.5
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.6.3
+#   new_value: 1.6.5
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons-codec>\d*\.\d*\.\d*</version.commons-codec>
+#   old_value: 1.18.0
+#   new_value: 1.22.1
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
-  old_value: 42.7.13
-  new_value: 42.7.14
+  match: <version.redisson>\d*\.\d*\.\d*</version.redisson>
+  old_value: "3.45.1"
+  new_value: "4.8.0"
