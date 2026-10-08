@@ -12,6 +12,12 @@ last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
 # you just want to repeat the release process due to some environmental issue before.
 skip_checkout: false
+# Install light-4j foundations locally before publishing the client snapshot.
+# Preparation runs even with skip_release: true; use skip_prepare for a retry.
+skip_prepare: false
+prepare:
+  - light-4j:
+      - mvn clean install -pl status,monad-result,config,client-config,cluster -am
 # skip change log generation
 skip_change_log: true
 # skip check in the generated changelog
@@ -29,6 +35,7 @@ checkout:
   - branch: master
     repository:
       - git@github.com:networknt/light-4j.git
+      - git@github.com:networknt/http-client.git
       - git@github.com:networknt/json-overlay.git
       - git@github.com:networknt/openapi-parser.git
       - git@github.com:networknt/light-rest-4j.git
@@ -59,6 +66,7 @@ checkout:
 # merge the changelog.md to develop branch
 # publish the release to github repository
 release:
+  - networknt/http-client
   - networknt/light-4j
   - networknt/json-overlay
   - networknt/openapi-parser

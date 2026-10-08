@@ -1,15 +1,38 @@
 ### The purpose of this config
 
-The config files in this folder is to release all modules in networknt org to maven central.
+The config files in this folder publish coordinated Maven snapshots.
 
 The following actions will be taken.
 
-1. checkout all repos from develop
-2. merge to master
-3. generate and checkin changelog.md
-4. build and release master to maven central
-5. update github.com release note
-6. merge generated changelog.md back to develop
+1. Checkout and pull the configured repositories on `master`, including `http-client`.
+2. Build/install the foundational `light-4j` modules locally, with their tests.
+3. Build/install/deploy `http-client` first, then the complete `light-4j` reactor,
+   followed by the remaining repositories in the configured order.
+
+Changelog generation, checkin, GitHub release notes, deployment commands, and
+asset upload are currently skipped by the snapshot configuration.
+
+The preparation build uses:
+
+```sh
+mvn clean install -pl status,monad-result,config,client-config,cluster -am
+```
+
+It supplies the framework artifacts needed by the client without selecting
+framework modules that depend on the client. A failed preparation stops before
+publication. Preparation still runs with `skip_release: true`; set
+`skip_prepare: true` only when intentionally reusing an already completed build.
+
+The configuration uses `version: 2.4.1-SNAPSHOT` and `prev_tag: 2.4.0`. No
+repository-specific previous-tag override is needed after both repositories
+have the `2.4.0` tag. Changelog generation is currently disabled.
+
+Before running, align the project versions and dependency properties in the
+release workspace: `http-client` and its `version.light-4j`, `light-4j` and its
+`version.http-client`, and downstream client consumers must use the intended
+snapshot versions. The YAML `version` does not rewrite Maven POMs. This sequence
+does not make publication atomic or wait for remote repository propagation;
+local installation supplies the dependencies for the ordered builds.
 
 
 ### Prepare the environment

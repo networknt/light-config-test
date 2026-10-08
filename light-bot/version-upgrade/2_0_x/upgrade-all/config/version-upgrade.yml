@@ -20,6 +20,7 @@ skip_checkin: false
 checkout:
   - branch: master
     repository:
+      - git@github.com:networknt/http-client.git
       - git@github.com:networknt/light-4j.git
       - git@github.com:networknt/json-overlay.git
       - git@github.com:networknt/openapi-parser.git
@@ -79,6 +80,7 @@ checkout:
 
 # run mvn versions:set command in the following folders.
 maven:
+  - http-client
   - light-4j
   - json-overlay
   - openapi-parser
@@ -106,6 +108,9 @@ maven:
 
 # regex replacement for dependencies
 version:
+  http-client:
+    - path: pom.xml
+      match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>
   json-overlay:
     - path: pom.xml
       match: <version.light-4j>((([0-9]+)\.([0-9]+)\.([0-9]+)(?:-([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)(?:\+([0-9a-zA-Z-]+(?:\.[0-9a-zA-Z-]+)*))?)</version.light-4j>

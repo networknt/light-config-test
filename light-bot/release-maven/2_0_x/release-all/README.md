@@ -4,12 +4,44 @@ The config files in this folder is to release all modules in networknt org to ma
 
 The following actions will be taken.
 
-1. checkout all repos from develop
-2. merge to master
-3. generate and checkin changelog.md
-4. build and release master to maven central
-5. update github.com release note
-6. merge generated changelog.md back to develop
+1. Checkout and pull the configured repositories on `master`, including `http-client`.
+2. Build/install the foundational `light-4j` modules locally, with their tests.
+3. Generate and check in `CHANGELOG.md` for the configured release repositories.
+4. Build and publish `http-client` first, then the complete `light-4j` reactor,
+   followed by the remaining repositories in the configured order.
+5. Publish GitHub release notes. Deployment and asset upload are currently skipped.
+
+The preparation build uses:
+
+```sh
+mvn clean install -pl status,monad-result,config,client-config,cluster -am
+```
+
+It installs the parent POM and foundational modules required by `http-client`
+without building the framework modules that depend on it. A failed preparation
+stops the task before changelog checkin or publication. Preparation still runs
+with `skip_release: true`; set `skip_prepare: true` only when intentionally
+reusing a completed local build.
+
+Before the next coordinated release, update `version` and the release POMs.
+The configuration's `version` does not change Maven artifact versions. Align
+the `http-client` project version and its `version.light-4j`, the `light-4j`
+project version and its `version.http-client`, and downstream client consumers
+(including the Lambda projects). All must refer to the intended release
+versions. Extend the version-upgrade configuration to maintain this alignment
+on subsequent cycles; it currently does not include `http-client`.
+
+`prev_tags.networknt/http-client` starts at `1.0.18` because its previous tags
+differ from the framework tags. After the first coordinated release, update
+that override to the previous shared tag or remove it when the global
+`prev_tag` applies. Each previous tag must exist locally and be an ancestor of
+the repository's HEAD.
+
+This sequence uses separate Central publications. The client may become
+visible before its new framework dependencies; a local installation does not
+make those dependencies available to other consumers. Validate the release
+pair after both publications complete. This change does not add coordinated
+staging or wait for Central propagation.
 
 
 ### Prepare the environment
