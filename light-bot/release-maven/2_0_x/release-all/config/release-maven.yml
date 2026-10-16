@@ -1,9 +1,18 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven_2_0_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.4.0
+version: 2.4.1
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.3.7
+prev_tag: 2.4.0
+prev_tags:
+  lightapi/light-portal: 2.3.7
+  lightapi/event-importer: 2.3.7
+  lightapi/event-exporter: 2.3.7
+  networknt/kafka-sidecar: 2.3.7
+  networknt/openapi-petstore: 2.3.7
+  networknt/openapi-market: 2.3.7
+  networknt/graphql-petstore: 2.3.7
+
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
