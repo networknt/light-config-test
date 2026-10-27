@@ -1,5 +1,5 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
-workspace: versionupgrade_2_x
+workspace: versionupgrade_master
 # git commit comment for this task
 comment: 'upgrade to version 3.0.0-SNAPSHOT after release in master branch'
 # old existing version that need to be upgraded
