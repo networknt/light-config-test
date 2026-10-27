@@ -1,4 +1,4 @@
-workspace: developbuild_2_0_x
+workspace: developbuild_master
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 # or the last time the build was failed and you just want to retry without changing anything.
 skip_checkout: false

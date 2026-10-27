@@ -1,3 +1,0 @@
-# This is the config file for Cli command line
-# Indicate if there is an email will be sent out if build fails.
-skipEmail: true
