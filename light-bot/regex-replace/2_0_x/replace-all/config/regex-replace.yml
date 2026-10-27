@@ -1,5 +1,5 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
-workspace: regexreplace_2_0_x
+workspace: regexreplace_2_x
 # git commit comment for the current task
 comment: 'upgrade maven-version to 2.23.0 from 2.22.0'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
@@ -12,7 +12,7 @@ skip_checkin: false
 # clone and switch to develop branch or checkout and pull from develop branch. This is to ensure that develop branch for
 # each repository is up-to-date for manipulations. Please update skip_checkout to true if you want to bypass this step.
 checkout:
-  - branch: master
+  - branch: 2.x
     repository:
     # repositories from github.com
     - git@github.com:networknt/light-4j.git
@@ -26,12 +26,10 @@ checkout:
     - git@github.com:networknt/light-spa-4j.git
     - git@github.com:networknt/light-gateway.git
     - git@github.com:networknt/light-example-4j.git
-    - git@github.com:networknt/light-doc.git
     - git@github.com:networknt/light-bot.git
     - git@github.com:networknt/model-config.git
     - git@github.com:networknt/http-client.git
     - git@github.com:networknt/json-schema-validator.git
-    - git@github.com:networknt/microbenchmark.git
     - git@github.com:networknt/light-config-prod.git
     - git@github.com:networknt/light-kafka.git
     - git@github.com:networknt/openapi-petstore.git
@@ -42,36 +40,6 @@ checkout:
     - git@github.com:networknt/light-websocket-4j.git
     - git@github.com:networknt/light-encryptor.git
 
-    # LightApi
-    - git@github.com:lightapi/light-portal.git
-    - git@github.com:lightapi/event-exporter.git
-    - git@github.com:lightapi/event-importer.git
-    - git@github.com:lightapi/portal-config-loc.git
-    - git@github.com:lightapi/light-portal-doc.git
-    - git@github.com:lightapi/portal-view.git
-
-    # Taiji Block Chain Projects
-    - git@github.com:networknt/taiji-blockchain.git
-    - git@github.com:taiji-chain/web-client.git
-    - git@github.com:taiji-chain/taiji-faucet.git
-    # repositories from lightapi.net
-    # - git@198.55.49.186:lightapi/tokenization.git
-    # Open Banking Projects
-    - git@github.com:open-banking/parties.git
-    - git@github.com:open-banking/beneficiaries.git
-    - git@github.com:open-banking/directDebits.git
-    - git@github.com:open-banking/standingOrders.git
-    - git@github.com:open-banking/products.git
-    - git@github.com:open-banking/statements.git
-    - git@github.com:open-banking/scheduledPayments.git
-    - git@github.com:open-banking/offers.git
-    - git@github.com:open-banking/balances.git
-    - git@github.com:open-banking/transactions.git
-    - git@github.com:open-banking/accounts.git
-
-    # Maproot
-    # - git@github.com:lightapi/maproot-command.git
-    # - git@github.com:lightapi/maproot-query.git
     # Light-aws-lambda
     - git@github.com:networknt/light-aws-lambda.git
     - git@github.com:networknt/light-lambda-native.git
@@ -80,15 +48,8 @@ checkout:
     - git@github.com:networknt/kafka-sidecar.git
     - git@github.com:networknt/http-sidecar.git
     # yaml rule and plugin
-    - git@github.com:networknt/yaml-rule.git
     - git@github.com:networknt/yaml-rule-plugin.git
 
-    # - git@198.55.49.186:steve/kafka-chain.git
-    # - git@198.55.49.186:steve/genesis-block.git
-    # - git@198.55.49.186:light-chain/chain-reader.git
-    # - git@198.55.49.186:light-chain/chain-writer.git
-    # - git@198.55.49.186:light-chain/kyc-reader.git
-    # - git@198.55.49.186:light-chain/token-reader.git
 
 # regex replacement from old value to new value during a full text search on certain patterns
 # of file names.

@@ -1,6 +1,0 @@
-protocol: https
-host: api.github.com
-pathPrefix: ''
-owner: yourorg
-repo: marketplace-admin
-path: users.json
