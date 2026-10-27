@@ -1,0 +1,1825 @@
+# Workspace that is used for this operation. Most of time, this is done on local user home.
+workspace: regexreplace_master
+# git commit comment for the current task
+comment: 'upgrade maven-version to 2.23.0 from 2.22.0'
+# indicate if you want to skip checkout. yes if you know that all repositories are just checkout
+skip_checkout: false
+# indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
+skip_replace: false
+# indicate if you want to skip checkin. If you are not comfortable to checkin directly, skip this step and then you can
+# skip checkout and replace in second round and only make skip checkin false.
+skip_checkin: false
+# clone and switch to develop branch or checkout and pull from develop branch. This is to ensure that develop branch for
+# each repository is up-to-date for manipulations. Please update skip_checkout to true if you want to bypass this step.
+checkout:
+  - branch: master
+    repository:
+    # repositories from github.com
+    - git@github.com:networknt/light-4j.git
+    - git@github.com:networknt/json-overlay.git
+    - git@github.com:networknt/openapi-parser.git
+    - git@github.com:networknt/light-rest-4j.git
+    - git@github.com:networknt/light-graphql-4j.git
+    - git@github.com:networknt/light-hybrid-4j.git
+    - git@github.com:networknt/light-codegen.git
+    - git@github.com:networknt/light-session-4j.git
+    - git@github.com:networknt/light-spa-4j.git
+    - git@github.com:networknt/light-gateway.git
+    - git@github.com:networknt/light-example-4j.git
+    - git@github.com:networknt/light-bot.git
+    - git@github.com:networknt/model-config.git
+    - git@github.com:networknt/http-client.git
+    - git@github.com:networknt/json-schema-validator.git
+    - git@github.com:networknt/light-config-prod.git
+    - git@github.com:networknt/light-kafka.git
+    - git@github.com:networknt/openapi-petstore.git
+    - git@github.com:networknt/lambda-petstore.git
+    - git@github.com:networknt/openapi-market.git
+    - git@github.com:networknt/lambda-market.git
+    - git@github.com:networknt/graphql-petstore.git
+    - git@github.com:networknt/light-websocket-4j.git
+    - git@github.com:networknt/light-encryptor.git
+
+    # Light-aws-lambda
+    - git@github.com:networknt/light-aws-lambda.git
+    - git@github.com:networknt/light-lambda-native.git
+    # light-chaos-monkey
+    - git@github.com:networknt/light-chaos-monkey.git
+    - git@github.com:networknt/kafka-sidecar.git
+    - git@github.com:networknt/http-sidecar.git
+    # yaml rule and plugin
+    - git@github.com:networknt/yaml-rule-plugin.git
+
+
+# regex replacement from old value to new value during a full text search on certain patterns
+# of file names.
+replace:
+# matched path based on Glob (https://javapapers.com/java/glob-with-java-nio/)
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.9.4
+#   new_value: 2.9.5
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.swagger>\d*\.\d*\.\d*</version.swagger>
+#   old_value: <version.swagger>1.0.32</version.swagger>
+#   new_value: <version.swagger-parser>1.0.34</version.swagger-parser>
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version>[$]\{version.swagger\}</version>
+#   old_value: version.swagger}
+#   new_value: version.swagger-parser}
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons.codec>\d*\.\d*</version.commons.codec>
+#   old_value: "1.10"
+#   new_value: "1.11"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons-text>\d*\.\d*</version.commons-text>
+#   old_value: "1.1"
+#   new_value: "1.3"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jose4j>\d*\.\d*\.\d*</version.jose4j>
+#   old_value: "0.6.1"
+#   new_value: "0.6.3"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jose4j>\d*\.\d*\.\d*</version.jose4j>
+#   old_value: "0.5.2"
+#   new_value: "0.6.3"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jose4j>\d*\.\d*\.\d*</version.jose4j>
+#   old_value: "0.5.5"
+#   new_value: "0.6.3"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "1.4.0.Final"
+#   new_value: "1.4.23.Final"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "1.4.10.Final"
+#   new_value: "1.4.23.Final"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "1.4.20.Final"
+#   new_value: "1.4.23.Final"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "1.4.11.Final"
+#   new_value: "1.4.23.Final"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "1.4.18.Final"
+#   new_value: "1.4.23.Final"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "1.4.19.Final"
+#   new_value: "1.4.23.Final"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.18"
+#   new_value: "1.20"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.caffeine>\d*\.\d*\.\d*</version.caffeine>
+#   old_value: "2.5.6"
+#   new_value: "2.6.2"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.javamail>\d*\.\d*\.\d*</version.javamail>
+#   old_value: "1.6.0"
+#   new_value: "1.6.1"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.javamail>\d*\.\d*\.\d*</version.javamail>
+#   old_value: "1.4.7"
+#   new_value: "1.6.1"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.fastscanner>\d*\.\d*\.\d*</version.fastscanner>
+#   old_value: "2.7.0"
+#   new_value: "2.18.1"
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.fastscanner>\d*\.\d*\.\d*</version.fastscanner>
+#   old_value: "2.0.8"
+#   new_value: "2.18.1"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
+#   old_value: "3.0.0"
+#   new_value: "3.1.0"
+
+# - glob: "{**/service.yml,**/service.yml.rocker.raw}"
+#   match: com.networknt.server.HandlerProvider
+#   old_value: "server"
+#   new_value: "handler"
+
+# - glob: "{**/*.java}"
+#   match: com.networknt.server.HandlerProvider
+#   old_value: "server"
+#   new_value: "handler"
+
+# - glob: "{**/*.java,**/*.rocker.raw}"
+#   match: Http2Client.POOL,
+#   old_value: POOL
+#   new_value: BUFFER_POOL
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.9.5
+#   new_value: 2.9.8
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.0.11.Final"
+#   new_value: "2.0.16.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.9.8
+#   new_value: 2.9.9
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.9.8
+#   new_value: 2.9.9
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.0.16.Final"
+#   new_value: "2.0.21.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.0.16.Final"
+#   new_value: "2.0.21.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.0.21.Final"
+#   new_value: "2.0.23.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.0.21.Final"
+#   new_value: "2.0.23.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.9.9
+#   new_value: 2.9.10
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.9.9
+#   new_value: 2.9.10
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson-databind>\d*\.\d*\.\d*\.\d*</version.jackson-databind>
+#   old_value: 2.9.9.3
+#   new_value: 2.9.10
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonDatabindVersion=\d*\.\d*\.\d*\.\d*
+#   old_value: 2.9.9.3
+#   new_value: 2.9.10
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.9.10
+#   new_value: 2.10.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.9.10
+#   new_value: 2.10.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson-databind>\d*\.\d*\.\d*</version.jackson-databind>
+#   old_value: 2.9.10
+#   new_value: 2.10.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonDatabindVersion=\d*\.\d*\.\d*
+#   old_value: 2.9.10
+#   new_value: 2.10.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.0.23.Final"
+#   new_value: "2.0.28.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.0.23.Final"
+#   new_value: "2.0.28.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.0.30.Final"
+#   new_value: "2.0.29.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.0.30.Final"
+#   new_value: "2.0.29.Final"
+
+# - glob: "{**/Dockerfile}"
+#   match: java.base,java.sql,java.naming,java.desktop,java.xml,jdk.crypto.cryptoki,jdk.unsupported,java.management,java.security.jgss
+#   old_value: "jdk.crypto.cryptoki,jdk.unsupported"
+#   new_value: "jdk.crypto.cryptoki,jdk.crypto.ec,jdk.unsupported"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.0.29.Final"
+#   new_value: "2.1.1.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.0.29.Final"
+#   new_value: "2.1.1.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.1.1.Final"
+#   new_value: "2.1.3.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.1.1.Final"
+#   new_value: "2.1.3.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.10.0
+#   new_value: 2.10.4
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.10.0
+#   new_value: 2.10.4
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson-databind>\d*\.\d*\.\d*</version.jackson-databind>
+#   old_value: 2.10.0
+#   new_value: 2.10.4
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonDatabindVersion=\d*\.\d*\.\d*
+#   old_value: 2.10.0
+#   new_value: 2.10.4
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.mysql>\d*\.\d*\.\d*</version.mysql>
+#   old_value: 6.0.5
+#   new_value: 8.0.16
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: mysqlVersion=\d*\.\d*\.\d*
+#   old_value: 6.0.5
+#   new_value: 8.0.16
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.20"
+#   new_value: "1.26"
+
+# - glob: "{**/Dockerfile}"
+#   match: java.base,java.sql,java.naming,java.desktop,java.xml,jdk.crypto.cryptoki,jdk.crypto.ec,jdk.unsupported,java.management,java.security.jgss
+#   old_value: "java.security.jgss"
+#   new_value: "java.security.jgss,java.net.http"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.10.0
+#   new_value: 2.12.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.10.0
+#   new_value: 2.12.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.1.3.Final"
+#   new_value: "2.2.4.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.1.3.Final"
+#   new_value: "2.2.4.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 1.0.29
+#   new_value: 1.0.49
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.29
+#   new_value: 1.0.49
+
+# - glob: "{**/build.sh}"
+#   match: docker push
+#   old_value: "IMAGE_NAME"
+#   new_value: "IMAGE_NAME -a"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 1.0.49
+#   new_value: 1.0.63
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.49
+#   new_value: 1.0.63
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.2.4.Final"
+#   new_value: "2.2.14.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.2.4.Final"
+#   new_value: "2.2.14.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.2.3
+#   new_value: 1.2.7
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.2.3
+#   new_value: 1.2.7
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons.codec>\d*\.\d*</version.commons.codec>
+#   old_value: "1.11"
+#   new_value: "1.13"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+#   old_value: 1.7.25
+#   new_value: 1.7.32
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: slf4jVersion=\d*\.\d*\.\d*
+#   old_value: 1.7.25
+#   new_value: 1.7.32
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 1.0.63
+#   new_value: 1.0.65
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.63
+#   new_value: 1.0.65
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.avro>\d*\.\d*\.\d*</version.avro>
+#   old_value: 1.9.2
+#   new_value: 1.11.0
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: avroVersion=\d*\.\d*\.\d*
+#   old_value: 1.9.2
+#   new_value: 1.11.0
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.avro>\d*\.\d*\.\d*</version.avro>
+#   old_value: 1.10.2
+#   new_value: 1.11.0
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: avroVersion=\d*\.\d*\.\d*
+#   old_value: 1.10.2
+#   new_value: 1.11.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.12.1
+#   new_value: 2.13.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.12.1
+#   new_value: 2.13.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.2.7
+#   new_value: 1.2.11
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.2.7
+#   new_value: 1.2.11
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+#   old_value: 1.7.21
+#   new_value: 1.7.36
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: slf4jVersion=\d*\.\d*\.\d*
+#   old_value: 1.7.21
+#   new_value: 1.7.36
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.12.5
+#   new_value: 2.13.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.12.5
+#   new_value: 2.13.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 6.2.1
+#   new_value: 7.1.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 6.2.1
+#   new_value: 7.1.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 2.8.0
+#   new_value: 3.2.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 2.8.0
+#   new_value: 3.2.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.2.18.Final"
+#   new_value: "2.2.19.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.2.18.Final"
+#   new_value: "2.2.19.Final"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.29"
+#   new_value: "1.31"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.13.3
+#   new_value: 2.14.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.13.3
+#   new_value: 2.14.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.2.19.Final"
+#   new_value: "2.3.0.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.2.19.Final"
+#   new_value: "2.3.0.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.31"
+#   new_value: "1.33"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons.codec>\d*\.\d*</version.commons.codec>
+#   old_value: "1.13"
+#   new_value: "1.15"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jaeger>\d*\.\d*\.\d*</version.jaeger>
+#   old_value: 1.8.0
+#   new_value: 1.8.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jcommander>\d*\.\d*</version.jcommander>
+#   old_value: "1.72"
+#   new_value: "1.82"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.graphql>\d*\.\d*</version.graphql>
+#   old_value: "13.0"
+#   new_value: "19.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-javadoc>\d*\.\d*\.\d*</version.maven-javadoc>
+#   old_value: 3.1.0
+#   new_value: 3.4.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.14.0
+#   new_value: 2.14.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.14.0
+#   new_value: 2.14.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.0.Final"
+#   new_value: "2.3.3.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.0.Final"
+#   new_value: "2.3.3.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.mysql>\d*\.\d*\.\d*</version.mysql>
+#   old_value: 8.0.27
+#   new_value: 8.0.32
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: mysqlVersion=\d*\.\d*\.\d*
+#   old_value: 8.0.27
+#   new_value: 8.0.32
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.4.3
+#   new_value: 42.5.3
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: postgresVersion=\d*\.\d*\.\d*
+#   old_value: 42.4.3
+#   new_value: 42.5.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 3.2.0
+#   new_value: 3.4.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 3.2.0
+#   new_value: 3.4.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "1.33"
+#   new_value: "2.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.5.1
+#   new_value: 42.6.0
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: postgresVersion=\d*\.\d*\.\d*
+#   old_value: 42.5.1
+#   new_value: 42.6.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.3.Final"
+#   new_value: "2.3.5.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.3.Final"
+#   new_value: "2.3.5.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.2.11
+#   new_value: 1.4.6
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.2.11
+#   new_value: 1.4.6
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+#   old_value: 1.7.36
+#   new_value: 2.0.7
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: slf4jVersion=\d*\.\d*\.\d*
+#   old_value: 1.7.36
+#   new_value: 2.0.7
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 7.2.1
+#   new_value: 7.3.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 7.2.1
+#   new_value: 7.3.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logstash>\d*\.\d*\.\d*</version.logstash>
+#   old_value: 7.0.1
+#   new_value: 7.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logstashVersion=\d*\.\d*\.\d*
+#   old_value: 7.0.1
+#   new_value: 7.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jose4j>\d*\.\d*\.\d*</version.jose4j>
+#   old_value: "0.6.3"
+#   new_value: "0.9.3"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.encoder>\d*\.\d*\.\d*</version.encoder>
+#   old_value: "1.2.1"
+#   new_value: "1.2.3"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.junit>\d*\.\d*</version.junit>
+#   old_value: "4.12"
+#   new_value: "4.13.2"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.prometheus>\d*\.\d*\.\d*</version.prometheus>
+#   old_value: "0.6.0"
+#   new_value: "0.16.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.javamail>\d*\.\d*\.\d*</version.javamail>
+#   old_value: "1.6.1"
+#   new_value: "1.6.2"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.httpclient>\d*\.\d*\.\d*</version.httpclient>
+#   old_value: "4.5.13"
+#   new_value: "4.5.14"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.graphql>\d*\.\d*</version.graphql>
+#   old_value: "19.0"
+#   new_value: "20.2"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.redisson>\d*\.\d*\.\d*</version.redisson>
+#   old_value: "3.19.0"
+#   new_value: "3.20.1"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.avro>\d*\.\d*\.\d*</version.avro>
+#   old_value: 1.11.0
+#   new_value: 1.11.1
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: avroVersion=\d*\.\d*\.\d*
+#   old_value: 1.11.0
+#   new_value: 1.11.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 7.1.1
+#   new_value: 7.3.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 7.1.1
+#   new_value: 7.3.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.15.1
+#   new_value: 2.15.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.15.1
+#   new_value: 2.15.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.5.Final"
+#   new_value: "2.3.6.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.5.Final"
+#   new_value: "2.3.6.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.yaml-rule>\d*\.\d*\.\d*</version.yaml-rule>
+#   old_value: 1.0.1
+#   new_value: 1.0.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: yamlruleVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.1
+#   new_value: 1.0.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.6.Final"
+#   new_value: "2.3.7.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.6.Final"
+#   new_value: "2.3.7.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 7.3.3
+#   new_value: 7.4.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 7.3.3
+#   new_value: 7.4.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.redisson>\d*\.\d*\.\d*</version.redisson>
+#   old_value: "3.20.1"
+#   new_value: "3.23.2"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.h2>\d*\.\d*\.\d*</version.h2>
+#   old_value: "2.0.206"
+#   new_value: "2.2.220"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 3.4.0
+#   new_value: 3.5.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 3.4.0
+#   new_value: 3.5.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 7.4.0
+#   new_value: 7.5.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 7.4.0
+#   new_value: 7.5.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.avro>\d*\.\d*\.\d*</version.avro>
+#   old_value: 1.11.1
+#   new_value: 1.11.3
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: avroVersion=\d*\.\d*\.\d*
+#   old_value: 1.11.1
+#   new_value: 1.11.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.7.Final"
+#   new_value: "2.3.10.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.7.Final"
+#   new_value: "2.3.10.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.15.2
+#   new_value: 2.15.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.15.2
+#   new_value: 2.15.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "2.0"
+#   new_value: "2.2"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+#   old_value: 1.7.32
+#   new_value: 2.0.9
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: slf4jVersion=\d*\.\d*\.\d*
+#   old_value: 1.7.32
+#   new_value: 2.0.9
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.2.11
+#   new_value: 1.4.14
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.2.11
+#   new_value: 1.4.14
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.yaml-rule>\d*\.\d*\.\d*</version.yaml-rule>
+#   old_value: 1.0.2
+#   new_value: 1.0.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: yamlruleVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.2
+#   new_value: 1.0.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.10.Final"
+#   new_value: "2.3.12.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.10.Final"
+#   new_value: "2.3.12.Final"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jsonpath>\d*\.\d*\.\d*</version.jsonpath>
+#   old_value: "2.2.0"
+#   new_value: "2.9.0"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonpathVersion=\d*\.\d*\.\d*
+#   old_value: "2.2.0"
+#   new_value: "2.9.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 3.5.1
+#   new_value: 3.6.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 3.5.1
+#   new_value: 3.6.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 7.5.1
+#   new_value: 7.6.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 7.5.1
+#   new_value: 7.6.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.6.0
+#   new_value: 42.7.2
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: postgresVersion=\d*\.\d*\.\d*
+#   old_value: 42.6.0
+#   new_value: 42.7.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jose4j>\d*\.\d*\.\d*</version.jose4j>
+#   old_value: "0.9.3"
+#   new_value: "0.9.6"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.15.3
+#   new_value: 2.17.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.15.3
+#   new_value: 2.17.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+#   old_value: 2.0.9
+#   new_value: 2.0.13
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: slf4jVersion=\d*\.\d*\.\d*
+#   old_value: 2.0.9
+#   new_value: 2.0.13
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.4.14
+#   new_value: 1.5.6
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.4.14
+#   new_value: 1.5.6
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.17.0
+#   new_value: 2.17.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.17.0
+#   new_value: 2.17.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.12.Final"
+#   new_value: "2.3.14.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.12.Final"
+#   new_value: "2.3.14.Final"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 1.0.7
+#   new_value: 1.5.0
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.7
+#   new_value: 1.5.0
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.http-client>\d*\.\d*\.\d*</version.http-client>
+#   old_value: 1.0.12
+#   new_value: 1.0.13
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: httpClientVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.12
+#   new_value: 1.0.13
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 1.4.3
+#   new_value: 1.5.0
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.4.3
+#   new_value: 1.5.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 1.5.0
+#   new_value: 1.5.1
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 1.5.0
+#   new_value: 1.5.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.14.Final"
+#   new_value: "2.3.15.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.14.Final"
+#   new_value: "2.3.15.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.graphql>\d*\.\d*</version.graphql>
+#   old_value: "20.2"
+#   new_value: "22.2"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.avro>\d*\.\d*\.\d*</version.avro>
+#   old_value: 1.11.3
+#   new_value: 1.12.0
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: avroVersion=\d*\.\d*\.\d*
+#   old_value: 1.11.3
+#   new_value: 1.12.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.15.Final"
+#   new_value: "2.3.16.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.15.Final"
+#   new_value: "2.3.16.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.16.Final"
+#   new_value: "2.3.17.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.16.Final"
+#   new_value: "2.3.17.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.17.1
+#   new_value: 2.17.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.17.1
+#   new_value: 2.17.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.yaml-rule>\d*\.\d*\.\d*</version.yaml-rule>
+#   old_value: 1.0.4
+#   new_value: 1.0.5
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: yamlruleVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.4
+#   new_value: 1.0.5
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.18.0
+#   new_value: 2.18.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.18.0
+#   new_value: 2.18.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+#   old_value: 2.0.13
+#   new_value: 2.0.16
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: slf4jVersion=\d*\.\d*\.\d*
+#   old_value: 2.0.13
+#   new_value: 2.0.16
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.5.6
+#   new_value: 1.5.12
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.5.6
+#   new_value: 1.5.12
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.17.Final"
+#   new_value: "2.3.18.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.17.Final"
+#   new_value: "2.3.18.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.junit>\d*\.\d*\.\d*</version.junit>
+#   old_value: 5.9.3
+#   new_value: 5.11.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: junitVersion=\d*\.\d*\.\d*
+#   old_value: 5.9.3
+#   new_value: 5.11.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-events>\d*\.\d*\.\d*</version.lambda-events>
+#   old_value: 3.11.6
+#   new_value: 3.14.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaEventsVersion=\d*\.\d*\.\d*
+#   old_value: 3.11.6
+#   new_value: 3.14.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.26.4
+#   new_value: 2.29.23
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.26.4
+#   new_value: 2.29.23
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.yaml-rule>\d*\.\d*\.\d*</version.yaml-rule>
+#   old_value: 1.0.5
+#   new_value: 2.0.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: yamlruleVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.5
+#   new_value: 2.0.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "2.2"
+#   new_value: "2.3"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 3.8.1
+#   new_value: 3.7.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 3.8.1
+#   new_value: 3.7.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.5.12
+#   new_value: 1.5.16
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.5.12
+#   new_value: 1.5.16
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons.io>\d*\.\d*\.\d*</version.commons.io>
+#   old_value: 2.11.0
+#   new_value: 2.18.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.29.23
+#   new_value: 2.30.17
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.29.23
+#   new_value: 2.30.17
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.yaml-rule>\d*\.\d*\.\d*</version.yaml-rule>
+#   old_value: 2.0.0
+#   new_value: 2.0.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: yamlruleVersion=\d*\.\d*\.\d*
+#   old_value: 2.0.0
+#   new_value: 2.0.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-events>\d*\.\d*\.\d*</version.lambda-events>
+#   old_value: 3.14.0
+#   new_value: 3.15.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaEventsVersion=\d*\.\d*\.\d*
+#   old_value: 3.14.0
+#   new_value: 3.15.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.30.17
+#   new_value: 2.31.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.30.17
+#   new_value: 2.31.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.18.1
+#   new_value: 2.18.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.18.1
+#   new_value: 2.18.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+#   old_value: 2.0.16
+#   new_value: 2.0.17
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: slf4jVersion=\d*\.\d*\.\d*
+#   old_value: 2.0.16
+#   new_value: 2.0.17
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons.codec>\d*\.\d*</version.commons.codec>
+#   old_value: "1.15"
+#   new_value: "1.17.2"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons.codec>\d*\.\d*\.\d*</version.commons.codec>
+#   old_value: "1.17.2"
+#   new_value: "1.18.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.encoder>\d*\.\d*\.\d*</version.encoder>
+#   old_value: "1.2.3"
+#   new_value: "1.3.1"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.5.16
+#   new_value: 1.5.18
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.5.16
+#   new_value: 1.5.18
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.hdrhistogram>\d*\.\d*\.\d*</version.hdrhistogram>
+#   old_value: 2.1.10
+#   new_value: 2.2.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: hdrhistogramVersion=\d*\.\d*\.\d*
+#   old_value: 2.1.10
+#   new_value: 2.2.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "2.3"
+#   new_value: "2.4"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.caffeine>\d*\.\d*\.\d*</version.caffeine>
+#   old_value: 2.8.6
+#   new_value: 3.2.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: caffeineVersion=\d*\.\d*\.\d*
+#   old_value: 2.8.6
+#   new_value: 3.2.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
+#   old_value: "5.0.0"
+#   new_value: "6.2.1"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.h2>\d*\.\d*\.\d*</version.h2>
+#   old_value: "2.2.220"
+#   new_value: "2.3.232"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.7.2
+#   new_value: 42.7.5
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: postgresVersion=\d*\.\d*\.\d*
+#   old_value: 42.7.2
+#   new_value: 42.7.5
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.redisson>\d*\.\d*\.\d*</version.redisson>
+#   old_value: "3.44.0"
+#   new_value: "3.45.1"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.dynamodb>\d*\.\d*\.\d*</version.dynamodb>
+#   old_value: 2.31.9
+#   new_value: 2.31.39
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: dynamodbVersion=\d*\.\d*\.\d*
+#   old_value: 2.31.9
+#   new_value: 2.31.39
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.http-client>\d*\.\d*\.\d*</version.http-client>
+#   old_value: 1.0.13
+#   new_value: 1.0.14
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: httpClientVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.13
+#   new_value: 1.0.14
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 3.9.0
+#   new_value: 3.9.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 3.9.0
+#   new_value: 3.9.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 7.9.0
+#   new_value: 7.9.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 7.9.0
+#   new_value: 7.9.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.http-client>\d*\.\d*\.\d*</version.http-client>
+#   old_value: 1.0.13
+#   new_value: 1.0.16
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: httpClientVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.13
+#   new_value: 1.0.16
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.20.Final"
+#   new_value: "2.3.22.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.20.Final"
+#   new_value: "2.3.22.Final"
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.assertj>\d*\.\d*\.\d*</version.assertj>
+#   old_value: 2.1.0
+#   new_value: 3.27.7
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: assertjVersion=\d*\.\d*\.\d*
+#   old_value: 2.1.0
+#   new_value: 3.27.7
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.5.18
+#   new_value: 1.5.26
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.5.18
+#   new_value: 1.5.26
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons-text>\d*\.\d*\.\d*</version.commons-text>
+#   old_value: 1.10.0
+#   new_value: 1.15.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-core>\d*\.\d*\.\d*</version.lambda-core>
+#   old_value: 1.2.3
+#   new_value: 1.4.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaCoreVersion=\d*\.\d*\.\d*
+#   old_value: 1.2.3
+#   new_value: 1.4.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-events>\d*\.\d*\.\d*</version.lambda-events>
+#   old_value: 3.15.0
+#   new_value: 3.16.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaEventsVersion=\d*\.\d*\.\d*
+#   old_value: 3.15.0
+#   new_value: 3.16.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.31.39
+#   new_value: 2.41.18
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.31.39
+#   new_value: 2.41.18
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jsonpath>\d*\.\d*\.\d*</version.jsonpath>
+#   old_value: "2.9.0"
+#   new_value: "2.10.0"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonpathVersion=\d*\.\d*\.\d*
+#   old_value: "2.9.0"
+#   new_value: "2.10.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.http-client>\d*\.\d*\.\d*</version.http-client>
+#   old_value: 1.0.16
+#   new_value: 1.0.17
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: httpClientVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.16
+#   new_value: 1.0.17
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.41.18
+#   new_value: 2.41.24
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.41.18
+#   new_value: 2.41.24
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.avro>\d*\.\d*\.\d*</version.avro>
+#   old_value: 1.12.0
+#   new_value: 1.12.1
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: avroVersion=\d*\.\d*\.\d*
+#   old_value: 1.12.0
+#   new_value: 1.12.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.junit>\d*\.\d*\.\d*</version.junit>
+#   old_value: 5.8.1
+#   new_value: 5.11.4
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: junitVersion=\d*\.\d*\.\d*
+#   old_value: 5.8.1
+#   new_value: 5.11.4
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.7.5
+#   new_value: 42.7.7
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: postgresVersion=\d*\.\d*\.\d*
+#   old_value: 42.7.5
+#   new_value: 42.7.7
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.18.1
+#   new_value: 2.19.4
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.18.1
+#   new_value: 2.19.4
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.http-client>\d*\.\d*\.\d*</version.http-client>
+#   old_value: 1.0.17
+#   new_value: 1.0.18
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: httpClientVersion=\d*\.\d*\.\d*
+#   old_value: 1.0.17
+#   new_value: 1.0.18
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.7.7
+#   new_value: 42.7.11
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: postgresVersion=\d*\.\d*\.\d*
+#   old_value: 42.7.7
+#   new_value: 42.7.11
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.3.22.Final"
+#   new_value: "2.4.1.Final"
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: undertowVersion=\d*\.\d*\.\d*\.Final
+#   old_value: "2.3.22.Final"
+#   new_value: "2.4.1.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 3.9.1
+#   new_value: 3.9.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 3.9.1
+#   new_value: 3.9.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 7.9.1
+#   new_value: 7.9.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 7.9.1
+#   new_value: 7.9.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.41.24
+#   new_value: 2.46.16
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.41.24
+#   new_value: 2.46.16
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.5.26
+#   new_value: 1.5.37
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.5.26
+#   new_value: 1.5.37
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.46.16
+#   new_value: 2.47.5
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.46.16
+#   new_value: 2.47.5
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.7.11
+#   new_value: 42.7.13
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: postgresVersion=\d*\.\d*\.\d*
+#   old_value: 42.7.11
+#   new_value: 42.7.13
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 4.3.1
+#   new_value: 4.2.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 4.3.1
+#   new_value: 4.2.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 8.3.1
+#   new_value: 8.2.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 8.3.1
+#   new_value: 8.2.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.21.1
+#   new_value: 2.22.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.21.1
+#   new_value: 2.22.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.47.5
+#   new_value: 2.51.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: lambdaAwssdkVersion=\d*\.\d*\.\d*
+#   old_value: 2.47.5
+#   new_value: 2.51.3
+
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 2.0.5
+#   new_value: 2.0.7
+
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jsonSchemaValidatorVersion=\d*\.\d*\.\d*
+#   old_value: 2.0.5
+#   new_value: 2.0.7
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.kafka>\d*\.\d*\.\d*</version.kafka>
+#   old_value: 4.2.1
+#   new_value: 4.3.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: kafkaVersion=\d*\.\d*\.\d*
+#   old_value: 4.2.1
+#   new_value: 4.3.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 8.2.1
+#   new_value: 8.3.1
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 8.2.1
+#   new_value: 8.3.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.h2>\d*\.\d*\.\d*</version.h2>
+#   old_value: "2.3.232"
+#   new_value: "2.5.250"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-jar>\d*\.\d*\.\d*</version.maven-jar>
+#   old_value: 3.1.2
+#   new_value: 3.5.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.caffeine>\d*\.\d*\.\d*</version.caffeine>
+#   old_value: 3.2.0
+#   new_value: 3.2.4
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: caffeineVersion=\d*\.\d*\.\d*
+#   old_value: 3.2.0
+#   new_value: 3.2.4
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.5.37
+#   new_value: 1.6.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: logbackVersion=\d*\.\d*\.\d*
+#   old_value: 1.5.37
+#   new_value: 1.6.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.caffeine>\d*\.\d*\.\d*</version.caffeine>
+#   old_value: 3.2.4
+#   new_value: 3.3.0
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: caffeineVersion=\d*\.\d*\.\d*
+#   old_value: 3.2.4
+#   new_value: 3.3.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.hikaricp>\d*\.\d*\.\d*</version.hikaricp>
+#   old_value: "6.2.1"
+#   new_value: "7.1.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+#   old_value: 2.0.17
+#   new_value: 2.0.19
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: slf4jVersion=\d*\.\d*\.\d*
+#   old_value: 2.0.17
+#   new_value: 2.0.19
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 2.22.1
+#   new_value: 2.22.3
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: jacksonVersion=\d*\.\d*\.\d*
+#   old_value: 2.22.1
+#   new_value: 2.22.3
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jose4j>\d*\.\d*\.\d*</version.jose4j>
+#   old_value: "0.9.6"
+#   new_value: "0.9.7"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.slf4j>\d*\.\d*\.\d*</version.slf4j>
+#   old_value: 2.0.19
+#   new_value: 2.0.20
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: slf4jVersion=\d*\.\d*\.\d*
+#   old_value: 2.0.19
+#   new_value: 2.0.20
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <versions.maven-version>\d*\.\d*</versions.maven-version>
+#   old_value: "2.4"
+#   new_value: "2.22.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.h2>\d*\.\d*\.\d*</version.h2>
+#   old_value: "2.5.250"
+#   new_value: "2.5.252"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-javadoc>\d*\.\d*\.\d*</version.maven-javadoc>
+#   old_value: 3.4.1
+#   new_value: 3.12.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.confluent>\d*\.\d*\.\d*</version.confluent>
+#   old_value: 8.3.1
+#   new_value: 8.3.2
+# - glob: "{**/gradle.properties,**/gradleProperties.rocker.raw}"
+#   match: confluentVersion=\d*\.\d*\.\d*
+#   old_value: 8.3.1
+#   new_value: 8.3.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.encoder>\d*\.\d*\.\d*</version.encoder>
+#   old_value: "1.3.1"
+#   new_value: "1.5.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.51.3
+#   new_value: 2.55.12
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.undertow>\d*\.\d*\.\d*\.Final</version.undertow>
+#   old_value: "2.4.1.Final"
+#   new_value: "2.4.4.Final"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.postgres>\d*\.\d*\.\d*</version.postgres>
+#   old_value: 42.7.13
+#   new_value: 42.7.14
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+#   old_value: 2.0.7
+#   new_value: 2.0.8
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.snakeyaml>\d*\.\d*</version.snakeyaml>
+#   old_value: "2.4"
+#   new_value: "2.7"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.testcontainers>\d*\.\d*\.\d*</version.testcontainers>
+#   old_value: 1.8.0
+#   new_value: 2.0.5
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.6.3
+#   new_value: 1.6.5
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.commons-codec>\d*\.\d*\.\d*</version.commons-codec>
+#   old_value: 1.18.0
+#   new_value: 1.22.1
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.redisson>\d*\.\d*\.\d*</version.redisson>
+#   old_value: "3.45.1"
+#   new_value: "4.8.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logstash>\d*\.\d*</version.logstash>
+#   old_value: "7.3"
+#   new_value: "9.0"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-source>\d*\.\d*\.\d*</version.maven-source>
+#   old_value: 3.2.0
+#   new_value: 3.4.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-source>\d*\.\d*\.\d*</version.maven-source>
+#   old_value: 3.2.1
+#   new_value: 3.4.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-source>\d*\.\d*\.\d*</version.maven-source>
+#   old_value: 3.0.1
+#   new_value: 3.4.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-source>\d*\.\d*\.\d*</version.maven-source>
+#   old_value: 3.1.0
+#   new_value: 3.4.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-gpg>\d*\.\d*\.\d*</version.maven-gpg>
+#   old_value: 3.2.7
+#   new_value: 3.2.8
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.exec-maven>\d*\.\d*\.\d*</version.exec-maven>
+#   old_value: 1.6.0
+#   new_value: 3.6.4
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.maven-shade>\d*\.\d*\.\d*</version.maven-shade>
+#   old_value: 3.2.1
+#   new_value: 3.6.2
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logstash>\d*\.\d*</version.logstash>
+#   old_value: "9.0"
+#   new_value: "8.1"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.55.12
+#   new_value: 2.55.13
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.caffeine>\d*\.\d*\.\d*</version.caffeine>
+#   old_value: 3.3.0
+#   new_value: 3.3.1
+
+- glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+  match: <versions.maven-version>\d*\.\d*\.\d*</versions.maven-version>
+  old_value: "2.22.0"
+  new_value: "2.23.0"
