@@ -1,34 +1,47 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
-workspace: releasesnapshot_patch
+workspace: releasemaven_2_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.1.38-SNAPSHOT
-# github organization as the token is bound to the org in changelog generator. This
-# means that you can only release multiple repositories within the same org each time.
-organization: networknt
+version: 2.4.1
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.1.37
+prev_tag: 2.4.0
+# prev_tags:
+#   lightapi/light-portal: 2.3.7
+#   lightapi/event-importer: 2.3.7
+#   lightapi/event-exporter: 2.3.7
+#   networknt/kafka-sidecar: 2.3.7
+#   networknt/openapi-petstore: 2.3.7
+#   networknt/openapi-market: 2.3.7
+#   networknt/graphql-petstore: 2.3.7
+
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
 # You can skip checkout if you are sure that the code in workspace are the latest and
 # you just want to repeat the release process due to some environmental issue before.
 skip_checkout: false
+# Install light-4j foundations locally before changelogs/checkin/publication.
+# This runs even with skip_release: true; skip_prepare skips it on a retry.
+skip_prepare: false
+prepare:
+  - light-4j:
+      - mvn clean install -pl status,monad-result,config,client-config,cluster -am
 # skip change log generation
-skip_change_log: true
+skip_change_log: false
 # skip check in the generated changelog
-skip_checkin: true
+skip_checkin: false
 # You can skip the last release step so that you can double check the merged result.
 skip_release: false
 # skip upload release note to the github
-skip_release_note: true
+skip_release_note: false
 # skip deploy after the release
 skip_deploy: true
 # skip upload release assets
 skip_upload: true
 # clone and switch to develop branch / checkout and pull from develop branch
 checkout:
-  - branch: patch
+  - branch: 2.x
     repository:
       - git@github.com:networknt/light-4j.git
+      - git@github.com:networknt/http-client.git
       - git@github.com:networknt/json-overlay.git
       - git@github.com:networknt/openapi-parser.git
       - git@github.com:networknt/light-rest-4j.git
@@ -44,21 +57,15 @@ checkout:
       - git@github.com:networknt/http-sidecar.git
       - git@github.com:networknt/light-aws-lambda.git
       - git@github.com:networknt/light-lambda-native.git
-      - git@github.com:lightapi/light-portal.git
-      - git@github.com:lightapi/event-exporter.git
-      - git@github.com:lightapi/event-importer.git
       - git@github.com:networknt/kafka-sidecar.git
-      - git@github.com:networknt/openapi-petstore.git
-      - git@github.com:networknt/openapi-market.git
-      - git@github.com:networknt/graphql-petstore.git
       - git@github.com:networknt/light-websocket-4j.git
-
 
 # generate changelog.md from github issues and check in
 # release to maven central
 # merge the changelog.md to develop branch
 # publish the release to github repository
 release:
+  - networknt/http-client
   - networknt/light-4j
   - networknt/json-overlay
   - networknt/openapi-parser
@@ -73,13 +80,7 @@ release:
   - networknt/light-aws-lambda
   - networknt/light-lambda-native
   - networknt/light-chaos-monkey
+  - networknt/light-websocket-4j
   - networknt/light-gateway
   - networknt/http-sidecar
-  - lightapi/light-portal
-  - lightapi/event-exporter
-  - lightapi/event-importer
-  - networknt/openapi-petstore
-  - networknt/openapi-market
   - networknt/kafka-sidecar
-  - networknt/graphql-petstore
-  - networknt/light-websocket-4j
