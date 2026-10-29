@@ -48,12 +48,6 @@ checkout:
       - git@github.com:networknt/light-chaos-monkey.git
       - git@github.com:networknt/kafka-sidecar.git
       - git@github.com:networknt/http-sidecar.git
-      - git@github.com:lightapi/light-portal.git
-      - git@github.com:lightapi/event-exporter.git
-      - git@github.com:lightapi/event-importer.git
-      - git@github.com:networknt/openapi-petstore.git
-      - git@github.com:networknt/openapi-market.git
-      - git@github.com:networknt/graphql-petstore.git
       - git@github.com:networknt/light-websocket-4j.git
 
 build:
@@ -78,10 +72,3 @@ build:
     - light-chaos-monkey
     - kafka-sidecar
     - http-sidecar
-    - light-portal
-    - event-exporter
-    - event-importer
-    - openapi-petstore
-    - openapi-market
-    - graphql-petstore
-  
