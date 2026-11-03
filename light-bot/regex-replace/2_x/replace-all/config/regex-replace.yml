@@ -39,6 +39,7 @@ checkout:
     - git@github.com:networknt/kafka-sidecar.git
     - git@github.com:networknt/http-sidecar.git
     # yaml rule and plugin
+    - git@github.com:networknt/yaml-rule.git
     - git@github.com:networknt/yaml-rule-plugin.git
 
 

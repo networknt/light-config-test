@@ -47,10 +47,12 @@ checkout:
     - git@github.com:networknt/kafka-sidecar.git
     - git@github.com:networknt/http-sidecar.git
     # yaml rule and plugin
+    - git@github.com:networknt/yaml-rule.git
     - git@github.com:networknt/yaml-rule-plugin.git
     - git@github.com:lightapi/light-portal.git
     - git@github.com:lightapi/event-exporter.git
     - git@github.com:lightapi/event-importer.git
+    - git@github.com:networknt/light-bot.git
 
 # regex replacement from old value to new value during a full text search on certain patterns
 # of file names.
