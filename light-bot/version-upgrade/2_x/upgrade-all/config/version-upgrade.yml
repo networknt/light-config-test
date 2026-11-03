@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: versionupgrade_2_x
 # git commit comment for this task
-comment: 'upgrade to version 2.4.2-SNAPSHOT after release in 2.x branch'
+comment: 'upgrade to version 2.5.0-SNAPSHOT after release in 2.x branch'
 # old existing version that need to be upgraded
-old_version: 2.4.1
+old_version: 2.4.2-SNAPSHOT
 # new upgraded version. These two versions need to be updated every time to run this command
-new_version: 2.4.2-SNAPSHOT
+new_version: 2.5.0-SNAPSHOT
 # only skip the checkout if you are sure that the latest code is in the workspace. It is
 # OK to execute it several times.
 skip_checkout: false
@@ -32,7 +32,6 @@ checkout:
       - git@github.com:networknt/light-spa-4j.git
       - git@github.com:networknt/yaml-rule-plugin.git
       - git@github.com:networknt/light-gateway.git
-      - git@github.com:networknt/light-example-4j.git
       - git@github.com:networknt/light-kafka.git
       - git@github.com:networknt/light-websocket-4j.git
 
@@ -60,9 +59,6 @@ maven:
   - yaml-rule-plugin
   - light-gateway
   - light-kafka
-  - light-portal
-  - event-exporter
-  - event-importer
   - light-aws-lambda
   - light-lambda-native
   - light-chaos-monkey
