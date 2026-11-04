@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_master
 # git commit comment for the current task
-comment: 'upgrade central-publishing-maven to 0.12.0 from 0.11.0'
+comment: 'upgrade json-schema-validator to 3.0.9 from 3.0.8'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -1872,7 +1872,17 @@ replace:
 #   old_value: 5.0.0
 #   new_value: 5.1.0
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.central-publishing-maven>\d*\.\d*\.\d*</version.central-publishing-maven>
+#   old_value: 0.11.0
+#   new_value: 0.12.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.jackson>\d*\.\d*\.\d*</version.jackson>
+#   old_value: 3.2.4
+#   new_value: 3.1.8
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.central-publishing-maven>\d*\.\d*\.\d*</version.central-publishing-maven>
-  old_value: 0.11.0
-  new_value: 0.12.0
+  match: <version.json-schema-validator>\d*\.\d*\.\d*</version.json-schema-validator>
+  old_value: 3.0.8
+  new_value: 3.0.9
