@@ -4,14 +4,8 @@ workspace: releasemaven_2_x
 version: 2.5.0
 # previous tag used to calculate how many commits in between in the git log
 prev_tag: 2.4.1
-# prev_tags:
-#   lightapi/light-portal: 2.3.7
-#   lightapi/event-importer: 2.3.7
-#   lightapi/event-exporter: 2.3.7
-#   networknt/kafka-sidecar: 2.3.7
-#   networknt/openapi-petstore: 2.3.7
-#   networknt/openapi-market: 2.3.7
-#   networknt/graphql-petstore: 2.3.7
+prev_tags:
+  networknt/kafka-sidecar: 2.3.7
 
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
