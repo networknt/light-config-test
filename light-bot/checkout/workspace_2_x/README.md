@@ -1,0 +1,35 @@
+### The purpose of this config
+
+The config files in this folder is just check out all the repositories in workspace folder for AI to work on
+all repositories at the same time. We recommend run this task everyday in the morning to ensure your local 
+repositories are up to date.
+
+### Prepare the environment
+
+This is a one time work and all other tasks in light-config-test won't need to do it again. If this is your first
+time to use light-bot, then you need to checkout both light-bot and light-config-test repository to a workspace.
+
+I am using networknt under my user home directory as workspace and all scripts are based on that assumtpion. If
+you want use another folder as your workspace, please fork the light-config-test repo and update the scripts
+accordingly.
+
+```
+cd ~
+mkdir networknt
+git clone https://github.com/networknt/light-bot.git
+git clone https://github.com/networknt/light-config-test.git
+cd light-bot
+mvn clean verify
+```
+
+Now you should have light-bot built already.
+
+### To start the command line
+
+Run the following command at the same location as this README.md
+
+```
+./run.sh
+```
+
+Current light-bot requires JDK 25 or newer to build and run, and Maven 3.6.3 or newer to build.
