@@ -1,7 +1,7 @@
 # Workspace that is used for this operation. Most of time, this is done on local user home.
 workspace: regexreplace_master
 # git commit comment for the current task
-comment: 'upgrade exec-maven to 3.7.0 from 3.6.4'
+comment: 'upgrade logback to 1.6.8 from 1.6.7'
 # indicate if you want to skip checkout. yes if you know that all repositories are just checkout
 skip_checkout: false
 # indicate if you want to skip replace. yes if you have just run the replace first and this time you just want to checkin.
@@ -1897,7 +1897,27 @@ replace:
 #   old_value: 3.10.1
 #   new_value: 3.16.0
 
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.exec-maven>\d*\.\d*\.\d*</version.exec-maven>
+#   old_value: 3.6.4
+#   new_value: 3.7.0
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <versions.maven-version>\d*\.\d*\.\d*</versions.maven-version>
+#   old_value: "2.23.0"
+#   new_value: "2.25.2"
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.logback>\d*\.\d*\.\d*</version.logback>
+#   old_value: 1.6.6
+#   new_value: 1.6.7
+
+# - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
+#   match: <version.lambda-awssdk>\d*\.\d*\.\d*</version.lambda-awssdk>
+#   old_value: 2.57.8
+#   new_value: 2.59.5
+
 - glob: "{**/pom.xml,**/pom.xml.rocker.raw}"
-  match: <version.exec-maven>\d*\.\d*\.\d*</version.exec-maven>
-  old_value: 3.6.4
-  new_value: 3.7.0
+  match: <version.logback>\d*\.\d*\.\d*</version.logback>
+  old_value: 1.6.7
+  new_value: 1.6.8
