@@ -1,11 +1,11 @@
 # Workspace that is used for this operation. Most of time, this is done on local.
 workspace: releasemaven_2_x
 # release version that is used to generate changelog. This need to be changed every time
-version: 2.5.0
+version: 2.5.1
 # previous tag used to calculate how many commits in between in the git log
-prev_tag: 2.4.1
-prev_tags:
-  networknt/kafka-sidecar: 2.3.7
+prev_tag: 2.5.0
+# prev_tags:
+#   networknt/kafka-sidecar: 2.3.7
 
 # last number of pull requests retrieved from the GitHub. 100 minimum.
 last: 100
